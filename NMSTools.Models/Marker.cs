@@ -3,6 +3,7 @@
 namespace NMSTools.Models
 {
     using Base;
+
     public class Marker : ModelBase
     {
         private int table;
@@ -45,8 +46,8 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("oZw")]
-        public string GalacticAddress 
-        { 
+        public string GalacticAddress
+        {
             get => galacticAddress;
             set
             {

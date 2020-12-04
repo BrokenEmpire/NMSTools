@@ -14,9 +14,9 @@ namespace NMSTools.Models
         private int flags;
 
         [JsonProperty("=yU")]
-        public Catalog InventoryContainer 
-        { 
-            get => inventoryContainer; 
+        public Catalog InventoryContainer
+        {
+            get => inventoryContainer;
             set
             {
                 if ((ReferenceEquals(inventoryContainer, value) != true))
@@ -28,9 +28,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wx7")]
-        public int LastUpdateTimestamp 
-        { 
-            get => lastUpdateTimestamp; 
+        public int LastUpdateTimestamp
+        {
+            get => lastUpdateTimestamp;
             set
             {
                 if ((ReferenceEquals(lastUpdateTimestamp, value) != true))
@@ -42,9 +42,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eyv")]
-        public int LastCompletedTimestamp 
-        { 
-            get => lastCompletedTimestamp; 
+        public int LastCompletedTimestamp
+        {
+            get => lastCompletedTimestamp;
             set
             {
                 if ((ReferenceEquals(lastCompletedTimestamp, value) != true))
@@ -56,9 +56,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("FML")]
-        public int LastBrokenTimestamp 
-        { 
-            get => lastBrokenTimestamp; 
+        public int LastBrokenTimestamp
+        {
+            get => lastBrokenTimestamp;
             set
             {
                 if ((ReferenceEquals(lastBrokenTimestamp, value) != true))
@@ -70,9 +70,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("4>;")]
-        public float[] DamageTimers 
-        { 
-            get => damageTimers; 
+        public float[] DamageTimers
+        {
+            get => damageTimers;
             set
             {
                 if ((ReferenceEquals(damageTimers, value) != true))
@@ -84,8 +84,8 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("XV5")]
-        public int Flags 
-        { 
+        public int Flags
+        {
             get => flags;
             set
             {

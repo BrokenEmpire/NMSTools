@@ -16,8 +16,8 @@ namespace NMSTools.Models
         private float[] at;
 
         [JsonProperty("b1:")]
-        public int Timestamp 
-        { 
+        public int Timestamp
+        {
             get => timestamp;
             set
             {
@@ -30,9 +30,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("r<7")]
-        public string ObjectID 
-        { 
-            get => objectID; 
+        public string ObjectID
+        {
+            get => objectID;
             set
             {
                 if ((ReferenceEquals(objectID, value) != true))
@@ -44,9 +44,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("oZw")]
-        public string GalacticAddress 
-        { 
-            get => galacticAddress; 
+        public string GalacticAddress
+        {
+            get => galacticAddress;
             set
             {
                 if ((ReferenceEquals(galacticAddress, value) != true))
@@ -58,9 +58,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("ofi")]
-        public string RegionSeed 
-        { 
-            get => regionSeed; 
+        public string RegionSeed
+        {
+            get => regionSeed;
             set
             {
                 if ((ReferenceEquals(regionSeed, value) != true))
@@ -72,9 +72,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("CVX")]
-        public int UserData 
-        { 
-            get => userData; 
+        public int UserData
+        {
+            get => userData;
             set
             {
                 if ((ReferenceEquals(userData, value) != true))
@@ -86,9 +86,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public float[] Position 
-        { 
-            get => position; 
+        public float[] Position
+        {
+            get => position;
             set
             {
                 if ((ReferenceEquals(position, value) != true))
@@ -100,8 +100,8 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wJ0")]
-        public float[] Up 
-        { 
+        public float[] Up
+        {
             get => up; set
             {
                 if ((ReferenceEquals(up, value) != true))
@@ -113,9 +113,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("aNu")]
-        public float[] At 
-        { 
-            get => at; 
+        public float[] At
+        {
+            get => at;
             set
             {
                 if ((ReferenceEquals(at, value) != true))

@@ -9,9 +9,9 @@ namespace NMSTools.Models
         private int[] savedRaceIndicies;
 
         [JsonProperty("SEK")]
-        public int[] SavedRaceIndicies 
-        { 
-            get => savedRaceIndicies; 
+        public int[] SavedRaceIndicies
+        {
+            get => savedRaceIndicies;
             set
             {
                 if ((ReferenceEquals(savedRaceIndicies, value) != true))

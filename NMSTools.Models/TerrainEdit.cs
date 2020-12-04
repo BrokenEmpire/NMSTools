@@ -10,8 +10,8 @@ namespace NMSTools.Models
         private int position;
 
         [JsonProperty("8?J")]
-        public int Data 
-        { 
+        public int Data
+        {
             get => data;
             set
             {
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public int Position 
-        { 
-            get => position; 
+        public int Position
+        {
+            get => position;
             set
             {
                 if ((ReferenceEquals(position, value) != true))

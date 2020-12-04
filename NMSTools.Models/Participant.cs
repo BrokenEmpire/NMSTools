@@ -12,8 +12,8 @@ namespace NMSTools.Models
         private ParticipantType participantMode;
 
         [JsonProperty("5L6")]
-        public string UA 
-        { 
+        public string UA
+        {
             get => uA;
             set
             {
@@ -27,7 +27,7 @@ namespace NMSTools.Models
 
         [JsonProperty("5bU")]
         public string[] BuildingSeed
-        { 
+        {
             get => buildingSeed;
             set
             {
@@ -40,7 +40,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("TWn")]
-        public float[] BuildingLocation 
+        public float[] BuildingLocation
         {
             get => buildingLocation;
             set

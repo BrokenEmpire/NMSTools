@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private float floatValue;
 
         [JsonProperty(">vs")]
-        public int IntValue 
-        { 
-            get => intValue; 
+        public int IntValue
+        {
+            get => intValue;
             set
             {
                 if ((ReferenceEquals(intValue, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eoL")]
-        public float FloatValue 
-        { 
-            get => floatValue; 
+        public float FloatValue
+        {
+            get => floatValue;
             set
             {
                 if ((ReferenceEquals(floatValue, value) != true))

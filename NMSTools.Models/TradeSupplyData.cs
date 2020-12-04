@@ -15,7 +15,7 @@ namespace NMSTools.Models
         [JsonProperty("oZw")]
         public string GalacticAddress
         {
-            get => galacticAddress; 
+            get => galacticAddress;
             set
             {
                 if ((ReferenceEquals(galacticAddress, value) != true))
@@ -29,7 +29,7 @@ namespace NMSTools.Models
         [JsonProperty("Iu7")]
         public float Supply
         {
-            get => supply; 
+            get => supply;
             set
             {
                 if ((ReferenceEquals(supply, value) != true))

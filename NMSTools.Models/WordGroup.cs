@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private bool[] races;
 
         [JsonProperty("MYl")]
-        public string Group 
-        { 
-            get => group; 
+        public string Group
+        {
+            get => group;
             set
             {
                 if ((ReferenceEquals(group, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("D;o")]
-        public bool[] Races 
-        { 
-            get => races; 
+        public bool[] Races
+        {
+            get => races;
             set
             {
                 if ((ReferenceEquals(races, value) != true))

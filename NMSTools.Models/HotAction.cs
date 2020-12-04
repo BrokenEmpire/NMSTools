@@ -8,18 +8,18 @@ namespace NMSTools.Models
     {
         private KeyAction[] keyActions;
 
-		[JsonProperty("sM@")]
-		public KeyAction[] KeyActions
-		{
-			get => keyActions;
-			set
-			{
-				if ((ReferenceEquals(keyActions, value) != true))
-				{
-					keyActions = value;
-					OnPropertyChanged("KeyActions");
-				}
-			}
-		}
+        [JsonProperty("sM@")]
+        public KeyAction[] KeyActions
+        {
+            get => keyActions;
+            set
+            {
+                if ((ReferenceEquals(keyActions, value) != true))
+                {
+                    keyActions = value;
+                    OnPropertyChanged("KeyActions");
+                }
+            }
+        }
     }
 }

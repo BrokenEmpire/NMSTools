@@ -2,114 +2,114 @@ using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
-	using Base;
+    using Base;
 
     public class MultiTool : ModelBase
-	{
-		private CatalogLayout layout;
-		private Catalog store;
-		private string[] seed;
-		private string name;
-		private bool isLarge;
-		private long primaryMode;
-		private long secondaryMode;
+    {
+        private CatalogLayout layout;
+        private Catalog store;
+        private string[] seed;
+        private string name;
+        private bool isLarge;
+        private long primaryMode;
+        private long secondaryMode;
 
         [JsonProperty("CA4")]
-		public CatalogLayout Layout
-		{
-			get => layout;
-			set
-			{
-				if ((ReferenceEquals(layout, value) != true))
-				{
-					layout = value;
-					OnPropertyChanged("Layout");
-				}
-			}
-		}
+        public CatalogLayout Layout
+        {
+            get => layout;
+            set
+            {
+                if ((ReferenceEquals(layout, value) != true))
+                {
+                    layout = value;
+                    OnPropertyChanged("Layout");
+                }
+            }
+        }
 
         [JsonProperty("OsQ")]
-		public Catalog Store
-		{
-			get => store;
-			set
-			{
-				if ((ReferenceEquals(store, value) != true))
-				{
-					store = value;
-					OnPropertyChanged("Store");
-				}
-			}
-		}
+        public Catalog Store
+        {
+            get => store;
+            set
+            {
+                if ((ReferenceEquals(store, value) != true))
+                {
+                    store = value;
+                    OnPropertyChanged("Store");
+                }
+            }
+        }
 
         [JsonProperty("@EL")]
-		public string[] Seed
-		{
-			get => seed;
-			set
-			{
-				if ((ReferenceEquals(seed, value) != true))
-				{
-					seed = value;
-					OnPropertyChanged("Seed");
-				}
-			}
-		}
+        public string[] Seed
+        {
+            get => seed;
+            set
+            {
+                if ((ReferenceEquals(seed, value) != true))
+                {
+                    seed = value;
+                    OnPropertyChanged("Seed");
+                }
+            }
+        }
 
         [JsonProperty("NKm")]
-		public string Name
-		{
-			get => name;
-			set
-			{
-				if ((ReferenceEquals(name, value) != true))
-				{
-					name = value;
-					OnPropertyChanged("Name");
-				}
-			}
-		}
+        public string Name
+        {
+            get => name;
+            set
+            {
+                if ((ReferenceEquals(name, value) != true))
+                {
+                    name = value;
+                    OnPropertyChanged("Name");
+                }
+            }
+        }
 
         [JsonProperty("OGV")]
-		public bool IsLarge
-		{
-			get => isLarge;
-			set
-			{
-				if ((ReferenceEquals(isLarge, value) != true))
-				{
-					isLarge = value;
-					OnPropertyChanged("IsLarge");
-				}
-			}
-		}
+        public bool IsLarge
+        {
+            get => isLarge;
+            set
+            {
+                if ((ReferenceEquals(isLarge, value) != true))
+                {
+                    isLarge = value;
+                    OnPropertyChanged("IsLarge");
+                }
+            }
+        }
 
         [JsonProperty("qVG")]
-		public long PrimaryMode
-		{
-			get => primaryMode;
-			set
-			{
-				if ((ReferenceEquals(primaryMode, value) != true))
-				{
-					primaryMode = value;
-					OnPropertyChanged("PrimaryMode");
-				}
-			}
-		}
+        public long PrimaryMode
+        {
+            get => primaryMode;
+            set
+            {
+                if ((ReferenceEquals(primaryMode, value) != true))
+                {
+                    primaryMode = value;
+                    OnPropertyChanged("PrimaryMode");
+                }
+            }
+        }
 
         [JsonProperty("jl;")]
-		public long SecondaryMode
-		{
-			get => secondaryMode;
-			set
-			{
-				if ((ReferenceEquals(secondaryMode, value) != true))
-				{
-					secondaryMode = value;
-					OnPropertyChanged("SecondaryMode");
-				}
-			}
-		}
-	}
+        public long SecondaryMode
+        {
+            get => secondaryMode;
+            set
+            {
+                if ((ReferenceEquals(secondaryMode, value) != true))
+                {
+                    secondaryMode = value;
+                    OnPropertyChanged("SecondaryMode");
+                }
+            }
+        }
+    }
 }

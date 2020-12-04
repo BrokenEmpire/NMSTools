@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private StatValue statValue;
 
         [JsonProperty("b2n")]
-        public string Id 
-        { 
-            get => id; 
+        public string Id
+        {
+            get => id;
             set
             {
                 if ((ReferenceEquals(id, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty(">MX")]
-        public StatValue StatValue 
-        { 
-            get => statValue; 
+        public StatValue StatValue
+        {
+            get => statValue;
             set
             {
                 if ((ReferenceEquals(statValue, value) != true))

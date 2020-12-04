@@ -44,8 +44,8 @@ namespace NMSTools.Models
         }
 
         [JsonProperty(";l5")]
-        public Catalog Inventory 
-        { 
+        public Catalog Inventory
+        {
             get => inventory;
             set
             {
@@ -58,9 +58,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("PMT")]
-        public Catalog InventoryTech 
-        { 
-            get => inventoryTech; 
+        public Catalog InventoryTech
+        {
+            get => inventoryTech;
             set
             {
                 if ((ReferenceEquals(inventoryTech, value) != true))
@@ -72,9 +72,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("pMa")]
-        public CatalogLayout InventoryLayout 
-        { 
-            get => inventoryLayout; 
+        public CatalogLayout InventoryLayout
+        {
+            get => inventoryLayout;
             set
             {
                 if ((ReferenceEquals(inventoryLayout, value) != true))
@@ -86,9 +86,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("YTa")]
-        public string Location 
-        { 
-            get => location; 
+        public string Location
+        {
+            get => location;
             set
             {
                 if ((ReferenceEquals(location, value) != true))
@@ -100,9 +100,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public float[] Position 
-        { 
-            get => position; 
+        public float[] Position
+        {
+            get => position;
             set
             {
                 if ((ReferenceEquals(position, value) != true))
@@ -114,9 +114,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("l?l")]
-        public float[] Direction 
-        { 
-            get => direction; 
+        public float[] Direction
+        {
+            get => direction;
             set
             {
                 if ((ReferenceEquals(direction, value) != true))

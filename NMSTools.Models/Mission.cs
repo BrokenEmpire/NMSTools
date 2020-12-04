@@ -13,9 +13,9 @@ namespace NMSTools.Models
         private Participant[] participants;
 
         [JsonProperty("p0c")]
-        public string MissionName 
-        { 
-            get => missionName; 
+        public string MissionName
+        {
+            get => missionName;
             set
             {
                 if ((ReferenceEquals(missionName, value) != true))
@@ -27,9 +27,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("tW6")]
-        public int Progress 
-        { 
-            get => progress; 
+        public int Progress
+        {
+            get => progress;
             set
             {
                 if ((ReferenceEquals(progress, value) != true))
@@ -41,8 +41,8 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("@EL")]
-        public string Seed 
-        { 
+        public string Seed
+        {
             get => seed;
             set
             {
@@ -55,9 +55,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("8?J")]
-        public int Data 
-        { 
-            get => data; 
+        public int Data
+        {
+            get => data;
             set
             {
                 if ((ReferenceEquals(data, value) != true))
@@ -69,9 +69,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eZ7")]
-        public Participant[] Participants 
-        { 
-            get => participants; 
+        public Participant[] Participants
+        {
+            get => participants;
             set
             {
                 if ((ReferenceEquals(participants, value) != true))

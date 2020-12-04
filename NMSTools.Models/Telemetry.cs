@@ -11,9 +11,9 @@ namespace NMSTools.Models
         private int telemetryValue;
 
         [JsonProperty("b2n")]
-        public string Id 
-        { 
-            get => id; 
+        public string Id
+        {
+            get => id;
             set
             {
                 if ((ReferenceEquals(id, value) != true))
@@ -25,9 +25,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("Vn8")]
-        public string TelemetryType 
-        { 
-            get => telemetryType; 
+        public string TelemetryType
+        {
+            get => telemetryType;
             set
             {
                 if ((ReferenceEquals(telemetryType, value) != true))
@@ -39,9 +39,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty(">MX")]
-        public int TelemetryValue 
-        { 
-            get => telemetryValue; 
+        public int TelemetryValue
+        {
+            get => telemetryValue;
             set
             {
                 if ((ReferenceEquals(telemetryValue, value) != true))

@@ -9,8 +9,8 @@ namespace NMSTools.Models
         private string alienRace;
 
         [JsonProperty("0Hi")]
-        public string AlienRace 
-        { 
+        public string AlienRace
+        {
             get => alienRace;
             set
             {

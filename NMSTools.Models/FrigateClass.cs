@@ -9,8 +9,8 @@ namespace NMSTools.Models
         private string className;
 
         [JsonProperty("uw7")]
-        public string ClassName 
-        { 
+        public string ClassName
+        {
             get => className;
             set
             {

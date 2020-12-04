@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private string dialog;
 
         [JsonProperty("E=X")]
-        public string Hash 
-        { 
-            get => hash; 
+        public string Hash
+        {
+            get => hash;
             set
             {
                 if ((ReferenceEquals(hash, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("2Fk")]
-        public string Dialog 
-        { 
-            get => dialog; 
+        public string Dialog
+        {
+            get => dialog;
             set
             {
                 if ((ReferenceEquals(dialog, value) != true))

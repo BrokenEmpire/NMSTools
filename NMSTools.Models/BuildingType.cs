@@ -3,14 +3,15 @@
 namespace NMSTools.Models
 {
     using Base;
+
     public class BuildingType : ModelBase
     {
         private string buildingClass;
 
         [JsonProperty("iqv")]
-        public string BuildingClass 
-        { 
-            get => buildingClass; 
+        public string BuildingClass
+        {
+            get => buildingClass;
             set
             {
                 if ((ReferenceEquals(buildingClass, value) != true))

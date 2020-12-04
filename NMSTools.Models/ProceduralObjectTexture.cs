@@ -2,24 +2,24 @@ using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
-	using Base;
+    using Base;
 
     public class ProceduralObjectTexture : ModelBase
-	{
-		private string[] samplers;
+    {
+        private string[] samplers;
 
         [JsonProperty("bnT")]
-		public string[] Samplers
-		{
-			get => samplers;
-			set
-			{
-				if ((ReferenceEquals(samplers, value) != true))
-				{
-					samplers = value;
-					OnPropertyChanged("Samplers");
-				}
-			}
-		}
-	}
+        public string[] Samplers
+        {
+            get => samplers;
+            set
+            {
+                if ((ReferenceEquals(samplers, value) != true))
+                {
+                    samplers = value;
+                    OnPropertyChanged("Samplers");
+                }
+            }
+        }
+    }
 }

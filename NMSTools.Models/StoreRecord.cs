@@ -2,24 +2,24 @@ using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
-	using Base;
+    using Base;
 
     public class StoreRecord : ModelBase
-	{
-		private RecordData[] records;
+    {
+        private RecordData[] records;
 
         [JsonProperty("?fB")]
-		public RecordData[] Records
-		{
-			get => records;
-			set
-			{
-				if ((ReferenceEquals(records, value) != true))
-				{
-					records = value;
-					OnPropertyChanged("Records");
-				}
-			}
-		}
-	}
+        public RecordData[] Records
+        {
+            get => records;
+            set
+            {
+                if ((ReferenceEquals(records, value) != true))
+                {
+                    records = value;
+                    OnPropertyChanged("Records");
+                }
+            }
+        }
+    }
 }

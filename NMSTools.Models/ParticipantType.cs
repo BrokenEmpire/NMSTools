@@ -10,7 +10,7 @@ namespace NMSTools.Models
 
         [JsonProperty("M?f")]
         public string ParticipantMode
-        { 
+        {
             get => participantMode;
             set
             {

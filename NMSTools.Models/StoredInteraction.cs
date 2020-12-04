@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private int currentPos;
 
         [JsonProperty("O49")]
-        public Interaction[] Interactions 
-        { 
-            get => interactions; 
+        public Interaction[] Interactions
+        {
+            get => interactions;
             set
             {
                 if ((ReferenceEquals(interactions, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("Xf4")]
-        public int CurrentPos 
-        { 
-            get => currentPos; 
+        public int CurrentPos
+        {
+            get => currentPos;
             set
             {
                 if ((ReferenceEquals(currentPos, value) != true))

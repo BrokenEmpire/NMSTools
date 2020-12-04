@@ -11,9 +11,9 @@ namespace NMSTools.Models
         private StatDetail[] stats;
 
         [JsonProperty(":rc")]
-        public string GroupId 
-        { 
-            get => groupId; 
+        public string GroupId
+        {
+            get => groupId;
             set
             {
                 if ((ReferenceEquals(groupId, value) != true))
@@ -25,9 +25,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("2Ak")]
-        public string Address 
-        { 
-            get => address; 
+        public string Address
+        {
+            get => address;
             set
             {
                 if ((ReferenceEquals(address, value) != true))
@@ -39,9 +39,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("gUR")]
-        public StatDetail[] Stats 
-        { 
-            get => stats; 
+        public StatDetail[] Stats
+        {
+            get => stats;
             set
             {
                 if ((ReferenceEquals(stats, value) != true))

@@ -43,7 +43,7 @@ namespace NMSTools.Models
         [JsonProperty("T>1")]
         public TextureOption[] TextureOptions
         {
-            get => textureOptions; 
+            get => textureOptions;
             set
             {
                 if ((ReferenceEquals(textureOptions, value) != true))
@@ -57,7 +57,7 @@ namespace NMSTools.Models
         [JsonProperty("gsg")]
         public BoneScale[] BoneScaleData
         {
-            get => boneScaleData; 
+            get => boneScaleData;
             set
             {
                 if ((ReferenceEquals(boneScaleData, value) != true))
@@ -71,7 +71,7 @@ namespace NMSTools.Models
         [JsonProperty("unY")]
         public float Scale
         {
-            get => scale; 
+            get => scale;
             set
             {
                 if ((ReferenceEquals(scale, value) != true))

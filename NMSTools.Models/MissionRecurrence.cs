@@ -10,9 +10,9 @@ namespace NMSTools.Models
         private int recurrenceDeadline;
 
         [JsonProperty("jGk")]
-        public string MissionID 
-        { 
-            get => missionID; 
+        public string MissionID
+        {
+            get => missionID;
             set
             {
                 if ((ReferenceEquals(missionID, value) != true))
@@ -24,9 +24,9 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("oF@")]
-        public int RecurrenceDeadline 
-        { 
-            get => recurrenceDeadline; 
+        public int RecurrenceDeadline
+        {
+            get => recurrenceDeadline;
             set
             {
                 if ((ReferenceEquals(recurrenceDeadline, value) != true))

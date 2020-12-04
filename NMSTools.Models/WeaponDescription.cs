@@ -2,24 +2,24 @@ using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
-	using Base;
+    using Base;
 
     public class WeaponDescription : ModelBase
-	{
-		private string weaponMode;
+    {
+        private string weaponMode;
 
         [JsonProperty("Rfw")]
-		public string WeaponMode
-		{
-			get => weaponMode;
-			set
-			{
-				if ((ReferenceEquals(weaponMode, value) != true))
-				{
-					weaponMode = value;
-					OnPropertyChanged("WeaponMode");
-				}
-			}
-		}
-	}
+        public string WeaponMode
+        {
+            get => weaponMode;
+            set
+            {
+                if ((ReferenceEquals(weaponMode, value) != true))
+                {
+                    weaponMode = value;
+                    OnPropertyChanged("WeaponMode");
+                }
+            }
+        }
+    }
 }

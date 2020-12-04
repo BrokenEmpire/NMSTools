@@ -3,6 +3,7 @@
 namespace NMSTools.Models
 {
     using Base;
+
     public class KeyAction : ModelBase
     {
         private Action action;

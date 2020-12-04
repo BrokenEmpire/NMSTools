@@ -103,6 +103,7 @@
     <Compile Include="StatValue.cs" />
     <Compile Include="StoredInteraction.cs" />
     <Compile Include="Telemetry.cs" />
+    <Compile Include="TerrainEdit.cs" />
     <Compile Include="Vehicle.cs" />
     <Compile Include="ShipTypeDescription.cs" />
     <Compile Include="Slot.cs" />

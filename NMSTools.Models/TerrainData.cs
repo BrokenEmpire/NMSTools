@@ -1,22 +1,20 @@
 using Newtonsoft.Json;
 
-using System.Collections.ObjectModel;
-
 namespace NMSTools.Models
 {
 	using Base;
 
     public class TerrainData : ModelBase
 	{
-		private ObservableCollection<object> galacticAddresses;
-		private ObservableCollection<object> bufferSizes;
-		private ObservableCollection<object> bufferAges;
-		private ObservableCollection<object> bufferAnchors;
-		private ObservableCollection<object> bufferProtected;
-		private ObservableCollection<object> edits;
+		private string[] galacticAddresses;
+		private int[] bufferSizes;
+		private int[] bufferAges;
+		private float[][] bufferAnchors;
+		private bool[] bufferProtected;
+		private TerrainEdit[] edits;
 
         [JsonProperty("r:j")]
-		public ObservableCollection<object> GalacticAddresses
+		public string[] GalacticAddresses
 		{
 			get => galacticAddresses;
 			set
@@ -30,7 +28,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("eiy")]
-		public ObservableCollection<object> BufferSizes
+		public int[] BufferSizes
 		{
 			get => bufferSizes;
 			set
@@ -44,7 +42,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("w0G")]
-		public ObservableCollection<object> BufferAges
+		public int[] BufferAges
 		{
 			get => bufferAges;
 			set
@@ -58,7 +56,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("cL6")]
-		public ObservableCollection<object> BufferAnchors
+		public float[][] BufferAnchors
 		{
 			get => bufferAnchors;
 			set
@@ -72,7 +70,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("deQ")]
-		public ObservableCollection<object> BufferProtected
+		public bool[] BufferProtected
 		{
 			get => bufferProtected;
 			set
@@ -86,7 +84,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("Mes")]
-		public ObservableCollection<object> Edits
+		public TerrainEdit[] Edits
 		{
 			get => edits;
 			set
@@ -98,6 +96,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

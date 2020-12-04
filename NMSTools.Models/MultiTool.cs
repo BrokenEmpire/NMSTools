@@ -1,18 +1,14 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class MultiTool : ModelBase
 	{
 		private CatalogLayout layout;
 		private Catalog store;
-		private ObservableCollection<object> seed;
+		private string[] seed;
 		private string name;
 		private bool isLarge;
 		private long primaryMode;
@@ -47,7 +43,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@EL")]
-		public ObservableCollection<object> Seed
+		public string[] Seed
 		{
 			get => seed;
 			set
@@ -115,6 +111,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

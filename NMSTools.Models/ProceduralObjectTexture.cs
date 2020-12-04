@@ -6,10 +6,10 @@ namespace NMSTools.Models
 
     public class ProceduralObjectTexture : ModelBase
 	{
-		private object[] samplers;
+		private string[] samplers;
 
         [JsonProperty("bnT")]
-		public object[] Samplers
+		public string[] Samplers
 		{
 			get => samplers;
 			set
@@ -21,6 +21,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

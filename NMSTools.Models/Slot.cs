@@ -1,12 +1,8 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class Slot : ModelBase
 	{
@@ -115,6 +111,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

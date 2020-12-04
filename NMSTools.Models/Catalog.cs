@@ -1,30 +1,26 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class Catalog : ModelBase
 	{
-		private ObservableCollection<Slot> slots;
-		private ObservableCollection<SlotIndex> validSlotIndices;
+		private Slot[] slots;
+		private SlotIndex[] validSlotIndices;
 		private CatalogType classType;
-		private long substanceMaxStorageMultiplier;
-		private long productMaxStorageMultiplier;
-		private ObservableCollection<StatData> baseStatValues;
-		private ObservableCollection<object> specialSlots;
-		private long width;
-		private long height;
+		private int substanceMaxStorageMultiplier;
+		private int productMaxStorageMultiplier;
+		private StatData[] baseStatValues;
+		private object[] specialSlots;
+		private int width;
+		private int height;
 		private bool isCool;
 		private string name;
-		private long version;
+		private int version;
 
         [JsonProperty(":No")]
-		public ObservableCollection<Slot> Slots
+		public Slot[] Slots
 		{
 			get => slots;
 			set
@@ -38,7 +34,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("hl?")]
-		public ObservableCollection<SlotIndex> ValidSlotIndices
+		public SlotIndex[] ValidSlotIndices
 		{
 			get => validSlotIndices;
 			set
@@ -66,7 +62,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("0H2")]
-		public long SubstanceMaxStorageMultiplier
+		public int SubstanceMaxStorageMultiplier
 		{
 			get => substanceMaxStorageMultiplier;
 			set
@@ -80,7 +76,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("cTY")]
-		public long ProductMaxStorageMultiplier
+		public int ProductMaxStorageMultiplier
 		{
 			get => productMaxStorageMultiplier;
 			set
@@ -94,7 +90,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@bB")]
-		public ObservableCollection<StatData> BaseStatValues
+		public StatData[] BaseStatValues
 		{
 			get => baseStatValues;
 			set
@@ -108,7 +104,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("MMm")]
-		public ObservableCollection<object> SpecialSlots
+		public object[] SpecialSlots
 		{
 			get => specialSlots;
 			set
@@ -122,7 +118,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("=Tb")]
-		public long Width
+		public int Width
 		{
 			get => width;
 			set
@@ -136,7 +132,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("N9>")]
-		public long Height
+		public int Height
 		{
 			get => height;
 			set
@@ -178,7 +174,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("F2P")]
-		public long Version
+		public int Version
 		{
 			get => version;
 			set
@@ -190,6 +186,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

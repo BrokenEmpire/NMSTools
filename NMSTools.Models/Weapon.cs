@@ -1,17 +1,13 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class Weapon : ModelBase
 	{
 		private string filename;
-		private ObservableCollection<object> generationSeed;
+		private object[] generationSeed;
 
         [JsonProperty("93M")]
 		public string Filename
@@ -28,7 +24,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("NNR")]
-		public ObservableCollection<object> GenerationSeed
+		public object[] GenerationSeed
 		{
 			get => generationSeed;
 			set
@@ -40,6 +36,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

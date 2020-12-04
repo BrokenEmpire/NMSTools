@@ -7,7 +7,7 @@ namespace NMSTools.Models
     public class ProceduralObject : ModelBase
 	{
 		private string filename;
-		private object[] seed;
+		private string[] seed;
 		private string altId;
 		private ProceduralObjectTexture proceduralTexture;
 
@@ -26,7 +26,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@EL")]
-		public object[] Seed
+		public string[] Seed
 		{
 			get => seed;
 			set

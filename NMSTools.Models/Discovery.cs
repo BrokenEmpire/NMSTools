@@ -1,23 +1,19 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class Discovery : ModelBase
 	{
-		private long reserveStore;
-		private long reserveManaged;
+		private int reserveStore;
+		private int reserveManaged;
 		private StoreRecord store;
-		private ObservableCollection<AvailableDiscovery> available;
-		private ObservableCollection<object> enqueued;
+		private AvailableDiscovery[] available;
+		private object[] enqueued;
 
         [JsonProperty("fgt")]
-		public long ReserveStore
+		public int ReserveStore
 		{
 			get => reserveStore;
 			set
@@ -31,7 +27,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("xxK")]
-		public long ReserveManaged
+		public int ReserveManaged
 		{
 			get => reserveManaged;
 			set
@@ -59,7 +55,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("brV")]
-		public ObservableCollection<AvailableDiscovery> Available
+		public AvailableDiscovery[] Available
 		{
 			get => available;
 			set
@@ -73,7 +69,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(";FZ")]
-		public ObservableCollection<object> Enqueued
+		public object[] Enqueued
 		{
 			get => enqueued;
 			set
@@ -85,6 +81,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

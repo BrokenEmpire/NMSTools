@@ -1,43 +1,159 @@
 ﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NMSTools.Models
 {
     using Base;
     public class Marker : ModelBase
     {
+        private int table;
+        private string markerEvent;
+        private string galacticAddress;
+        private string[] buildingSeed;
+        private float[] buildingLocation;
+        private BuildingType buildingClass;
+        private float time;
+        private string missionID;
+        private int missionSeed;
+        private ParticipantType participantType;
+
         [JsonProperty("9@i")]
-        public int Table { get; set; }
+        public int Table
+        {
+            get => table;
+            set
+            {
+                if ((ReferenceEquals(table, value) != true))
+                {
+                    table = value;
+                    OnPropertyChanged("Table");
+                }
+            }
+        }
 
         [JsonProperty("FN5")]
-        public string Event { get; set; }
+        public string MarkerEvent
+        {
+            get => markerEvent;
+            set
+            {
+                if ((ReferenceEquals(markerEvent, value) != true))
+                {
+                    markerEvent = value;
+                    OnPropertyChanged("MarkerEvent");
+                }
+            }
+        }
 
         [JsonProperty("oZw")]
-        public string GalacticAddress { get; set; }
+        public string GalacticAddress 
+        { 
+            get => galacticAddress;
+            set
+            {
+                if ((ReferenceEquals(galacticAddress, value) != true))
+                {
+                    galacticAddress = value;
+                    OnPropertyChanged("GalacticAddress");
+                }
+            }
+        }
 
         [JsonProperty("5bU")]
-        public string[] BuildingSeed { get; set; }
+        public string[] BuildingSeed
+        {
+            get => buildingSeed;
+            set
+            {
+                if ((ReferenceEquals(buildingSeed, value) != true))
+                {
+                    buildingSeed = value;
+                    OnPropertyChanged("BuildingSeed");
+                }
+            }
+        }
 
         [JsonProperty("TWn")]
-        public float[] BuildingLocation { get; set; }
+        public float[] BuildingLocation
+        {
+            get => buildingLocation;
+            set
+            {
+                if ((ReferenceEquals(buildingLocation, value) != true))
+                {
+                    buildingLocation = value;
+                    OnPropertyChanged("BuildingLocation");
+                }
+            }
+        }
 
         [JsonProperty("iqv")]
-        public BuildingType BuildingClass { get; set; }
+        public BuildingType BuildingClass
+        {
+            get => buildingClass;
+            set
+            {
+                if ((ReferenceEquals(buildingClass, value) != true))
+                {
+                    buildingClass = value;
+                    OnPropertyChanged("BuildingClass");
+                }
+            }
+        }
 
         [JsonProperty("ADw")]
-        public float Time { get; set; }
+        public float Time
+        {
+            get => time;
+            set
+            {
+                if ((ReferenceEquals(time, value) != true))
+                {
+                    time = value;
+                    OnPropertyChanged("Time");
+                }
+            }
+        }
 
         [JsonProperty("jGk")]
-        public string MissionID { get; set; }
+        public string MissionID
+        {
+            get => missionID;
+            set
+            {
+                if ((ReferenceEquals(missionID, value) != true))
+                {
+                    missionID = value;
+                    OnPropertyChanged("MissionID");
+                }
+            }
+        }
 
         [JsonProperty("1JW")]
-        public int MissionSeed { get; set; }
+        public int MissionSeed
+        {
+            get => missionSeed;
+            set
+            {
+                if ((ReferenceEquals(missionSeed, value) != true))
+                {
+                    missionSeed = value;
+                    OnPropertyChanged("MissionSeed");
+                }
+            }
+        }
 
         [JsonProperty("M?f")]
-        public ParticipantType ParticipantType { get; set; }
+        public ParticipantType ParticipantType
+        {
+            get => participantType;
+            set
+            {
+                if ((ReferenceEquals(participantType, value) != true))
+                {
+                    participantType = value;
+                    OnPropertyChanged("ParticipantType");
+                }
+            }
+        }
     }
 }

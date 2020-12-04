@@ -1,29 +1,25 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class PhotoSettings : ModelBase
 	{
 		private float fog;
-		private long cloudAmount;
-		private ObservableCollection<object> sunDir;
+		private float cloudAmount;
+		private float[] sunDir;
 		private bool sunDirSet;
-		private long foV;
+		private float foV;
 		private bool foVSet;
 		private string depthOfField;
-		private long depthOfFieldStrengthSetting;
-		private long depthOfFieldDistance;
-		private long depthOfFieldDistanceSpace;
-		private long halfFocalPlaneDepth;
-		private long halfFocalPlaneDepthSpace;
+		private float depthOfFieldStrengthSetting;
+		private float depthOfFieldDistance;
+		private float depthOfFieldDistanceSpace;
+		private float halfFocalPlaneDepth;
+		private float halfFocalPlaneDepthSpace;
 		private float vignette;
-		private long filter;
+		private int filter;
 
         [JsonProperty("qAx")]
 		public float Fog
@@ -40,7 +36,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("22a")]
-		public long CloudAmount
+		public float CloudAmount
 		{
 			get => cloudAmount;
 			set
@@ -54,7 +50,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("qLk")]
-		public ObservableCollection<object> SunDir
+		public float[] SunDir
 		{
 			get => sunDir;
 			set
@@ -82,7 +78,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("yGF")]
-		public long FoV
+		public float FoV
 		{
 			get => foV;
 			set
@@ -124,7 +120,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("wKU")]
-		public long DepthOfFieldStrengthSetting
+		public float DepthOfFieldStrengthSetting
 		{
 			get => depthOfFieldStrengthSetting;
 			set
@@ -138,7 +134,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("RUO")]
-		public long DepthOfFieldDistance
+		public float DepthOfFieldDistance
 		{
 			get => depthOfFieldDistance;
 			set
@@ -152,7 +148,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("yuu")]
-		public long DepthOfFieldDistanceSpace
+		public float DepthOfFieldDistanceSpace
 		{
 			get => depthOfFieldDistanceSpace;
 			set
@@ -166,7 +162,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("n0h")]
-		public long HalfFocalPlaneDepth
+		public float HalfFocalPlaneDepth
 		{
 			get => halfFocalPlaneDepth;
 			set
@@ -180,7 +176,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(">xF")]
-		public long HalfFocalPlaneDepthSpace
+		public float HalfFocalPlaneDepthSpace
 		{
 			get => halfFocalPlaneDepthSpace;
 			set
@@ -208,7 +204,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("HJQ")]
-		public long Filter
+		public int Filter
 		{
 			get => filter;
 			set
@@ -220,6 +216,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

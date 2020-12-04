@@ -7,11 +7,11 @@ namespace NMSTools.Models
 
     public class AvailableDiscovery : ModelBase
 	{
-		private long tSrec;
+		private int tSrec;
 		private DD dD;
 
         [JsonProperty("kVv")]
-		public long TSrec
+		public int TSrec
 		{
 			get => tSrec;
 			set

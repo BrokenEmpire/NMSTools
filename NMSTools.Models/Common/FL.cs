@@ -1,12 +1,8 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models.Common
 {
 	using Base;
-	using Common;
 
     public class FL : ModelBase
 	{
@@ -40,6 +36,5 @@ namespace NMSTools.Models.Common
 				}
 			}
 		}
-
 	}
 }

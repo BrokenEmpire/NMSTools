@@ -1,12 +1,8 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class SeasonData : ModelBase
 	{
@@ -18,14 +14,14 @@ namespace NMSTools.Models
 		private GamePreset gameMode;
 		private string seasonalUAOverride;
 		private long uAOverrideValue;
-		private ObservableCollection<object> weaponSeed;
-		private ObservableCollection<object> shipSeed;
+		private object[] weaponSeed;
+		private object[] shipSeed;
 		private ShipTypeDescription shipType;
 		private bool startNextToShip;
 		private bool shipStartsDamaged;
 		private bool allowMissionDetailMessages;
-		private ObservableCollection<object> milestones;
-		private ObservableCollection<object> secondaryStats;
+		private object[] milestones;
+		private object[] secondaryStats;
 
         [JsonProperty("hyA")]
 		public long StartTimeUTC
@@ -140,7 +136,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@lX")]
-		public ObservableCollection<object> WeaponSeed
+		public object[] WeaponSeed
 		{
 			get => weaponSeed;
 			set
@@ -154,7 +150,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("3R<")]
-		public ObservableCollection<object> ShipSeed
+		public object[] ShipSeed
 		{
 			get => shipSeed;
 			set
@@ -224,7 +220,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("kr6")]
-		public ObservableCollection<object> Milestones
+		public object[] Milestones
 		{
 			get => milestones;
 			set
@@ -238,7 +234,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(":Je")]
-		public ObservableCollection<object> SecondaryStats
+		public object[] SecondaryStats
 		{
 			get => secondaryStats;
 			set
@@ -250,6 +246,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

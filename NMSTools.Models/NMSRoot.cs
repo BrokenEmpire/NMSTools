@@ -96,6 +96,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

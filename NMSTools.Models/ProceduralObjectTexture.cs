@@ -1,19 +1,15 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class ProceduralObjectTexture : ModelBase
 	{
-		private ObservableCollection<object> samplers;
+		private object[] samplers;
 
         [JsonProperty("bnT")]
-		public ObservableCollection<object> Samplers
+		public object[] Samplers
 		{
 			get => samplers;
 			set

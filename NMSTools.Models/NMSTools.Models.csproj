@@ -21,6 +21,8 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -47,14 +49,26 @@
     <Compile Include="Action.cs" />
     <Compile Include="AvailableDiscovery.cs" />
     <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="BoneScale.cs" />
+    <Compile Include="BuildingObject.cs" />
+    <Compile Include="BuildingType.cs" />
     <Compile Include="Catalog.cs" />
     <Compile Include="CatalogLayout.cs" />
     <Compile Include="CatalogType.cs" />
+    <Compile Include="InteractionDialog.cs" />
+    <Compile Include="InteractionIndicies.cs" />
+    <Compile Include="Marker.cs" />
+    <Compile Include="Mission.cs" />
+    <Compile Include="MissionRecurrence.cs" />
+    <Compile Include="NPCWorker.cs" />
+    <Compile Include="OutfitColor.cs" />
     <Compile Include="Common\DD.cs" />
     <Compile Include="Discovery.cs" />
     <Compile Include="DiscoveryData.cs" />
     <Compile Include="Common\DM.cs" />
     <Compile Include="Common\FL.cs" />
+    <Compile Include="Frigate.cs" />
+    <Compile Include="FrigateClass.cs" />
     <Compile Include="GalaxyCoordinates.cs" />
     <Compile Include="GamePreset.cs" />
     <Compile Include="HotAction.cs" />
@@ -64,19 +78,32 @@
     <Compile Include="MultiTool.cs" />
     <Compile Include="NMSRoot.cs" />
     <Compile Include="Common\OWS.cs" />
+    <Compile Include="Outfit.cs" />
+    <Compile Include="OutfitPreset.cs" />
+    <Compile Include="PaletteData.cs" />
+    <Compile Include="Participant.cs" />
+    <Compile Include="ParticipantType.cs" />
     <Compile Include="PhotoSettings.cs" />
     <Compile Include="PlayerBase.cs" />
     <Compile Include="PlayerBaseItem.cs" />
     <Compile Include="PlayerBaseMode.cs" />
     <Compile Include="PlayerBaseOwner.cs" />
     <Compile Include="PlayerBaseType.cs" />
+    <Compile Include="InteractionData.cs" />
     <Compile Include="Portal.cs" />
-    <Compile Include="PortalReturnAddress.cs" />
+    <Compile Include="PortalData.cs" />
     <Compile Include="ProceduralObject.cs" />
     <Compile Include="ProceduralObjectTexture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Race.cs" />
     <Compile Include="RecordData.cs" />
     <Compile Include="SeasonData.cs" />
+    <Compile Include="Stat.cs" />
+    <Compile Include="StatDetail.cs" />
+    <Compile Include="StatValue.cs" />
+    <Compile Include="StoredInteraction.cs" />
+    <Compile Include="Telemetry.cs" />
+    <Compile Include="Vehicle.cs" />
     <Compile Include="ShipTypeDescription.cs" />
     <Compile Include="Slot.cs" />
     <Compile Include="SlotDescription.cs" />
@@ -86,11 +113,14 @@
     <Compile Include="StateData.cs" />
     <Compile Include="StoreRecord.cs" />
     <Compile Include="TerrainData.cs" />
+    <Compile Include="TextureOption.cs" />
+    <Compile Include="TradeSupplyData.cs" />
     <Compile Include="UniverseCoordinates.cs" />
     <Compile Include="Waypoint.cs" />
     <Compile Include="WaypointType.cs" />
     <Compile Include="Weapon.cs" />
     <Compile Include="WeaponDescription.cs" />
+    <Compile Include="WordGroup.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

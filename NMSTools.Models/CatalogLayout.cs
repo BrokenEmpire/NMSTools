@@ -1,21 +1,17 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class CatalogLayout : ModelBase
 	{
-		private long slots;
-		private ObservableCollection<object> seed;
-		private long level;
+		private int slots;
+		private object[] seed;
+		private int level;
 
         [JsonProperty(":No")]
-		public long Slots
+		public int Slots
 		{
 			get => slots;
 			set
@@ -29,7 +25,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@EL")]
-		public ObservableCollection<object> Seed
+		public object[] Seed
 		{
 			get => seed;
 			set
@@ -43,7 +39,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("9;o")]
-		public long Level
+		public int Level
 		{
 			get => level;
 			set
@@ -55,6 +51,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

@@ -1,12 +1,9 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class StateData : ModelBase
 	{
@@ -31,93 +28,93 @@ namespace NMSTools.Models
 		private CatalogLayout weaponLayout;
 		private ProceduralObject currentShip;
 		private Weapon currentWeapon;
-		private ObservableCollection<object> knownTech;
-		private ObservableCollection<object> knownProducts;
-		private ObservableCollection<object> knownSpecials;
-		private ObservableCollection<object> knownRefinerRecipes;
-		private ObservableCollection<object> knownWords;
-		private ObservableCollection<object> knownWordGroups;
-		private ObservableCollection<object> missionProgress;
-		private long postMissionIndex;
+		private ObservableCollection<string> knownTech;
+		private ObservableCollection<string> knownProducts;
+		private ObservableCollection<string> knownSpecials;
+		private ObservableCollection<string> knownRefinerRecipes;
+		private ObservableCollection<string> knownWords;
+		private WordGroup[] knownWordGroups;
+		private Mission[] missionProgress;
+		private int postMissionIndex;
 		private string currentMissionID;
-		private long currentMissionSeed;
+		private int currentMissionSeed;
 		private string previousMissionID;
-		private long previousMissionSeed;
-		private long missionVersion;
-		private ObservableCollection<object> missionRecurrences;
+		private int previousMissionSeed;
+		private int missionVersion;
+		private MissionRecurrence[] missionRecurrences;
 		private Interaction holoExplorerInteraction;
 		private Interaction holoScepticInteraction;
 		private Interaction holoNooneInteraction;
-		private long health;
-		private long shipHealth;
-		private long shield;
-		private long shipShield;
-		private long energy;
-		private long units;
-		private long nanites;
-		private long specials;
+		private int health;
+		private int shipHealth;
+		private int shield;
+		private int shipShield;
+		private int energy;
+		private int units;
+		private int nanites;
+		private int specials;
 		private bool thirdPersonShip;
-		private long timeAlive;
-		private long totalPlayTime;
-		private ObservableCollection<object> markerStack;
-		private ObservableCollection<object> newMPMarkerStack;
-		private ObservableCollection<object> surveyedEventPositions;
-		private long nextSurveyedEventPositionIndex;
-		private ObservableCollection<object> stats;
-		private ObservableCollection<object> telemetryStats;
-		private ObservableCollection<object> storedInteractions;
-		private ObservableCollection<object> maintenanceInteractions;
-		private ObservableCollection<object> personalMaintenanceInteractions;
-		private ObservableCollection<object> visitedSystems;
-		private ObservableCollection<object> hazard;
-		private long boltAmmo;
-		private long scatterAmmo;
-		private long pulseAmmo;
-		private long laserAmmo;
-		private ObservableCollection<object> firstSpawnPosition;
-		private ObservableCollection<object> savedInteractionIndicies;
-		private ObservableCollection<object> savedInteractionDialogTable;
-		private ObservableCollection<object> interactionProgressTable;
-		private ObservableCollection<object> atlasStationAdressData;
-		private ObservableCollection<object> newAtlasStationAdressData;
-		private ObservableCollection<object> visitedAtlasStationsData;
+		private int timeAlive;
+		private int totalPlayTime;
+		private Marker[] markerStack;
+		private object[] newMPMarkerStack;
+		private object[] surveyedEventPositions;
+		private int nextSurveyedEventPositionIndex;
+		private Stat[] stats;
+		private Telemetry[] telemetryStats;
+		private StoredInteraction[] storedInteractions;
+		private InteractionData[] maintenanceInteractions;
+		private InteractionData[] personalMaintenanceInteractions;
+		private long[] visitedSystems;
+		private float[] hazard;
+		private int boltAmmo;
+		private int scatterAmmo;
+		private int pulseAmmo;
+		private int laserAmmo;
+		private float[] firstSpawnPosition;
+		private InteractionIndicies[] savedInteractionIndicies;
+		private InteractionDialog[] savedInteractionDialogTable;
+		private object[] interactionProgressTable;
+		private UniverseCoordinates[] atlasStationAdressData;
+		private UniverseCoordinates[] newAtlasStationAdressData;
+		private UniverseCoordinates[] visitedAtlasStationsData;
 		private bool firstAtlasStationDiscovered;
 		private bool usesThirdPersonCharacterCam;
-		private long progressionLevel;
-		private long procTechIndex;
+		private int progressionLevel;
+		private int procTechIndex;
 		private bool isNew;
 		private bool useSmallerBlackholeJumps;
-		private ObservableCollection<object> usedEntitlements;
-		private ObservableCollection<object> planetPositions;
-		private ObservableCollection<object> planetSeeds;
-		private long primaryPlanet;
-		private long timeLastSpaceBattle;
-		private long warpsLastSpaceBattle;
-		private long activeSpaceBattleUA;
-		private long timeLastMiniStation;
-		private long warpsLastMiniStation;
+		private object[] usedEntitlements;
+		private float[][] planetPositions;
+		private object[][] planetSeeds;
+		private int primaryPlanet;
+		private int timeLastSpaceBattle;
+		private int warpsLastSpaceBattle;
+		private int activeSpaceBattleUA;
+		private int timeLastMiniStation;
+		private int warpsLastMiniStation;
 		private string miniStationUA;
-		private ObservableCollection<object> anomalyPositionOverride;
+		private float[] anomalyPositionOverride;
 		private UniverseCoordinates gameStartAddress1;
 		private UniverseCoordinates gameStartAddress2;
-		private ObservableCollection<object> galacticMapRequests;
-		private ObservableCollection<object> firstShipPosition;
-		private long hazardTimeAlive;
+		private bool[] galacticMapRequests;
+		private float[] firstShipPosition;
+		private int hazardTimeAlive;
 		private bool revealBlackHoles;
-		private ObservableCollection<object> currentFreighterHomeSystemSeed;
+		private string[] currentFreighterHomeSystemSeed;
 		private ProceduralObject currentFreighter;
 		private CatalogLayout freighterLayout;
 		private Catalog freighterInventory;
 		private Catalog freighterInventoryTech;
 		private UniverseCoordinates freighterUniverseAddress;
-		private ObservableCollection<object> freighterMatrixAt;
-		private ObservableCollection<object> freighterMatrixUp;
-		private ObservableCollection<object> freighterMatrixPos;
-		private ObservableCollection<object> baseBuildingObjects;
+		private float[] freighterMatrixAt;
+		private float[] freighterMatrixUp;
+		private float[] freighterMatrixPos;
+		private ObservableCollection<BuildingObject> baseBuildingObjects;
 		private TerrainData terrainEditData;
-		private ObservableCollection<object> nPCWorkers;
+		private NPCWorker[] nPCWorkers;
 		private ObservableCollection<PlayerBase> persistentPlayerBases;
-		private ObservableCollection<object> teleportEndpoints;
+		private PortalData[] teleportEndpoints;
 		private CatalogLayout chest0Layout;
 		private Catalog chest0Inventory;
 		private CatalogLayout chest1Layout;
@@ -145,31 +142,31 @@ namespace NMSTools.Models
 		private CatalogLayout cookingIngredientsLayout;
 		private Catalog cookingIngredientsInventory;
 		private ProceduralObject currentFreighterNPC;
-		private ObservableCollection<object> vehicleOwnership;
-		private long primaryVehicle;
-		private ObservableCollection<object> shipOwnership;
-		private long primaryShip;
+		private Vehicle[] vehicleOwnership;
+		private short primaryVehicle;
+		private Vehicle[] shipOwnership;
+		private short primaryShip;
 		private bool multiShipEnabled;
 		private string playerFreighterName;
-		private ObservableCollection<object> startGameShipPosition;
+		private float[] startGameShipPosition;
 		private bool shipNeedsTerrainPositioning;
-		private long tradingSupplyDataIndex;
-		private ObservableCollection<object> tradingSupplyData;
-		private ObservableCollection<object> lastPortal;
+		private int tradingSupplyDataIndex;
+		private TradeSupplyData[] tradingSupplyData;
+		private object[] lastPortal;
 		private Portal visitedPortal;
-		private long knownPortalRunes;
+		private int knownPortalRunes;
 		private bool onOtherSideOfPortal;
-		private PortalReturnAddress otherSideOfPortalReturnBase;
-		private ObservableCollection<object> portalMarkerPosition_Local;
-		private ObservableCollection<object> portalMarkerPosition_Offset;
+		private PortalData otherSideOfPortalReturnBase;
+		private float[] portalMarkerPosition_Local;
+		private float[] portalMarkerPosition_Offset;
 		private WeaponDescription startingPrimaryWeapon;
 		private WeaponDescription startingSecondaryWeapon;
-		private ObservableCollection<object> characterCustomisationData;
-		private ObservableCollection<object> shipUsesLegacyColours;
-		private ObservableCollection<object> outfits;
+		private OutfitPreset[] outfitPresets;
+		private bool[] shipUsesLegacyColours;
+		private Outfit[] outfits;
 		private string jetpackEffect;
 		private object[] fleetSeed;
-		private ObservableCollection<object> fleetFrigates;
+		private ObservableCollection<Frigate> fleetFrigates;
 		private object[] fleetExpeditions;
 		private object[] expeditionSeedsSelectedToday;
 		private long lastKnownDay;
@@ -494,7 +491,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("4kj")]
-		public ObservableCollection<object> KnownTech
+		public ObservableCollection<string> KnownTech
 		{
 			get => knownTech;
 			set
@@ -508,7 +505,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("eZ<")]
-		public ObservableCollection<object> KnownProducts
+		public ObservableCollection<string> KnownProducts
 		{
 			get => knownProducts;
 			set
@@ -522,7 +519,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("24<")]
-		public ObservableCollection<object> KnownSpecials
+		public ObservableCollection<string> KnownSpecials
 		{
 			get => knownSpecials;
 			set
@@ -536,7 +533,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("Ddk")]
-		public ObservableCollection<object> KnownRefinerRecipes
+		public ObservableCollection<string> KnownRefinerRecipes
 		{
 			get => knownRefinerRecipes;
 			set
@@ -550,7 +547,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(":JX")]
-		public ObservableCollection<object> KnownWords
+		public ObservableCollection<string> KnownWords
 		{
 			get => knownWords;
 			set
@@ -564,7 +561,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("MF2")]
-		public ObservableCollection<object> KnownWordGroups
+		public WordGroup[] KnownWordGroups
 		{
 			get => knownWordGroups;
 			set
@@ -578,7 +575,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("dwb")]
-		public ObservableCollection<object> MissionProgress
+		public Mission[] MissionProgress
 		{
 			get => missionProgress;
 			set
@@ -592,7 +589,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("?eS")]
-		public long PostMissionIndex
+		public int PostMissionIndex
 		{
 			get => postMissionIndex;
 			set
@@ -620,7 +617,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("k?G")]
-		public long CurrentMissionSeed
+		public int CurrentMissionSeed
 		{
 			get => currentMissionSeed;
 			set
@@ -648,7 +645,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("rej")]
-		public long PreviousMissionSeed
+		public int PreviousMissionSeed
 		{
 			get => previousMissionSeed;
 			set
@@ -662,7 +659,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("yq:")]
-		public long MissionVersion
+		public int MissionVersion
 		{
 			get => missionVersion;
 			set
@@ -676,7 +673,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("EQt")]
-		public ObservableCollection<object> MissionRecurrences
+		public MissionRecurrence[] MissionRecurrences
 		{
 			get => missionRecurrences;
 			set
@@ -732,7 +729,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("fSZ")]
-		public long Health
+		public int Health
 		{
 			get => health;
 			set
@@ -746,7 +743,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("KCM")]
-		public long ShipHealth
+		public int ShipHealth
 		{
 			get => shipHealth;
 			set
@@ -760,7 +757,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("kLc")]
-		public long Shield
+		public int Shield
 		{
 			get => shield;
 			set
@@ -774,7 +771,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("NE3")]
-		public long ShipShield
+		public int ShipShield
 		{
 			get => shipShield;
 			set
@@ -788,7 +785,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("dcK")]
-		public long Energy
+		public int Energy
 		{
 			get => energy;
 			set
@@ -802,7 +799,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("wGS")]
-		public long Units
+		public int Units
 		{
 			get => units;
 			set
@@ -816,7 +813,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("7QL")]
-		public long Nanites
+		public int Nanites
 		{
 			get => nanites;
 			set
@@ -830,7 +827,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("kN;")]
-		public long Specials
+		public int Specials
 		{
 			get => specials;
 			set
@@ -858,7 +855,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("i8O")]
-		public long TimeAlive
+		public int TimeAlive
 		{
 			get => timeAlive;
 			set
@@ -872,7 +869,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("Lg8")]
-		public long TotalPlayTime
+		public int TotalPlayTime
 		{
 			get => totalPlayTime;
 			set
@@ -886,7 +883,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("A1f")]
-		public ObservableCollection<object> MarkerStack
+		public Marker[] MarkerStack
 		{
 			get => markerStack;
 			set
@@ -900,7 +897,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("i;<")]
-		public ObservableCollection<object> NewMPMarkerStack
+		public object[] NewMPMarkerStack
 		{
 			get => newMPMarkerStack;
 			set
@@ -914,7 +911,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("CYJ")]
-		public ObservableCollection<object> SurveyedEventPositions
+		public object[] SurveyedEventPositions
 		{
 			get => surveyedEventPositions;
 			set
@@ -928,7 +925,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("6Ws")]
-		public long NextSurveyedEventPositionIndex
+		public int NextSurveyedEventPositionIndex
 		{
 			get => nextSurveyedEventPositionIndex;
 			set
@@ -942,7 +939,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("gUR")]
-		public ObservableCollection<object> Stats
+		public Stat[] Stats
 		{
 			get => stats;
 			set
@@ -956,7 +953,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("m4I")]
-		public ObservableCollection<object> TelemetryStats
+		public Telemetry[] TelemetryStats
 		{
 			get => telemetryStats;
 			set
@@ -970,7 +967,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("a6j")]
-		public ObservableCollection<object> StoredInteractions
+		public StoredInteraction[] StoredInteractions
 		{
 			get => storedInteractions;
 			set
@@ -984,7 +981,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("RQA")]
-		public ObservableCollection<object> MaintenanceInteractions
+		public InteractionData[] MaintenanceInteractions
 		{
 			get => maintenanceInteractions;
 			set
@@ -998,7 +995,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("VhC")]
-		public ObservableCollection<object> PersonalMaintenanceInteractions
+		public InteractionData[] PersonalMaintenanceInteractions
 		{
 			get => personalMaintenanceInteractions;
 			set
@@ -1012,7 +1009,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("nwS")]
-		public ObservableCollection<object> VisitedSystems
+		public long[] VisitedSystems
 		{
 			get => visitedSystems;
 			set
@@ -1026,7 +1023,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("seg")]
-		public ObservableCollection<object> Hazard
+		public float[] Hazard
 		{
 			get => hazard;
 			set
@@ -1040,7 +1037,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("9Lm")]
-		public long BoltAmmo
+		public int BoltAmmo
 		{
 			get => boltAmmo;
 			set
@@ -1054,7 +1051,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("VPy")]
-		public long ScatterAmmo
+		public int ScatterAmmo
 		{
 			get => scatterAmmo;
 			set
@@ -1068,7 +1065,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(":ML")]
-		public long PulseAmmo
+		public int PulseAmmo
 		{
 			get => pulseAmmo;
 			set
@@ -1082,7 +1079,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("cO>")]
-		public long LaserAmmo
+		public int LaserAmmo
 		{
 			get => laserAmmo;
 			set
@@ -1096,7 +1093,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("vaP")]
-		public ObservableCollection<object> FirstSpawnPosition
+		public float[] FirstSpawnPosition
 		{
 			get => firstSpawnPosition;
 			set
@@ -1110,7 +1107,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("E?v")]
-		public ObservableCollection<object> SavedInteractionIndicies
+		public InteractionIndicies[] SavedInteractionIndicies
 		{
 			get => savedInteractionIndicies;
 			set
@@ -1124,7 +1121,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("Wu?")]
-		public ObservableCollection<object> SavedInteractionDialogTable
+		public InteractionDialog[] SavedInteractionDialogTable
 		{
 			get => savedInteractionDialogTable;
 			set
@@ -1138,7 +1135,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("wHR")]
-		public ObservableCollection<object> InteractionProgressTable
+		public object[] InteractionProgressTable
 		{
 			get => interactionProgressTable;
 			set
@@ -1152,7 +1149,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("vsV")]
-		public ObservableCollection<object> AtlasStationAdressData
+		public UniverseCoordinates[] AtlasStationAdressData
 		{
 			get => atlasStationAdressData;
 			set
@@ -1166,7 +1163,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("B9>")]
-		public ObservableCollection<object> NewAtlasStationAdressData
+		public UniverseCoordinates[] NewAtlasStationAdressData
 		{
 			get => newAtlasStationAdressData;
 			set
@@ -1180,7 +1177,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(":A3")]
-		public ObservableCollection<object> VisitedAtlasStationsData
+		public UniverseCoordinates[] VisitedAtlasStationsData
 		{
 			get => visitedAtlasStationsData;
 			set
@@ -1222,7 +1219,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("DtI")]
-		public long ProgressionLevel
+		public int ProgressionLevel
 		{
 			get => progressionLevel;
 			set
@@ -1236,7 +1233,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("QNH")]
-		public long ProcTechIndex
+		public int ProcTechIndex
 		{
 			get => procTechIndex;
 			set
@@ -1278,7 +1275,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("<dk")]
-		public ObservableCollection<object> UsedEntitlements
+		public object[] UsedEntitlements
 		{
 			get => usedEntitlements;
 			set
@@ -1292,7 +1289,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("aHM")]
-		public ObservableCollection<object> PlanetPositions
+		public float[][] PlanetPositions
 		{
 			get => planetPositions;
 			set
@@ -1306,7 +1303,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("?=a")]
-		public ObservableCollection<object> PlanetSeeds
+		public object[][] PlanetSeeds
 		{
 			get => planetSeeds;
 			set
@@ -1320,7 +1317,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("7Mc")]
-		public long PrimaryPlanet
+		public int PrimaryPlanet
 		{
 			get => primaryPlanet;
 			set
@@ -1334,7 +1331,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("05J")]
-		public long TimeLastSpaceBattle
+		public int TimeLastSpaceBattle
 		{
 			get => timeLastSpaceBattle;
 			set
@@ -1348,7 +1345,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("8br")]
-		public long WarpsLastSpaceBattle
+		public int WarpsLastSpaceBattle
 		{
 			get => warpsLastSpaceBattle;
 			set
@@ -1362,7 +1359,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("8xx")]
-		public long ActiveSpaceBattleUA
+		public int ActiveSpaceBattleUA
 		{
 			get => activeSpaceBattleUA;
 			set
@@ -1376,7 +1373,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("IRi")]
-		public long TimeLastMiniStation
+		public int TimeLastMiniStation
 		{
 			get => timeLastMiniStation;
 			set
@@ -1390,7 +1387,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("x=M")]
-		public long WarpsLastMiniStation
+		public int WarpsLastMiniStation
 		{
 			get => warpsLastMiniStation;
 			set
@@ -1418,7 +1415,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("JvI")]
-		public ObservableCollection<object> AnomalyPositionOverride
+		public float[] AnomalyPositionOverride
 		{
 			get => anomalyPositionOverride;
 			set
@@ -1460,7 +1457,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("M2Z")]
-		public ObservableCollection<object> GalacticMapRequests
+		public bool[] GalacticMapRequests
 		{
 			get => galacticMapRequests;
 			set
@@ -1474,7 +1471,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("nTB")]
-		public ObservableCollection<object> FirstShipPosition
+		public float[] FirstShipPosition
 		{
 			get => firstShipPosition;
 			set
@@ -1488,7 +1485,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("G?:")]
-		public long HazardTimeAlive
+		public int HazardTimeAlive
 		{
 			get => hazardTimeAlive;
 			set
@@ -1516,7 +1513,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("kYq")]
-		public ObservableCollection<object> CurrentFreighterHomeSystemSeed
+		public string[] CurrentFreighterHomeSystemSeed
 		{
 			get => currentFreighterHomeSystemSeed;
 			set
@@ -1600,7 +1597,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("9wg")]
-		public ObservableCollection<object> FreighterMatrixAt
+		public float[] FreighterMatrixAt
 		{
 			get => freighterMatrixAt;
 			set
@@ -1614,7 +1611,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("fUl")]
-		public ObservableCollection<object> FreighterMatrixUp
+		public float[] FreighterMatrixUp
 		{
 			get => freighterMatrixUp;
 			set
@@ -1628,7 +1625,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("lpm")]
-		public ObservableCollection<object> FreighterMatrixPos
+		public float[] FreighterMatrixPos
 		{
 			get => freighterMatrixPos;
 			set
@@ -1642,7 +1639,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("c5s")]
-		public ObservableCollection<object> BaseBuildingObjects
+		public ObservableCollection<BuildingObject> BaseBuildingObjects
 		{
 			get => baseBuildingObjects;
 			set
@@ -1670,7 +1667,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("4Km")]
-		public ObservableCollection<object> NPCWorkers
+		public NPCWorker[] NPCWorkers
 		{
 			get => nPCWorkers;
 			set
@@ -1698,7 +1695,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("nlG")]
-		public ObservableCollection<object> TeleportEndpoints
+		public PortalData[] TeleportEndpoints
 		{
 			get => teleportEndpoints;
 			set
@@ -2090,7 +2087,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("P;m")]
-		public ObservableCollection<object> VehicleOwnership
+		public Vehicle[] VehicleOwnership
 		{
 			get => vehicleOwnership;
 			set
@@ -2104,7 +2101,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("5sx")]
-		public long PrimaryVehicle
+		public short PrimaryVehicle
 		{
 			get => primaryVehicle;
 			set
@@ -2118,7 +2115,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@Cs")]
-		public ObservableCollection<object> ShipOwnership
+		public Vehicle[] ShipOwnership
 		{
 			get => shipOwnership;
 			set
@@ -2132,7 +2129,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("aBE")]
-		public long PrimaryShip
+		public short PrimaryShip
 		{
 			get => primaryShip;
 			set
@@ -2174,7 +2171,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("h=c")]
-		public ObservableCollection<object> StartGameShipPosition
+		public float[] StartGameShipPosition
 		{
 			get => startGameShipPosition;
 			set
@@ -2202,7 +2199,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("nkF")]
-		public long TradingSupplyDataIndex
+		public int TradingSupplyDataIndex
 		{
 			get => tradingSupplyDataIndex;
 			set
@@ -2216,7 +2213,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("b69")]
-		public ObservableCollection<object> TradingSupplyData
+		public TradeSupplyData[] TradingSupplyData
 		{
 			get => tradingSupplyData;
 			set
@@ -2230,7 +2227,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("HbG")]
-		public ObservableCollection<object> LastPortal
+		public object[] LastPortal
 		{
 			get => lastPortal;
 			set
@@ -2258,7 +2255,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("vrS")]
-		public long KnownPortalRunes
+		public int KnownPortalRunes
 		{
 			get => knownPortalRunes;
 			set
@@ -2286,7 +2283,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("30s")]
-		public PortalReturnAddress OtherSideOfPortalReturnBase
+		public PortalData OtherSideOfPortalReturnBase
 		{
 			get => otherSideOfPortalReturnBase;
 			set
@@ -2300,7 +2297,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("LIR")]
-		public ObservableCollection<object> PortalMarkerPosition_Local
+		public float[] PortalMarkerPosition_Local
 		{
 			get => portalMarkerPosition_Local;
 			set
@@ -2314,7 +2311,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("qW;")]
-		public ObservableCollection<object> PortalMarkerPosition_Offset
+		public float[] PortalMarkerPosition_Offset
 		{
 			get => portalMarkerPosition_Offset;
 			set
@@ -2356,21 +2353,21 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("l:j")]
-		public ObservableCollection<object> CharacterCustomisationData
+		public OutfitPreset[] OutfitPresets
 		{
-			get => characterCustomisationData;
+			get => outfitPresets;
 			set
 			{
-				if ((ReferenceEquals(characterCustomisationData, value) != true))
+				if ((ReferenceEquals(outfitPresets, value) != true))
 				{
-					characterCustomisationData = value;
-					OnPropertyChanged("CharacterCustomisationData");
+					outfitPresets = value;
+					OnPropertyChanged("OutfitPresets");
 				}
 			}
 		}
 
         [JsonProperty("4hl")]
-		public ObservableCollection<object> ShipUsesLegacyColours
+		public bool[] ShipUsesLegacyColours
 		{
 			get => shipUsesLegacyColours;
 			set
@@ -2384,7 +2381,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("cf5")]
-		public ObservableCollection<object> Outfits
+		public Outfit[] Outfits
 		{
 			get => outfits;
 			set
@@ -2426,7 +2423,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(";Du")]
-		public ObservableCollection<object> FleetFrigates
+		public ObservableCollection<Frigate> FleetFrigates
 		{
 			get => fleetFrigates;
 			set
@@ -2830,6 +2827,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

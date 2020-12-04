@@ -76,7 +76,7 @@ namespace NMSTools.CodeGen
         public Telemetrystat[] TelemetryStats { get; set; }
         public Storedinteraction[] StoredInteractions { get; set; }
         public Maintenanceinteraction[] MaintenanceInteractions { get; set; }
-        public Personalmaintenanceinteraction[] PersonalMaintenanceInteractions { get; set; }
+        public Personalmaintenanceinteraction[] PersonalMaintenanceInteractions { get; set; }      
         public long[] VisitedSystems { get; set; }
         public float[] Hazard { get; set; }
         public int BoltAmmo { get; set; }

@@ -1,17 +1,13 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class ProceduralObject : ModelBase
 	{
 		private string filename;
-		private ObservableCollection<object> seed;
+		private object[] seed;
 		private string altId;
 		private ProceduralObjectTexture proceduralTexture;
 
@@ -30,7 +26,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("@EL")]
-		public ObservableCollection<object> Seed
+		public object[] Seed
 		{
 			get => seed;
 			set
@@ -70,6 +66,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

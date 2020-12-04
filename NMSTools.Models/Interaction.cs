@@ -1,21 +1,17 @@
 using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
 	using Base;
-	using Common;
 
     public class Interaction : ModelBase
 	{
-		private long galacticAddress;
-		private long interactionValue;
-		private ObservableCollection<object> position;
+		private string galacticAddress;
+		private int interactionValue;
+		private float[] position;
 
         [JsonProperty("oZw")]
-		public long GalacticAddress
+		public string GalacticAddress
 		{
 			get => galacticAddress;
 			set
@@ -29,7 +25,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty(">MX")]
-		public long InteractionValue
+		public int InteractionValue
 		{
 			get => interactionValue;
 			set
@@ -43,7 +39,7 @@ namespace NMSTools.Models
 		}
 
         [JsonProperty("wMC")]
-		public ObservableCollection<object> Position
+		public float[] Position
 		{
 			get => position;
 			set
@@ -55,6 +51,5 @@ namespace NMSTools.Models
 				}
 			}
 		}
-
 	}
 }

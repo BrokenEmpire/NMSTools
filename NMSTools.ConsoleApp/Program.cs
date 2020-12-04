@@ -1,38 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Security.Cryptography;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 
 namespace NMSTools.ConsoleApp
 {
+    using Models;
+
     class Program
     {
+        public const string saveFile = "D:\\NMSProjects\\Archives\\Misc\\save.hg";
+
         static void Main(string[] args)
         {
+            using var inputFile = File.Open(saveFile, FileMode.Open);
+            using var sr = new StreamReader(inputFile);
+            using var json = new JsonTextReader(sr);
 
-        }
+            var serializer = new JsonSerializer();
+            var root = serializer.Deserialize<NMSRoot>(json);
 
-        public static async Task<byte[]> DecryptAsync(byte[] value, byte[] iv, byte[] systemKey)
-        {
-            using (var keyDerivationFunction = new Rfc2898DeriveBytes(iv, systemKey, 16000))
-            {
-                var keyBytes = keyDerivationFunction.GetBytes(32);
-                var ivBytes = keyDerivationFunction.GetBytes(16);
-
-                using (var outputStream = new MemoryStream())
-                {
-                    using (var inputStream = new MemoryStream(value))
-                    using (var aesCypher = new AesManaged())
-                    using (var decryptor = aesCypher.CreateDecryptor(keyBytes, ivBytes))
-                    using (var cryptoStream = new CryptoStream(inputStream, decryptor, CryptoStreamMode.Read))
-                        await cryptoStream.CopyToAsync(outputStream);
-
-                    return outputStream.ToArray();
-                }
-            }
+            Console.WriteLine("Program Complete");
+            Console.Read();
         }
     }
 }

@@ -1,16 +1,17 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
     using Common;
 
+    [DataContract]
     public class AvailableDiscovery : ModelBase
     {
         private int tSrec;
         private DD dD;
 
-        [JsonProperty("kVv")]
+        [DataMember(Name = "kVv")]
         public int TSrec
         {
             get => tSrec;
@@ -24,7 +25,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8P3")]
+        [DataMember(Name = "8P3")]
         public DD DD
         {
             get => dD;

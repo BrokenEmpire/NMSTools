@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Outfit : ModelBase
     {
         private string[] descriptorGroups;
@@ -12,7 +13,7 @@ namespace NMSTools.Models
         private BoneScale[] boneScaleData;
         private float scale;
 
-        [JsonProperty("SMP")]
+        [DataMember(Name = "SMP")]
         public string[] DescriptorGroups
         {
             get => descriptorGroups;
@@ -26,7 +27,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Aak")]
+        [DataMember(Name = "Aak")]
         public OutfitColor[] OutfitColors
         {
             get => outfitColors;
@@ -40,7 +41,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("T>1")]
+        [DataMember(Name = "T>1")]
         public TextureOption[] TextureOptions
         {
             get => textureOptions;
@@ -54,7 +55,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gsg")]
+        [DataMember(Name = "gsg")]
         public BoneScale[] BoneScaleData
         {
             get => boneScaleData;
@@ -68,7 +69,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("unY")]
+        [DataMember(Name = "unY")]
         public float Scale
         {
             get => scale;

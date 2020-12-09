@@ -1,9 +1,10 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class MultiTool : ModelBase
     {
         private CatalogLayout layout;
@@ -14,7 +15,7 @@ namespace NMSTools.Models
         private long primaryMode;
         private long secondaryMode;
 
-        [JsonProperty("CA4")]
+        [DataMember(Name = "CA4")]
         public CatalogLayout Layout
         {
             get => layout;
@@ -28,7 +29,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("OsQ")]
+        [DataMember(Name = "OsQ")]
         public Catalog Store
         {
             get => store;
@@ -42,7 +43,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@EL")]
+        [DataMember(Name = "@EL")]
         public object[] Seed
         {
             get => seed;
@@ -56,7 +57,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NKm")]
+        [DataMember(Name = "NKm")]
         public string Name
         {
             get => name;
@@ -70,7 +71,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("OGV")]
+        [DataMember(Name = "OGV")]
         public bool IsLarge
         {
             get => isLarge;
@@ -84,7 +85,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("qVG")]
+        [DataMember(Name = "qVG")]
         public long PrimaryMode
         {
             get => primaryMode;
@@ -98,7 +99,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("jl;")]
+        [DataMember(Name = "jl;")]
         public long SecondaryMode
         {
             get => secondaryMode;

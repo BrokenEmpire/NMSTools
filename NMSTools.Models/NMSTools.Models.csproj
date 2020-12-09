@@ -10,6 +10,7 @@
     <RootNamespace>NMSTools.Models</RootNamespace>
     <AssemblyName>NMSTools.Models</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
@@ -33,11 +34,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="AvailableDiscovery.cs" />
-    <Compile Include="Base\FileNameConverter.cs" />
     <Compile Include="Base\ModelBase.cs" />
     <Compile Include="BoneScale.cs" />
     <Compile Include="BuildingObject.cs" />
@@ -123,9 +121,6 @@
     <Compile Include="Weapon.cs" />
     <Compile Include="WeaponDescription.cs" />
     <Compile Include="WordGroup.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,17 +1,18 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class PlayerBase : ModelBase
     {
         private long baseVersion;
         private long originalBaseVersion;
         private string galacticAddress;
-        private float[] position;
-        private float[] forward;
+        private decimal[] position;
+        private decimal[] forward;
         private long userData;
         private long lastUpdateTimestamp;
         private ObservableCollection<PlayerBaseItem> objects;
@@ -21,14 +22,14 @@ namespace NMSTools.Models
         private PlayerBaseType baseType;
         private string lastEditedById;
         private string lastEditedByUsername;
-        private float[] screenshotAt;
-        private float[] screenshotPos;
+        private decimal[] screenshotAt;
+        private decimal[] screenshotPos;
         private PlayerBaseMode gameMode;
         private string platformToken;
         private bool isReported;
         private bool isFeatured;
 
-        [JsonProperty("h4X")]
+        [DataMember(Name = "h4X")]
         public long BaseVersion
         {
             get => baseVersion;
@@ -42,7 +43,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("BpT")]
+        [DataMember(Name = "BpT")]
         public long OriginalBaseVersion
         {
             get => originalBaseVersion;
@@ -56,7 +57,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oZw")]
+        [DataMember(Name = "oZw")]
         public string GalacticAddress
         {
             get => galacticAddress;
@@ -70,8 +71,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wMC")]
-        public float[] Position
+        [DataMember(Name = "wMC")]
+        public decimal[] Position
         {
             get => position;
             set
@@ -84,8 +85,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oHw")]
-        public float[] Forward
+        [DataMember(Name = "oHw")]
+        public decimal[] Forward
         {
             get => forward;
             set
@@ -98,7 +99,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("CVX")]
+        [DataMember(Name = "CVX")]
         public long UserData
         {
             get => userData;
@@ -112,7 +113,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wx7")]
+        [DataMember(Name = "wx7")]
         public long LastUpdateTimestamp
         {
             get => lastUpdateTimestamp;
@@ -126,7 +127,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@ZJ")]
+        [DataMember(Name = "@ZJ")]
         public ObservableCollection<PlayerBaseItem> Objects
         {
             get => objects;
@@ -140,7 +141,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("B2h")]
+        [DataMember(Name = "B2h")]
         public string RID
         {
             get => rID;
@@ -154,7 +155,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("3?K")]
+        [DataMember(Name = "3?K")]
         public PlayerBaseOwner Owner
         {
             get => owner;
@@ -168,7 +169,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NKm")]
+        [DataMember(Name = "NKm")]
         public string Name
         {
             get => name;
@@ -182,7 +183,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("peI")]
+        [DataMember(Name = "peI")]
         public PlayerBaseType BaseType
         {
             get => baseType;
@@ -196,7 +197,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("J=S")]
+        [DataMember(Name = "J=S")]
         public string LastEditedById
         {
             get => lastEditedById;
@@ -210,7 +211,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vyN")]
+        [DataMember(Name = "vyN")]
         public string LastEditedByUsername
         {
             get => lastEditedByUsername;
@@ -224,8 +225,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("D9@")]
-        public float[] ScreenshotAt
+        [DataMember(Name = "D9@")]
+        public decimal[] ScreenshotAt
         {
             get => screenshotAt;
             set
@@ -238,8 +239,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("rIR")]
-        public float[] ScreenshotPos
+        [DataMember(Name = "rIR")]
+        public decimal[] ScreenshotPos
         {
             get => screenshotPos;
             set
@@ -252,7 +253,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("idA")]
+        [DataMember(Name = "idA")]
         public PlayerBaseMode GameMode
         {
             get => gameMode;
@@ -266,7 +267,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("C0j")]
+        [DataMember(Name = "C0j")]
         public string PlatformToken
         {
             get => platformToken;
@@ -280,7 +281,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("i4g")]
+        [DataMember(Name = "i4g")]
         public bool IsReported
         {
             get => isReported;
@@ -294,7 +295,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("tww")]
+        [DataMember(Name = "tww")]
         public bool IsFeatured
         {
             get => isFeatured;

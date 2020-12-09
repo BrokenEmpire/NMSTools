@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class BuildingType : ModelBase
     {
         private string buildingClass;
 
-        [JsonProperty("iqv")]
+        [DataMember(Name = "iqv")]
         public string BuildingClass
         {
             get => buildingClass;

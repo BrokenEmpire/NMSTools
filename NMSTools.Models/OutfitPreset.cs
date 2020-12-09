@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class OutfitPreset : ModelBase
     {
         private string selectedPreset;
         private Outfit presetData;
 
-        [JsonProperty("VFd")]
+        [DataMember(Name = "VFd")]
         public string SelectedPreset
         {
             get => selectedPreset;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wnR")]
+        [DataMember(Name = "wnR")]
         public Outfit PresetData
         {
             get => presetData;

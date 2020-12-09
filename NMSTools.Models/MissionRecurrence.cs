@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class MissionRecurrence : ModelBase
     {
         private string missionID;
         private int recurrenceDeadline;
 
-        [JsonProperty("jGk")]
+        [DataMember(Name = "jGk")]
         public string MissionID
         {
             get => missionID;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oF@")]
+        [DataMember(Name = "oF@")]
         public int RecurrenceDeadline
         {
             get => recurrenceDeadline;

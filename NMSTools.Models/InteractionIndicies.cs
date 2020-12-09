@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class InteractionIndicies : ModelBase
     {
         private int[] savedRaceIndicies;
 
-        [JsonProperty("SEK")]
+        [DataMember(Name = "SEK")]
         public int[] SavedRaceIndicies
         {
             get => savedRaceIndicies;

@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class WordGroup : ModelBase
     {
         private string group;
         private bool[] races;
 
-        [JsonProperty("MYl")]
+        [DataMember(Name = "MYl")]
         public string Group
         {
             get => group;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("D;o")]
+        [DataMember(Name = "D;o")]
         public bool[] Races
         {
             get => races;

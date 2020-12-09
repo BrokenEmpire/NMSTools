@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class TextureOption : ModelBase
     {
         private string textureOptionGroupName;
         private string textureOptionName;
 
-        [JsonProperty("@6c")]
+        [DataMember(Name = "@6c")]
         public string TextureOptionGroupName
         {
             get => textureOptionGroupName;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("=Cv")]
+        [DataMember(Name = "=Cv")]
         public string TextureOptionName
         {
             get => textureOptionName;

@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class WeaponDescription : ModelBase
     {
         private string weaponMode;
 
-        [JsonProperty("Rfw")]
+        [DataMember(Name = "Rfw")]
         public string WeaponMode
         {
             get => weaponMode;

@@ -1,9 +1,10 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class PlayerBaseItem : ModelBase
     {
         private long timestamp;
@@ -13,7 +14,7 @@ namespace NMSTools.Models
         private float[] up;
         private float[] at;
 
-        [JsonProperty("b1:")]
+        [DataMember(Name = "b1:")]
         public long Timestamp
         {
             get => timestamp;
@@ -27,7 +28,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("r<7")]
+        [DataMember(Name = "r<7")]
         public string ObjectID
         {
             get => objectID;
@@ -41,7 +42,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("CVX")]
+        [DataMember(Name = "CVX")]
         public long UserData
         {
             get => userData;
@@ -55,7 +56,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wMC")]
+        [DataMember(Name = "wMC")]
         public float[] Position
         {
             get => position;
@@ -69,7 +70,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wJ0")]
+        [DataMember(Name = "wJ0")]
         public float[] Up
         {
             get => up;
@@ -83,7 +84,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aNu")]
+        [DataMember(Name = "aNu")]
         public float[] At
         {
             get => at;

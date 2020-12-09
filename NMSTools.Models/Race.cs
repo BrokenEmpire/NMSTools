@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Race : ModelBase
     {
         private string alienRace;
 
-        [JsonProperty("0Hi")]
+        [DataMember(Name = "0Hi")]
         public string AlienRace
         {
             get => alienRace;

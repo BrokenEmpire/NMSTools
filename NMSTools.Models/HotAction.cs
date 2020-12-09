@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class HotAction : ModelBase
     {
         private KeyAction[] keyActions;
 
-        [JsonProperty("sM@")]
+        [DataMember(Name = "sM@")]
         public KeyAction[] KeyActions
         {
             get => keyActions;

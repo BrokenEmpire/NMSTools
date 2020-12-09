@@ -1,9 +1,10 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Discovery : ModelBase
     {
         private int reserveStore;
@@ -12,7 +13,7 @@ namespace NMSTools.Models
         private AvailableDiscovery[] available;
         private object[] enqueued;
 
-        [JsonProperty("fgt")]
+        [DataMember(Name = "fgt")]
         public int ReserveStore
         {
             get => reserveStore;
@@ -26,7 +27,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("xxK")]
+        [DataMember(Name = "xxK")]
         public int ReserveManaged
         {
             get => reserveManaged;
@@ -40,7 +41,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("OsQ")]
+        [DataMember(Name = "OsQ")]
         public StoreRecord Store
         {
             get => store;
@@ -54,7 +55,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("brV")]
+        [DataMember(Name = "brV")]
         public AvailableDiscovery[] Available
         {
             get => available;
@@ -68,7 +69,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";FZ")]
+        [DataMember(Name = ";FZ")]
         public object[] Enqueued
         {
             get => enqueued;

@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models.Common
 {
     using Base;
 
+    [DataContract]
     public class DM : ModelBase
     {
         private string cN;
 
-        [JsonProperty("q5u")]
+        [DataMember(Name = "q5u")]
         public string CN
         {
             get => cN;

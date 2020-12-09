@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Vehicle : ModelBase
     {
         private string name;
@@ -15,7 +16,7 @@ namespace NMSTools.Models
         private float[] position;
         private float[] direction;
 
-        [JsonProperty("NKm")]
+        [DataMember(Name = "NKm")]
         public string Name
         {
             get => name;
@@ -29,7 +30,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NTx")]
+        [DataMember(Name = "NTx")]
         public ProceduralObject Resource
         {
             get => resource;
@@ -43,7 +44,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";l5")]
+        [DataMember(Name = ";l5")]
         public Catalog Inventory
         {
             get => inventory;
@@ -57,7 +58,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("PMT")]
+        [DataMember(Name = "PMT")]
         public Catalog InventoryTech
         {
             get => inventoryTech;
@@ -71,7 +72,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("pMa")]
+        [DataMember(Name = "pMa")]
         public CatalogLayout InventoryLayout
         {
             get => inventoryLayout;
@@ -85,7 +86,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("YTa")]
+        [DataMember(Name = "YTa")]
         public string Location
         {
             get => location;
@@ -99,7 +100,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wMC")]
+        [DataMember(Name = "wMC")]
         public float[] Position
         {
             get => position;
@@ -113,7 +114,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("l?l")]
+        [DataMember(Name = "l?l")]
         public float[] Direction
         {
             get => direction;

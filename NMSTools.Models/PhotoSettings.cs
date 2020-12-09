@@ -1,9 +1,10 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class PhotoSettings : ModelBase
     {
         private float fog;
@@ -21,7 +22,7 @@ namespace NMSTools.Models
         private float vignette;
         private int filter;
 
-        [JsonProperty("qAx")]
+        [DataMember(Name = "qAx")]
         public float Fog
         {
             get => fog;
@@ -35,7 +36,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("22a")]
+        [DataMember(Name = "22a")]
         public float CloudAmount
         {
             get => cloudAmount;
@@ -49,7 +50,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("qLk")]
+        [DataMember(Name = "qLk")]
         public float[] SunDir
         {
             get => sunDir;
@@ -63,7 +64,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("OCG")]
+        [DataMember(Name = "OCG")]
         public bool SunDirSet
         {
             get => sunDirSet;
@@ -77,7 +78,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("yGF")]
+        [DataMember(Name = "yGF")]
         public float FoV
         {
             get => foV;
@@ -91,7 +92,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ARP")]
+        [DataMember(Name = "ARP")]
         public bool FoVSet
         {
             get => foVSet;
@@ -105,7 +106,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("?sW")]
+        [DataMember(Name = "?sW")]
         public string DepthOfField
         {
             get => depthOfField;
@@ -119,7 +120,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wKU")]
+        [DataMember(Name = "wKU")]
         public float DepthOfFieldStrengthSetting
         {
             get => depthOfFieldStrengthSetting;
@@ -133,7 +134,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("RUO")]
+        [DataMember(Name = "RUO")]
         public float DepthOfFieldDistance
         {
             get => depthOfFieldDistance;
@@ -147,7 +148,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("yuu")]
+        [DataMember(Name = "yuu")]
         public float DepthOfFieldDistanceSpace
         {
             get => depthOfFieldDistanceSpace;
@@ -161,7 +162,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("n0h")]
+        [DataMember(Name = "n0h")]
         public float HalfFocalPlaneDepth
         {
             get => halfFocalPlaneDepth;
@@ -175,7 +176,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(">xF")]
+        [DataMember(Name = ">xF")]
         public float HalfFocalPlaneDepthSpace
         {
             get => halfFocalPlaneDepthSpace;
@@ -189,7 +190,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("L85")]
+        [DataMember(Name = "L85")]
         public float Vignette
         {
             get => vignette;
@@ -203,7 +204,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("HJQ")]
+        [DataMember(Name = "HJQ")]
         public int Filter
         {
             get => filter;

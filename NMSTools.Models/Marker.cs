@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Marker : ModelBase
     {
         private int table;
         private string markerEvent;
-        private string galacticAddress;
-        private string[] buildingSeed;
+        private object galacticAddress;
+        private object[] buildingSeed;
         private float[] buildingLocation;
         private BuildingType buildingClass;
         private float time;
@@ -17,7 +18,7 @@ namespace NMSTools.Models
         private int missionSeed;
         private ParticipantType participantType;
 
-        [JsonProperty("9@i")]
+        [DataMember(Name = "9@i")]
         public int Table
         {
             get => table;
@@ -31,7 +32,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("FN5")]
+        [DataMember(Name = "FN5")]
         public string MarkerEvent
         {
             get => markerEvent;
@@ -45,8 +46,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oZw")]
-        public string GalacticAddress
+        [DataMember(Name = "oZw")]
+        public object GalacticAddress
         {
             get => galacticAddress;
             set
@@ -59,8 +60,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5bU")]
-        public string[] BuildingSeed
+        [DataMember(Name = "5bU")]
+        public object[] BuildingSeed
         {
             get => buildingSeed;
             set
@@ -73,7 +74,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("TWn")]
+        [DataMember(Name = "TWn")]
         public float[] BuildingLocation
         {
             get => buildingLocation;
@@ -87,7 +88,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("iqv")]
+        [DataMember(Name = "iqv")]
         public BuildingType BuildingClass
         {
             get => buildingClass;
@@ -101,7 +102,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ADw")]
+        [DataMember(Name = "ADw")]
         public float Time
         {
             get => time;
@@ -115,7 +116,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("jGk")]
+        [DataMember(Name = "jGk")]
         public string MissionID
         {
             get => missionID;
@@ -129,7 +130,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("1JW")]
+        [DataMember(Name = "1JW")]
         public int MissionSeed
         {
             get => missionSeed;
@@ -143,7 +144,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("M?f")]
+        [DataMember(Name = "M?f")]
         public ParticipantType ParticipantType
         {
             get => participantType;

@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class BoneScale : ModelBase
     {
         private string boneName;
         private float scale;
 
-        [JsonProperty("tIm")]
+        [DataMember(Name = "tIm")]
         public string BoneName
         {
             get => boneName;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("unY")]
+        [DataMember(Name = "unY")]
         public float Scale
         {
             get => scale;

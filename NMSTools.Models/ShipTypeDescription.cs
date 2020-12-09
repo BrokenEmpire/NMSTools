@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class ShipTypeDescription : ModelBase
     {
         private string shipClass;
 
-        [JsonProperty("eEU")]
+        [DataMember(Name = "eEU")]
         public string ShipClass
         {
             get => shipClass;

@@ -1,9 +1,10 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class TerrainData : ModelBase
     {
         private string[] galacticAddresses;
@@ -13,7 +14,7 @@ namespace NMSTools.Models
         private bool[] bufferProtected;
         private TerrainEdit[] edits;
 
-        [JsonProperty("r:j")]
+        [DataMember(Name = "r:j")]
         public string[] GalacticAddresses
         {
             get => galacticAddresses;
@@ -27,7 +28,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eiy")]
+        [DataMember(Name = "eiy")]
         public int[] BufferSizes
         {
             get => bufferSizes;
@@ -41,7 +42,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("w0G")]
+        [DataMember(Name = "w0G")]
         public int[] BufferAges
         {
             get => bufferAges;
@@ -55,7 +56,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("cL6")]
+        [DataMember(Name = "cL6")]
         public float[][] BufferAnchors
         {
             get => bufferAnchors;
@@ -69,7 +70,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("deQ")]
+        [DataMember(Name = "deQ")]
         public bool[] BufferProtected
         {
             get => bufferProtected;
@@ -83,7 +84,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Mes")]
+        [DataMember(Name = "Mes")]
         public TerrainEdit[] Edits
         {
             get => edits;

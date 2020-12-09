@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class ProceduralObjectTexture : ModelBase
     {
         private string[] samplers;
 
-        [JsonProperty("bnT")]
+        [DataMember(Name = "bnT")]
         public string[] Samplers
         {
             get => samplers;

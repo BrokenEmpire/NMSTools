@@ -1,10 +1,11 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 using System.Collections.ObjectModel;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class StateData : ModelBase
     {
         private UniverseCoordinates universeAddress;
@@ -101,7 +102,7 @@ namespace NMSTools.Models
         private float[] firstShipPosition;
         private int hazardTimeAlive;
         private bool revealBlackHoles;
-        private string[] currentFreighterHomeSystemSeed;
+        private object[] currentFreighterHomeSystemSeed;
         private ProceduralObject currentFreighter;
         private CatalogLayout freighterLayout;
         private Catalog freighterInventory;
@@ -196,7 +197,7 @@ namespace NMSTools.Models
         private float vRCameraOffset;
         private SeasonData seasonalData;
 
-        [JsonProperty("yhJ")]
+        [DataMember(Name = "yhJ")]
         public UniverseCoordinates UniverseAddress
         {
             get => universeAddress;
@@ -210,7 +211,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ux@")]
+        [DataMember(Name = "ux@")]
         public UniverseCoordinates PreviousUniverseAddress
         {
             get => previousUniverseAddress;
@@ -224,7 +225,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("QQp")]
+        [DataMember(Name = "QQp")]
         public int HomeRealityIteration
         {
             get => homeRealityIteration;
@@ -238,7 +239,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";l5")]
+        [DataMember(Name = ";l5")]
         public Catalog Inventory
         {
             get => inventory;
@@ -252,7 +253,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("PMT")]
+        [DataMember(Name = "PMT")]
         public Catalog InventoryTech
         {
             get => inventoryTech;
@@ -266,7 +267,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gan")]
+        [DataMember(Name = "gan")]
         public Catalog InventoryCargo
         {
             get => inventoryCargo;
@@ -280,7 +281,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("6<E")]
+        [DataMember(Name = "6<E")]
         public Catalog InventoryShip
         {
             get => inventoryShip;
@@ -294,7 +295,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Kgt")]
+        [DataMember(Name = "Kgt")]
         public Catalog InventoryWeapon
         {
             get => inventoryWeapon;
@@ -308,7 +309,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("SuJ")]
+        [DataMember(Name = "SuJ")]
         public ObservableCollection<MultiTool> MultiTools
         {
             get => multiTools;
@@ -322,7 +323,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("j3E")]
+        [DataMember(Name = "j3E")]
         public short ActiveMultiTool
         {
             get => activeMultiTool;
@@ -336,7 +337,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4eu")]
+        [DataMember(Name = "4eu")]
         public Catalog InventoryGrave
         {
             get => inventoryGrave;
@@ -350,7 +351,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("BGQ")]
+        [DataMember(Name = "BGQ")]
         public bool SpawnGrave
         {
             get => spawnGrave;
@@ -364,7 +365,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";JQ")]
+        [DataMember(Name = ";JQ")]
         public bool SpaceGrave
         {
             get => spaceGrave;
@@ -378,7 +379,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NFm")]
+        [DataMember(Name = "NFm")]
         public UniverseCoordinates GraveUniverseAddress
         {
             get => graveUniverseAddress;
@@ -392,7 +393,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4ia")]
+        [DataMember(Name = "4ia")]
         public decimal[] GravePosition
         {
             get => gravePosition;
@@ -406,7 +407,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gIh")]
+        [DataMember(Name = "gIh")]
         public decimal[] GraveMatrixLookAt
         {
             get => graveMatrixLookAt;
@@ -420,7 +421,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("YJU")]
+        [DataMember(Name = "YJU")]
         public decimal[] GraveMatrixUp
         {
             get => graveMatrixUp;
@@ -434,7 +435,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("rj2")]
+        [DataMember(Name = "rj2")]
         public CatalogLayout ShipLayout
         {
             get => shipLayout;
@@ -448,7 +449,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("xbM")]
+        [DataMember(Name = "xbM")]
         public CatalogLayout WeaponLayout
         {
             get => weaponLayout;
@@ -462,7 +463,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oJJ")]
+        [DataMember(Name = "oJJ")]
         public ProceduralObject CurrentShip
         {
             get => currentShip;
@@ -476,7 +477,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("e6e")]
+        [DataMember(Name = "e6e")]
         public Weapon CurrentWeapon
         {
             get => currentWeapon;
@@ -490,7 +491,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4kj")]
+        [DataMember(Name = "4kj")]
         public ObservableCollection<string> KnownTech
         {
             get => knownTech;
@@ -504,7 +505,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eZ<")]
+        [DataMember(Name = "eZ<")]
         public ObservableCollection<string> KnownProducts
         {
             get => knownProducts;
@@ -518,7 +519,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("24<")]
+        [DataMember(Name = "24<")]
         public ObservableCollection<string> KnownSpecials
         {
             get => knownSpecials;
@@ -532,7 +533,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Ddk")]
+        [DataMember(Name = "Ddk")]
         public ObservableCollection<string> KnownRefinerRecipes
         {
             get => knownRefinerRecipes;
@@ -546,7 +547,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(":JX")]
+        [DataMember(Name = ":JX")]
         public ObservableCollection<string> KnownWords
         {
             get => knownWords;
@@ -560,7 +561,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("MF2")]
+        [DataMember(Name = "MF2")]
         public WordGroup[] KnownWordGroups
         {
             get => knownWordGroups;
@@ -574,7 +575,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("dwb")]
+        [DataMember(Name = "dwb")]
         public Mission[] MissionProgress
         {
             get => missionProgress;
@@ -588,7 +589,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("?eS")]
+        [DataMember(Name = "?eS")]
         public int PostMissionIndex
         {
             get => postMissionIndex;
@@ -602,7 +603,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";R7")]
+        [DataMember(Name = ";R7")]
         public string CurrentMissionID
         {
             get => currentMissionID;
@@ -616,7 +617,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("k?G")]
+        [DataMember(Name = "k?G")]
         public int CurrentMissionSeed
         {
             get => currentMissionSeed;
@@ -630,7 +631,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Mg<")]
+        [DataMember(Name = "Mg<")]
         public string PreviousMissionID
         {
             get => previousMissionID;
@@ -644,7 +645,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("rej")]
+        [DataMember(Name = "rej")]
         public int PreviousMissionSeed
         {
             get => previousMissionSeed;
@@ -658,7 +659,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("yq:")]
+        [DataMember(Name = "yq:")]
         public int MissionVersion
         {
             get => missionVersion;
@@ -672,7 +673,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("EQt")]
+        [DataMember(Name = "EQt")]
         public MissionRecurrence[] MissionRecurrences
         {
             get => missionRecurrences;
@@ -686,7 +687,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("cmA")]
+        [DataMember(Name = "cmA")]
         public Interaction HoloExplorerInteraction
         {
             get => holoExplorerInteraction;
@@ -700,7 +701,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("<>B")]
+        [DataMember(Name = "<>B")]
         public Interaction HoloScepticInteraction
         {
             get => holoScepticInteraction;
@@ -714,7 +715,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(":=:")]
+        [DataMember(Name = ":=:")]
         public Interaction HoloNooneInteraction
         {
             get => holoNooneInteraction;
@@ -728,7 +729,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("fSZ")]
+        [DataMember(Name = "fSZ")]
         public int Health
         {
             get => health;
@@ -742,7 +743,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("KCM")]
+        [DataMember(Name = "KCM")]
         public int ShipHealth
         {
             get => shipHealth;
@@ -756,7 +757,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kLc")]
+        [DataMember(Name = "kLc")]
         public int Shield
         {
             get => shield;
@@ -770,7 +771,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NE3")]
+        [DataMember(Name = "NE3")]
         public int ShipShield
         {
             get => shipShield;
@@ -784,7 +785,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("dcK")]
+        [DataMember(Name = "dcK")]
         public int Energy
         {
             get => energy;
@@ -798,7 +799,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wGS")]
+        [DataMember(Name = "wGS")]
         public int Units
         {
             get => units;
@@ -812,7 +813,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("7QL")]
+        [DataMember(Name = "7QL")]
         public int Nanites
         {
             get => nanites;
@@ -826,7 +827,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kN;")]
+        [DataMember(Name = "kN;")]
         public int Specials
         {
             get => specials;
@@ -840,7 +841,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("cid")]
+        [DataMember(Name = "cid")]
         public bool ThirdPersonShip
         {
             get => thirdPersonShip;
@@ -854,7 +855,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("i8O")]
+        [DataMember(Name = "i8O")]
         public int TimeAlive
         {
             get => timeAlive;
@@ -868,7 +869,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Lg8")]
+        [DataMember(Name = "Lg8")]
         public int TotalPlayTime
         {
             get => totalPlayTime;
@@ -882,7 +883,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("A1f")]
+        [DataMember(Name = "A1f")]
         public Marker[] MarkerStack
         {
             get => markerStack;
@@ -896,7 +897,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("i;<")]
+        [DataMember(Name = "i;<")]
         public object[] NewMPMarkerStack
         {
             get => newMPMarkerStack;
@@ -910,7 +911,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("CYJ")]
+        [DataMember(Name = "CYJ")]
         public object[] SurveyedEventPositions
         {
             get => surveyedEventPositions;
@@ -924,7 +925,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("6Ws")]
+        [DataMember(Name = "6Ws")]
         public int NextSurveyedEventPositionIndex
         {
             get => nextSurveyedEventPositionIndex;
@@ -938,7 +939,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gUR")]
+        [DataMember(Name = "gUR")]
         public Stat[] Stats
         {
             get => stats;
@@ -952,7 +953,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("m4I")]
+        [DataMember(Name = "m4I")]
         public Telemetry[] TelemetryStats
         {
             get => telemetryStats;
@@ -966,7 +967,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("a6j")]
+        [DataMember(Name = "a6j")]
         public StoredInteraction[] StoredInteractions
         {
             get => storedInteractions;
@@ -980,7 +981,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("RQA")]
+        [DataMember(Name = "RQA")]
         public InteractionData[] MaintenanceInteractions
         {
             get => maintenanceInteractions;
@@ -994,7 +995,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("VhC")]
+        [DataMember(Name = "VhC")]
         public InteractionData[] PersonalMaintenanceInteractions
         {
             get => personalMaintenanceInteractions;
@@ -1008,7 +1009,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nwS")]
+        [DataMember(Name = "nwS")]
         public long[] VisitedSystems
         {
             get => visitedSystems;
@@ -1022,7 +1023,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("seg")]
+        [DataMember(Name = "seg")]
         public float[] Hazard
         {
             get => hazard;
@@ -1036,7 +1037,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("9Lm")]
+        [DataMember(Name = "9Lm")]
         public int BoltAmmo
         {
             get => boltAmmo;
@@ -1050,7 +1051,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("VPy")]
+        [DataMember(Name = "VPy")]
         public int ScatterAmmo
         {
             get => scatterAmmo;
@@ -1064,7 +1065,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(":ML")]
+        [DataMember(Name = ":ML")]
         public int PulseAmmo
         {
             get => pulseAmmo;
@@ -1078,7 +1079,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("cO>")]
+        [DataMember(Name = "cO>")]
         public int LaserAmmo
         {
             get => laserAmmo;
@@ -1092,7 +1093,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vaP")]
+        [DataMember(Name = "vaP")]
         public float[] FirstSpawnPosition
         {
             get => firstSpawnPosition;
@@ -1106,7 +1107,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("E?v")]
+        [DataMember(Name = "E?v")]
         public InteractionIndicies[] SavedInteractionIndicies
         {
             get => savedInteractionIndicies;
@@ -1120,7 +1121,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Wu?")]
+        [DataMember(Name = "Wu?")]
         public InteractionDialog[] SavedInteractionDialogTable
         {
             get => savedInteractionDialogTable;
@@ -1134,7 +1135,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wHR")]
+        [DataMember(Name = "wHR")]
         public object[] InteractionProgressTable
         {
             get => interactionProgressTable;
@@ -1148,7 +1149,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vsV")]
+        [DataMember(Name = "vsV")]
         public UniverseCoordinates[] AtlasStationAdressData
         {
             get => atlasStationAdressData;
@@ -1162,7 +1163,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("B9>")]
+        [DataMember(Name = "B9>")]
         public UniverseCoordinates[] NewAtlasStationAdressData
         {
             get => newAtlasStationAdressData;
@@ -1176,7 +1177,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(":A3")]
+        [DataMember(Name = ":A3")]
         public UniverseCoordinates[] VisitedAtlasStationsData
         {
             get => visitedAtlasStationsData;
@@ -1190,7 +1191,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(":0x")]
+        [DataMember(Name = ":0x")]
         public bool FirstAtlasStationDiscovered
         {
             get => firstAtlasStationDiscovered;
@@ -1204,7 +1205,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kPF")]
+        [DataMember(Name = "kPF")]
         public bool UsesThirdPersonCharacterCam
         {
             get => usesThirdPersonCharacterCam;
@@ -1218,7 +1219,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("DtI")]
+        [DataMember(Name = "DtI")]
         public int ProgressionLevel
         {
             get => progressionLevel;
@@ -1232,7 +1233,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("QNH")]
+        [DataMember(Name = "QNH")]
         public int ProcTechIndex
         {
             get => procTechIndex;
@@ -1246,7 +1247,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eV1")]
+        [DataMember(Name = "eV1")]
         public bool IsNew
         {
             get => isNew;
@@ -1260,7 +1261,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wc3")]
+        [DataMember(Name = "wc3")]
         public bool UseSmallerBlackholeJumps
         {
             get => useSmallerBlackholeJumps;
@@ -1274,7 +1275,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("<dk")]
+        [DataMember(Name = "<dk")]
         public object[] UsedEntitlements
         {
             get => usedEntitlements;
@@ -1288,7 +1289,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aHM")]
+        [DataMember(Name = "aHM")]
         public float[][] PlanetPositions
         {
             get => planetPositions;
@@ -1302,7 +1303,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("?=a")]
+        [DataMember(Name = "?=a")]
         public object[][] PlanetSeeds
         {
             get => planetSeeds;
@@ -1316,7 +1317,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("7Mc")]
+        [DataMember(Name = "7Mc")]
         public int PrimaryPlanet
         {
             get => primaryPlanet;
@@ -1330,7 +1331,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("05J")]
+        [DataMember(Name = "05J")]
         public int TimeLastSpaceBattle
         {
             get => timeLastSpaceBattle;
@@ -1344,7 +1345,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8br")]
+        [DataMember(Name = "8br")]
         public int WarpsLastSpaceBattle
         {
             get => warpsLastSpaceBattle;
@@ -1358,7 +1359,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8xx")]
+        [DataMember(Name = "8xx")]
         public int ActiveSpaceBattleUA
         {
             get => activeSpaceBattleUA;
@@ -1372,7 +1373,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("IRi")]
+        [DataMember(Name = "IRi")]
         public int TimeLastMiniStation
         {
             get => timeLastMiniStation;
@@ -1386,7 +1387,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("x=M")]
+        [DataMember(Name = "x=M")]
         public int WarpsLastMiniStation
         {
             get => warpsLastMiniStation;
@@ -1400,7 +1401,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gpU")]
+        [DataMember(Name = "gpU")]
         public string MiniStationUA
         {
             get => miniStationUA;
@@ -1414,7 +1415,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("JvI")]
+        [DataMember(Name = "JvI")]
         public float[] AnomalyPositionOverride
         {
             get => anomalyPositionOverride;
@@ -1428,7 +1429,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5ST")]
+        [DataMember(Name = "5ST")]
         public UniverseCoordinates GameStartAddress1
         {
             get => gameStartAddress1;
@@ -1442,7 +1443,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("EeN")]
+        [DataMember(Name = "EeN")]
         public UniverseCoordinates GameStartAddress2
         {
             get => gameStartAddress2;
@@ -1456,7 +1457,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("M2Z")]
+        [DataMember(Name = "M2Z")]
         public bool[] GalacticMapRequests
         {
             get => galacticMapRequests;
@@ -1470,7 +1471,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nTB")]
+        [DataMember(Name = "nTB")]
         public float[] FirstShipPosition
         {
             get => firstShipPosition;
@@ -1484,7 +1485,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("G?:")]
+        [DataMember(Name = "G?:")]
         public int HazardTimeAlive
         {
             get => hazardTimeAlive;
@@ -1498,7 +1499,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("tSD")]
+        [DataMember(Name = "tSD")]
         public bool RevealBlackHoles
         {
             get => revealBlackHoles;
@@ -1512,8 +1513,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kYq")]
-        public string[] CurrentFreighterHomeSystemSeed
+        [DataMember(Name = "kYq")]
+        public object[] CurrentFreighterHomeSystemSeed
         {
             get => currentFreighterHomeSystemSeed;
             set
@@ -1526,7 +1527,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("bIR")]
+        [DataMember(Name = "bIR")]
         public ProceduralObject CurrentFreighter
         {
             get => currentFreighter;
@@ -1540,7 +1541,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(">Yh")]
+        [DataMember(Name = ">Yh")]
         public CatalogLayout FreighterLayout
         {
             get => freighterLayout;
@@ -1554,7 +1555,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8ZP")]
+        [DataMember(Name = "8ZP")]
         public Catalog FreighterInventory
         {
             get => freighterInventory;
@@ -1568,7 +1569,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("0wS")]
+        [DataMember(Name = "0wS")]
         public Catalog FreighterInventoryTech
         {
             get => freighterInventoryTech;
@@ -1582,7 +1583,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("RB7")]
+        [DataMember(Name = "RB7")]
         public UniverseCoordinates FreighterUniverseAddress
         {
             get => freighterUniverseAddress;
@@ -1596,7 +1597,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("9wg")]
+        [DataMember(Name = "9wg")]
         public float[] FreighterMatrixAt
         {
             get => freighterMatrixAt;
@@ -1610,7 +1611,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("fUl")]
+        [DataMember(Name = "fUl")]
         public float[] FreighterMatrixUp
         {
             get => freighterMatrixUp;
@@ -1624,7 +1625,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("lpm")]
+        [DataMember(Name = "lpm")]
         public float[] FreighterMatrixPos
         {
             get => freighterMatrixPos;
@@ -1638,7 +1639,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("c5s")]
+        [DataMember(Name = "c5s")]
         public ObservableCollection<BuildingObject> BaseBuildingObjects
         {
             get => baseBuildingObjects;
@@ -1652,7 +1653,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("=o:")]
+        [DataMember(Name = "=o:")]
         public TerrainData TerrainEditData
         {
             get => terrainEditData;
@@ -1666,7 +1667,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4Km")]
+        [DataMember(Name = "4Km")]
         public NPCWorker[] NPCWorkers
         {
             get => nPCWorkers;
@@ -1680,7 +1681,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("F?0")]
+        [DataMember(Name = "F?0")]
         public ObservableCollection<PlayerBase> PersistentPlayerBases
         {
             get => persistentPlayerBases;
@@ -1694,7 +1695,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nlG")]
+        [DataMember(Name = "nlG")]
         public PortalData[] TeleportEndpoints
         {
             get => teleportEndpoints;
@@ -1708,7 +1709,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("=3B")]
+        [DataMember(Name = "=3B")]
         public CatalogLayout Chest0Layout
         {
             get => chest0Layout;
@@ -1722,7 +1723,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("3Nc")]
+        [DataMember(Name = "3Nc")]
         public Catalog Chest0Inventory
         {
             get => chest0Inventory;
@@ -1736,7 +1737,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@ip")]
+        [DataMember(Name = "@ip")]
         public CatalogLayout Chest1Layout
         {
             get => chest1Layout;
@@ -1750,7 +1751,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("IDc")]
+        [DataMember(Name = "IDc")]
         public Catalog Chest1Inventory
         {
             get => chest1Inventory;
@@ -1764,7 +1765,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@Ik")]
+        [DataMember(Name = "@Ik")]
         public CatalogLayout Chest2Layout
         {
             get => chest2Layout;
@@ -1778,7 +1779,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("M=:")]
+        [DataMember(Name = "M=:")]
         public Catalog Chest2Inventory
         {
             get => chest2Inventory;
@@ -1792,7 +1793,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@1E")]
+        [DataMember(Name = "@1E")]
         public CatalogLayout Chest3Layout
         {
             get => chest3Layout;
@@ -1806,7 +1807,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("iYp")]
+        [DataMember(Name = "iYp")]
         public Catalog Chest3Inventory
         {
             get => chest3Inventory;
@@ -1820,7 +1821,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("XgV")]
+        [DataMember(Name = "XgV")]
         public CatalogLayout Chest4Layout
         {
             get => chest4Layout;
@@ -1834,7 +1835,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("<IP")]
+        [DataMember(Name = "<IP")]
         public Catalog Chest4Inventory
         {
             get => chest4Inventory;
@@ -1848,7 +1849,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nw5")]
+        [DataMember(Name = "nw5")]
         public CatalogLayout Chest5Layout
         {
             get => chest5Layout;
@@ -1862,7 +1863,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("qYJ")]
+        [DataMember(Name = "qYJ")]
         public Catalog Chest5Inventory
         {
             get => chest5Inventory;
@@ -1876,7 +1877,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("tLo")]
+        [DataMember(Name = "tLo")]
         public CatalogLayout Chest6Layout
         {
             get => chest6Layout;
@@ -1890,7 +1891,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@e5")]
+        [DataMember(Name = "@e5")]
         public Catalog Chest6Inventory
         {
             get => chest6Inventory;
@@ -1904,7 +1905,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("7b?")]
+        [DataMember(Name = "7b?")]
         public CatalogLayout Chest7Layout
         {
             get => chest7Layout;
@@ -1918,7 +1919,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5uh")]
+        [DataMember(Name = "5uh")]
         public Catalog Chest7Inventory
         {
             get => chest7Inventory;
@@ -1932,7 +1933,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("QBc")]
+        [DataMember(Name = "QBc")]
         public CatalogLayout Chest8Layout
         {
             get => chest8Layout;
@@ -1946,7 +1947,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5Tg")]
+        [DataMember(Name = "5Tg")]
         public Catalog Chest8Inventory
         {
             get => chest8Inventory;
@@ -1960,7 +1961,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wqf")]
+        [DataMember(Name = "wqf")]
         public CatalogLayout Chest9Layout
         {
             get => chest9Layout;
@@ -1974,7 +1975,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Bq<")]
+        [DataMember(Name = "Bq<")]
         public Catalog Chest9Inventory
         {
             get => chest9Inventory;
@@ -1988,7 +1989,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("v8;")]
+        [DataMember(Name = "v8;")]
         public CatalogLayout ChestMagicLayout
         {
             get => chestMagicLayout;
@@ -2002,7 +2003,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";?C")]
+        [DataMember(Name = ";?C")]
         public Catalog ChestMagicInventory
         {
             get => chestMagicInventory;
@@ -2016,7 +2017,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wFm")]
+        [DataMember(Name = "wFm")]
         public CatalogLayout ChestMagic2Layout
         {
             get => chestMagic2Layout;
@@ -2030,7 +2031,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("fCh")]
+        [DataMember(Name = "fCh")]
         public Catalog ChestMagic2Inventory
         {
             get => chestMagic2Inventory;
@@ -2044,7 +2045,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("RiP")]
+        [DataMember(Name = "RiP")]
         public CatalogLayout CookingIngredientsLayout
         {
             get => cookingIngredientsLayout;
@@ -2058,7 +2059,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Kha")]
+        [DataMember(Name = "Kha")]
         public Catalog CookingIngredientsInventory
         {
             get => cookingIngredientsInventory;
@@ -2072,7 +2073,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Sjw")]
+        [DataMember(Name = "Sjw")]
         public ProceduralObject CurrentFreighterNPC
         {
             get => currentFreighterNPC;
@@ -2086,7 +2087,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("P;m")]
+        [DataMember(Name = "P;m")]
         public Vehicle[] VehicleOwnership
         {
             get => vehicleOwnership;
@@ -2100,7 +2101,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5sx")]
+        [DataMember(Name = "5sx")]
         public short PrimaryVehicle
         {
             get => primaryVehicle;
@@ -2114,7 +2115,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@Cs")]
+        [DataMember(Name = "@Cs")]
         public Vehicle[] ShipOwnership
         {
             get => shipOwnership;
@@ -2128,7 +2129,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aBE")]
+        [DataMember(Name = "aBE")]
         public short PrimaryShip
         {
             get => primaryShip;
@@ -2142,7 +2143,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@Vn")]
+        [DataMember(Name = "@Vn")]
         public bool MultiShipEnabled
         {
             get => multiShipEnabled;
@@ -2156,7 +2157,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vxi")]
+        [DataMember(Name = "vxi")]
         public string PlayerFreighterName
         {
             get => playerFreighterName;
@@ -2170,7 +2171,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("h=c")]
+        [DataMember(Name = "h=c")]
         public float[] StartGameShipPosition
         {
             get => startGameShipPosition;
@@ -2184,7 +2185,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Bur")]
+        [DataMember(Name = "Bur")]
         public bool ShipNeedsTerrainPositioning
         {
             get => shipNeedsTerrainPositioning;
@@ -2198,7 +2199,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nkF")]
+        [DataMember(Name = "nkF")]
         public int TradingSupplyDataIndex
         {
             get => tradingSupplyDataIndex;
@@ -2212,7 +2213,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("b69")]
+        [DataMember(Name = "b69")]
         public TradeSupplyData[] TradingSupplyData
         {
             get => tradingSupplyData;
@@ -2226,7 +2227,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("HbG")]
+        [DataMember(Name = "HbG")]
         public object[] LastPortal
         {
             get => lastPortal;
@@ -2240,7 +2241,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("NQJ")]
+        [DataMember(Name = "NQJ")]
         public Portal VisitedPortal
         {
             get => visitedPortal;
@@ -2254,7 +2255,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vrS")]
+        [DataMember(Name = "vrS")]
         public int KnownPortalRunes
         {
             get => knownPortalRunes;
@@ -2268,7 +2269,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("DaC")]
+        [DataMember(Name = "DaC")]
         public bool OnOtherSideOfPortal
         {
             get => onOtherSideOfPortal;
@@ -2282,7 +2283,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("30s")]
+        [DataMember(Name = "30s")]
         public PortalData OtherSideOfPortalReturnBase
         {
             get => otherSideOfPortalReturnBase;
@@ -2296,7 +2297,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("LIR")]
+        [DataMember(Name = "LIR")]
         public float[] PortalMarkerPosition_Local
         {
             get => portalMarkerPosition_Local;
@@ -2310,7 +2311,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("qW;")]
+        [DataMember(Name = "qW;")]
         public float[] PortalMarkerPosition_Offset
         {
             get => portalMarkerPosition_Offset;
@@ -2324,7 +2325,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";DM")]
+        [DataMember(Name = ";DM")]
         public WeaponDescription StartingPrimaryWeapon
         {
             get => startingPrimaryWeapon;
@@ -2338,7 +2339,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("SYl")]
+        [DataMember(Name = "SYl")]
         public WeaponDescription StartingSecondaryWeapon
         {
             get => startingSecondaryWeapon;
@@ -2352,7 +2353,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("l:j")]
+        [DataMember(Name = "l:j")]
         public OutfitPreset[] OutfitPresets
         {
             get => outfitPresets;
@@ -2366,7 +2367,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4hl")]
+        [DataMember(Name = "4hl")]
         public bool[] ShipUsesLegacyColours
         {
             get => shipUsesLegacyColours;
@@ -2380,7 +2381,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("cf5")]
+        [DataMember(Name = "cf5")]
         public Outfit[] Outfits
         {
             get => outfits;
@@ -2394,7 +2395,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5LX")]
+        [DataMember(Name = "5LX")]
         public string JetpackEffect
         {
             get => jetpackEffect;
@@ -2408,7 +2409,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("3Z>")]
+        [DataMember(Name = "3Z>")]
         public object[] FleetSeed
         {
             get => fleetSeed;
@@ -2422,7 +2423,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(";Du")]
+        [DataMember(Name = ";Du")]
         public ObservableCollection<Frigate> FleetFrigates
         {
             get => fleetFrigates;
@@ -2436,7 +2437,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kw:")]
+        [DataMember(Name = "kw:")]
         public object[] FleetExpeditions
         {
             get => fleetExpeditions;
@@ -2450,7 +2451,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ieD")]
+        [DataMember(Name = "ieD")]
         public object[] ExpeditionSeedsSelectedToday
         {
             get => expeditionSeedsSelectedToday;
@@ -2464,7 +2465,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("nxr")]
+        [DataMember(Name = "nxr")]
         public long LastKnownDay
         {
             get => lastKnownDay;
@@ -2478,7 +2479,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(">db")]
+        [DataMember(Name = ">db")]
         public long SunTimer
         {
             get => sunTimer;
@@ -2492,7 +2493,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("vXX")]
+        [DataMember(Name = "vXX")]
         public long MultiplayerLobbyID
         {
             get => multiplayerLobbyID;
@@ -2506,7 +2507,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("YxD")]
+        [DataMember(Name = "YxD")]
         public UniverseCoordinates MultiplayerUA
         {
             get => multiplayerUA;
@@ -2520,7 +2521,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("x<b")]
+        [DataMember(Name = "x<b")]
         public SpawnData MultiplayerSpawn
         {
             get => multiplayerSpawn;
@@ -2534,7 +2535,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wyZ")]
+        [DataMember(Name = "wyZ")]
         public object[] RepairTechBuffer
         {
             get => repairTechBuffer;
@@ -2548,7 +2549,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("kpg")]
+        [DataMember(Name = "kpg")]
         public long MultiplayerPrivileges
         {
             get => multiplayerPrivileges;
@@ -2562,7 +2563,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("k8N")]
+        [DataMember(Name = "k8N")]
         public HotAction[] HotActions
         {
             get => hotActions;
@@ -2576,7 +2577,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8GF")]
+        [DataMember(Name = "8GF")]
         public string LastUABeforePortalWarp
         {
             get => lastUABeforePortalWarp;
@@ -2590,7 +2591,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("7Un")]
+        [DataMember(Name = "7Un")]
         public int StoryPortalSeed
         {
             get => storyPortalSeed;
@@ -2604,7 +2605,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aPn")]
+        [DataMember(Name = "aPn")]
         public int ShopNumber
         {
             get => shopNumber;
@@ -2618,7 +2619,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("rk3")]
+        [DataMember(Name = "rk3")]
         public int ShopTier
         {
             get => shopTier;
@@ -2632,7 +2633,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Ue9")]
+        [DataMember(Name = "Ue9")]
         public bool HasAccessToNexus
         {
             get => hasAccessToNexus;
@@ -2646,7 +2647,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("hiE")]
+        [DataMember(Name = "hiE")]
         public UniverseCoordinates NexusUniverseAddress
         {
             get => nexusUniverseAddress;
@@ -2660,7 +2661,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Fk@")]
+        [DataMember(Name = "Fk@")]
         public float[] NexusMatrixAt
         {
             get => nexusMatrixAt;
@@ -2674,7 +2675,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("d72")]
+        [DataMember(Name = "d72")]
         public float[] NexusMatrixUp
         {
             get => nexusMatrixUp;
@@ -2688,7 +2689,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Yel")]
+        [DataMember(Name = "Yel")]
         public float[] NexusMatrixPos
         {
             get => nexusMatrixPos;
@@ -2702,7 +2703,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("j3Y")]
+        [DataMember(Name = "j3Y")]
         public PhotoSettings PhotoModeSettings
         {
             get => photoModeSettings;
@@ -2716,7 +2717,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("9hR")]
+        [DataMember(Name = "9hR")]
         public int BannerIcon
         {
             get => bannerIcon;
@@ -2730,7 +2731,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8DG")]
+        [DataMember(Name = "8DG")]
         public int BannerMainColour
         {
             get => bannerMainColour;
@@ -2744,7 +2745,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("lmE")]
+        [DataMember(Name = "lmE")]
         public int BannerBackgroundColour
         {
             get => bannerBackgroundColour;
@@ -2758,7 +2759,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aNF")]
+        [DataMember(Name = "aNF")]
         public string BannerTitleId
         {
             get => bannerTitleId;
@@ -2772,7 +2773,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("qFl")]
+        [DataMember(Name = "qFl")]
         public long TelemetryUploadVersion
         {
             get => telemetryUploadVersion;
@@ -2786,7 +2787,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wb:")]
+        [DataMember(Name = "wb:")]
         public bool UsesThirdPersonVehicleCam
         {
             get => usesThirdPersonVehicleCam;
@@ -2800,7 +2801,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("T>Z")]
+        [DataMember(Name = "T>Z")]
         public float VRCameraOffset
         {
             get => vRCameraOffset;
@@ -2814,7 +2815,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("TFZ")]
+        [DataMember(Name = "TFZ")]
         public SeasonData SeasonalData
         {
             get => seasonalData;

@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class KeyAction : ModelBase
     {
         private Action action;
@@ -11,7 +12,7 @@ namespace NMSTools.Models
         private int number;
         private SlotIndex inventoryIndex;
 
-        [JsonProperty("TD8")]
+        [DataMember(Name = "TD8")]
         public Action Action
         {
             get => action;
@@ -25,7 +26,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("b2n")]
+        [DataMember(Name = "b2n")]
         public string Id
         {
             get => id;
@@ -39,7 +40,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Y5p")]
+        [DataMember(Name = "Y5p")]
         public int Number
         {
             get => number;
@@ -53,7 +54,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("WX8")]
+        [DataMember(Name = "WX8")]
         public SlotIndex InventoryIndex
         {
             get => inventoryIndex;

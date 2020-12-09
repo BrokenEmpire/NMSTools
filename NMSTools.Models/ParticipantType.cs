@@ -1,14 +1,15 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class ParticipantType : ModelBase
     {
         private string participantMode;
 
-        [JsonProperty("M?f")]
+        [DataMember(Name = "M?f")]
         public string ParticipantMode
         {
             get => participantMode;

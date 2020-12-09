@@ -1,10 +1,11 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
     using Common;
 
+    [DataContract]
     public class RecordData : ModelBase
     {
         private DD dD;
@@ -14,7 +15,7 @@ namespace NMSTools.Models
         private string rID;
         private string pTK;
 
-        [JsonProperty("8P3")]
+        [DataMember(Name = "8P3")]
         public DD DD
         {
             get => dD;
@@ -28,7 +29,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("q9a")]
+        [DataMember(Name = "q9a")]
         public DM DM
         {
             get => dM;
@@ -42,7 +43,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ksu")]
+        [DataMember(Name = "ksu")]
         public OWS OWS
         {
             get => oWS;
@@ -56,7 +57,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("=wD")]
+        [DataMember(Name = "=wD")]
         public FL FL
         {
             get => fL;
@@ -70,7 +71,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("B2h")]
+        [DataMember(Name = "B2h")]
         public string RID
         {
             get => rID;
@@ -84,7 +85,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("D6b")]
+        [DataMember(Name = "D6b")]
         public string PTK
         {
             get => pTK;

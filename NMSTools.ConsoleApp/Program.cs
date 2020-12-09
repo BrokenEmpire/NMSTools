@@ -1,12 +1,10 @@
-﻿using Newtonsoft.Json;
-using System.Collections.Generic;
+﻿using libMBIN;
+using Newtonsoft.Json;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
-using System.Diagnostics;
-using libMBIN;
 
 namespace NMSTools.ConsoleApp
 {
@@ -48,34 +46,10 @@ namespace NMSTools.ConsoleApp
         static void Main(string[] args)
         {
             var root = Deserialize<NMSRoot>(saveFile);
+            GenerateClasses<NMSRoot>("C:\\Users\\dhr\\Desktop\\NMS");
+           // DumpClassInfo<NMSRoot>("C:\\Users\\dhr\\Desktop\\dump.txt");
 
-            DumpClassInfo<NMSRoot>("C:\\Users\\dhr\\Desktop\\dump.txt");
-
-            Serialize(root, saveFile + ".test");
-
-            using var inputFileA = File.Open(saveFile, FileMode.Open);
-            using var inputFileB = File.Open(saveFile + ".test", FileMode.Open);
-            using var srA = new StreamReader(inputFileA);
-            using var srB = new StreamReader(inputFileB);
-            var pos = 0;
-            var intA = 0;
-            var intB = 0;
-
-            while (!(srA.EndOfStream | srB.EndOfStream))
-            {
-                pos++;
-
-                intA = srA.Read();         
-                intB = srB.Read();
-
-                if (intA != intB)
-                {
-                    Console.WriteLine(pos);
-                    break;
-                }
-            }
-
-
+            //  Serialize(root, saveFile + ".test");
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
@@ -121,6 +95,9 @@ namespace NMSTools.ConsoleApp
                 jtw = new JsonTextWriter(sw);
 
                 serializer.Serialize(jtw, value, typeof(T));
+
+
+
             }
             catch (Exception ex)
             {
@@ -213,8 +190,15 @@ namespace NMSTools.ConsoleApp
             return result;
         }
 
-        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e) => Console.WriteLine(e.ToString());
-        
+        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e)
+        {
+            
+
+            Console.WriteLine(e.ErrorContext.Error.Message);
+
+
+        }
+
         static void ExtractMBins(string input, string output)
         {
             if (!Directory.Exists(input))
@@ -307,7 +291,7 @@ namespace NMSTools.ConsoleApp
                 Debug.WriteLine(output);
                 Console.WriteLine(output);
 
-                if (group.Key == "@EL")
+                if (group.Key == "wMC")
                 {
                     foreach (var prop in group)
                     {
@@ -320,8 +304,45 @@ namespace NMSTools.ConsoleApp
                 }
             }
         }
+        static void GenerateClasses<T>(string path) where T : class
+        {
+            if (!Directory.Exists(path))
+                Directory.CreateDirectory(path);
 
-        static void GenerateClasses<T>() where T : class
+            foreach (var classType in typeof(T).Assembly.DefinedTypes)
+            {
+                using var outputFile = File.Create(string.Format("{0}\\{1}.cs", path, classType.Name));
+                using var writer = new StreamWriter(outputFile);
+
+                if (classType.IsAbstract)
+                    continue;
+
+                // Search the members of each class to determin which namespaces we need to references.
+                var isObjectModelRequired = classType.GetProperties().Where(i => i.PropertyType.Namespace == "System.Collections.ObjectModel").Count() > 0;
+
+                if (isObjectModelRequired)
+                    writer.WriteLine("using System.Collections.ObjectModel;");
+
+                writer.WriteLine("using System.Runtime.Serialization;");
+                writer.WriteLine("namespace NMSTools.DB");
+                writer.WriteLine("{");
+                writer.WriteLine("\tusing Base;");
+                writer.WriteLine("");
+                writer.WriteLine("\t[DataContract]");
+                writer.WriteLine("\tpublic class {0} : ModelBase", classType.Name);
+                writer.WriteLine("\t{");
+
+                // foreach (var property in classType.GetProperties())
+                // Console.WriteLine("{0}\t\t\t{1}\t{2}", 
+                //   property.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName,
+                //   property.Name, 
+                //  property.PropertyType);
+
+                writer.WriteLine("\t}");
+                writer.WriteLine("}");
+            }
+        }
+        static void GenerateNativeClasses<T>() where T : class
         {
             foreach (var classType in typeof(T).Assembly.DefinedTypes)
             {

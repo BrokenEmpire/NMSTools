@@ -1,15 +1,16 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class SlotIndex : ModelBase
     {
         private short x;
         private short y;
 
-        [JsonProperty(">Qh")]
+        [DataMember(Name = ">Qh")]
         public short X
         {
             get => x;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("XJ>")]
+        [DataMember(Name = "XJ>")]
         public short Y
         {
             get => y;

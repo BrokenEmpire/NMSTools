@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class StoredInteraction : ModelBase
     {
         private Interaction[] interactions;
         private int currentPos;
 
-        [JsonProperty("O49")]
+        [DataMember(Name = "O49")]
         public Interaction[] Interactions
         {
             get => interactions;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Xf4")]
+        [DataMember(Name = "Xf4")]
         public int CurrentPos
         {
             get => currentPos;

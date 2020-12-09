@@ -1,15 +1,16 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class StatValue : ModelBase
     {
         private int intValue;
-        private float floatValue;
+        private decimal floatValue;
 
-        [JsonProperty(">vs")]
+        [DataMember(Name = ">vs", EmitDefaultValue = false)]
         public int IntValue
         {
             get => intValue;
@@ -23,8 +24,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eoL")]
-        public float FloatValue
+        [DataMember(Name = "eoL", EmitDefaultValue = false)]
+        public decimal FloatValue
         {
             get => floatValue;
             set

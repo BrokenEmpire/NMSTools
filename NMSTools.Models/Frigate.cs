@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Frigate : ModelBase
     {
         private object[] resourceSeed;
@@ -21,7 +22,7 @@ namespace NMSTools.Models
         private int repairsMade;
         private int damageTaken;
 
-        [JsonProperty("SLc")]
+        [DataMember(Name = "SLc")]
         public object[] ResourceSeed
         {
             get => resourceSeed;
@@ -35,7 +36,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@ui")]
+        [DataMember(Name = "@ui")]
         public object[] HomeSystemSeed
         {
             get => homeSystemSeed;
@@ -49,7 +50,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4kx")]
+        [DataMember(Name = "4kx")]
         public int TimeOfLastIncomeCollection
         {
             get => timeOfLastIncomeCollection;
@@ -63,7 +64,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("fH8")]
+        [DataMember(Name = "fH8")]
         public string CustomName
         {
             get => customName;
@@ -77,7 +78,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("uw7")]
+        [DataMember(Name = "uw7")]
         public FrigateClass FrigateType
         {
             get => frigateType;
@@ -91,7 +92,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("SS2")]
+        [DataMember(Name = "SS2")]
         public Race Race
         {
             get => race;
@@ -105,7 +106,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5es")]
+        [DataMember(Name = "5es")]
         public int TotalNumberOfExpeditions
         {
             get => totalNumberOfExpeditions;
@@ -119,7 +120,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("v=L")]
+        [DataMember(Name = "v=L")]
         public int TotalNumberOfSuccessfulEvents
         {
             get => totalNumberOfSuccessfulEvents;
@@ -133,7 +134,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("5VG")]
+        [DataMember(Name = "5VG")]
         public int TotalNumberOfFailedEvents
         {
             get => totalNumberOfFailedEvents;
@@ -147,7 +148,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("MuL")]
+        [DataMember(Name = "MuL")]
         public int NumberOfTimesDamaged
         {
             get => numberOfTimesDamaged;
@@ -161,7 +162,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Mjm")]
+        [DataMember(Name = "Mjm")]
         public string[] TraitIDs
         {
             get => traitIDs;
@@ -175,7 +176,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("gUR")]
+        [DataMember(Name = "gUR")]
         public int[] Stats
         {
             get => stats;
@@ -189,7 +190,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("yJC")]
+        [DataMember(Name = "yJC")]
         public int RepairsMade
         {
             get => repairsMade;
@@ -203,7 +204,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("7hK")]
+        [DataMember(Name = "7hK")]
         public int DamageTaken
         {
             get => damageTaken;

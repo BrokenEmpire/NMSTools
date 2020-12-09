@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class DiscoveryData : ModelBase
     {
         private Discovery discoveryDataV1;
 
-        [JsonProperty("ETO")]
+        [DataMember(Name = "ETO")]
         public Discovery DiscoveryDataV1
         {
             get => discoveryDataV1;

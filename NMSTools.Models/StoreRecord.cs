@@ -1,14 +1,15 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class StoreRecord : ModelBase
     {
         private RecordData[] records;
 
-        [JsonProperty("?fB")]
+        [DataMember(Name = "?fB")]
         public RecordData[] Records
         {
             get => records;

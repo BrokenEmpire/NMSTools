@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class InteractionData : ModelBase
     {
         private Catalog inventoryContainer;
@@ -13,7 +14,7 @@ namespace NMSTools.Models
         private float[] damageTimers;
         private int flags;
 
-        [JsonProperty("=yU")]
+        [DataMember(Name = "=yU")]
         public Catalog InventoryContainer
         {
             get => inventoryContainer;
@@ -27,7 +28,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wx7")]
+        [DataMember(Name = "wx7")]
         public int LastUpdateTimestamp
         {
             get => lastUpdateTimestamp;
@@ -41,7 +42,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eyv")]
+        [DataMember(Name = "eyv")]
         public int LastCompletedTimestamp
         {
             get => lastCompletedTimestamp;
@@ -55,7 +56,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("FML")]
+        [DataMember(Name = "FML")]
         public int LastBrokenTimestamp
         {
             get => lastBrokenTimestamp;
@@ -69,7 +70,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("4>;")]
+        [DataMember(Name = "4>;")]
         public float[] DamageTimers
         {
             get => damageTimers;
@@ -83,7 +84,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("XV5")]
+        [DataMember(Name = "XV5")]
         public int Flags
         {
             get => flags;

@@ -1,15 +1,16 @@
-using Newtonsoft.Json;
+using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class StatData : ModelBase
     {
         private string baseStatID;
         private decimal statValue;
 
-        [JsonProperty("QL1")]
+        [DataMember(Name = "QL1")]
         public string BaseStatID
         {
             get => baseStatID;
@@ -23,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(">MX")]
+        [DataMember(Name = ">MX")]
         public decimal StatValue
         {
             get => statValue;

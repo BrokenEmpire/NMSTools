@@ -1,16 +1,17 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Telemetry : ModelBase
     {
         private string id;
         private string telemetryType;
         private int telemetryValue;
 
-        [JsonProperty("b2n")]
+        [DataMember(Name = "b2n")]
         public string Id
         {
             get => id;
@@ -24,7 +25,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("Vn8")]
+        [DataMember(Name = "Vn8")]
         public string TelemetryType
         {
             get => telemetryType;
@@ -38,7 +39,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty(">MX")]
+        [DataMember(Name = ">MX")]
         public int TelemetryValue
         {
             get => telemetryValue;

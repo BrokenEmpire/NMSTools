@@ -1,9 +1,10 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class BuildingObject : ModelBase
     {
         private int timestamp;
@@ -11,11 +12,11 @@ namespace NMSTools.Models
         private string galacticAddress;
         private string regionSeed;
         private int userData;
-        private float[] position;
-        private float[] up;
-        private float[] at;
+        private decimal[] position;
+        private decimal[] up;
+        private decimal[] at;
 
-        [JsonProperty("b1:")]
+        [DataMember(Name = "b1:")]
         public int Timestamp
         {
             get => timestamp;
@@ -29,7 +30,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("r<7")]
+        [DataMember(Name = "r<7")]
         public string ObjectID
         {
             get => objectID;
@@ -43,7 +44,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("oZw")]
+        [DataMember(Name = "oZw")]
         public string GalacticAddress
         {
             get => galacticAddress;
@@ -57,7 +58,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("ofi")]
+        [DataMember(Name = "ofi")]
         public string RegionSeed
         {
             get => regionSeed;
@@ -71,7 +72,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("CVX")]
+        [DataMember(Name = "CVX")]
         public int UserData
         {
             get => userData;
@@ -85,8 +86,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wMC")]
-        public float[] Position
+        [DataMember(Name = "wMC")]
+        public decimal[] Position
         {
             get => position;
             set
@@ -99,8 +100,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("wJ0")]
-        public float[] Up
+        [DataMember(Name = "wJ0")]
+        public decimal[] Up
         {
             get => up; set
             {
@@ -112,8 +113,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("aNu")]
-        public float[] At
+        [DataMember(Name = "aNu")]
+        public decimal[] At
         {
             get => at;
             set

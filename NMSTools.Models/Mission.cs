@@ -1,18 +1,19 @@
-﻿using Newtonsoft.Json;
+﻿using System.Runtime.Serialization;
 
 namespace NMSTools.Models
 {
     using Base;
 
+    [DataContract]
     public class Mission : ModelBase
     {
         private string missionName;
         private int progress;
-        private string seed;
+        private object seed;
         private int data;
         private Participant[] participants;
 
-        [JsonProperty("p0c")]
+        [DataMember(Name = "p0c")]
         public string MissionName
         {
             get => missionName;
@@ -26,7 +27,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("tW6")]
+        [DataMember(Name = "tW6")]
         public int Progress
         {
             get => progress;
@@ -40,8 +41,8 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("@EL")]
-        public string Seed
+        [DataMember(Name = "@EL")]
+        public object Seed
         {
             get => seed;
             set
@@ -54,7 +55,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("8?J")]
+        [DataMember(Name = "8?J")]
         public int Data
         {
             get => data;
@@ -68,7 +69,7 @@ namespace NMSTools.Models
             }
         }
 
-        [JsonProperty("eZ7")]
+        [DataMember(Name = "eZ7")]
         public Participant[] Participants
         {
             get => participants;

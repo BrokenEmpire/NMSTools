@@ -8,9 +8,9 @@ namespace NMSTools.Models
     {
         private SlotDescription slotType;
         private string id;
-        private long amount;
-        private long maxAmount;
-        private long damageFactor;
+        private int amount;
+        private int maxAmount;
+        private float damageFactor;
         private bool fullyInstalled;
         private SlotIndex index;
 
@@ -43,7 +43,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("1o9")]
-        public long Amount
+        public int Amount
         {
             get => amount;
             set
@@ -57,7 +57,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("F9q")]
-        public long MaxAmount
+        public int MaxAmount
         {
             get => maxAmount;
             set
@@ -71,7 +71,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eVk")]
-        public long DamageFactor
+        public float DamageFactor
         {
             get => damageFactor;
             set

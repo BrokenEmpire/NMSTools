@@ -8,7 +8,7 @@ namespace NMSTools.Models
     {
         private CatalogLayout layout;
         private Catalog store;
-        private string[] seed;
+        private object[] seed;
         private string name;
         private bool isLarge;
         private long primaryMode;
@@ -43,7 +43,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("@EL")]
-        public string[] Seed
+        public object[] Seed
         {
             get => seed;
             set

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System;
 using System.IO;
 using System.Linq;
-
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Diagnostics;
 using libMBIN;
 
 namespace NMSTools.ConsoleApp
@@ -45,23 +47,35 @@ namespace NMSTools.ConsoleApp
 
         static void Main(string[] args)
         {
-            var root = ParseJson(saveFile);
+            var root = Deserialize<NMSRoot>(saveFile);
 
-            foreach (var playerBase in root.PlayerStateData.PersistentPlayerBases)
+            DumpClassInfo<NMSRoot>("C:\\Users\\dhr\\Desktop\\dump.txt");
+
+            Serialize(root, saveFile + ".test");
+
+            using var inputFileA = File.Open(saveFile, FileMode.Open);
+            using var inputFileB = File.Open(saveFile + ".test", FileMode.Open);
+            using var srA = new StreamReader(inputFileA);
+            using var srB = new StreamReader(inputFileB);
+            var pos = 0;
+            var intA = 0;
+            var intB = 0;
+
+            while (!(srA.EndOfStream | srB.EndOfStream))
             {
-                Console.WriteLine(playerBase.Name);
+                pos++;
 
-                foreach (var baseObject in playerBase.Objects)
+                intA = srA.Read();         
+                intB = srB.Read();
+
+                if (intA != intB)
                 {
-                    Console.WriteLine("Object ID: {0}", baseObject.ObjectID);
-                    Console.WriteLine("Position: [ {0}, {1}, {2} ]", baseObject.Position[0], baseObject.Position[1], baseObject.Position[2]);
-                    Console.WriteLine("Up:       [ {0}, {1}, {2} ]", baseObject.Up[0], baseObject.Up[1], baseObject.Up[2]);
-                    Console.WriteLine("At:       [ {0}, {1}, {2} ]", baseObject.At[0], baseObject.At[1], baseObject.At[2]);
-                    Console.WriteLine();
+                    Console.WriteLine(pos);
+                    break;
                 }
-
-                break;
             }
+
+
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
@@ -69,18 +83,138 @@ namespace NMSTools.ConsoleApp
             
         }
 
-        static NMSRoot ParseJson(string filename)
+        static void FindOtherFiles()
         {
-            using var inputFile = File.Open(filename, FileMode.Open);
-            using var sr = new StreamReader(inputFile);
-            using var json = new JsonTextReader(sr);
+            using var outputFile = File.Create("C:\\Users\\dhr\\Desktop\\output.txt");
+            using var sw = new StreamWriter(outputFile);
+            var dirInfo = new DirectoryInfo(mBinDir);
+            var files = dirInfo.GetFiles("*.*", SearchOption.AllDirectories);
 
-            var serializer = new JsonSerializer();
-            var root = serializer.Deserialize<NMSRoot>(json);
+            foreach (var item in files.Where(i => !i.Extension.Equals(".MBIN")).GroupBy(i => i.Extension))
+            {
 
-            return root;
+                sw.WriteLine(string.Format("{0} ({1})", item.Key, item.Count()));
+                foreach (var file in item)
+                {
+                    sw.WriteLine(string.Format("  {0}", file.FullName));
+                }
+
+                sw.WriteLine();
+            }
         }
 
+        
+        static void Serialize<T>(T value, string filename)
+        {
+            FileStream outputFile = default;
+            StreamWriter sw = default;
+            JsonTextWriter jtw = default;
+            JsonSerializer serializer = default;
+
+            try
+            {
+                serializer = new JsonSerializer();
+                serializer.Error += Serializer_Error;
+
+                outputFile = File.Create(filename);
+                sw = new StreamWriter(outputFile);
+                jtw = new JsonTextWriter(sw);
+
+                serializer.Serialize(jtw, value, typeof(T));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (jtw != null)
+                {  
+                    jtw.Close();
+
+                    ((IDisposable)jtw).Dispose();
+                    jtw = null;
+                }
+
+                if (sw != null)
+                {
+                    sw.Close();
+
+                    sw.Dispose();
+                    sw = null;
+                }
+
+                if (outputFile != null)
+                {
+                    outputFile.Close();
+
+                    outputFile.Dispose();
+                    outputFile = null;
+                }
+
+                serializer.Error -= Serializer_Error;
+                serializer = null;
+            }
+        }   
+
+        static T Deserialize<T>(string filename) where T : class
+        {
+            T result = default;
+            FileStream inputFile = default;
+            StreamReader sr = default;
+            JsonTextReader jtr = default;
+            JsonSerializer serializer = default;
+
+            try
+            {
+                serializer = new JsonSerializer();
+                serializer.Error += Serializer_Error;
+
+                inputFile = File.Open(filename, FileMode.Open);
+                sr = new StreamReader(inputFile);
+                jtr = new JsonTextReader(sr);
+
+                result = serializer.Deserialize<T>(jtr);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (jtr != null)
+                {
+                    jtr.Close();
+
+                    ((IDisposable)jtr).Dispose();
+                    jtr = null;
+                }
+
+                if (sr != null)
+                {
+                    sr.Close();
+
+                    sr.Dispose();
+                    sr = null;
+                }
+
+                if (inputFile != null)
+                {
+                    inputFile.Close();
+
+                    inputFile.Dispose();
+                    inputFile = null;
+                }
+
+                serializer.Error -= Serializer_Error;
+                serializer = null;
+            }
+
+            return result;
+        }
+
+        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e) => Console.WriteLine(e.ToString());
+        
         static void ExtractMBins(string input, string output)
         {
             if (!Directory.Exists(input))
@@ -157,105 +291,68 @@ namespace NMSTools.ConsoleApp
             sw.Flush();
         }
 
-        static void GenerateClasses(string input, string output)
+        static void DumpClassInfo<T>(string path) where T : class
         {
-            if (!Directory.Exists(input))
-            {
-                Console.WriteLine("Input directory does not exist.");
-                Console.Read();
+            using var outputFile = File.Create(path);
+            using var writer = new StreamWriter(outputFile);
 
-                return;
+            var definedTypes = typeof(T).Assembly.DefinedTypes.Where(i => !i.IsAbstract)
+                                                              .SelectMany(i => i.GetProperties())
+                                                              .Select(i => new { Key = i.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName, PropertyName = i.Name, i.PropertyType, Property = i }).GroupBy(i => i.Key).OrderByDescending(i => i.Count());
+            foreach (var group in definedTypes)
+            {
+                var output = string.Format("{0} ({1})", group.Key, group.Count());
+
+                writer.WriteLine(output);
+                Debug.WriteLine(output);
+                Console.WriteLine(output);
+
+                if (group.Key == "@EL")
+                {
+                    foreach (var prop in group)
+                    {
+                        output = string.Format("{0}.{1} ({2})", prop.Property.ReflectedType.Name, prop.PropertyName, prop.PropertyType);
+
+                        writer.WriteLine(output);
+                        Debug.WriteLine(output);
+                        Console.WriteLine(output);
+                    }
+                }
             }
+        }
 
-            if (!Directory.Exists(output))
-                Directory.CreateDirectory(output);
-
-            var dirInfo = new DirectoryInfo(input);
-            var modelFiles = dirInfo.GetFiles("*.cs", SearchOption.AllDirectories);
-
-            foreach (var file in modelFiles)
+        static void GenerateClasses<T>() where T : class
+        {
+            foreach (var classType in typeof(T).Assembly.DefinedTypes)
             {
-                switch (file.Directory.Name)
-                {
-                    case "Base":
-                    case "Debug":
-                    case "Release":
-                    case "Properties":
-                        continue;
+                using var outputFile = File.Create(string.Format("{0}{1}.hpp", "C:\\Users\\dhr\\Desktop\\NMS\\", classType.Name));
+                using var writer = new StreamWriter(outputFile);
 
-                    default:
-                        break;
-                }
+                if (classType.IsAbstract)
+                    continue;
 
-                using var inputFile = file.Open(FileMode.Open, FileAccess.Read);
-                using var outputFile = File.Create(output + "\\" + file.Name);
-                using var sr = new StreamReader(inputFile);
-                using var sw = new StreamWriter(outputFile);
+                var includeGuard = string.Format("_NMSTOOLKIT_DB_{0}_H", classType.Name.ToUpper());
 
-                var fields = new List<FieldData>();
+                writer.WriteLine(string.Format("#ifndef {0}", includeGuard));
+                writer.WriteLine(string.Format("#define {0}", includeGuard));
 
-                sw.WriteLine("using Newtonsoft.Json;");
-                sw.WriteLine("using System;");
-                sw.WriteLine("using System.Collections.Generic;");
-                sw.WriteLine("using System.Collections.ObjectModel;");
-                sw.WriteLine("");
+                writer.WriteLine();
+                writer.WriteLine("namespace NMSToolKit");
+                writer.WriteLine("{");
+                writer.WriteLine("\tnamespace DB");
+                writer.WriteLine("\t{");
+                writer.WriteLine("\t\tclass {0}", classType.Name);
+                writer.WriteLine("\t\t{");
+                writer.WriteLine("\t\tpublic:");
+                writer.WriteLine("\t\t\t{0}();", classType.Name);
+                writer.WriteLine("\t\t\tvirtual ~{0}();", classType.Name);
+                foreach (var property in classType.GetProperties())
+                    Console.WriteLine("{0}\t\t\t{1}\t{2}", property.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName, property.Name, property.PropertyType);
 
-                var line = string.Empty;
-                while (!sr.EndOfStream)
-                {
-                    line = sr.ReadLine();
-
-                    if (line.Contains("namespace"))
-                    {
-                        sw.WriteLine(line);
-                        sw.WriteLine("{");
-                        sw.WriteLine("\tusing Base;");
-                        sw.WriteLine("\tusing Common;");
-                        sw.WriteLine("");
-                    }
-                    else if (line.Contains("public class"))
-                    {
-                        sw.WriteLine(line + " : ModelBase");
-                        sw.WriteLine("\t{");
-                    }
-                    else if (line.Contains("JsonProperty"))
-                    {
-                        var field = new FieldData { Attribute = line };
-                        var components = sr.ReadLine().Replace("{ get; set; }", "").Trim().Split(' ');
-
-                        field.Type = components[1];
-                        field.Name = components[2];
-
-                        fields.Add(field);
-                    }
-                }
-
-                foreach (var field in fields)
-                    sw.WriteLine("\t\tprivate {0} {1};", field.GetGeneratedType(), field.GetPrivateName());
-
-                sw.WriteLine();
-
-                foreach (var field in fields)
-                {
-                    sw.WriteLine(field.Attribute);
-                    sw.WriteLine("\t\tpublic {0} {1}", field.GetGeneratedType(), field.Name);
-                    sw.WriteLine("\t\t{");
-
-                    sw.WriteLine("\t\t\tget => {0};", field.GetPrivateName());
-                    sw.WriteLine("\t\t\tset");
-                    sw.WriteLine("\t\t\t{");
-                    sw.WriteLine("\t\t\t\tif ((ReferenceEquals({0}, value) != true))", field.GetPrivateName());
-                    sw.WriteLine("\t\t\t\t{");
-                    sw.WriteLine("\t\t\t\t\t{0} = value;", field.GetPrivateName());
-                    sw.WriteLine("\t\t\t\t\tOnPropertyChanged(\"{0}\");", field.Name);
-                    sw.WriteLine("\t\t\t\t}");
-                    sw.WriteLine("\t\t\t}");
-                    sw.WriteLine("\t\t}");
-                    sw.WriteLine();
-                }
-
-                sw.WriteLine("\t}");
-                sw.WriteLine("}");
+                writer.WriteLine("\t\t};");
+                writer.WriteLine("\t}");
+                writer.WriteLine("}");
+                writer.Write(string.Format("#endif // !_NMSTOOLKIT_DB_{0}_H", classType.Name.ToUpper()));
             }
         }
     }

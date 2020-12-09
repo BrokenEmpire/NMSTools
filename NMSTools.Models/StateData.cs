@@ -21,9 +21,9 @@ namespace NMSTools.Models
         private bool spawnGrave;
         private bool spaceGrave;
         private UniverseCoordinates graveUniverseAddress;
-        private float[] gravePosition;
-        private float[] graveMatrixLookAt;
-        private float[] graveMatrixUp;
+        private decimal[] gravePosition;
+        private decimal[] graveMatrixLookAt;
+        private decimal[] graveMatrixUp;
         private CatalogLayout shipLayout;
         private CatalogLayout weaponLayout;
         private ProceduralObject currentShip;
@@ -393,7 +393,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("4ia")]
-        public float[] GravePosition
+        public decimal[] GravePosition
         {
             get => gravePosition;
             set
@@ -407,7 +407,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("gIh")]
-        public float[] GraveMatrixLookAt
+        public decimal[] GraveMatrixLookAt
         {
             get => graveMatrixLookAt;
             set
@@ -421,7 +421,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("YJU")]
-        public float[] GraveMatrixUp
+        public decimal[] GraveMatrixUp
         {
             get => graveMatrixUp;
             set

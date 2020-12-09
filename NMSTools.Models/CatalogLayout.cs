@@ -7,7 +7,7 @@ namespace NMSTools.Models
     public class CatalogLayout : ModelBase
     {
         private int slots;
-        private string[] seed;
+        private object[] seed;
         private int level;
 
         [JsonProperty(":No")]
@@ -25,7 +25,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("@EL")]
-        public string[] Seed
+        public object[] Seed
         {
             get => seed;
             set

@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="AvailableDiscovery.cs" />
+    <Compile Include="Base\FileNameConverter.cs" />
     <Compile Include="Base\ModelBase.cs" />
     <Compile Include="BoneScale.cs" />
     <Compile Include="BuildingObject.cs" />

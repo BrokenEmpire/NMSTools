@@ -7,9 +7,9 @@ namespace NMSTools.Models
     public class StatData : ModelBase
     {
         private string baseStatID;
-        private float statValue;
+        private decimal statValue;
 
-        [JsonProperty("@bB")]
+        [JsonProperty("QL1")]
         public string BaseStatID
         {
             get => baseStatID;
@@ -24,7 +24,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty(">MX")]
-        public float StatValue
+        public decimal StatValue
         {
             get => statValue;
             set

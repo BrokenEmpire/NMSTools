@@ -1,22 +1,21 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class BuildingObject : ModelBase
     {
         private int timestamp;
         private string objectID;
-        private string galacticAddress;
+        private object galacticAddress;
         private string regionSeed;
         private int userData;
         private decimal[] position;
         private decimal[] up;
         private decimal[] at;
 
-        [DataMember(Name = "b1:")]
+        [JsonProperty("b1:")]
         public int Timestamp
         {
             get => timestamp;
@@ -30,7 +29,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "r<7")]
+        [JsonProperty("r<7")]
         public string ObjectID
         {
             get => objectID;
@@ -44,8 +43,8 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "oZw")]
-        public string GalacticAddress
+        [JsonProperty("oZw")]
+        public object GalacticAddress
         {
             get => galacticAddress;
             set
@@ -58,7 +57,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "ofi")]
+        [JsonProperty("ofi")]
         public string RegionSeed
         {
             get => regionSeed;
@@ -72,7 +71,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "CVX")]
+        [JsonProperty("CVX")]
         public int UserData
         {
             get => userData;
@@ -86,7 +85,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wMC")]
+        [JsonProperty("wMC")]
         public decimal[] Position
         {
             get => position;
@@ -100,7 +99,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wJ0")]
+        [JsonProperty("wJ0")]
         public decimal[] Up
         {
             get => up; set
@@ -113,7 +112,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "aNu")]
+        [JsonProperty("aNu")]
         public decimal[] At
         {
             get => at;

@@ -1,17 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class CatalogLayout : ModelBase
     {
         private int slots;
         private object[] seed;
         private int level;
 
-        [DataMember(Name = ":No")]
+        [JsonProperty(":No")]
         public int Slots
         {
             get => slots;
@@ -25,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "@EL")]
+        [JsonProperty("@EL")]
         public object[] Seed
         {
             get => seed;
@@ -39,7 +38,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "9;o")]
+        [JsonProperty("9;o")]
         public int Level
         {
             get => level;

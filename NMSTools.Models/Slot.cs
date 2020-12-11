@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class Slot : ModelBase
     {
         private SlotDescription slotType;
@@ -15,7 +14,7 @@ namespace NMSTools.Models
         private bool fullyInstalled;
         private SlotIndex index;
 
-        [DataMember(Name = "Vn8")]
+        [JsonProperty("Vn8")]
         public SlotDescription SlotType
         {
             get => slotType;
@@ -29,7 +28,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "b2n")]
+        [JsonProperty("b2n")]
         public string Id
         {
             get => id;
@@ -43,7 +42,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "1o9")]
+        [JsonProperty("1o9")]
         public int Amount
         {
             get => amount;
@@ -57,7 +56,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "F9q")]
+        [JsonProperty("F9q")]
         public int MaxAmount
         {
             get => maxAmount;
@@ -71,7 +70,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "eVk")]
+        [JsonProperty("eVk")]
         public float DamageFactor
         {
             get => damageFactor;
@@ -85,7 +84,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "b76")]
+        [JsonProperty("b76")]
         public bool FullyInstalled
         {
             get => fullyInstalled;
@@ -99,7 +98,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "3ZH")]
+        [JsonProperty("3ZH")]
         public SlotIndex Index
         {
             get => index;

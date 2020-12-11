@@ -1,10 +1,9 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class Participant : ModelBase
     {
         private object uA;
@@ -12,7 +11,7 @@ namespace NMSTools.Models
         private decimal[] buildingLocation;
         private ParticipantType participantMode;
 
-        [DataMember(Name = "5L6")]
+        [JsonProperty("5L6")]
         public object UA
         {
             get => uA;
@@ -26,7 +25,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "5bU")]
+        [JsonProperty("5bU")]
         public object[] BuildingSeed
         {
             get => buildingSeed;
@@ -40,7 +39,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "TWn")]
+        [JsonProperty("TWn")]
         public decimal[] BuildingLocation
         {
             get => buildingLocation;
@@ -54,7 +53,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "M?f")]
+        [JsonProperty("M?f")]
         public ParticipantType ParticipantMode
         {
             get => participantMode;

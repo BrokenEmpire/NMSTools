@@ -1,17 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+  
     public class Waypoint : ModelBase
     {
         private GalaxyCoordinates address;
         private WaypointType type;
         private string eventId;
 
-        [DataMember(Name = "2Ak")]
+        [JsonProperty("2Ak")]
         public GalaxyCoordinates Address
         {
             get => address;
@@ -25,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "Vn8")]
+        [JsonProperty("Vn8")]
         public WaypointType Type
         {
             get => type;
@@ -39,7 +38,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "SSo")]
+        [JsonProperty("SSo")]
         public string EventId
         {
             get => eventId;

@@ -1,20 +1,19 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class NPCWorker : ModelBase
     {
         private ProceduralObject resourceElement;
-        private string[] interactionSeed;
+        private object[] interactionSeed;
         private bool hiredWorker;
         private bool freighterBase;
         private string baseUA;
         private float[] baseOffset;
 
-        [DataMember(Name = "q08")]
+        [JsonProperty("q08")]
         public ProceduralObject ResourceElement
         {
             get => resourceElement;
@@ -28,8 +27,8 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "BKy")]
-        public string[] InteractionSeed
+        [JsonProperty("BKy")]
+        public object[] InteractionSeed
         {
             get => interactionSeed;
             set
@@ -42,7 +41,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "1wj")]
+        [JsonProperty("1wj")]
         public bool HiredWorker
         {
             get => hiredWorker;
@@ -56,7 +55,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "gNy")]
+        [JsonProperty("gNy")]
         public bool FreighterBase
         {
             get => freighterBase;
@@ -70,7 +69,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "pNt")]
+        [JsonProperty("pNt")]
         public string BaseUA
         {
             get => baseUA;
@@ -84,7 +83,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "TJx")]
+        [JsonProperty("TJx")]
         public float[] BaseOffset
         {
             get => baseOffset;

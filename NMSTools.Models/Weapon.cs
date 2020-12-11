@@ -1,16 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
 
-    [DataContract]
+    [JsonObject]
     public class Weapon : ModelBase
     {
         private string filename;
         private object[] generationSeed;
 
-        [DataMember(Name = "93M")]
+        [JsonProperty(PropertyName = "93M", ItemConverterType = typeof(FilePathConverter))]
         public string Filename
         {
             get => filename;
@@ -24,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "NNR")]
+        [JsonProperty("NNR")]
         public object[] GenerationSeed
         {
             get => generationSeed;

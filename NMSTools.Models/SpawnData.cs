@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class SpawnData : ModelBase
     {
         private float[] playerPositionInSystem;
@@ -19,7 +18,7 @@ namespace NMSTools.Models
         private float[] abandonedFreighterTransformAt;
         private float[] abandonedFreighterTransformUp;
 
-        [DataMember(Name = "mEH")]
+        [JsonProperty("mEH")]
         public float[] PlayerPositionInSystem
         {
             get => playerPositionInSystem;
@@ -33,7 +32,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "l2U")]
+        [JsonProperty("l2U")]
         public float[] PlayerTransformAt
         {
             get => playerTransformAt;
@@ -47,7 +46,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "tnP")]
+        [JsonProperty("tnP")]
         public float[] ShipPositionInSystem
         {
             get => shipPositionInSystem;
@@ -61,7 +60,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "l4H")]
+        [JsonProperty("l4H")]
         public float[] ShipTransformAt
         {
             get => shipTransformAt;
@@ -75,7 +74,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "jk4")]
+        [JsonProperty("jk4")]
         public string LastKnownPlayerState
         {
             get => lastKnownPlayerState;
@@ -89,7 +88,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "NGn")]
+        [JsonProperty("NGn")]
         public float[] FreighterPositionInSystem
         {
             get => freighterPositionInSystem;
@@ -103,7 +102,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "uAt")]
+        [JsonProperty("uAt")]
         public float[] FreighterTransformAt
         {
             get => freighterTransformAt;
@@ -117,7 +116,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "5Sg")]
+        [JsonProperty("5Sg")]
         public float[] FreighterTransformUp
         {
             get => freighterTransformUp;
@@ -131,7 +130,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "Ovv")]
+        [JsonProperty("Ovv")]
         public float[] AbandonedFreighterPositionInSystem
         {
             get => abandonedFreighterPositionInSystem;
@@ -145,7 +144,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "EkX")]
+        [JsonProperty("EkX")]
         public float[] AbandonedFreighterTransformAt
         {
             get => abandonedFreighterTransformAt;
@@ -159,7 +158,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "Bg3")]
+        [JsonProperty("Bg3")]
         public float[] AbandonedFreighterTransformUp
         {
             get => abandonedFreighterTransformUp;

@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class PortalData : ModelBase
     {
         private UniverseCoordinates universeAddress;
@@ -15,7 +14,7 @@ namespace NMSTools.Models
         private bool calcWarpOffset;
         private bool isFeatured;
 
-        [DataMember(Name = "yhJ")]
+        [JsonProperty("yhJ")]
         public UniverseCoordinates UniverseAddress
         {
             get => universeAddress;
@@ -29,7 +28,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wMC")]
+        [JsonProperty("wMC")]
         public float[] Position
         {
             get => position;
@@ -43,7 +42,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "gk4")]
+        [JsonProperty("gk4")]
         public float[] Facing
         {
             get => facing;
@@ -57,7 +56,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "iAF")]
+        [JsonProperty("iAF")]
         public string TeleporterType
         {
             get => teleporterType;
@@ -71,7 +70,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "NKm")]
+        [JsonProperty("NKm")]
         public string Name
         {
             get => name;
@@ -85,7 +84,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "a>;")]
+        [JsonProperty("a>;")]
         public bool CalcWarpOffset
         {
             get => calcWarpOffset;
@@ -99,7 +98,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "tww")]
+        [JsonProperty("tww")]
         public bool IsFeatured
         {
             get => isFeatured;

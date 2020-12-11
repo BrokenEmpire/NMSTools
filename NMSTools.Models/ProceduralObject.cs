@@ -1,10 +1,10 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
+    [JsonObject]
     public class ProceduralObject : ModelBase
     {
         private string filename;
@@ -12,7 +12,7 @@ namespace NMSTools.Models
         private string altId;
         private ProceduralObjectTexture proceduralTexture;
 
-        [DataMember(Name = "93M")]
+        [JsonProperty(PropertyName = "93M", ItemConverterType = typeof(FilePathConverter))]
         public string Filename
         {
             get => filename;
@@ -26,7 +26,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "@EL")]
+        [JsonProperty("@EL")]
         public object[] Seed
         {
             get => seed;
@@ -40,7 +40,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "QlJ")]
+        [JsonProperty("QlJ")]
         public string AltId
         {
             get => altId;
@@ -54,7 +54,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "<d2")]
+        [JsonProperty("<d2")]
         public ProceduralObjectTexture ProceduralTexture
         {
             get => proceduralTexture;

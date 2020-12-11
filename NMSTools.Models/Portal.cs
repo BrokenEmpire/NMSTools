@@ -1,17 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
 
-    [DataContract]
     public class Portal : ModelBase
     {
-        private string[] portalSeed;
-        private string lastPortalUA;
+        private object[] portalSeed;
+        private object lastPortalUA;
 
-        [DataMember(Name = "3fO")]
-        public string[] PortalSeed
+        [JsonProperty("3fO")]
+        public object[] PortalSeed
         {
             get => portalSeed;
             set
@@ -24,8 +23,8 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "K:U")]
-        public string LastPortalUA
+        [JsonProperty("K:U")]
+        public object LastPortalUA
         {
             get => lastPortalUA;
             set

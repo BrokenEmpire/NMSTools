@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class SeasonData : ModelBase
     {
         private long startTimeUTC;
@@ -24,7 +23,7 @@ namespace NMSTools.Models
         private object[] milestones;
         private object[] secondaryStats;
 
-        [DataMember(Name = "hyA")]
+        [JsonProperty("hyA")]
         public long StartTimeUTC
         {
             get => startTimeUTC;
@@ -38,7 +37,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "jqx")]
+        [JsonProperty("jqx")]
         public long EndTimeUTC
         {
             get => endTimeUTC;
@@ -52,7 +51,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "8wT")]
+        [JsonProperty("8wT")]
         public string Title
         {
             get => title;
@@ -66,7 +65,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "GLf")]
+        [JsonProperty("GLf")]
         public string SubTitle
         {
             get => subTitle;
@@ -80,7 +79,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "myI")]
+        [JsonProperty("myI")]
         public string Description
         {
             get => description;
@@ -94,7 +93,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "idA")]
+        [JsonProperty("idA")]
         public GamePreset GameMode
         {
             get => gameMode;
@@ -108,7 +107,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "8sY")]
+        [JsonProperty("8sY")]
         public string SeasonalUAOverride
         {
             get => seasonalUAOverride;
@@ -122,7 +121,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "GPe")]
+        [JsonProperty("GPe")]
         public long UAOverrideValue
         {
             get => uAOverrideValue;
@@ -136,7 +135,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "@lX")]
+        [JsonProperty("@lX")]
         public object[] WeaponSeed
         {
             get => weaponSeed;
@@ -150,7 +149,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "3R<")]
+        [JsonProperty("3R<")]
         public object[] ShipSeed
         {
             get => shipSeed;
@@ -164,7 +163,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "bLP")]
+        [JsonProperty("bLP")]
         public ShipTypeDescription ShipType
         {
             get => shipType;
@@ -178,7 +177,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "bnC")]
+        [JsonProperty("bnC")]
         public bool StartNextToShip
         {
             get => startNextToShip;
@@ -192,7 +191,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "jA9")]
+        [JsonProperty("jA9")]
         public bool ShipStartsDamaged
         {
             get => shipStartsDamaged;
@@ -206,7 +205,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "5XZ")]
+        [JsonProperty("5XZ")]
         public bool AllowMissionDetailMessages
         {
             get => allowMissionDetailMessages;
@@ -220,7 +219,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "kr6")]
+        [JsonProperty("kr6")]
         public object[] Milestones
         {
             get => milestones;
@@ -234,7 +233,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = ":Je")]
+        [JsonProperty(":Je")]
         public object[] SecondaryStats
         {
             get => secondaryStats;

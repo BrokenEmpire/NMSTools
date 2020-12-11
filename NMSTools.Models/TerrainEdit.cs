@@ -1,16 +1,15 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
 
-    [DataContract]
     public class TerrainEdit : ModelBase
     {
         private int data;
         private int position;
 
-        [DataMember(Name = "8?J")]
+        [JsonProperty("8?J")]
         public int Data
         {
             get => data;
@@ -24,7 +23,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wMC")]
+        [JsonProperty("wMC")]
         public int Position
         {
             get => position;

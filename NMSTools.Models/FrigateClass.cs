@@ -1,15 +1,14 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class FrigateClass : ModelBase
     {
         private string className;
 
-        [DataMember(Name = "uw7")]
+        [JsonProperty("uw7")]
         public string ClassName
         {
             get => className;

@@ -1,17 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models.Common
 {
     using Base;
-
-    [DataContract]
+        
     public class DD : ModelBase
     {
         private object uA;
         private string dT;
         private object[] vP;
 
-        [DataMember(Name = "5L6")]
+        [JsonProperty("5L6")]
         public object UA
         {
             get => uA;
@@ -25,7 +24,7 @@ namespace NMSTools.Models.Common
             }
         }
 
-        [DataMember(Name = "<Dn")]
+        [JsonProperty("<Dn")]
         public string DT
         {
             get => dT;
@@ -39,7 +38,7 @@ namespace NMSTools.Models.Common
             }
         }
 
-        [DataMember(Name = "bEr")]
+        [JsonProperty("bEr")]
         public object[] VP
         {
             get => vP;

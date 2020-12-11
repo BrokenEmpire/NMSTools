@@ -1,15 +1,14 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class KnowledgetData : ModelBase
     {
         private Waypoint[] waypoints;
 
-        [DataMember(Name = "yRy")]
+        [JsonProperty("yRy")]
         public Waypoint[] Waypoints
         {
             get => waypoints;

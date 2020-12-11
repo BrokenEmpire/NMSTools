@@ -1,16 +1,15 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class PaletteData : ModelBase
     {
         private string palette;
         private string colourAlt;
 
-        [DataMember(Name = "RVl")]
+        [JsonProperty("RVl")]
         public string Palette
         {
             get => palette;
@@ -24,7 +23,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "Ty=")]
+        [JsonProperty("Ty=")]
         public string ColourAlt
         {
             get => colourAlt;

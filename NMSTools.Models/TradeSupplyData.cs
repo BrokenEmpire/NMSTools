@@ -1,20 +1,19 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
 
-    [DataContract]
     public class TradeSupplyData : ModelBase
     {
-        private string galacticAddress;
+        private object galacticAddress;
         private float supply;
         private float demand;
         private string product;
         private int timestamp;
 
-        [DataMember(Name = "oZw")]
-        public string GalacticAddress
+        [JsonProperty("oZw")]
+        public object GalacticAddress
         {
             get => galacticAddress;
             set
@@ -27,7 +26,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "Iu7")]
+        [JsonProperty("Iu7")]
         public float Supply
         {
             get => supply;
@@ -41,7 +40,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "pfp")]
+        [JsonProperty("pfp")]
         public float Demand
         {
             get => demand;
@@ -55,7 +54,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "JWK")]
+        [JsonProperty("JWK")]
         public string Product
         {
             get => product;
@@ -69,7 +68,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "b1:")]
+        [JsonProperty("b1:")]
         public int Timestamp
         {
             get => timestamp;

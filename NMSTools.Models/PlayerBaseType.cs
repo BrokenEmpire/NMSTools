@@ -1,15 +1,14 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class PlayerBaseType : ModelBase
     {
         private string persistentBaseTypes;
 
-        [DataMember(Name = "DPp")]
+        [JsonProperty("DPp")]
         public string PersistentBaseTypes
         {
             get => persistentBaseTypes;

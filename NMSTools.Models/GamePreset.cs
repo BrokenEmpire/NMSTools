@@ -1,15 +1,14 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class GamePreset : ModelBase
     {
         private string presetGameMode;
 
-        [DataMember(Name = "pwt")]
+        [JsonProperty("pwt")]
         public string PresetGameMode
         {
             get => presetGameMode;

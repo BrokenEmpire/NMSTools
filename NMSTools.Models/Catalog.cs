@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class Catalog : ModelBase
     {
         private Slot[] slots;
@@ -20,7 +19,7 @@ namespace NMSTools.Models
         private string name;
         private int version;
 
-        [DataMember(Name = ":No")]
+        [JsonProperty(":No")]
         public Slot[] Slots
         {
             get => slots;
@@ -34,7 +33,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "hl?")]
+        [JsonProperty("hl?")]
         public SlotIndex[] ValidSlotIndices
         {
             get => validSlotIndices;
@@ -48,7 +47,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "B@N")]
+        [JsonProperty("B@N")]
         public CatalogType ClassType
         {
             get => classType;
@@ -62,7 +61,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "0H2")]
+        [JsonProperty("0H2")]
         public int SubstanceMaxStorageMultiplier
         {
             get => substanceMaxStorageMultiplier;
@@ -76,7 +75,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "cTY")]
+        [JsonProperty("cTY")]
         public int ProductMaxStorageMultiplier
         {
             get => productMaxStorageMultiplier;
@@ -90,7 +89,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "@bB")]
+        [JsonProperty("@bB")]
         public StatData[] BaseStatValues
         {
             get => baseStatValues;
@@ -104,7 +103,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "MMm")]
+        [JsonProperty("MMm")]
         public object[] SpecialSlots
         {
             get => specialSlots;
@@ -118,7 +117,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "=Tb")]
+        [JsonProperty("=Tb")]
         public int Width
         {
             get => width;
@@ -132,7 +131,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "N9>")]
+        [JsonProperty("N9>")]
         public int Height
         {
             get => height;
@@ -146,7 +145,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "iF:")]
+        [JsonProperty("iF:")]
         public bool IsCool
         {
             get => isCool;
@@ -160,7 +159,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "NKm")]
+        [JsonProperty("NKm")]
         public string Name
         {
             get => name;
@@ -174,7 +173,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "F2P")]
+        [JsonProperty("F2P")]
         public int Version
         {
             get => version;

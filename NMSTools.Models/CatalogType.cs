@@ -1,15 +1,14 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class CatalogType : ModelBase
     {
         private string inventoryClass;
 
-        [DataMember(Name = "1o6")]
+        [JsonProperty("1o6")]
         public string InventoryClass
         {
             get => inventoryClass;

@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class GalaxyCoordinates : ModelBase
     {
         private int voxelX;
@@ -13,7 +12,7 @@ namespace NMSTools.Models
         private int solarSystemIndex;
         private short planetIndex;
 
-        [DataMember(Name = "dZj")]
+        [JsonProperty("dZj")]
         public int VoxelX
         {
             get => voxelX;
@@ -27,7 +26,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "IyE")]
+        [JsonProperty("IyE")]
         public int VoxelY
         {
             get => voxelY;
@@ -41,7 +40,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "uXE")]
+        [JsonProperty("uXE")]
         public int VoxelZ
         {
             get => voxelZ;
@@ -55,7 +54,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "vby")]
+        [JsonProperty("vby")]
         public int SolarSystemIndex
         {
             get => solarSystemIndex;
@@ -69,7 +68,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "jsv")]
+        [JsonProperty("jsv")]
         public short PlanetIndex
         {
             get => planetIndex;

@@ -1,10 +1,11 @@
-﻿using libMBIN;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using libMBIN;
 using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+
 
 namespace NMSTools.ConsoleApp
 {
@@ -34,9 +35,6 @@ namespace NMSTools.ConsoleApp
 
     class Program
     {
-        public const string oldDataContracts = "D:\\NMSData\\ARCHIVE\\BackupContracts";
-        public const string newDataContracts = "D:\\NMSData\\ARCHIVE\\NewpContracts";
-
         public const string pcBanksDir = "D:\\NMSData\\PCBANKS";
         public const string mBinDir = "D:\\NMSData\\MBIN";
         public const string eXMLDir = "D:\\NMSData\\EXML";
@@ -45,11 +43,29 @@ namespace NMSTools.ConsoleApp
 
         static void Main(string[] args)
         {
-            var root = Deserialize<NMSRoot>(saveFile);
-            GenerateClasses<NMSRoot>("C:\\Users\\dhr\\Desktop\\NMS");
-           // DumpClassInfo<NMSRoot>("C:\\Users\\dhr\\Desktop\\dump.txt");
+             var root = Deserialize<NMSRoot>(saveFile);
 
-            //  Serialize(root, saveFile + ".test");
+          //  using var inputFile = File.Open("C:\\Users\\dhr\\Desktop\\stringTest.txt", FileMode.Open);
+          //  using var outputFile = File.Create("C:\\Users\\dhr\\Desktop\\stringTest.result.txt");
+          //  using var sr = new StreamReader(inputFile);
+          //  using var sw = new StreamWriter(outputFile);
+
+          //  var value = sr.ReadLine();
+          //  sw.WriteLine(value);
+
+
+            
+            //  var test1 = double.Parse("59.140689849853516", System.Globalization.NumberStyles.Float);
+            //  var test = double.Parse("4.208272645803044e-36", System.Globalization.NumberStyles.Float);
+
+            // foreach (var value in root.PlayerStateData.TerrainEditData.BufferAnchors)
+            //  {
+            //      Debug.WriteLine("{0}, {1}, {2}", value[0], value[1], value[2]);
+            //  Console.WriteLine("{0}, {1}, {2}", value[0], value[1], value[2]);
+            //  }
+
+
+              Serialize(root, saveFile + ".test");
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
@@ -77,7 +93,6 @@ namespace NMSTools.ConsoleApp
             }
         }
 
-        
         static void Serialize<T>(T value, string filename)
         {
             FileStream outputFile = default;
@@ -95,9 +110,6 @@ namespace NMSTools.ConsoleApp
                 jtw = new JsonTextWriter(sw);
 
                 serializer.Serialize(jtw, value, typeof(T));
-
-
-
             }
             catch (Exception ex)
             {
@@ -106,7 +118,7 @@ namespace NMSTools.ConsoleApp
             finally
             {
                 if (jtw != null)
-                {  
+                {
                     jtw.Close();
 
                     ((IDisposable)jtw).Dispose();
@@ -132,7 +144,7 @@ namespace NMSTools.ConsoleApp
                 serializer.Error -= Serializer_Error;
                 serializer = null;
             }
-        }   
+        }
 
         static T Deserialize<T>(string filename) where T : class
         {
@@ -190,14 +202,7 @@ namespace NMSTools.ConsoleApp
             return result;
         }
 
-        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e)
-        {
-            
-
-            Console.WriteLine(e.ErrorContext.Error.Message);
-
-
-        }
+        private static void Serializer_Error(object sender, Newtonsoft.Json.Serialization.ErrorEventArgs e) => Console.WriteLine(e.ErrorContext.Error.Message);
 
         static void ExtractMBins(string input, string output)
         {
@@ -291,7 +296,7 @@ namespace NMSTools.ConsoleApp
                 Debug.WriteLine(output);
                 Console.WriteLine(output);
 
-                if (group.Key == "wMC")
+                if (group.Key == "TWn")
                 {
                     foreach (var prop in group)
                     {
@@ -304,6 +309,7 @@ namespace NMSTools.ConsoleApp
                 }
             }
         }
+        
         static void GenerateClasses<T>(string path) where T : class
         {
             if (!Directory.Exists(path))
@@ -342,6 +348,7 @@ namespace NMSTools.ConsoleApp
                 writer.WriteLine("}");
             }
         }
+        
         static void GenerateNativeClasses<T>() where T : class
         {
             foreach (var classType in typeof(T).Assembly.DefinedTypes)

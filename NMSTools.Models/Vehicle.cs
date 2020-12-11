@@ -1,10 +1,9 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+   
     public class Vehicle : ModelBase
     {
         private string name;
@@ -12,11 +11,11 @@ namespace NMSTools.Models
         private Catalog inventory;
         private Catalog inventoryTech;
         private CatalogLayout inventoryLayout;
-        private string location;
+        private object location;
         private float[] position;
         private float[] direction;
 
-        [DataMember(Name = "NKm")]
+        [JsonProperty("NKm")]
         public string Name
         {
             get => name;
@@ -30,7 +29,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "NTx")]
+        [JsonProperty("NTx")]
         public ProceduralObject Resource
         {
             get => resource;
@@ -44,7 +43,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = ";l5")]
+        [JsonProperty(";l5")]
         public Catalog Inventory
         {
             get => inventory;
@@ -58,7 +57,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "PMT")]
+        [JsonProperty("PMT")]
         public Catalog InventoryTech
         {
             get => inventoryTech;
@@ -72,7 +71,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "pMa")]
+        [JsonProperty("pMa")]
         public CatalogLayout InventoryLayout
         {
             get => inventoryLayout;
@@ -86,8 +85,8 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "YTa")]
-        public string Location
+        [JsonProperty("YTa")]
+        public object Location
         {
             get => location;
             set
@@ -100,7 +99,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wMC")]
+        [JsonProperty("wMC")]
         public float[] Position
         {
             get => position;
@@ -114,7 +113,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "l?l")]
+        [JsonProperty("l?l")]
         public float[] Direction
         {
             get => direction;

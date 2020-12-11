@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class PlayerBaseOwner : ModelBase
     {
         private string lID;
@@ -13,7 +12,7 @@ namespace NMSTools.Models
         private string pTK;
         private long tS;
 
-        [DataMember(Name = "f5Q")]
+        [JsonProperty("f5Q")]
         public string LID
         {
             get => lID;
@@ -27,7 +26,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "K7E")]
+        [JsonProperty("K7E")]
         public string UID
         {
             get => uID;
@@ -41,7 +40,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "V?:")]
+        [JsonProperty("V?:")]
         public string USN
         {
             get => uSN;
@@ -55,7 +54,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "D6b")]
+        [JsonProperty("D6b")]
         public string PTK
         {
             get => pTK;
@@ -69,7 +68,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "3I1")]
+        [JsonProperty("3I1")]
         public long TS
         {
             get => tS;

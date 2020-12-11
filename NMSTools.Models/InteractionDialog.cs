@@ -1,16 +1,15 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class InteractionDialog : ModelBase
     {
         private string hash;
         private string dialog;
 
-        [DataMember(Name = "E=X")]
+        [JsonProperty("E=X")]
         public string Hash
         {
             get => hash;
@@ -24,7 +23,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "2Fk")]
+        [JsonProperty("2Fk")]
         public string Dialog
         {
             get => dialog;

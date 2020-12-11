@@ -1,10 +1,9 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class NMSRoot : ModelBase
     {
         private int version;
@@ -14,7 +13,7 @@ namespace NMSTools.Models
         private KnowledgetData gameKnowledgeData;
         private DiscoveryData discoveryManagerData;
 
-        [DataMember(Name = "F2P")]
+        [JsonProperty("F2P")]
         public int Version
         {
             get => version;
@@ -28,7 +27,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "8>q")]
+        [JsonProperty("8>q")]
         public string Platform
         {
             get => platform;
@@ -42,7 +41,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "6f=")]
+        [JsonProperty("6f=")]
         public StateData PlayerStateData
         {
             get => playerStateData;
@@ -56,7 +55,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "rnc")]
+        [JsonProperty("rnc")]
         public SpawnData SpawnStateData
         {
             get => spawnStateData;
@@ -70,7 +69,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "VuQ")]
+        [JsonProperty("VuQ")]
         public KnowledgetData GameKnowledgeData
         {
             get => gameKnowledgeData;
@@ -84,7 +83,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "fDu")]
+        [JsonProperty("fDu")]
         public DiscoveryData DiscoveryManagerData
         {
             get => discoveryManagerData;

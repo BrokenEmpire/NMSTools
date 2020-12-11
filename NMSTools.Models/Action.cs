@@ -1,15 +1,14 @@
-﻿using System.Runtime.Serialization;
+﻿using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
 
-    [DataContract(Name = "Action")]
     public class Action : ModelBase
     {
         private string quickMenuActions;
-
-        [DataMember(Name = "<6x")]
+        
+        [JsonProperty("<6x")]
         public string QuickMenuActions
         {
             get => quickMenuActions;

@@ -1,17 +1,16 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+        
     public class Interaction : ModelBase
     {
         private object galacticAddress;
         private int interactionValue;
         private decimal[] position;
 
-        [DataMember(Name = "oZw")]
+        [JsonProperty("oZw")]
         public object GalacticAddress
         {
             get => galacticAddress;
@@ -25,7 +24,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = ">MX")]
+        [JsonProperty(">MX")]
         public int InteractionValue
         {
             get => interactionValue;
@@ -39,7 +38,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "wMC")]
+        [JsonProperty("wMC")]
         public decimal[] Position
         {
             get => position;

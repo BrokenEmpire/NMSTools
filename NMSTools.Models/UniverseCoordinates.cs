@@ -1,16 +1,15 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+    
     public class UniverseCoordinates : ModelBase
     {
         private int realityIndex;
         private GalaxyCoordinates galacticAddress;
 
-        [DataMember(Name = "Iis")]
+        [JsonProperty("Iis")]
         public int RealityIndex
         {
             get => realityIndex;
@@ -24,7 +23,7 @@ namespace NMSTools.Models
             }
         }
 
-        [DataMember(Name = "oZw")]
+        [JsonProperty("oZw")]
         public GalaxyCoordinates GalacticAddress
         {
             get => galacticAddress;

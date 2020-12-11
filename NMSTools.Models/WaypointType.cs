@@ -1,15 +1,14 @@
-using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace NMSTools.Models
 {
     using Base;
-
-    [DataContract]
+ 
     public class WaypointType : ModelBase
     {
         private string galaxyWaypointType;
 
-        [DataMember(Name = "S8b")]
+        [JsonProperty("S8b")]
         public string GalaxyWaypointType
         {
             get => galaxyWaypointType;

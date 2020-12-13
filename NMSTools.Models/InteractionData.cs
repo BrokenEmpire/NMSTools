@@ -10,7 +10,7 @@ namespace NMSTools.Models
         private int lastUpdateTimestamp;
         private int lastCompletedTimestamp;
         private int lastBrokenTimestamp;
-        private float[] damageTimers;
+        private double[] damageTimers;
         private int flags;
 
         [JsonProperty("=yU")]
@@ -70,7 +70,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("4>;")]
-        public float[] DamageTimers
+        public double[] DamageTimers
         {
             get => damageTimers;
             set

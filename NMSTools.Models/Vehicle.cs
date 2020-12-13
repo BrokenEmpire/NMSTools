@@ -12,8 +12,8 @@ namespace NMSTools.Models
         private Catalog inventoryTech;
         private CatalogLayout inventoryLayout;
         private object location;
-        private float[] position;
-        private float[] direction;
+        private double[] position;
+        private double[] direction;
 
         [JsonProperty("NKm")]
         public string Name
@@ -100,7 +100,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public float[] Position
+        public double[] Position
         {
             get => position;
             set
@@ -114,7 +114,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("l?l")]
-        public float[] Direction
+        public double[] Direction
         {
             get => direction;
             set

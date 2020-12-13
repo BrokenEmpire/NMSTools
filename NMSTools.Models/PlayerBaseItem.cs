@@ -9,9 +9,9 @@ namespace NMSTools.Models
         private long timestamp;
         private string objectID;
         private long userData;
-        private float[] position;
-        private float[] up;
-        private float[] at;
+        private double[] position;
+        private double[] up;
+        private double[] at;
 
         [JsonProperty("b1:")]
         public long Timestamp
@@ -56,7 +56,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public float[] Position
+        public double[] Position
         {
             get => position;
             set
@@ -70,7 +70,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wJ0")]
-        public float[] Up
+        public double[] Up
         {
             get => up;
             set
@@ -84,7 +84,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("aNu")]
-        public float[] At
+        public double[] At
         {
             get => at;
             set

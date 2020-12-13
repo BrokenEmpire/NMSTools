@@ -7,8 +7,8 @@ namespace NMSTools.Models
     public class PortalData : ModelBase
     {
         private UniverseCoordinates universeAddress;
-        private float[] position;
-        private float[] facing;
+        private double[] position;
+        private double[] facing;
         private string teleporterType;
         private string name;
         private bool calcWarpOffset;
@@ -29,7 +29,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public float[] Position
+        public double[] Position
         {
             get => position;
             set
@@ -43,7 +43,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("gk4")]
-        public float[] Facing
+        public double[] Facing
         {
             get => facing;
             set

@@ -50,8 +50,10 @@
   <ItemGroup>
     <Compile Include="Action.cs" />
     <Compile Include="AvailableDiscovery.cs" />
+    <Compile Include="Base\DoubleConverter.cs" />
     <Compile Include="Base\FilePathConverter.cs" />
     <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Base\TerrainDataConverter.cs" />
     <Compile Include="BoneScale.cs" />
     <Compile Include="BuildingObject.cs" />
     <Compile Include="BuildingType.cs" />

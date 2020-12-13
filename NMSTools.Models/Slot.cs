@@ -10,7 +10,7 @@ namespace NMSTools.Models
         private string id;
         private int amount;
         private int maxAmount;
-        private float damageFactor;
+        private double damageFactor;
         private bool fullyInstalled;
         private SlotIndex index;
 
@@ -71,7 +71,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eVk")]
-        public float DamageFactor
+        public double DamageFactor
         {
             get => damageFactor;
             set

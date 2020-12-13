@@ -5,17 +5,27 @@ namespace NMSTools.Models.Base
 {
     public sealed class FilePathConverter : JsonConverter
     {
-        public override bool CanConvert(Type objectType) => objectType.Equals(typeof(string));
+        public override bool CanConvert(Type objectType) 
+            => objectType.Equals(typeof(string));
 
-        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
-        {
-            Console.WriteLine(reader.Value as string);
-            return reader.Value as string;
-        }
+        public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer) 
+            => reader.Value as string;
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            switch (value)
+            {
+                case string s:
+                    if (s.EndsWith(".MBIN"))
+                        writer.WriteRawValue((char)34 + s.Replace("/", @"\/") + (char)34);
+                    else
+                        writer.WriteValue(s);
+
+                    return;
+
+                default:
+                    throw new Exception("Invalid Type");
+            };
         }
     }
 }

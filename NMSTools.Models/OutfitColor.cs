@@ -7,7 +7,7 @@ namespace NMSTools.Models
     public class OutfitColor : ModelBase
     {
         private PaletteData palette;
-        private float[] rgb;
+        private double[] rgb;
 
         [JsonProperty("RVl")]
         public PaletteData Palette
@@ -24,7 +24,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("xEg")]
-        public float[] RGB
+        public double[] RGB
         {
             get => rgb;
             set

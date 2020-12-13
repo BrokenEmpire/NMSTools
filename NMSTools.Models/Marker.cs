@@ -12,7 +12,7 @@ namespace NMSTools.Models
         private object[] buildingSeed;
         private decimal[] buildingLocation;
         private BuildingType buildingClass;
-        private float time;
+        private double time;
         private string missionID;
         private int missionSeed;
         private ParticipantType participantType;
@@ -102,7 +102,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("ADw")]
-        public float Time
+        public double Time
         {
             get => time;
             set

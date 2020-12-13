@@ -10,7 +10,7 @@ namespace NMSTools.Models
         private OutfitColor[] outfitColors;
         private TextureOption[] textureOptions;
         private BoneScale[] boneScaleData;
-        private float scale;
+        private double scale;
 
         [JsonProperty("SMP")]
         public string[] DescriptorGroups
@@ -69,7 +69,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("unY")]
-        public float Scale
+        public double Scale
         {
             get => scale;
             set

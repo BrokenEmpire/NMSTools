@@ -9,7 +9,7 @@ namespace NMSTools.Models
         private object[] galacticAddresses;
         private int[] bufferSizes;
         private int[] bufferAges;
-        private decimal[][] bufferAnchors;
+        private object[][] bufferAnchors; // EVIL!!  Mixed data type collection made up of Singles, Doubles and Decimals as well as doubles in scientific notiation.
         private bool[] bufferProtected;
         private TerrainEdit[] edits;
 
@@ -55,8 +55,9 @@ namespace NMSTools.Models
             }
         }
 
+        //[JsonConverter(typeof(TerrainDataConverter))]
         [JsonProperty("cL6")]
-        public decimal[][] BufferAnchors
+        public object[][] BufferAnchors
         {
             get => bufferAnchors;
             set

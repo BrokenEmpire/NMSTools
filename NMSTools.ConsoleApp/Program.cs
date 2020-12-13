@@ -2,9 +2,11 @@
 using libMBIN;
 using System;
 using System.Diagnostics;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Globalization;
 
 
 namespace NMSTools.ConsoleApp
@@ -33,6 +35,32 @@ namespace NMSTools.ConsoleApp
         }
     }
 
+    struct TestData
+    {
+        public int Precision { get; set; }
+
+        public double DoubleValue { get; set; }
+
+        public decimal DecimalValue { get; set; }
+
+        public string StringValue { get; set; }
+
+        public string Format { get; set; }
+
+        public TestData(string value, int precision)
+        {
+            DoubleValue = double.Parse(value, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign);
+            DecimalValue = decimal.Parse(value, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture);
+            StringValue = value;
+            Precision = precision;
+            Format = "{0:e" + Precision + "}";
+        }
+
+        public bool MatchA => string.Format(Format, DoubleValue) == StringValue;
+
+        public bool MatchB => string.Format(Format, DecimalValue) == StringValue;
+    }
+
     class Program
     {
         public const string pcBanksDir = "D:\\NMSData\\PCBANKS";
@@ -43,35 +71,49 @@ namespace NMSTools.ConsoleApp
 
         static void Main(string[] args)
         {
-             var root = Deserialize<NMSRoot>(saveFile);
 
-          //  using var inputFile = File.Open("C:\\Users\\dhr\\Desktop\\stringTest.txt", FileMode.Open);
-          //  using var outputFile = File.Create("C:\\Users\\dhr\\Desktop\\stringTest.result.txt");
-          //  using var sr = new StreamReader(inputFile);
-          //  using var sw = new StreamWriter(outputFile);
+            var root = Deserialize<NMSRoot>(saveFile);
 
-          //  var value = sr.ReadLine();
-          //  sw.WriteLine(value);
+            foreach (var test in new List<TestData>
+            {
+                new TestData("-16.32000160217285", 16),
+                new TestData("4.208272645803044e-36", 16),
+                new TestData("32.193878173828128", 17),
+                new TestData("130151.1015625", 17),
+                new TestData("-1055.5179443359375", 17)
+            })
+            {
+                var previousColor = Console.ForegroundColor;
+                var highlightColorA = test.MatchA ? ConsoleColor.Green : ConsoleColor.Red;
+                var highlightColorB = test.MatchB ? ConsoleColor.Green : ConsoleColor.Red;
 
+                Console.Write("Expected: ");
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine(test.StringValue);
+                Console.ForegroundColor = previousColor;
 
-            
-            //  var test1 = double.Parse("59.140689849853516", System.Globalization.NumberStyles.Float);
-            //  var test = double.Parse("4.208272645803044e-36", System.Globalization.NumberStyles.Float);
+                Console.Write("  Double: ");
+                Console.ForegroundColor = highlightColorA;
+                Console.Write(test.Format, test.DoubleValue);
+                Console.WriteLine(" {0}", test.MatchA ? "Passed" : "Failed");
+                Console.ForegroundColor = previousColor;
 
-            // foreach (var value in root.PlayerStateData.TerrainEditData.BufferAnchors)
-            //  {
-            //      Debug.WriteLine("{0}, {1}, {2}", value[0], value[1], value[2]);
-            //  Console.WriteLine("{0}, {1}, {2}", value[0], value[1], value[2]);
-            //  }
+                Console.Write(" Decimal: ");
+                Console.ForegroundColor = highlightColorB;
+                Console.Write(test.Format, test.DecimalValue);
+                Console.WriteLine(" {0}", test.MatchB ? "Passed" : "Failed");
+                Console.ForegroundColor = previousColor;
 
+                Console.WriteLine();
+            }
 
-              Serialize(root, saveFile + ".test");
+            Serialize(root, saveFile + ".test");
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
             Console.Read();
-            
         }
+
 
         static void FindOtherFiles()
         {
@@ -103,6 +145,7 @@ namespace NMSTools.ConsoleApp
             try
             {
                 serializer = new JsonSerializer();
+                serializer.Converters.Add(new Models.Base.DoubleConverter());
                 serializer.Error += Serializer_Error;
 
                 outputFile = File.Create(filename);
@@ -157,6 +200,7 @@ namespace NMSTools.ConsoleApp
             try
             {
                 serializer = new JsonSerializer();
+                serializer.Converters.Add(new Models.Base.DoubleConverter(16));
                 serializer.Error += Serializer_Error;
 
                 inputFile = File.Open(filename, FileMode.Open);
@@ -164,10 +208,6 @@ namespace NMSTools.ConsoleApp
                 jtr = new JsonTextReader(sr);
 
                 result = serializer.Deserialize<T>(jtr);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
             }
             finally
             {
@@ -237,6 +277,8 @@ namespace NMSTools.ConsoleApp
 
         static void Extract(FileInfo inputFile, string outputFileName)
         {
+
+
             using var mbinFile = new MBINFile(inputFile.FullName);
             using var outputFile = File.Create(outputFileName);
             using var sw = new StreamWriter(outputFile);
@@ -287,29 +329,24 @@ namespace NMSTools.ConsoleApp
 
             var definedTypes = typeof(T).Assembly.DefinedTypes.Where(i => !i.IsAbstract)
                                                               .SelectMany(i => i.GetProperties())
-                                                              .Select(i => new { Key = i.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName, PropertyName = i.Name, i.PropertyType, Property = i }).GroupBy(i => i.Key).OrderByDescending(i => i.Count());
+                                                              .Select(i => new 
+                                                              { 
+                                                                  Key = i.GetCustomAttribute<JsonPropertyAttribute>()?.PropertyName, 
+                                                                  PropertyName = i.Name, 
+                                                                  i.PropertyType, 
+                                                                  Property = i 
+                                                              }).GroupBy(i => i.Key).OrderByDescending(i => i.Key);
             foreach (var group in definedTypes)
             {
-                var output = string.Format("{0} ({1})", group.Key, group.Count());
+                writer.WriteLine("{0} ({1})", group.Key, group.Count());
 
-                writer.WriteLine(output);
-                Debug.WriteLine(output);
-                Console.WriteLine(output);
+                foreach (var prop in group)
+                    writer.WriteLine("{0}.{1} ({2})", prop.Property.ReflectedType.Name, prop.PropertyName, prop.PropertyType);
 
-                if (group.Key == "TWn")
-                {
-                    foreach (var prop in group)
-                    {
-                        output = string.Format("{0}.{1} ({2})", prop.Property.ReflectedType.Name, prop.PropertyName, prop.PropertyType);
-
-                        writer.WriteLine(output);
-                        Debug.WriteLine(output);
-                        Console.WriteLine(output);
-                    }
-                }
+                writer.WriteLine();
             }
         }
-        
+
         static void GenerateClasses<T>(string path) where T : class
         {
             if (!Directory.Exists(path))
@@ -348,7 +385,7 @@ namespace NMSTools.ConsoleApp
                 writer.WriteLine("}");
             }
         }
-        
+
         static void GenerateNativeClasses<T>() where T : class
         {
             foreach (var classType in typeof(T).Assembly.DefinedTypes)

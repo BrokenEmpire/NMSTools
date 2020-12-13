@@ -7,7 +7,7 @@ namespace NMSTools.Models
     public class BoneScale : ModelBase
     {
         private string boneName;
-        private float scale;
+        private double scale;
 
         [JsonProperty("tIm")]
         public string BoneName
@@ -24,7 +24,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("unY")]
-        public float Scale
+        public double Scale
         {
             get => scale;
             set

@@ -7,7 +7,7 @@ namespace NMSTools.Models
     public class StatValue : ModelBase
     {
         private int intValue;
-        private decimal floatValue;
+        private decimal doubleValue;
 
         [JsonProperty(">vs", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
         public int IntValue
@@ -24,15 +24,15 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("eoL", DefaultValueHandling = DefaultValueHandling.IgnoreAndPopulate)]
-        public decimal FloatValue
+        public decimal DoubleValue
         {
-            get => floatValue;
+            get => doubleValue;
             set
             {
-                if ((ReferenceEquals(floatValue, value) != true))
+                if ((ReferenceEquals(doubleValue, value) != true))
                 {
-                    floatValue = value;
-                    OnPropertyChanged("FloatValue");
+                    doubleValue = value;
+                    OnPropertyChanged("doubleValue");
                 }
             }
         }

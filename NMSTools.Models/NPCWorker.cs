@@ -11,7 +11,7 @@ namespace NMSTools.Models
         private bool hiredWorker;
         private bool freighterBase;
         private string baseUA;
-        private float[] baseOffset;
+        private double[] baseOffset;
 
         [JsonProperty("q08")]
         public ProceduralObject ResourceElement
@@ -84,7 +84,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("TJx")]
-        public float[] BaseOffset
+        public double[] BaseOffset
         {
             get => baseOffset;
             set

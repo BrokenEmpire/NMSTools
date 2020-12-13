@@ -10,8 +10,8 @@ namespace NMSTools.Models
         private long baseVersion;
         private long originalBaseVersion;
         private object galacticAddress;
-        private decimal[] position;
-        private decimal[] forward;
+        private double[] position;
+        private double[] forward;
         private long userData;
         private long lastUpdateTimestamp;
         private ObservableCollection<PlayerBaseItem> objects;
@@ -21,8 +21,8 @@ namespace NMSTools.Models
         private PlayerBaseType baseType;
         private string lastEditedById;
         private string lastEditedByUsername;
-        private decimal[] screenshotAt;
-        private decimal[] screenshotPos;
+        private double[] screenshotAt;
+        private double[] screenshotPos;
         private PlayerBaseMode gameMode;
         private string platformToken;
         private bool isReported;
@@ -71,7 +71,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("wMC")]
-        public decimal[] Position
+        public double[] Position
         {
             get => position;
             set
@@ -85,7 +85,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("oHw")]
-        public decimal[] Forward
+        public double[] Forward
         {
             get => forward;
             set
@@ -225,7 +225,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("D9@")]
-        public decimal[] ScreenshotAt
+        public double[] ScreenshotAt
         {
             get => screenshotAt;
             set
@@ -239,7 +239,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("rIR")]
-        public decimal[] ScreenshotPos
+        public double[] ScreenshotPos
         {
             get => screenshotPos;
             set

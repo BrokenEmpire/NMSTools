@@ -7,8 +7,8 @@ namespace NMSTools.Models
     public class TradeSupplyData : ModelBase
     {
         private object galacticAddress;
-        private float supply;
-        private float demand;
+        private double supply;
+        private double demand;
         private string product;
         private int timestamp;
 
@@ -27,7 +27,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("Iu7")]
-        public float Supply
+        public double Supply
         {
             get => supply;
             set
@@ -41,7 +41,7 @@ namespace NMSTools.Models
         }
 
         [JsonProperty("pfp")]
-        public float Demand
+        public double Demand
         {
             get => demand;
             set

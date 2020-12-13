@@ -10,7 +10,8 @@ namespace NMSTools.Models
         private string filename;
         private object[] generationSeed;
 
-        [JsonProperty(PropertyName = "93M", ItemConverterType = typeof(FilePathConverter))]
+        [JsonConverter(typeof(FilePathConverter))]
+        [JsonProperty("93M")]
         public string Filename
         {
             get => filename;

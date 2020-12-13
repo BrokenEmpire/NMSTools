@@ -12,7 +12,8 @@ namespace NMSTools.Models
         private string altId;
         private ProceduralObjectTexture proceduralTexture;
 
-        [JsonProperty(PropertyName = "93M", ItemConverterType = typeof(FilePathConverter))]
+        [JsonConverter(typeof(FilePathConverter))]
+        [JsonProperty("93M")]
         public string Filename
         {
             get => filename;

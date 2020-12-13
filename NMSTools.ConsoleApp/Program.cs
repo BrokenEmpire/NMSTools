@@ -53,7 +53,7 @@ namespace NMSTools.ConsoleApp
             DecimalValue = decimal.Parse(value, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture);
             StringValue = value;
             Precision = precision;
-            Format = "{0:e" + Precision + "}";
+            Format = "{0:G" + Precision + "}";
         }
 
         public bool MatchA => string.Format(Format, DoubleValue) == StringValue;

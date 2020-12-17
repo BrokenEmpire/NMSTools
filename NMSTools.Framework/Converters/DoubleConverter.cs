@@ -3,12 +3,8 @@ using System;
 
 namespace NMSTools.Framework.Converters
 {
-    public sealed class DoubleConverter : JsonConverter
+    public sealed class DoubleConverter : BaseConverter<double>
     {
-        private readonly int precision;
-
-        public override bool CanConvert(Type objectType) => objectType.Equals(typeof(double));
-
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.Value.ToString() == "0")
@@ -27,6 +23,6 @@ namespace NMSTools.Framework.Converters
                 writer.WriteRawValue(result);
         }
 
-        public DoubleConverter(int precision = 16) : base() => this.precision = precision;
+        public DoubleConverter(int precision = 17) : base(precision) { }
     }
 }

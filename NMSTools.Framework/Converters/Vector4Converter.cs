@@ -5,12 +5,8 @@ namespace NMSTools.Framework.Converters
 {
     using Framework.Primitives;
 
-    public sealed class Vector4Converter : JsonConverter
+    public sealed class Vector4Converter : BaseConverter<Vector4>
     {
-        private readonly int precision;
-
-        public override bool CanConvert(Type objectType) => objectType.Equals(typeof(Vector4));
-
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType != JsonToken.StartArray)
@@ -46,6 +42,6 @@ namespace NMSTools.Framework.Converters
             writer.WriteEndArray();
         }
 
-        public Vector4Converter(int precision = 17) : base() => this.precision = precision;
+        public Vector4Converter(int precision = 17) : base(precision) { }
     }
 }

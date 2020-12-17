@@ -4,14 +4,15 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
         
+    [JsonObject]
     public class InteractionData : ModelBase
     {
         private Catalog inventoryContainer;
-        private int lastUpdateTimestamp;
-        private int lastCompletedTimestamp;
-        private int lastBrokenTimestamp;
+        private ulong lastUpdateTimestamp;
+        private ulong lastCompletedTimestamp;
+        private ulong lastBrokenTimestamp;
         private double[] damageTimers;
-        private int flags;
+        private uint flags;
 
         [JsonProperty("=yU")]
         public Catalog InventoryContainer
@@ -28,7 +29,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wx7")]
-        public int LastUpdateTimestamp
+        public ulong LastUpdateTimestamp
         {
             get => lastUpdateTimestamp;
             set
@@ -42,7 +43,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("eyv")]
-        public int LastCompletedTimestamp
+        public ulong LastCompletedTimestamp
         {
             get => lastCompletedTimestamp;
             set
@@ -56,7 +57,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("FML")]
-        public int LastBrokenTimestamp
+        public ulong LastBrokenTimestamp
         {
             get => lastBrokenTimestamp;
             set
@@ -84,7 +85,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("XV5")]
-        public int Flags
+        public uint Flags
         {
             get => flags;
             set

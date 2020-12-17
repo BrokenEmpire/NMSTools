@@ -112,7 +112,7 @@
     <Compile Include="Models\Stat.cs" />
     <Compile Include="Models\StatData.cs" />
     <Compile Include="Models\StatDetail.cs" />
-    <Compile Include="Models\StateData.cs" />
+    <Compile Include="Models\PlayerState.cs" />
     <Compile Include="Models\StatValue.cs" />
     <Compile Include="Models\StoredInteraction.cs" />
     <Compile Include="Models\StoreRecord.cs" />

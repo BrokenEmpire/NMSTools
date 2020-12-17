@@ -3,18 +3,19 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+
     public class PlayerBaseItem : ModelBase
     {
-        private long timestamp;
+        private ulong timestamp;
         private string objectID;
         private long userData;
-        private double[] position;
-        private double[] up;
-        private double[] at;
+        private Vector3 position;
+        private Vector3 up;
+        private Vector3 at;
 
         [JsonProperty("b1:")]
-        public long Timestamp
+        public ulong Timestamp
         {
             get => timestamp;
             set
@@ -56,7 +57,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wMC")]
-        public double[] Position
+        public Vector3 Position
         {
             get => position;
             set
@@ -70,7 +71,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wJ0")]
-        public double[] Up
+        public Vector3 Up
         {
             get => up;
             set
@@ -84,7 +85,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("aNu")]
-        public double[] At
+        public Vector3 At
         {
             get => at;
             set

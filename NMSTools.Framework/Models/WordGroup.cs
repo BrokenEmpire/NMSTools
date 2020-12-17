@@ -4,6 +4,7 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
 
+    [JsonObject]
     public class WordGroup : ModelBase
     {
         private string group;

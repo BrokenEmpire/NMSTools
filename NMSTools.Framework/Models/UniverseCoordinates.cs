@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-    
+
+    [JsonObject]
     public class UniverseCoordinates : ModelBase
     {
         private int realityIndex;

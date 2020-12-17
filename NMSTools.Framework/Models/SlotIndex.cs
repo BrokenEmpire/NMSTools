@@ -4,6 +4,7 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
         
+    [JsonObject]
     public class SlotIndex : ModelBase
     {
         private short x;

@@ -6,60 +6,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Globalization;
 
 namespace NMSTools.ConsoleApp
 {
     using Framework.Converters;
     using Framework.Models;
-
-    struct FieldData
-    {
-        public string Name { get; set; }
-
-        public string Type { get; set; }
-
-        public string Attribute { get; set; }
-
-        public string GetPrivateName()
-        {
-            return Name.Substring(0, 1).ToLower() + Name.Substring(1);
-        }
-
-        public string GetGeneratedType()
-        {
-            if (Type.Contains("IList"))
-                return Type.Replace("IList", "ObservableCollection");
-
-            return Type;
-        }
-    }
-
-    struct TestData
-    {
-        public int Precision { get; set; }
-
-        public double DoubleValue { get; set; }
-
-        public decimal DecimalValue { get; set; }
-
-        public string StringValue { get; set; }
-
-        public string Format { get; set; }
-
-        public TestData(string value, int precision)
-        {
-            DoubleValue = double.Parse(value, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign);
-            DecimalValue = decimal.Parse(value, NumberStyles.AllowExponent | NumberStyles.AllowDecimalPoint | NumberStyles.AllowLeadingSign, CultureInfo.InvariantCulture);
-            StringValue = value;
-            Precision = precision;
-            Format = "{0:G" + Precision + "}";
-        }
-
-        public bool MatchA => string.Format(Format, DoubleValue) == StringValue;
-
-        public bool MatchB => string.Format(Format, DecimalValue) == StringValue;
-    }
 
     class Program
     {
@@ -72,13 +23,24 @@ namespace NMSTools.ConsoleApp
         static void Main(string[] args)
         {
             var root = Deserialize<NMSRoot>(saveFile);
+
+            foreach (var playerBase in root.PlayerStateData.PersistentPlayerBases)
+            {
+                if (playerBase.Name != "Test Base")
+                    continue;
+
+                foreach (var items in playerBase.Objects)
+                {
+                    Console.WriteLine(items.ObjectID);
+                }
+            }
+
             Serialize(root, saveFile.Replace(".hg", ".nmsTools.hg"));
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
             Console.Read();
         }
-
 
         static void FindOtherFiles()
         {
@@ -112,6 +74,7 @@ namespace NMSTools.ConsoleApp
                 serializer = new JsonSerializer();
                 serializer.Converters.Add(new DoubleConverter());
                 serializer.Converters.Add(new Vector3Converter());
+                serializer.Converters.Add(new Vector4Converter());
                 serializer.Error += Serializer_Error;
 
                 outputFile = File.Create(filename);
@@ -168,6 +131,7 @@ namespace NMSTools.ConsoleApp
                 serializer = new JsonSerializer();
                 serializer.Converters.Add(new DoubleConverter());
                 serializer.Converters.Add(new Vector3Converter());
+                serializer.Converters.Add(new Vector4Converter());
                 serializer.Error += Serializer_Error;
 
                 inputFile = File.Open(filename, FileMode.Open);

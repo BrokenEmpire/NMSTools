@@ -9,7 +9,7 @@ namespace NMSTools.Framework.Models
     public class Weapon : ModelBase
     {
         private string filename;
-        private object[] generationSeed;
+        private object[] generationSeed;  //todo: strong type
 
         [JsonConverter(typeof(PathConverter))]
         [JsonProperty("93M")]

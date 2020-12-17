@@ -3,7 +3,8 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+      
+    [JsonObject]
     public class KeyAction : ModelBase
     {
         private Action action;

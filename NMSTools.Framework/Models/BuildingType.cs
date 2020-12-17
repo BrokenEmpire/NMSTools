@@ -3,7 +3,8 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    
+    [JsonObject]
     public class BuildingType : ModelBase
     {
         private string buildingClass;

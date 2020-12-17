@@ -4,11 +4,12 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
 
+    [JsonObject]
     public class DD : ModelBase
     {
         private object uA;
         private string dT;
-        private object[] vP;
+        private object[] vP;  //todo: strong type
 
         [JsonProperty("5L6")]
         public object UA

@@ -3,11 +3,12 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    
+    [JsonObject]
     public class Frigate : ModelBase
     {
-        private object[] resourceSeed;
-        private object[] homeSystemSeed;
+        private object[] resourceSeed;  //todo: strong type
+        private object[] homeSystemSeed;  //todo: strong type
         private int timeOfLastIncomeCollection;
         private string customName;
         private FrigateClass frigateType;

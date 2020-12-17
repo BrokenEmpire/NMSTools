@@ -3,28 +3,29 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+
+    [JsonObject]
     public class SeasonData : ModelBase
     {
-        private long startTimeUTC;
-        private long endTimeUTC;
+        private ulong startTimeUTC;
+        private ulong endTimeUTC;
         private string title;
         private string subTitle;
         private string description;
         private GamePreset gameMode;
         private string seasonalUAOverride;
         private long uAOverrideValue;
-        private object[] weaponSeed;
-        private object[] shipSeed;
+        private object[] weaponSeed;    //todo: strong type
+        private object[] shipSeed;      //todo: strong type
         private ShipTypeDescription shipType;
         private bool startNextToShip;
         private bool shipStartsDamaged;
         private bool allowMissionDetailMessages;
-        private object[] milestones;
-        private object[] secondaryStats;
+        private object[] milestones;      //todo: strong type
+        private object[] secondaryStats;  //todo: strong type
 
         [JsonProperty("hyA")]
-        public long StartTimeUTC
+        public ulong StartTimeUTC
         {
             get => startTimeUTC;
             set
@@ -38,7 +39,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("jqx")]
-        public long EndTimeUTC
+        public ulong EndTimeUTC
         {
             get => endTimeUTC;
             set

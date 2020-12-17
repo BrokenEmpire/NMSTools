@@ -9,7 +9,7 @@ namespace NMSTools.Framework.Models
     public class ProceduralObject : ModelBase
     {
         private string filename;
-        private object[] seed;
+        private object[] seed;  //todo: strong type
         private string altId;
         private ProceduralObjectTexture proceduralTexture;
 

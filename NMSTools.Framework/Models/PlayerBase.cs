@@ -8,13 +8,13 @@ namespace NMSTools.Framework.Models
         
     public class PlayerBase : ModelBase
     {
-        private long baseVersion;
-        private long originalBaseVersion;
-        private object galacticAddress;
+        private int baseVersion;
+        private int originalBaseVersion;
+        private object galacticAddress; //todo: replace with strong type
         private Vector3 position;
         private Vector3 forward;
         private long userData;
-        private long lastUpdateTimestamp;
+        private ulong lastUpdateTimestamp;
         private ObservableCollection<PlayerBaseItem> objects;
         private string rID;
         private PlayerBaseOwner owner;
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
         private bool isFeatured;
 
         [JsonProperty("h4X")]
-        public long BaseVersion
+        public int BaseVersion
         {
             get => baseVersion;
             set
@@ -44,7 +44,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("BpT")]
-        public long OriginalBaseVersion
+        public int OriginalBaseVersion
         {
             get => originalBaseVersion;
             set
@@ -114,7 +114,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wx7")]
-        public long LastUpdateTimestamp
+        public ulong LastUpdateTimestamp
         {
             get => lastUpdateTimestamp;
             set

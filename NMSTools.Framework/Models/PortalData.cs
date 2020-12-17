@@ -3,12 +3,14 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+    
+    [JsonObject]
     public class PortalData : ModelBase
     {
         private UniverseCoordinates universeAddress;
-        private double[] position;
-        private double[] facing;
+        private Vector3 position;
+        private Vector3 facing;
         private string teleporterType;
         private string name;
         private bool calcWarpOffset;
@@ -29,7 +31,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wMC")]
-        public double[] Position
+        public Vector3 Position
         {
             get => position;
             set
@@ -43,7 +45,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("gk4")]
-        public double[] Facing
+        public Vector3 Facing
         {
             get => facing;
             set

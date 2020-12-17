@@ -4,15 +4,16 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
 
+    [JsonObject]
     public class MultiTool : ModelBase
     {
         private CatalogLayout layout;
         private Catalog store;
-        private object[] seed;
+        private object[] seed;  //todo: replace with strong type
         private string name;
         private bool isLarge;
-        private long primaryMode;
-        private long secondaryMode;
+        private int primaryMode;
+        private int secondaryMode;
 
         [JsonProperty("CA4")]
         public CatalogLayout Layout
@@ -85,7 +86,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("qVG")]
-        public long PrimaryMode
+        public int PrimaryMode
         {
             get => primaryMode;
             set
@@ -99,7 +100,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("jl;")]
-        public long SecondaryMode
+        public int SecondaryMode
         {
             get => secondaryMode;
             set

@@ -3,12 +3,14 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+
+    [JsonObject]
     public class Participant : ModelBase
     {
         private object uA;
-        private object[] buildingSeed;
-        private double[] buildingLocation;
+        private object[] buildingSeed;  //todo: strong type
+        private Vector3 buildingLocation;
         private ParticipantType participantMode;
 
         [JsonProperty("5L6")]
@@ -40,7 +42,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("TWn")]
-        public double[] BuildingLocation
+        public Vector3 BuildingLocation
         {
             get => buildingLocation;
             set

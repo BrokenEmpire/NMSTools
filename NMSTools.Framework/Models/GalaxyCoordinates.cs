@@ -3,14 +3,15 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    
+    [JsonObject]
     public class GalaxyCoordinates : ModelBase
     {
         private int voxelX;
         private int voxelY;
         private int voxelZ;
         private int solarSystemIndex;
-        private short planetIndex;
+        private int planetIndex;
 
         [JsonProperty("dZj")]
         public int VoxelX
@@ -69,7 +70,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("jsv")]
-        public short PlanetIndex
+        public int PlanetIndex
         {
             get => planetIndex;
             set

@@ -3,14 +3,16 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+
+    [JsonObject]
     public class Marker : ModelBase
     {
         private int table;
         private string markerEvent;
-        private object galacticAddress;
-        private object[] buildingSeed;
-        private double[] buildingLocation;
+        private object galacticAddress;  //todo: strong type
+        private object[] buildingSeed;  //todo: strong type
+        private Vector3 buildingLocation;
         private BuildingType buildingClass;
         private double time;
         private string missionID;
@@ -74,7 +76,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("TWn")]
-        public double[] BuildingLocation
+        public Vector3 BuildingLocation
         {
             get => buildingLocation;
             set

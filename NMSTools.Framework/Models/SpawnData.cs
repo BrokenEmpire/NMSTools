@@ -3,23 +3,25 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+
+    [JsonObject]
     public class SpawnData : ModelBase
     {
-        private double[] playerPositionInSystem;
-        private double[] playerTransformAt;
-        private double[] shipPositionInSystem;
-        private double[] shipTransformAt;
+        private Vector4 playerPositionInSystem;
+        private Vector4 playerTransformAt;
+        private Vector4 shipPositionInSystem;
+        private Vector4 shipTransformAt;
         private string lastKnownPlayerState;
-        private double[] freighterPositionInSystem;
-        private double[] freighterTransformAt;
-        private double[] freighterTransformUp;
-        private double[] abandonedFreighterPositionInSystem;
-        private double[] abandonedFreighterTransformAt;
-        private double[] abandonedFreighterTransformUp;
+        private Vector4 freighterPositionInSystem;
+        private Vector4 freighterTransformAt;
+        private Vector4 freighterTransformUp;
+        private Vector4 abandonedFreighterPositionInSystem;
+        private Vector4 abandonedFreighterTransformAt;
+        private Vector4 abandonedFreighterTransformUp;
 
         [JsonProperty("mEH")]
-        public double[] PlayerPositionInSystem
+        public Vector4 PlayerPositionInSystem
         {
             get => playerPositionInSystem;
             set
@@ -33,7 +35,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("l2U")]
-        public double[] PlayerTransformAt
+        public Vector4 PlayerTransformAt
         {
             get => playerTransformAt;
             set
@@ -47,7 +49,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("tnP")]
-        public double[] ShipPositionInSystem
+        public Vector4 ShipPositionInSystem
         {
             get => shipPositionInSystem;
             set
@@ -61,7 +63,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("l4H")]
-        public double[] ShipTransformAt
+        public Vector4 ShipTransformAt
         {
             get => shipTransformAt;
             set
@@ -89,7 +91,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("NGn")]
-        public double[] FreighterPositionInSystem
+        public Vector4 FreighterPositionInSystem
         {
             get => freighterPositionInSystem;
             set
@@ -103,7 +105,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("uAt")]
-        public double[] FreighterTransformAt
+        public Vector4 FreighterTransformAt
         {
             get => freighterTransformAt;
             set
@@ -117,7 +119,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("5Sg")]
-        public double[] FreighterTransformUp
+        public Vector4 FreighterTransformUp
         {
             get => freighterTransformUp;
             set
@@ -131,7 +133,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("Ovv")]
-        public double[] AbandonedFreighterPositionInSystem
+        public Vector4 AbandonedFreighterPositionInSystem
         {
             get => abandonedFreighterPositionInSystem;
             set
@@ -145,7 +147,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("EkX")]
-        public double[] AbandonedFreighterTransformAt
+        public Vector4 AbandonedFreighterTransformAt
         {
             get => abandonedFreighterTransformAt;
             set
@@ -159,7 +161,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("Bg3")]
-        public double[] AbandonedFreighterTransformUp
+        public Vector4 AbandonedFreighterTransformUp
         {
             get => abandonedFreighterTransformUp;
             set

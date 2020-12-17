@@ -3,7 +3,8 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+
+    [JsonObject]
     public class DiscoveryData : ModelBase
     {
         private Discovery discoveryDataV1;

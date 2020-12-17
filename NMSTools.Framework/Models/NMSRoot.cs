@@ -8,7 +8,7 @@ namespace NMSTools.Framework.Models
     {
         private int version;
         private string platform;
-        private StateData playerStateData;
+        private PlayerState playerStateData;
         private SpawnData spawnStateData;
         private KnowledgetData gameKnowledgeData;
         private DiscoveryData discoveryManagerData;
@@ -42,7 +42,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("6f=")]
-        public StateData PlayerStateData
+        public PlayerState PlayerStateData
         {
             get => playerStateData;
             set

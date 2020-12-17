@@ -3,7 +3,8 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+
+    [JsonObject]
     public class PaletteData : ModelBase
     {
         private string palette;

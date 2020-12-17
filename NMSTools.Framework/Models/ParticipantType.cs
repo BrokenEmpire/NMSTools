@@ -4,6 +4,7 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
         
+    [JsonObject]
     public class ParticipantType : ModelBase
     {
         private string participantMode;

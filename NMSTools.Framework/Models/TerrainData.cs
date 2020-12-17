@@ -3,13 +3,15 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
+    using Framework.Primitives;
 
+    [JsonObject]
     public class TerrainData : ModelBase
     {
-        private object[] galacticAddresses;
+        private object[] galacticAddresses;  //todo: strong type
         private int[] bufferSizes;
         private int[] bufferAges;
-        private double[][] bufferAnchors;
+        private Vector3[] bufferAnchors;
         private bool[] bufferProtected;
         private TerrainEdit[] edits;
 
@@ -56,7 +58,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("cL6")]
-        public double[][] BufferAnchors
+        public Vector3[] BufferAnchors
         {
             get => bufferAnchors;
             set

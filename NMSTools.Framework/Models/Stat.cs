@@ -3,11 +3,12 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+
+    [JsonObject]
     public class Stat : ModelBase
     {
         private string groupId;
-        private object address;
+        private object address; //todo: strong type
         private StatDetail[] stats;
 
         [JsonProperty(":rc")]

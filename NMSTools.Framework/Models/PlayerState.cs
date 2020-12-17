@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
+    using Framework.Primitives;
 
-    public class StateData : ModelBase
+    [JsonObject]
+    public class PlayerState : ModelBase
     {
         private UniverseCoordinates universeAddress;
         private UniverseCoordinates previousUniverseAddress;
@@ -16,14 +18,14 @@ namespace NMSTools.Framework.Models
         private Catalog inventoryShip;
         private Catalog inventoryWeapon;
         private ObservableCollection<MultiTool> multiTools;
-        private short activeMultiTool;
+        private int activeMultiTool;
         private Catalog inventoryGrave;
         private bool spawnGrave;
         private bool spaceGrave;
         private UniverseCoordinates graveUniverseAddress;
-        private double[] gravePosition;
-        private double[] graveMatrixLookAt;
-        private double[] graveMatrixUp;
+        private Vector4 gravePosition;
+        private Vector4 graveMatrixLookAt;
+        private Vector4 graveMatrixUp;
         private CatalogLayout shipLayout;
         private CatalogLayout weaponLayout;
         private ProceduralObject currentShip;
@@ -54,11 +56,11 @@ namespace NMSTools.Framework.Models
         private int nanites;
         private int specials;
         private bool thirdPersonShip;
-        private int timeAlive;
-        private int totalPlayTime;
+        private ulong timeAlive;
+        private ulong totalPlayTime;
         private Marker[] markerStack;
-        private object[] newMPMarkerStack;
-        private object[] surveyedEventPositions;
+        private object[] newMPMarkerStack; //todo: create strong typed object 
+        private Vector4[] surveyedEventPositions;
         private int nextSurveyedEventPositionIndex;
         private Stat[] stats;
         private Telemetry[] telemetryStats;
@@ -71,10 +73,10 @@ namespace NMSTools.Framework.Models
         private int scatterAmmo;
         private int pulseAmmo;
         private int laserAmmo;
-        private double[] firstSpawnPosition;
+        private Vector4 firstSpawnPosition;
         private InteractionIndicies[] savedInteractionIndicies;
         private InteractionDialog[] savedInteractionDialogTable;
-        private object[] interactionProgressTable;
+        private string[] interactionProgressTable;
         private UniverseCoordinates[] atlasStationAdressData;
         private UniverseCoordinates[] newAtlasStationAdressData;
         private UniverseCoordinates[] visitedAtlasStationsData;
@@ -84,32 +86,32 @@ namespace NMSTools.Framework.Models
         private int procTechIndex;
         private bool isNew;
         private bool useSmallerBlackholeJumps;
-        private object[] usedEntitlements;
-        private double[][] planetPositions;
-        private object[][] planetSeeds;
+        private object[] usedEntitlements;  //todo: create strong typed object
+        private Vector3[] planetPositions;
+        private object[][] planetSeeds; //todo: create strong typed object
         private int primaryPlanet;
-        private int timeLastSpaceBattle;
+        private ulong timeLastSpaceBattle;
         private int warpsLastSpaceBattle;
         private int activeSpaceBattleUA;
-        private int timeLastMiniStation;
+        private ulong timeLastMiniStation;
         private int warpsLastMiniStation;
         private string miniStationUA;
-        private double[] anomalyPositionOverride;
+        private Vector4 anomalyPositionOverride;
         private UniverseCoordinates gameStartAddress1;
         private UniverseCoordinates gameStartAddress2;
         private bool[] galacticMapRequests;
-        private double[] firstShipPosition;
-        private int hazardTimeAlive;
+        private Vector4 firstShipPosition;
+        private ulong hazardTimeAlive;
         private bool revealBlackHoles;
-        private object[] currentFreighterHomeSystemSeed;
+        private object[] currentFreighterHomeSystemSeed; //todo: create strong typed object
         private ProceduralObject currentFreighter;
         private CatalogLayout freighterLayout;
         private Catalog freighterInventory;
         private Catalog freighterInventoryTech;
         private UniverseCoordinates freighterUniverseAddress;
-        private double[] freighterMatrixAt;
-        private double[] freighterMatrixUp;
-        private double[] freighterMatrixPos;
+        private Vector3 freighterMatrixAt;
+        private Vector3 freighterMatrixUp;
+        private Vector3 freighterMatrixPos;
         private ObservableCollection<BuildingObject> baseBuildingObjects;
         private TerrainData terrainEditData;
         private NPCWorker[] nPCWorkers;
@@ -143,55 +145,55 @@ namespace NMSTools.Framework.Models
         private Catalog cookingIngredientsInventory;
         private ProceduralObject currentFreighterNPC;
         private Vehicle[] vehicleOwnership;
-        private short primaryVehicle;
+        private int primaryVehicle;
         private Vehicle[] shipOwnership;
-        private short primaryShip;
+        private int primaryShip;
         private bool multiShipEnabled;
         private string playerFreighterName;
-        private double[] startGameShipPosition;
+        private Vector4 startGameShipPosition;
         private bool shipNeedsTerrainPositioning;
         private int tradingSupplyDataIndex;
         private TradeSupplyData[] tradingSupplyData;
-        private object[] lastPortal;
+        private object[] lastPortal;  //todo: strong type object
         private Portal visitedPortal;
         private int knownPortalRunes;
         private bool onOtherSideOfPortal;
         private PortalData otherSideOfPortalReturnBase;
-        private double[] portalMarkerPosition_Local;
-        private double[] portalMarkerPosition_Offset;
+        private Vector4 portalMarkerPosition_Local;
+        private Vector4 portalMarkerPosition_Offset;
         private WeaponDescription startingPrimaryWeapon;
         private WeaponDescription startingSecondaryWeapon;
         private OutfitPreset[] outfitPresets;
         private bool[] shipUsesLegacyColours;
         private Outfit[] outfits;
         private string jetpackEffect;
-        private object[] fleetSeed;
+        private object[] fleetSeed; //todo: strong type object
         private ObservableCollection<Frigate> fleetFrigates;
-        private object[] fleetExpeditions;
-        private object[] expeditionSeedsSelectedToday;
-        private long lastKnownDay;
-        private long sunTimer;
+        private object[] fleetExpeditions;  //todo: strong type object
+        private object[] expeditionSeedsSelectedToday;  //todo: strong type object
+        private ulong lastKnownDay;
+        private ulong sunTimer;
         private long multiplayerLobbyID;
         private UniverseCoordinates multiplayerUA;
         private SpawnData multiplayerSpawn;
-        private object[] repairTechBuffer;
-        private long multiplayerPrivileges;
+        private object[] repairTechBuffer;  //todo: strong type object
+        private ulong multiplayerPrivileges;
         private HotAction[] hotActions;
-        private object lastUABeforePortalWarp;
+        private object lastUABeforePortalWarp;   //todo: strong type object
         private int storyPortalSeed;
-        private int shopNumber;
-        private int shopTier;
+        private ushort shopNumber;
+        private ushort shopTier;
         private bool hasAccessToNexus;
         private UniverseCoordinates nexusUniverseAddress;
-        private double[] nexusMatrixAt;
-        private double[] nexusMatrixUp;
-        private double[] nexusMatrixPos;
+        private Vector3 nexusMatrixAt;
+        private Vector3 nexusMatrixUp;
+        private Vector3 nexusMatrixPos;
         private PhotoSettings photoModeSettings;
         private int bannerIcon;
         private int bannerMainColour;
         private int bannerBackgroundColour;
         private string bannerTitleId;
-        private long telemetryUploadVersion;
+        private int telemetryUploadVersion;
         private bool usesThirdPersonVehicleCam;
         private double vRCameraOffset;
         private SeasonData seasonalData;
@@ -323,7 +325,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("j3E")]
-        public short ActiveMultiTool
+        public int ActiveMultiTool
         {
             get => activeMultiTool;
             set
@@ -393,7 +395,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("4ia")]
-        public double[] GravePosition
+        public Vector4 GravePosition
         {
             get => gravePosition;
             set
@@ -407,7 +409,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("gIh")]
-        public double[] GraveMatrixLookAt
+        public Vector4 GraveMatrixLookAt
         {
             get => graveMatrixLookAt;
             set
@@ -421,7 +423,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("YJU")]
-        public double[] GraveMatrixUp
+        public Vector4 GraveMatrixUp
         {
             get => graveMatrixUp;
             set
@@ -855,7 +857,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("i8O")]
-        public int TimeAlive
+        public ulong TimeAlive
         {
             get => timeAlive;
             set
@@ -869,7 +871,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("Lg8")]
-        public int TotalPlayTime
+        public ulong TotalPlayTime
         {
             get => totalPlayTime;
             set
@@ -911,7 +913,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("CYJ")]
-        public object[] SurveyedEventPositions
+        public Vector4[] SurveyedEventPositions
         {
             get => surveyedEventPositions;
             set
@@ -1093,7 +1095,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("vaP")]
-        public double[] FirstSpawnPosition
+        public Vector4 FirstSpawnPosition
         {
             get => firstSpawnPosition;
             set
@@ -1135,7 +1137,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wHR")]
-        public object[] InteractionProgressTable
+        public string[] InteractionProgressTable
         {
             get => interactionProgressTable;
             set
@@ -1289,7 +1291,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("aHM")]
-        public double[][] PlanetPositions
+        public Vector3[] PlanetPositions
         {
             get => planetPositions;
             set
@@ -1331,7 +1333,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("05J")]
-        public int TimeLastSpaceBattle
+        public ulong TimeLastSpaceBattle
         {
             get => timeLastSpaceBattle;
             set
@@ -1373,7 +1375,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("IRi")]
-        public int TimeLastMiniStation
+        public ulong TimeLastMiniStation
         {
             get => timeLastMiniStation;
             set
@@ -1415,7 +1417,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("JvI")]
-        public double[] AnomalyPositionOverride
+        public Vector4 AnomalyPositionOverride
         {
             get => anomalyPositionOverride;
             set
@@ -1471,7 +1473,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("nTB")]
-        public double[] FirstShipPosition
+        public Vector4 FirstShipPosition
         {
             get => firstShipPosition;
             set
@@ -1485,7 +1487,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("G?:")]
-        public int HazardTimeAlive
+        public ulong HazardTimeAlive
         {
             get => hazardTimeAlive;
             set
@@ -1597,7 +1599,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("9wg")]
-        public double[] FreighterMatrixAt
+        public Vector3 FreighterMatrixAt
         {
             get => freighterMatrixAt;
             set
@@ -1611,7 +1613,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("fUl")]
-        public double[] FreighterMatrixUp
+        public Vector3 FreighterMatrixUp
         {
             get => freighterMatrixUp;
             set
@@ -1625,7 +1627,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("lpm")]
-        public double[] FreighterMatrixPos
+        public Vector3 FreighterMatrixPos
         {
             get => freighterMatrixPos;
             set
@@ -2101,7 +2103,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("5sx")]
-        public short PrimaryVehicle
+        public int PrimaryVehicle
         {
             get => primaryVehicle;
             set
@@ -2129,7 +2131,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("aBE")]
-        public short PrimaryShip
+        public int PrimaryShip
         {
             get => primaryShip;
             set
@@ -2171,7 +2173,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("h=c")]
-        public double[] StartGameShipPosition
+        public Vector4 StartGameShipPosition
         {
             get => startGameShipPosition;
             set
@@ -2297,7 +2299,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("LIR")]
-        public double[] PortalMarkerPosition_Local
+        public Vector4 PortalMarkerPosition_Local
         {
             get => portalMarkerPosition_Local;
             set
@@ -2311,7 +2313,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("qW;")]
-        public double[] PortalMarkerPosition_Offset
+        public Vector4 PortalMarkerPosition_Offset
         {
             get => portalMarkerPosition_Offset;
             set
@@ -2465,7 +2467,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("nxr")]
-        public long LastKnownDay
+        public ulong LastKnownDay
         {
             get => lastKnownDay;
             set
@@ -2479,7 +2481,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty(">db")]
-        public long SunTimer
+        public ulong SunTimer
         {
             get => sunTimer;
             set
@@ -2549,7 +2551,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("kpg")]
-        public long MultiplayerPrivileges
+        public ulong MultiplayerPrivileges
         {
             get => multiplayerPrivileges;
             set
@@ -2605,7 +2607,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("aPn")]
-        public int ShopNumber
+        public ushort ShopNumber
         {
             get => shopNumber;
             set
@@ -2619,7 +2621,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("rk3")]
-        public int ShopTier
+        public ushort ShopTier
         {
             get => shopTier;
             set
@@ -2661,7 +2663,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("Fk@")]
-        public double[] NexusMatrixAt
+        public Vector3 NexusMatrixAt
         {
             get => nexusMatrixAt;
             set
@@ -2675,7 +2677,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("d72")]
-        public double[] NexusMatrixUp
+        public Vector3 NexusMatrixUp
         {
             get => nexusMatrixUp;
             set
@@ -2689,7 +2691,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("Yel")]
-        public double[] NexusMatrixPos
+        public Vector3 NexusMatrixPos
         {
             get => nexusMatrixPos;
             set
@@ -2773,7 +2775,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("qFl")]
-        public long TelemetryUploadVersion
+        public int TelemetryUploadVersion
         {
             get => telemetryUploadVersion;
             set

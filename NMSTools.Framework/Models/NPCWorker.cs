@@ -3,15 +3,16 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
+    using Framework.Primitives;
         
     public class NPCWorker : ModelBase
     {
         private ProceduralObject resourceElement;
-        private object[] interactionSeed;
+        private object[] interactionSeed;   //todo: strong type
         private bool hiredWorker;
         private bool freighterBase;
         private string baseUA;
-        private double[] baseOffset;
+        private Vector4 baseOffset;
 
         [JsonProperty("q08")]
         public ProceduralObject ResourceElement
@@ -84,7 +85,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("TJx")]
-        public double[] BaseOffset
+        public Vector4 BaseOffset
         {
             get => baseOffset;
             set

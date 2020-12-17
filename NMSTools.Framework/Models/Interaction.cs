@@ -3,12 +3,14 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+     
+    [JsonObject]
     public class Interaction : ModelBase
     {
         private object galacticAddress;
         private int interactionValue;
-        private double[] position;
+        private Vector4 position;
 
         [JsonProperty("oZw")]
         public object GalacticAddress
@@ -39,7 +41,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wMC")]
-        public double[] Position
+        public Vector4 Position
         {
             get => position;
             set

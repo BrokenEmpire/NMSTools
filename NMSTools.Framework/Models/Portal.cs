@@ -4,10 +4,11 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
 
+    [JsonObject]
     public class Portal : ModelBase
     {
-        private object[] portalSeed;
-        private object lastPortalUA;
+        private object[] portalSeed;  //todo: strong type
+        private object lastPortalUA;  //todo:: strong type
 
         [JsonProperty("3fO")]
         public object[] PortalSeed

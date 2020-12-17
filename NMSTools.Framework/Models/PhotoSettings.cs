@@ -3,12 +3,14 @@ using Newtonsoft.Json;
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    using Framework.Primitives;
+
+    [JsonObject]
     public class PhotoSettings : ModelBase
     {
         private double fog;
         private double cloudAmount;
-        private double[] sunDir;
+        private Vector4 sunDir;
         private bool sunDirSet;
         private double foV;
         private bool foVSet;
@@ -50,7 +52,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("qLk")]
-        public double[] SunDir
+        public Vector4 SunDir
         {
             get => sunDir;
             set

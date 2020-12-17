@@ -7,7 +7,7 @@ namespace NMSTools.Framework.Models
     public class CatalogLayout : ModelBase
     {
         private int slots;
-        private object[] seed;
+        private object[] seed; //todo: strong type
         private int level;
 
         [JsonProperty(":No")]

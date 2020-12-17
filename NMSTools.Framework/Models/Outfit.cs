@@ -3,7 +3,8 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    
+    [JsonObject]
     public class Outfit : ModelBase
     {
         private string[] descriptorGroups;

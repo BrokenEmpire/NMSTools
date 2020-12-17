@@ -3,7 +3,9 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-   
+    using Framework.Primitives;
+
+    [JsonObject]
     public class Vehicle : ModelBase
     {
         private string name;
@@ -11,9 +13,9 @@ namespace NMSTools.Framework.Models
         private Catalog inventory;
         private Catalog inventoryTech;
         private CatalogLayout inventoryLayout;
-        private object location;
-        private double[] position;
-        private double[] direction;
+        private object location;       //todo: strong typed
+        private Vector4 position;
+        private Vector4 direction;
 
         [JsonProperty("NKm")]
         public string Name
@@ -100,7 +102,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("wMC")]
-        public double[] Position
+        public Vector4 Position
         {
             get => position;
             set
@@ -114,7 +116,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("l?l")]
-        public double[] Direction
+        public Vector4 Direction
         {
             get => direction;
             set

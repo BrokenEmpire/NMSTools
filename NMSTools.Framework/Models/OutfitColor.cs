@@ -3,11 +3,12 @@
 namespace NMSTools.Framework.Models
 {
     using Framework.Base;
-        
+    
+    [JsonObject]
     public class OutfitColor : ModelBase
     {
         private PaletteData palette;
-        private double[] rgb;
+        private double[] rgb;  //todo: create a Color class
 
         [JsonProperty("RVl")]
         public PaletteData Palette

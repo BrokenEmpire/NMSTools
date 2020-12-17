@@ -12,7 +12,7 @@ namespace NMSTools.Framework.Models
         private int substanceMaxStorageMultiplier;
         private int productMaxStorageMultiplier;
         private StatData[] baseStatValues;
-        private object[] specialSlots;
+        private bool[] specialSlots;
         private int width;
         private int height;
         private bool isCool;
@@ -104,7 +104,7 @@ namespace NMSTools.Framework.Models
         }
 
         [JsonProperty("MMm")]
-        public object[] SpecialSlots
+        public bool[] SpecialSlots
         {
             get => specialSlots;
             set

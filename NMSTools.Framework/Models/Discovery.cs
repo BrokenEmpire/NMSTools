@@ -4,13 +4,14 @@ namespace NMSTools.Framework.Models
 {
     using Framework.Base;
 
+    [JsonObject]
     public class Discovery : ModelBase
     {
         private int reserveStore;
         private int reserveManaged;
         private StoreRecord store;
         private AvailableDiscovery[] available;
-        private object[] enqueued;
+        private object[] enqueued;  //todo: strong type
 
         [JsonProperty("fgt")]
         public int ReserveStore

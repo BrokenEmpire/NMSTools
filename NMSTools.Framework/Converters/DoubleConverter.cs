@@ -15,14 +15,9 @@ namespace NMSTools.Framework.Converters
 
         public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
         {
-            var result = string.Format("{0:G" + precision + "}", value).Replace("E", "e");
-
-            if (result.IndexOf('.') < 0)
-                writer.WriteRawValue(result + ".0");
-            else
-                writer.WriteRawValue(result);
+            writer.WriteRawValue(Format(value));
         }
 
-        public DoubleConverter(int precision = 17) : base(precision) { }
+        public DoubleConverter(int precision = 18) : base(precision) { }
     }
 }

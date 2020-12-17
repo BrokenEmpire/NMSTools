@@ -34,14 +34,14 @@ namespace NMSTools.Framework.Converters
                 throw new JsonWriterException("Unexpected object type");
 
             writer.WriteStartArray();
-
-            writer.WriteRawValue(string.Format("{0:G" + precision + "}", vector[0]).Replace("E", "e"));
-            writer.WriteRawValue(string.Format("{0:G" + precision + "}", vector[1]).Replace("E", "e"));
-            writer.WriteRawValue(string.Format("{0:G" + precision + "}", vector[2]).Replace("E", "e"));
+                 
+            writer.WriteRawValue(Format(vector[0]));
+            writer.WriteRawValue(Format(vector[1]));
+            writer.WriteRawValue(Format(vector[2]));
 
             writer.WriteEndArray();
         }
 
-        public Vector3Converter(int precision = 17) : base(precision) { }
+        public Vector3Converter(int precision = 18) : base(precision) { }
     }
 }

@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NMSTools.Framework</RootNamespace>
+    <AssemblyName>NMSTools.Framework</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Converters\DoubleConverter.cs" />
+    <Compile Include="Converters\PathConverter.cs" />
+    <Compile Include="Converters\Vector2Converter.cs" />
+    <Compile Include="Converters\Vector3Converter.cs" />
+    <Compile Include="Converters\Vector4Converter.cs" />
+    <Compile Include="Extensions\V2Extensions.cs" />
+    <Compile Include="Extensions\V3Extensions.cs" />
+    <Compile Include="Helpers\MathHelper.cs" />
+    <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Models\Action.cs" />
+    <Compile Include="Models\AvailableDiscovery.cs" />
+    <Compile Include="Models\BoneScale.cs" />
+    <Compile Include="Models\BuildingObject.cs" />
+    <Compile Include="Models\BuildingType.cs" />
+    <Compile Include="Models\Catalog.cs" />
+    <Compile Include="Models\CatalogLayout.cs" />
+    <Compile Include="Models\CatalogType.cs" />
+    <Compile Include="Models\DD.cs" />
+    <Compile Include="Models\Discovery.cs" />
+    <Compile Include="Models\DiscoveryData.cs" />
+    <Compile Include="Models\DM.cs" />
+    <Compile Include="Models\FL.cs" />
+    <Compile Include="Models\Frigate.cs" />
+    <Compile Include="Models\FrigateClass.cs" />
+    <Compile Include="Models\GalaxyCoordinates.cs" />
+    <Compile Include="Models\GamePreset.cs" />
+    <Compile Include="Models\HotAction.cs" />
+    <Compile Include="Models\Interaction.cs" />
+    <Compile Include="Models\InteractionData.cs" />
+    <Compile Include="Models\InteractionDialog.cs" />
+    <Compile Include="Models\InteractionIndicies.cs" />
+    <Compile Include="Models\KeyAction.cs" />
+    <Compile Include="Models\KnowledgetData.cs" />
+    <Compile Include="Models\Marker.cs" />
+    <Compile Include="Models\Mission.cs" />
+    <Compile Include="Models\MissionRecurrence.cs" />
+    <Compile Include="Models\MultiTool.cs" />
+    <Compile Include="Models\NMSRoot.cs" />
+    <Compile Include="Models\NPCWorker.cs" />
+    <Compile Include="Models\Outfit.cs" />
+    <Compile Include="Models\OutfitColor.cs" />
+    <Compile Include="Models\OutfitPreset.cs" />
+    <Compile Include="Models\OWS.cs" />
+    <Compile Include="Models\PaletteData.cs" />
+    <Compile Include="Models\Participant.cs" />
+    <Compile Include="Models\ParticipantType.cs" />
+    <Compile Include="Models\PhotoSettings.cs" />
+    <Compile Include="Models\PlayerBase.cs" />
+    <Compile Include="Models\PlayerBaseItem.cs" />
+    <Compile Include="Models\PlayerBaseMode.cs" />
+    <Compile Include="Models\PlayerBaseOwner.cs" />
+    <Compile Include="Models\PlayerBaseType.cs" />
+    <Compile Include="Models\Portal.cs" />
+    <Compile Include="Models\PortalData.cs" />
+    <Compile Include="Models\ProceduralObject.cs" />
+    <Compile Include="Models\ProceduralObjectTexture.cs" />
+    <Compile Include="Models\Race.cs" />
+    <Compile Include="Models\RecordData.cs" />
+    <Compile Include="Models\SeasonData.cs" />
+    <Compile Include="Models\ShipTypeDescription.cs" />
+    <Compile Include="Models\Slot.cs" />
+    <Compile Include="Models\SlotDescription.cs" />
+    <Compile Include="Models\SlotIndex.cs" />
+    <Compile Include="Models\SpawnData.cs" />
+    <Compile Include="Models\Stat.cs" />
+    <Compile Include="Models\StatData.cs" />
+    <Compile Include="Models\StatDetail.cs" />
+    <Compile Include="Models\StateData.cs" />
+    <Compile Include="Models\StatValue.cs" />
+    <Compile Include="Models\StoredInteraction.cs" />
+    <Compile Include="Models\StoreRecord.cs" />
+    <Compile Include="Models\Telemetry.cs" />
+    <Compile Include="Models\TerrainData.cs" />
+    <Compile Include="Models\TerrainEdit.cs" />
+    <Compile Include="Models\TextureOption.cs" />
+    <Compile Include="Models\TradeSupplyData.cs" />
+    <Compile Include="Models\UniverseCoordinates.cs" />
+    <Compile Include="Models\Vehicle.cs" />
+    <Compile Include="Models\Waypoint.cs" />
+    <Compile Include="Models\WaypointType.cs" />
+    <Compile Include="Models\Weapon.cs" />
+    <Compile Include="Models\WeaponDescription.cs" />
+    <Compile Include="Models\WordGroup.cs" />
+    <Compile Include="Primitives\Matrix4x4.cs" />
+    <Compile Include="Primitives\Quaternion.cs" />
+    <Compile Include="Primitives\Vector2.cs" />
+    <Compile Include="Primitives\Vector3.cs" />
+    <Compile Include="Primitives\Vector4.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

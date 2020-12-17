@@ -98,11 +98,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NMSTools.Models\NMSTools.Models.csproj">
-      <Project>{dcfbdbda-4c13-42aa-a0c1-27e76594b2f9}</Project>
-      <Name>NMSTools.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

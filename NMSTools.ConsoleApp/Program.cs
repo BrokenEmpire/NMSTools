@@ -8,10 +8,10 @@ using System.Linq;
 using System.Reflection;
 using System.Globalization;
 
-
 namespace NMSTools.ConsoleApp
 {
-    using Models;
+    using Framework.Converters;
+    using Framework.Models;
 
     struct FieldData
     {
@@ -71,43 +71,8 @@ namespace NMSTools.ConsoleApp
 
         static void Main(string[] args)
         {
-
             var root = Deserialize<NMSRoot>(saveFile);
-
-            foreach (var test in new List<TestData>
-            {
-                new TestData("-16.32000160217285", 16),
-                new TestData("4.208272645803044e-36", 16),
-                new TestData("32.193878173828128", 17),
-                new TestData("130151.1015625", 17),
-                new TestData("-1055.5179443359375", 17)
-            })
-            {
-                var previousColor = Console.ForegroundColor;
-                var highlightColorA = test.MatchA ? ConsoleColor.Green : ConsoleColor.Red;
-                var highlightColorB = test.MatchB ? ConsoleColor.Green : ConsoleColor.Red;
-
-                Console.Write("Expected: ");
-                Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine(test.StringValue);
-                Console.ForegroundColor = previousColor;
-
-                Console.Write("  Double: ");
-                Console.ForegroundColor = highlightColorA;
-                Console.Write(test.Format, test.DoubleValue);
-                Console.WriteLine(" {0}", test.MatchA ? "Passed" : "Failed");
-                Console.ForegroundColor = previousColor;
-
-                Console.Write(" Decimal: ");
-                Console.ForegroundColor = highlightColorB;
-                Console.Write(test.Format, test.DecimalValue);
-                Console.WriteLine(" {0}", test.MatchB ? "Passed" : "Failed");
-                Console.ForegroundColor = previousColor;
-
-                Console.WriteLine();
-            }
-
-            Serialize(root, saveFile + ".test");
+            Serialize(root, saveFile.Replace(".hg", ".nmsTools.hg"));
 
             Console.WriteLine();
             Console.WriteLine("Program Complete");
@@ -145,7 +110,8 @@ namespace NMSTools.ConsoleApp
             try
             {
                 serializer = new JsonSerializer();
-                serializer.Converters.Add(new Models.Base.DoubleConverter());
+                serializer.Converters.Add(new DoubleConverter());
+                serializer.Converters.Add(new Vector3Converter());
                 serializer.Error += Serializer_Error;
 
                 outputFile = File.Create(filename);
@@ -200,7 +166,8 @@ namespace NMSTools.ConsoleApp
             try
             {
                 serializer = new JsonSerializer();
-                serializer.Converters.Add(new Models.Base.DoubleConverter(16));
+                serializer.Converters.Add(new DoubleConverter());
+                serializer.Converters.Add(new Vector3Converter());
                 serializer.Error += Serializer_Error;
 
                 inputFile = File.Open(filename, FileMode.Open);

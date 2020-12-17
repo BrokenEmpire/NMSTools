@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30711.63
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMSTools.ConsoleApp", "NMSTools.ConsoleApp\NMSTools.ConsoleApp.csproj", "{08960E2D-ABC2-42F2-BD25-BDAF64CCF9E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMSTools.Models", "NMSTools.Models\NMSTools.Models.csproj", "{DCFBDBDA-4C13-42AA-A0C1-27E76594B2F9}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMSTools.SaveEditor", "NMSTools.SaveEditor\NMSTools.SaveEditor.csproj", "{893C89E9-8DFD-4F4F-8AB3-B8DED57D4EBE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Dependencies", "External Dependencies", "{3770DCFB-4924-4D8E-9D6A-6A364DCED7A0}"
@@ -15,12 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Dependencies", "Ex
 		External Dependencies\psarc.exe = External Dependencies\psarc.exe
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMSTools.Serialization", "NMSTools.Serialization\NMSTools.Serialization.csproj", "{05101DD7-2341-4190-B822-A0EF2839BDA9}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{EE9E96E8-8F8D-444A-9B5A-0B2067606587}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NMSTools.Framework", "NMSTools.Framework\NMSTools.Framework.csproj", "{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -32,18 +30,14 @@ Global
 		{08960E2D-ABC2-42F2-BD25-BDAF64CCF9E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08960E2D-ABC2-42F2-BD25-BDAF64CCF9E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08960E2D-ABC2-42F2-BD25-BDAF64CCF9E1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DCFBDBDA-4C13-42AA-A0C1-27E76594B2F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DCFBDBDA-4C13-42AA-A0C1-27E76594B2F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DCFBDBDA-4C13-42AA-A0C1-27E76594B2F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DCFBDBDA-4C13-42AA-A0C1-27E76594B2F9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{893C89E9-8DFD-4F4F-8AB3-B8DED57D4EBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{893C89E9-8DFD-4F4F-8AB3-B8DED57D4EBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{893C89E9-8DFD-4F4F-8AB3-B8DED57D4EBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{893C89E9-8DFD-4F4F-8AB3-B8DED57D4EBE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{05101DD7-2341-4190-B822-A0EF2839BDA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{05101DD7-2341-4190-B822-A0EF2839BDA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{05101DD7-2341-4190-B822-A0EF2839BDA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{05101DD7-2341-4190-B822-A0EF2839BDA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD32CFB8-E168-4CC0-AE7A-B2AF46F47B31}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

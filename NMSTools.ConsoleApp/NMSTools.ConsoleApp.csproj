@@ -74,9 +74,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NMSTools.Models\NMSTools.Models.csproj">
-      <Project>{dcfbdbda-4c13-42aa-a0c1-27e76594b2f9}</Project>
-      <Name>NMSTools.Models</Name>
+    <ProjectReference Include="..\NMSTools.Framework\NMSTools.Framework.csproj">
+      <Project>{bd32cfb8-e168-4cc0-ae7a-b2af46f47b31}</Project>
+      <Name>NMSTools.Framework</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

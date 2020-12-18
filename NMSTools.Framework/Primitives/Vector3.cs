@@ -912,7 +912,7 @@ namespace NMSTools.Framework.Primitives
 		/// <returns></returns>
 		public override string ToString()
 		{
-			return String.Format($"[{X:0.####}, {Y:0.####}, {Z:0.####}]");
+			return string.Format("{0:G18},{1:G18},{2:G18}", X, Y, Z);
 		}
 
 		#endregion public override string ToString()

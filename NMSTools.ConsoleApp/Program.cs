@@ -23,17 +23,22 @@ namespace NMSTools.ConsoleApp
         static void Main(string[] args)
         {
             var root = Deserialize<NMSRoot>(saveFile);
-
+            using var outputFile = File.Create("C:\\Users\\dhr\\Desktop\\items.csv");
+            using var outputStream = new StreamWriter(outputFile);
+            
             foreach (var playerBase in root.PlayerStateData.PersistentPlayerBases)
             {
                 if (playerBase.Name != "Test Base")
                     continue;
 
-                foreach (var items in playerBase.Objects)
-                {
-                    Console.WriteLine(items.ObjectID);
-                }
+                foreach (var item in playerBase.Objects)
+                    outputStream.WriteLine("{0},{1},{2},{3},\"{4}\"", item.Timestamp, item.Position.ToString(), item.At.ToString(), item.Up.ToString(), item.ObjectID);
             }
+
+            outputStream.Flush();
+            outputFile.Flush();
+
+
 
             Serialize(root, saveFile.Replace(".hg", ".nmsTools.hg"));
 

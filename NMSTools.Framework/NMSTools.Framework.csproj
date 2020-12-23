@@ -51,9 +51,6 @@
     <Compile Include="Converters\Vector2Converter.cs" />
     <Compile Include="Converters\Vector3Converter.cs" />
     <Compile Include="Converters\Vector4Converter.cs" />
-    <Compile Include="Extensions\V2Extensions.cs" />
-    <Compile Include="Extensions\V3Extensions.cs" />
-    <Compile Include="Helpers\MathHelper.cs" />
     <Compile Include="Base\ModelBase.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\AvailableDiscovery.cs" />
@@ -129,8 +126,11 @@
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\WeaponDescription.cs" />
     <Compile Include="Models\WordGroup.cs" />
-    <Compile Include="Primitives\Matrix4x4.cs" />
-    <Compile Include="Primitives\Quaternion.cs" />
+    <Compile Include="Platforms\IPlatform.cs" />
+    <Compile Include="Platforms\Microsoft.cs" />
+    <Compile Include="Platforms\Playstation.cs" />
+    <Compile Include="Platforms\Steam.cs" />
+    <Compile Include="Primitives\ByteSlice.cs" />
     <Compile Include="Primitives\Vector2.cs" />
     <Compile Include="Primitives\Vector3.cs" />
     <Compile Include="Primitives\Vector4.cs" />
@@ -139,6 +139,10 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+    <Folder Include="Helpers\" />
+    <Folder Include="Meta\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

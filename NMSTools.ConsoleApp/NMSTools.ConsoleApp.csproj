@@ -89,7 +89,6 @@
   <ItemGroup>
     <Compile Include="Platforms\IPlatform.cs" />
     <Compile Include="Platforms\Microsoft.cs" />
-    <Compile Include="Platforms\Playstation.cs" />
     <Compile Include="Platforms\Steam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

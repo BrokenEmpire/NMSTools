@@ -50,6 +50,10 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="NMSTools.Framework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\NMSTools.Framework\bin\Debug\NMSTools.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="SpookilySharp, Version=1.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SpookilySharp.1.2.0\lib\netstandard2.0\SpookilySharp.dll</HintPath>
     </Reference>
@@ -87,6 +91,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Metadata.cs" />
     <Compile Include="Platforms\IPlatform.cs" />
     <Compile Include="Platforms\Microsoft.cs" />
     <Compile Include="Platforms\Steam.cs" />
@@ -96,12 +101,6 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\NMSTools.Framework\NMSTools.Framework.csproj">
-      <Project>{bd32cfb8-e168-4cc0-ae7a-b2af46f47b31}</Project>
-      <Name>NMSTools.Framework</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

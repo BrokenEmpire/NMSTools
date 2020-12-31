@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => data;
             set
             {
-                if ((ReferenceEquals(data, value) != true))
+                if (ReferenceEquals(data, value) != true)
                 {
                     data = value;
                     OnPropertyChanged("Data");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => position;
             set
             {
-                if ((ReferenceEquals(position, value) != true))
+                if (ReferenceEquals(position, value) != true)
                 {
                     position = value;
                     OnPropertyChanged("Position");

@@ -20,7 +20,7 @@ namespace NMSTools.Framework.Models
             get => resourceElement;
             set
             {
-                if ((ReferenceEquals(resourceElement, value) != true))
+                if (ReferenceEquals(resourceElement, value) != true)
                 {
                     resourceElement = value;
                     OnPropertyChanged("ResourceElement");
@@ -34,7 +34,7 @@ namespace NMSTools.Framework.Models
             get => interactionSeed;
             set
             {
-                if ((ReferenceEquals(interactionSeed, value) != true))
+                if (ReferenceEquals(interactionSeed, value) != true)
                 {
                     interactionSeed = value;
                     OnPropertyChanged("InteractionSeed");
@@ -48,7 +48,7 @@ namespace NMSTools.Framework.Models
             get => hiredWorker;
             set
             {
-                if ((ReferenceEquals(hiredWorker, value) != true))
+                if (ReferenceEquals(hiredWorker, value) != true)
                 {
                     hiredWorker = value;
                     OnPropertyChanged("HiredWorker");
@@ -62,7 +62,7 @@ namespace NMSTools.Framework.Models
             get => freighterBase;
             set
             {
-                if ((ReferenceEquals(freighterBase, value) != true))
+                if (ReferenceEquals(freighterBase, value) != true)
                 {
                     freighterBase = value;
                     OnPropertyChanged("FreighterBase");
@@ -76,7 +76,7 @@ namespace NMSTools.Framework.Models
             get => baseUA;
             set
             {
-                if ((ReferenceEquals(baseUA, value) != true))
+                if (ReferenceEquals(baseUA, value) != true)
                 {
                     baseUA = value;
                     OnPropertyChanged("BaseUA");
@@ -90,7 +90,7 @@ namespace NMSTools.Framework.Models
             get => baseOffset;
             set
             {
-                if ((ReferenceEquals(baseOffset, value) != true))
+                if (ReferenceEquals(baseOffset, value) != true)
                 {
                     baseOffset = value;
                     OnPropertyChanged("GalaBaseOffsetcticAddress");

@@ -17,7 +17,7 @@ namespace NMSTools.Framework.Models
             get => uA;
             set
             {
-                if ((ReferenceEquals(uA, value) != true))
+                if (ReferenceEquals(uA, value) != true)
                 {
                     uA = value;
                     OnPropertyChanged("UA");
@@ -31,7 +31,7 @@ namespace NMSTools.Framework.Models
             get => dT;
             set
             {
-                if ((ReferenceEquals(dT, value) != true))
+                if (ReferenceEquals(dT, value) != true)
                 {
                     dT = value;
                     OnPropertyChanged("DT");
@@ -45,7 +45,7 @@ namespace NMSTools.Framework.Models
             get => vP;
             set
             {
-                if ((ReferenceEquals(vP, value) != true))
+                if (ReferenceEquals(vP, value) != true)
                 {
                     vP = value;
                     OnPropertyChanged("VP");

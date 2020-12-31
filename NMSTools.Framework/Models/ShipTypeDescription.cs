@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => shipClass;
             set
             {
-                if ((ReferenceEquals(shipClass, value) != true))
+                if (ReferenceEquals(shipClass, value) != true)
                 {
                     shipClass = value;
                     OnPropertyChanged("ShipClass");

@@ -1,12 +1,11 @@
 ﻿using Newtonsoft.Json;
 using System;
 
-namespace NMSTools.Framework.Converters
+namespace NMSTools.Framework.Base
 {
-    public abstract class BaseConverter<T> : JsonConverter
+    public abstract class ConverterBase<T> : JsonConverter
     {
         protected readonly int precision;
-        protected static char[] exponentKeys = new char[2] { 'E','e' };
 
         public override bool CanConvert(Type objectType) => objectType.Equals(typeof(T));
 
@@ -18,19 +17,16 @@ namespace NMSTools.Framework.Converters
         {
             var result = value;
 
-            if (result.IndexOfAny(exponentKeys) > 0)
-                result = result.Replace("E", "e");
-
             if (result.IndexOf('.') < 0)
                 result += ".0";
 
             return result;
         }
 
-        protected virtual string Format(double value) => Format(string.Format("{0:G" + precision + "}", value));
+        protected virtual string Format(double value) => Format(string.Format("{0:g" + precision + "}", value));
 
-        protected virtual string Format(object value) => Format(string.Format("{0:G" + precision + "}", value));
+        protected virtual string Format(object value) => Format(string.Format("{0:g" + precision + "}", value));
 
-        protected BaseConverter(int precision = 18) : base() => this.precision = precision;
+        protected ConverterBase(int precision = 18) : base() => this.precision = precision;
     }
 }

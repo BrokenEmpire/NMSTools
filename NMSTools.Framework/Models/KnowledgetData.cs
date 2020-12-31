@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => waypoints;
             set
             {
-                if ((ReferenceEquals(waypoints, value) != true))
+                if (ReferenceEquals(waypoints, value) != true)
                 {
                     waypoints = value;
                     OnPropertyChanged("Waypoints");

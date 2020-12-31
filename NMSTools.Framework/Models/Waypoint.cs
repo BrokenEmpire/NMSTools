@@ -17,7 +17,7 @@ namespace NMSTools.Framework.Models
             get => address;
             set
             {
-                if ((ReferenceEquals(address, value) != true))
+                if (ReferenceEquals(address, value) != true)
                 {
                     address = value;
                     OnPropertyChanged("Address");
@@ -31,7 +31,7 @@ namespace NMSTools.Framework.Models
             get => type;
             set
             {
-                if ((ReferenceEquals(type, value) != true))
+                if (ReferenceEquals(type, value) != true)
                 {
                     type = value;
                     OnPropertyChanged("Type");
@@ -45,7 +45,7 @@ namespace NMSTools.Framework.Models
             get => eventId;
             set
             {
-                if ((ReferenceEquals(eventId, value) != true))
+                if (ReferenceEquals(eventId, value) != true)
                 {
                     eventId = value;
                     OnPropertyChanged("EventId");

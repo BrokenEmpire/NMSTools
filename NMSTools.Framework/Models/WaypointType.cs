@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => galaxyWaypointType;
             set
             {
-                if ((ReferenceEquals(galaxyWaypointType, value) != true))
+                if (ReferenceEquals(galaxyWaypointType, value) != true)
                 {
                     galaxyWaypointType = value;
                     OnPropertyChanged("GalaxyWaypointType");

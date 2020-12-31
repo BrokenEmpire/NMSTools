@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => participantMode;
             set
             {
-                if ((ReferenceEquals(participantMode, value) != true))
+                if (ReferenceEquals(participantMode, value) != true)
                 {
                     participantMode = value;
                     OnPropertyChanged("ParticipantMode");

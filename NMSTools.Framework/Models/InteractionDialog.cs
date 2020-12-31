@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => hash;
             set
             {
-                if ((ReferenceEquals(hash, value) != true))
+                if (ReferenceEquals(hash, value) != true)
                 {
                     hash = value;
                     OnPropertyChanged("Hash");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => dialog;
             set
             {
-                if ((ReferenceEquals(dialog, value) != true))
+                if (ReferenceEquals(dialog, value) != true)
                 {
                     dialog = value;
                     OnPropertyChanged("Dialog");

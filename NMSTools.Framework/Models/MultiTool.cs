@@ -21,7 +21,7 @@ namespace NMSTools.Framework.Models
             get => layout;
             set
             {
-                if ((ReferenceEquals(layout, value) != true))
+                if (ReferenceEquals(layout, value) != true)
                 {
                     layout = value;
                     OnPropertyChanged("Layout");
@@ -35,7 +35,7 @@ namespace NMSTools.Framework.Models
             get => store;
             set
             {
-                if ((ReferenceEquals(store, value) != true))
+                if (ReferenceEquals(store, value) != true)
                 {
                     store = value;
                     OnPropertyChanged("Store");
@@ -49,7 +49,7 @@ namespace NMSTools.Framework.Models
             get => seed;
             set
             {
-                if ((ReferenceEquals(seed, value) != true))
+                if (ReferenceEquals(seed, value) != true)
                 {
                     seed = value;
                     OnPropertyChanged("Seed");
@@ -63,7 +63,7 @@ namespace NMSTools.Framework.Models
             get => name;
             set
             {
-                if ((ReferenceEquals(name, value) != true))
+                if (ReferenceEquals(name, value) != true)
                 {
                     name = value;
                     OnPropertyChanged("Name");
@@ -77,7 +77,7 @@ namespace NMSTools.Framework.Models
             get => isLarge;
             set
             {
-                if ((ReferenceEquals(isLarge, value) != true))
+                if (ReferenceEquals(isLarge, value) != true)
                 {
                     isLarge = value;
                     OnPropertyChanged("IsLarge");
@@ -91,7 +91,7 @@ namespace NMSTools.Framework.Models
             get => primaryMode;
             set
             {
-                if ((ReferenceEquals(primaryMode, value) != true))
+                if (ReferenceEquals(primaryMode, value) != true)
                 {
                     primaryMode = value;
                     OnPropertyChanged("PrimaryMode");
@@ -105,7 +105,7 @@ namespace NMSTools.Framework.Models
             get => secondaryMode;
             set
             {
-                if ((ReferenceEquals(secondaryMode, value) != true))
+                if (ReferenceEquals(secondaryMode, value) != true)
                 {
                     secondaryMode = value;
                     OnPropertyChanged("SecondaryMode");

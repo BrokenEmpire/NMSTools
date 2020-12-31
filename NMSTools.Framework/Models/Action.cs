@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => quickMenuActions;
             set
             {
-                if ((ReferenceEquals(quickMenuActions, value) != true))
+                if (ReferenceEquals(quickMenuActions, value) != true)
                 {
                     quickMenuActions = value;
                     OnPropertyChanged("QuickMenuActions");

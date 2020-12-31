@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => realityIndex;
             set
             {
-                if ((ReferenceEquals(realityIndex, value) != true))
+                if (ReferenceEquals(realityIndex, value) != true)
                 {
                     realityIndex = value;
                     OnPropertyChanged("RealityIndex");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => galacticAddress;
             set
             {
-                if ((ReferenceEquals(galacticAddress, value) != true))
+                if (ReferenceEquals(galacticAddress, value) != true)
                 {
                     galacticAddress = value;
                     OnPropertyChanged("GalacticAddress");

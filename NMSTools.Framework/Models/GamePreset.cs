@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => presetGameMode;
             set
             {
-                if ((ReferenceEquals(presetGameMode, value) != true))
+                if (ReferenceEquals(presetGameMode, value) != true)
                 {
                     presetGameMode = value;
                     OnPropertyChanged("PresetGameMode");

@@ -109,7 +109,7 @@ namespace NMSTools.Framework.Primitives
 			=> !left.Equals(right);
 
         public override string ToString()
-			=> string.Format("{0:G18}, {1:G18}", X, Y);
+			=> string.Format("{0:g18},{1:g18}", X, Y);
 
         public override int GetHashCode()
 			=> new { X, Y }.GetHashCode();

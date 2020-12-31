@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => keyActions;
             set
             {
-                if ((ReferenceEquals(keyActions, value) != true))
+                if (ReferenceEquals(keyActions, value) != true)
                 {
                     keyActions = value;
                     OnPropertyChanged("KeyActions");

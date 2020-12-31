@@ -18,7 +18,7 @@ namespace NMSTools.Framework.Models
             get => filename;
             set
             {
-                if ((ReferenceEquals(filename, value) != true))
+                if (ReferenceEquals(filename, value) != true)
                 {
                     filename = value;
                     OnPropertyChanged("Filename");
@@ -32,7 +32,7 @@ namespace NMSTools.Framework.Models
             get => generationSeed;
             set
             {
-                if ((ReferenceEquals(generationSeed, value) != true))
+                if (ReferenceEquals(generationSeed, value) != true)
                 {
                     generationSeed = value;
                     OnPropertyChanged("GenerationSeed");

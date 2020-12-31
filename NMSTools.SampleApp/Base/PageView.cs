@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NMSTools.Framework.Platforms
+namespace NMSTools.SampleApp.Base
 {
-    public interface IPlatform
+    class PageView
     {
     }
 }

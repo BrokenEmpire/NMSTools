@@ -45,13 +45,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\PlatformBase.cs" />
     <Compile Include="Converters\DoubleConverter.cs" />
-    <Compile Include="Converters\BaseConverter.cs" />
+    <Compile Include="Base\ConverterBase.cs" />
     <Compile Include="Converters\PathConverter.cs" />
     <Compile Include="Converters\Vector2Converter.cs" />
     <Compile Include="Converters\Vector3Converter.cs" />
     <Compile Include="Converters\Vector4Converter.cs" />
     <Compile Include="Base\ModelBase.cs" />
+    <Compile Include="Enums\GameType.cs" />
+    <Compile Include="Enums\SaveType.cs" />
     <Compile Include="Models\Action.cs" />
     <Compile Include="Models\AvailableDiscovery.cs" />
     <Compile Include="Models\BoneScale.cs" />
@@ -101,6 +104,7 @@
     <Compile Include="Models\ProceduralObjectTexture.cs" />
     <Compile Include="Models\Race.cs" />
     <Compile Include="Models\RecordData.cs" />
+    <Compile Include="Meta\SaveSlot.cs" />
     <Compile Include="Models\SeasonData.cs" />
     <Compile Include="Models\ShipTypeDescription.cs" />
     <Compile Include="Models\Slot.cs" />
@@ -126,8 +130,7 @@
     <Compile Include="Models\Weapon.cs" />
     <Compile Include="Models\WeaponDescription.cs" />
     <Compile Include="Models\WordGroup.cs" />
-    <Compile Include="Platforms\IPlatform.cs" />
-    <Compile Include="Platforms\Microsoft.cs" />
+    <Compile Include="Platforms\MicrosoftStore.cs" />
     <Compile Include="Platforms\Playstation.cs" />
     <Compile Include="Platforms\Steam.cs" />
     <Compile Include="Primitives\ByteSlice.cs" />
@@ -141,8 +144,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Helpers\" />
-    <Folder Include="Meta\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

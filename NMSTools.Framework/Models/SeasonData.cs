@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => startTimeUTC;
             set
             {
-                if ((ReferenceEquals(startTimeUTC, value) != true))
+                if (ReferenceEquals(startTimeUTC, value) != true)
                 {
                     startTimeUTC = value;
                     OnPropertyChanged("StartTimeUTC");
@@ -44,7 +44,7 @@ namespace NMSTools.Framework.Models
             get => endTimeUTC;
             set
             {
-                if ((ReferenceEquals(endTimeUTC, value) != true))
+                if (ReferenceEquals(endTimeUTC, value) != true)
                 {
                     endTimeUTC = value;
                     OnPropertyChanged("EndTimeUTC");
@@ -58,7 +58,7 @@ namespace NMSTools.Framework.Models
             get => title;
             set
             {
-                if ((ReferenceEquals(title, value) != true))
+                if (ReferenceEquals(title, value) != true)
                 {
                     title = value;
                     OnPropertyChanged("Title");
@@ -72,7 +72,7 @@ namespace NMSTools.Framework.Models
             get => subTitle;
             set
             {
-                if ((ReferenceEquals(subTitle, value) != true))
+                if (ReferenceEquals(subTitle, value) != true)
                 {
                     subTitle = value;
                     OnPropertyChanged("SubTitle");
@@ -86,7 +86,7 @@ namespace NMSTools.Framework.Models
             get => description;
             set
             {
-                if ((ReferenceEquals(description, value) != true))
+                if (ReferenceEquals(description, value) != true)
                 {
                     description = value;
                     OnPropertyChanged("Description");
@@ -100,7 +100,7 @@ namespace NMSTools.Framework.Models
             get => gameMode;
             set
             {
-                if ((ReferenceEquals(gameMode, value) != true))
+                if (ReferenceEquals(gameMode, value) != true)
                 {
                     gameMode = value;
                     OnPropertyChanged("GameMode");
@@ -114,7 +114,7 @@ namespace NMSTools.Framework.Models
             get => seasonalUAOverride;
             set
             {
-                if ((ReferenceEquals(seasonalUAOverride, value) != true))
+                if (ReferenceEquals(seasonalUAOverride, value) != true)
                 {
                     seasonalUAOverride = value;
                     OnPropertyChanged("SeasonalUAOverride");
@@ -128,7 +128,7 @@ namespace NMSTools.Framework.Models
             get => uAOverrideValue;
             set
             {
-                if ((ReferenceEquals(uAOverrideValue, value) != true))
+                if (ReferenceEquals(uAOverrideValue, value) != true)
                 {
                     uAOverrideValue = value;
                     OnPropertyChanged("UAOverrideValue");
@@ -142,7 +142,7 @@ namespace NMSTools.Framework.Models
             get => weaponSeed;
             set
             {
-                if ((ReferenceEquals(weaponSeed, value) != true))
+                if (ReferenceEquals(weaponSeed, value) != true)
                 {
                     weaponSeed = value;
                     OnPropertyChanged("WeaponSeed");
@@ -156,7 +156,7 @@ namespace NMSTools.Framework.Models
             get => shipSeed;
             set
             {
-                if ((ReferenceEquals(shipSeed, value) != true))
+                if (ReferenceEquals(shipSeed, value) != true)
                 {
                     shipSeed = value;
                     OnPropertyChanged("ShipSeed");
@@ -170,7 +170,7 @@ namespace NMSTools.Framework.Models
             get => shipType;
             set
             {
-                if ((ReferenceEquals(shipType, value) != true))
+                if (ReferenceEquals(shipType, value) != true)
                 {
                     shipType = value;
                     OnPropertyChanged("ShipType");
@@ -184,7 +184,7 @@ namespace NMSTools.Framework.Models
             get => startNextToShip;
             set
             {
-                if ((ReferenceEquals(startNextToShip, value) != true))
+                if (ReferenceEquals(startNextToShip, value) != true)
                 {
                     startNextToShip = value;
                     OnPropertyChanged("StartNextToShip");
@@ -198,7 +198,7 @@ namespace NMSTools.Framework.Models
             get => shipStartsDamaged;
             set
             {
-                if ((ReferenceEquals(shipStartsDamaged, value) != true))
+                if (ReferenceEquals(shipStartsDamaged, value) != true)
                 {
                     shipStartsDamaged = value;
                     OnPropertyChanged("ShipStartsDamaged");
@@ -212,7 +212,7 @@ namespace NMSTools.Framework.Models
             get => allowMissionDetailMessages;
             set
             {
-                if ((ReferenceEquals(allowMissionDetailMessages, value) != true))
+                if (ReferenceEquals(allowMissionDetailMessages, value) != true)
                 {
                     allowMissionDetailMessages = value;
                     OnPropertyChanged("AllowMissionDetailMessages");
@@ -226,7 +226,7 @@ namespace NMSTools.Framework.Models
             get => milestones;
             set
             {
-                if ((ReferenceEquals(milestones, value) != true))
+                if (ReferenceEquals(milestones, value) != true)
                 {
                     milestones = value;
                     OnPropertyChanged("Milestones");
@@ -240,7 +240,7 @@ namespace NMSTools.Framework.Models
             get => secondaryStats;
             set
             {
-                if ((ReferenceEquals(secondaryStats, value) != true))
+                if (ReferenceEquals(secondaryStats, value) != true)
                 {
                     secondaryStats = value;
                     OnPropertyChanged("SecondaryStats");

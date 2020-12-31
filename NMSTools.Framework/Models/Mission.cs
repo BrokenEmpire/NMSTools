@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => missionName;
             set
             {
-                if ((ReferenceEquals(missionName, value) != true))
+                if (ReferenceEquals(missionName, value) != true)
                 {
                     missionName = value;
                     OnPropertyChanged("MissionName");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => progress;
             set
             {
-                if ((ReferenceEquals(progress, value) != true))
+                if (ReferenceEquals(progress, value) != true)
                 {
                     progress = value;
                     OnPropertyChanged("Progress");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => seed;
             set
             {
-                if ((ReferenceEquals(seed, value) != true))
+                if (ReferenceEquals(seed, value) != true)
                 {
                     seed = value;
                     OnPropertyChanged("Seed");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => data;
             set
             {
-                if ((ReferenceEquals(data, value) != true))
+                if (ReferenceEquals(data, value) != true)
                 {
                     data = value;
                     OnPropertyChanged("Data");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => participants;
             set
             {
-                if ((ReferenceEquals(participants, value) != true))
+                if (ReferenceEquals(participants, value) != true)
                 {
                     participants = value;
                     OnPropertyChanged("Participants");

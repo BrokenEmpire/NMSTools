@@ -20,7 +20,7 @@ namespace NMSTools.Framework.Models
             get => filename;
             set
             {
-                if ((ReferenceEquals(filename, value) != true))
+                if (ReferenceEquals(filename, value) != true)
                 {
                     filename = value;
                     OnPropertyChanged("Filename");
@@ -34,7 +34,7 @@ namespace NMSTools.Framework.Models
             get => seed;
             set
             {
-                if ((ReferenceEquals(seed, value) != true))
+                if (ReferenceEquals(seed, value) != true)
                 {
                     seed = value;
                     OnPropertyChanged("Seed");
@@ -48,7 +48,7 @@ namespace NMSTools.Framework.Models
             get => altId;
             set
             {
-                if ((ReferenceEquals(altId, value) != true))
+                if (ReferenceEquals(altId, value) != true)
                 {
                     altId = value;
                     OnPropertyChanged("AltId");
@@ -62,7 +62,7 @@ namespace NMSTools.Framework.Models
             get => proceduralTexture;
             set
             {
-                if ((ReferenceEquals(proceduralTexture, value) != true))
+                if (ReferenceEquals(proceduralTexture, value) != true)
                 {
                     proceduralTexture = value;
                     OnPropertyChanged("ProceduralTexture");

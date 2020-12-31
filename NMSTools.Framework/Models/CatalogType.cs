@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => inventoryClass;
             set
             {
-                if ((ReferenceEquals(inventoryClass, value) != true))
+                if (ReferenceEquals(inventoryClass, value) != true)
                 {
                     inventoryClass = value;
                     OnPropertyChanged("InventoryClass");

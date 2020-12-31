@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => reserveStore;
             set
             {
-                if ((ReferenceEquals(reserveStore, value) != true))
+                if (ReferenceEquals(reserveStore, value) != true)
                 {
                     reserveStore = value;
                     OnPropertyChanged("ReserveStore");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => reserveManaged;
             set
             {
-                if ((ReferenceEquals(reserveManaged, value) != true))
+                if (ReferenceEquals(reserveManaged, value) != true)
                 {
                     reserveManaged = value;
                     OnPropertyChanged("ReserveManaged");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => store;
             set
             {
-                if ((ReferenceEquals(store, value) != true))
+                if (ReferenceEquals(store, value) != true)
                 {
                     store = value;
                     OnPropertyChanged("Store");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => available;
             set
             {
-                if ((ReferenceEquals(available, value) != true))
+                if (ReferenceEquals(available, value) != true)
                 {
                     available = value;
                     OnPropertyChanged("Available");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => enqueued;
             set
             {
-                if ((ReferenceEquals(enqueued, value) != true))
+                if (ReferenceEquals(enqueued, value) != true)
                 {
                     enqueued = value;
                     OnPropertyChanged("Enqueued");

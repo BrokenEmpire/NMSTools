@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => discoveryDataV1;
             set
             {
-                if ((ReferenceEquals(discoveryDataV1, value) != true))
+                if (ReferenceEquals(discoveryDataV1, value) != true)
                 {
                     discoveryDataV1 = value;
                     OnPropertyChanged("DiscoveryDataV1");

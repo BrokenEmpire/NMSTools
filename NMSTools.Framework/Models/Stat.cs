@@ -17,7 +17,7 @@ namespace NMSTools.Framework.Models
             get => groupId;
             set
             {
-                if ((ReferenceEquals(groupId, value) != true))
+                if (ReferenceEquals(groupId, value) != true)
                 {
                     groupId = value;
                     OnPropertyChanged("GroupId");
@@ -31,7 +31,7 @@ namespace NMSTools.Framework.Models
             get => address;
             set
             {
-                if ((ReferenceEquals(address, value) != true))
+                if (ReferenceEquals(address, value) != true)
                 {
                     address = value;
                     OnPropertyChanged("Address");
@@ -45,7 +45,7 @@ namespace NMSTools.Framework.Models
             get => stats;
             set
             {
-                if ((ReferenceEquals(stats, value) != true))
+                if (ReferenceEquals(stats, value) != true)
                 {
                     stats = value;
                     OnPropertyChanged("Stats");

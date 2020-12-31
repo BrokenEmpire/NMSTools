@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => alienRace;
             set
             {
-                if ((ReferenceEquals(alienRace, value) != true))
+                if (ReferenceEquals(alienRace, value) != true)
                 {
                     alienRace = value;
                     OnPropertyChanged("AlienRace");

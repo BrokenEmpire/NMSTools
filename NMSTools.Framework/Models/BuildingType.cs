@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => buildingClass;
             set
             {
-                if ((ReferenceEquals(buildingClass, value) != true))
+                if (ReferenceEquals(buildingClass, value) != true)
                 {
                     buildingClass = value;
                     OnPropertyChanged("BuildingClass");

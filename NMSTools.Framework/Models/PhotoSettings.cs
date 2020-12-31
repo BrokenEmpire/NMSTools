@@ -29,7 +29,7 @@ namespace NMSTools.Framework.Models
             get => fog;
             set
             {
-                if ((ReferenceEquals(fog, value) != true))
+                if (ReferenceEquals(fog, value) != true)
                 {
                     fog = value;
                     OnPropertyChanged("Fog");
@@ -43,7 +43,7 @@ namespace NMSTools.Framework.Models
             get => cloudAmount;
             set
             {
-                if ((ReferenceEquals(cloudAmount, value) != true))
+                if (ReferenceEquals(cloudAmount, value) != true)
                 {
                     cloudAmount = value;
                     OnPropertyChanged("CloudAmount");
@@ -57,7 +57,7 @@ namespace NMSTools.Framework.Models
             get => sunDir;
             set
             {
-                if ((ReferenceEquals(sunDir, value) != true))
+                if (ReferenceEquals(sunDir, value) != true)
                 {
                     sunDir = value;
                     OnPropertyChanged("SunDir");
@@ -71,7 +71,7 @@ namespace NMSTools.Framework.Models
             get => sunDirSet;
             set
             {
-                if ((ReferenceEquals(sunDirSet, value) != true))
+                if (ReferenceEquals(sunDirSet, value) != true)
                 {
                     sunDirSet = value;
                     OnPropertyChanged("SunDirSet");
@@ -85,7 +85,7 @@ namespace NMSTools.Framework.Models
             get => foV;
             set
             {
-                if ((ReferenceEquals(foV, value) != true))
+                if (ReferenceEquals(foV, value) != true)
                 {
                     foV = value;
                     OnPropertyChanged("FoV");
@@ -99,7 +99,7 @@ namespace NMSTools.Framework.Models
             get => foVSet;
             set
             {
-                if ((ReferenceEquals(foVSet, value) != true))
+                if (ReferenceEquals(foVSet, value) != true)
                 {
                     foVSet = value;
                     OnPropertyChanged("FoVSet");
@@ -113,7 +113,7 @@ namespace NMSTools.Framework.Models
             get => depthOfField;
             set
             {
-                if ((ReferenceEquals(depthOfField, value) != true))
+                if (ReferenceEquals(depthOfField, value) != true)
                 {
                     depthOfField = value;
                     OnPropertyChanged("DepthOfField");
@@ -127,7 +127,7 @@ namespace NMSTools.Framework.Models
             get => depthOfFieldStrengthSetting;
             set
             {
-                if ((ReferenceEquals(depthOfFieldStrengthSetting, value) != true))
+                if (ReferenceEquals(depthOfFieldStrengthSetting, value) != true)
                 {
                     depthOfFieldStrengthSetting = value;
                     OnPropertyChanged("DepthOfFieldStrengthSetting");
@@ -141,7 +141,7 @@ namespace NMSTools.Framework.Models
             get => depthOfFieldDistance;
             set
             {
-                if ((ReferenceEquals(depthOfFieldDistance, value) != true))
+                if (ReferenceEquals(depthOfFieldDistance, value) != true)
                 {
                     depthOfFieldDistance = value;
                     OnPropertyChanged("DepthOfFieldDistance");
@@ -155,7 +155,7 @@ namespace NMSTools.Framework.Models
             get => depthOfFieldDistanceSpace;
             set
             {
-                if ((ReferenceEquals(depthOfFieldDistanceSpace, value) != true))
+                if (ReferenceEquals(depthOfFieldDistanceSpace, value) != true)
                 {
                     depthOfFieldDistanceSpace = value;
                     OnPropertyChanged("DepthOfFieldDistanceSpace");
@@ -169,7 +169,7 @@ namespace NMSTools.Framework.Models
             get => halfFocalPlaneDepth;
             set
             {
-                if ((ReferenceEquals(halfFocalPlaneDepth, value) != true))
+                if (ReferenceEquals(halfFocalPlaneDepth, value) != true)
                 {
                     halfFocalPlaneDepth = value;
                     OnPropertyChanged("HalfFocalPlaneDepth");
@@ -183,7 +183,7 @@ namespace NMSTools.Framework.Models
             get => halfFocalPlaneDepthSpace;
             set
             {
-                if ((ReferenceEquals(halfFocalPlaneDepthSpace, value) != true))
+                if (ReferenceEquals(halfFocalPlaneDepthSpace, value) != true)
                 {
                     halfFocalPlaneDepthSpace = value;
                     OnPropertyChanged("HalfFocalPlaneDepthSpace");
@@ -197,7 +197,7 @@ namespace NMSTools.Framework.Models
             get => vignette;
             set
             {
-                if ((ReferenceEquals(vignette, value) != true))
+                if (ReferenceEquals(vignette, value) != true)
                 {
                     vignette = value;
                     OnPropertyChanged("Vignette");
@@ -211,7 +211,7 @@ namespace NMSTools.Framework.Models
             get => filter;
             set
             {
-                if ((ReferenceEquals(filter, value) != true))
+                if (ReferenceEquals(filter, value) != true)
                 {
                     filter = value;
                     OnPropertyChanged("Filter");

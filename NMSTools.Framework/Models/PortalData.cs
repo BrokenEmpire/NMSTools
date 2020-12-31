@@ -22,7 +22,7 @@ namespace NMSTools.Framework.Models
             get => universeAddress;
             set
             {
-                if ((ReferenceEquals(universeAddress, value) != true))
+                if (ReferenceEquals(universeAddress, value) != true)
                 {
                     universeAddress = value;
                     OnPropertyChanged("UniverseAddress");
@@ -36,7 +36,7 @@ namespace NMSTools.Framework.Models
             get => position;
             set
             {
-                if ((ReferenceEquals(position, value) != true))
+                if (ReferenceEquals(position, value) != true)
                 {
                     position = value;
                     OnPropertyChanged("Position");
@@ -50,7 +50,7 @@ namespace NMSTools.Framework.Models
             get => facing;
             set
             {
-                if ((ReferenceEquals(facing, value) != true))
+                if (ReferenceEquals(facing, value) != true)
                 {
                     facing = value;
                     OnPropertyChanged("Facing");
@@ -64,7 +64,7 @@ namespace NMSTools.Framework.Models
             get => teleporterType;
             set
             {
-                if ((ReferenceEquals(teleporterType, value) != true))
+                if (ReferenceEquals(teleporterType, value) != true)
                 {
                     teleporterType = value;
                     OnPropertyChanged("TeleporterType");
@@ -78,7 +78,7 @@ namespace NMSTools.Framework.Models
             get => name;
             set
             {
-                if ((ReferenceEquals(name, value) != true))
+                if (ReferenceEquals(name, value) != true)
                 {
                     name = value;
                     OnPropertyChanged("Name");
@@ -92,7 +92,7 @@ namespace NMSTools.Framework.Models
             get => calcWarpOffset;
             set
             {
-                if ((ReferenceEquals(calcWarpOffset, value) != true))
+                if (ReferenceEquals(calcWarpOffset, value) != true)
                 {
                     calcWarpOffset = value;
                     OnPropertyChanged("CalcWarpOffset");
@@ -106,7 +106,7 @@ namespace NMSTools.Framework.Models
             get => isFeatured;
             set
             {
-                if ((ReferenceEquals(isFeatured, value) != true))
+                if (ReferenceEquals(isFeatured, value) != true)
                 {
                     isFeatured = value;
                     OnPropertyChanged("IsFeatured");

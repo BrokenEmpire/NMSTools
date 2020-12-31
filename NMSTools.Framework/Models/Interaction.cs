@@ -18,7 +18,7 @@ namespace NMSTools.Framework.Models
             get => galacticAddress;
             set
             {
-                if ((ReferenceEquals(galacticAddress, value) != true))
+                if (ReferenceEquals(galacticAddress, value) != true)
                 {
                     galacticAddress = value;
                     OnPropertyChanged("GalacticAddress");
@@ -32,7 +32,7 @@ namespace NMSTools.Framework.Models
             get => interactionValue;
             set
             {
-                if ((ReferenceEquals(interactionValue, value) != true))
+                if (ReferenceEquals(interactionValue, value) != true)
                 {
                     interactionValue = value;
                     OnPropertyChanged("InteractionValue");
@@ -46,7 +46,7 @@ namespace NMSTools.Framework.Models
             get => position;
             set
             {
-                if ((ReferenceEquals(position, value) != true))
+                if (ReferenceEquals(position, value) != true)
                 {
                     position = value;
                     OnPropertyChanged("Position");

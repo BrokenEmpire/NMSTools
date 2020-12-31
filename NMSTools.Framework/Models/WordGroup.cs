@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => group;
             set
             {
-                if ((ReferenceEquals(group, value) != true))
+                if (ReferenceEquals(group, value) != true)
                 {
                     group = value;
                     OnPropertyChanged("Group");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => races;
             set
             {
-                if ((ReferenceEquals(races, value) != true))
+                if (ReferenceEquals(races, value) != true)
                 {
                     races = value;
                     OnPropertyChanged("Races");

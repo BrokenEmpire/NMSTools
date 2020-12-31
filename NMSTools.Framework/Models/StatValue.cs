@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => intValue;
             set
             {
-                if ((ReferenceEquals(intValue, value) != true))
+                if (ReferenceEquals(intValue, value) != true)
                 {
                     intValue = value;
                     OnPropertyChanged("IntValue");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => doubleValue;
             set
             {
-                if ((ReferenceEquals(doubleValue, value) != true))
+                if (ReferenceEquals(doubleValue, value) != true)
                 {
                     doubleValue = value;
                     OnPropertyChanged("doubleValue");

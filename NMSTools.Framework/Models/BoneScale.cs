@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => boneName;
             set
             {
-                if ((ReferenceEquals(boneName, value) != true))
+                if (ReferenceEquals(boneName, value) != true)
                 {
                     boneName = value;
                     OnPropertyChanged("BoneName");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => scale;
             set
             {
-                if ((ReferenceEquals(scale, value) != true))
+                if (ReferenceEquals(scale, value) != true)
                 {
                     scale = value;
                     OnPropertyChanged("Scale");

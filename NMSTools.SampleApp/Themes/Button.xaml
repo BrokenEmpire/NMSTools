@@ -1,0 +1,307 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ButtonForegroundLightBrush"
+                     Color="{StaticResource Color_001}" />
+    
+    <SolidColorBrush x:Key="ButtonForegroundBrush"
+                     Color="{StaticResource Color_002}" />
+    
+    <SolidColorBrush x:Key="ButtonBackgroundBrush"
+                     Color="{StaticResource Color_009}" />
+    
+    <SolidColorBrush x:Key="ButtonBorderBrush"
+                     Color="{StaticResource Color_006}" />
+    
+    <SolidColorBrush x:Key="ButtonHoverBackgroundBrush"
+                     Color="{StaticResource Color_006}" />
+
+    <SolidColorBrush x:Key="ButtonHoverForegroundBrush"
+                     Color="{StaticResource Color_024}" />
+    
+    <SolidColorBrush x:Key="ButtonHoverBorderBrush"
+                     Color="{StaticResource Color_004}" />
+    
+    <SolidColorBrush x:Key="ButtonPressedBackgroundBrush"
+                     Color="{StaticResource Color_024}" />
+
+    <SolidColorBrush x:Key="ButtonPressedForegroundBrush"
+                     Color="{StaticResource Color_001}" />
+    
+    <SolidColorBrush x:Key="ButtonPressedBorderBrush"
+                     Color="{StaticResource Color_024}" />
+
+    <SolidColorBrush x:Key="ButtonDisabledVisualBrush"
+                     Color="{StaticResource Color_009}"
+                     Opacity="0.6" />
+    
+    <ControlTemplate x:Key="Button_Template"
+                     TargetType="{x:Type Button}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonHoverBackgroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonHoverBorderBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                           Storyboard.TargetProperty="Foreground"
+                                                           Storyboard.TargetName="ContentControl">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonForegroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedBackgroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedBorderBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                           Storyboard.TargetProperty="Foreground"
+                                                           Storyboard.TargetName="ContentControl">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedForegroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="DisabledVisualElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="FocusedVisualElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Rectangle x:Name="Bd"
+                       Fill="{StaticResource ButtonBackgroundBrush}"
+                       Stroke="{StaticResource ButtonBorderBrush}"
+                       StrokeThickness="1" />
+
+            <ContentControl x:Name="ContentControl"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Margin="{TemplateBinding Padding}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                <ContentPresenter x:Name="contentPresenter" />
+
+            </ContentControl>
+
+            <Rectangle x:Name="FocusedVisualElement"
+                       Stroke="{StaticResource ButtonPressedBorderBrush}"
+                       Visibility="Collapsed"
+                       StrokeThickness="2" />
+
+            <Rectangle x:Name="DisabledVisualElement"
+                       Fill="{StaticResource ButtonDisabledVisualBrush}"
+                       Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="WindowButton_Template"
+                     TargetType="{x:Type Button}">
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <!--<ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonHoverBackgroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>-->
+
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonHoverBorderBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                           Storyboard.TargetProperty="Foreground"
+                                                           Storyboard.TargetName="ContentControl">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonHoverForegroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Fill">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedBackgroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Bd"
+                                                           Storyboard.TargetProperty="Stroke">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedBorderBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+
+                            <ObjectAnimationUsingKeyFrames Duration="0"
+                                                           Storyboard.TargetProperty="Foreground"
+                                                           Storyboard.TargetName="ContentControl">
+                                <DiscreteObjectKeyFrame KeyTime="0"
+                                                        Value="{StaticResource ButtonPressedForegroundBrush}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="DisabledVisualElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)"
+                                                           Storyboard.TargetName="FocusedVisualElement">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>Visible</Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+
+            <Rectangle x:Name="Bd"
+                       Visibility="Collapsed"
+                       Stroke="{StaticResource ButtonHoverForegroundBrush}"
+                       StrokeThickness="1" />
+
+            <ContentControl x:Name="ContentControl"
+                            Foreground="{TemplateBinding Foreground}"
+                            HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                            Margin="{TemplateBinding Padding}"
+                            VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+
+                <ContentPresenter x:Name="contentPresenter" />
+
+            </ContentControl>
+
+            <Rectangle x:Name="FocusedVisualElement"
+                       Stroke="{StaticResource ButtonPressedBorderBrush}"
+                       Visibility="Collapsed"
+                       StrokeThickness="2" />
+
+            <Rectangle x:Name="DisabledVisualElement"
+                       Fill="{StaticResource ButtonDisabledVisualBrush}"
+                       Visibility="Collapsed" />
+        </Grid>
+    </ControlTemplate>
+   
+    
+    <Style x:Key="WindowButton_Style"
+           TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground"
+                Value="{StaticResource ButtonForegroundBrush}" />
+
+        <Setter Property="Template"
+                Value="{StaticResource WindowButton_Template}" />
+
+        <Setter Property="Margin"
+                Value="0" />
+        
+        <Setter Property="FontFamily"
+                Value="Segoe MDL2 Assets" />
+
+        <Setter Property="FontSize"
+                Value="15" />
+
+        <Setter Property="Padding"
+                Value="0" />
+
+        <Setter Property="Height"
+                Value="30" />
+
+        <Setter Property="Width"
+                Value="30" />
+
+        <Setter Property="Focusable"
+                Value="False" />
+    </Style>
+
+    <Style x:Key="{x:Type Button}"
+           TargetType="{x:Type Button}">
+
+        <Setter Property="Foreground"
+                Value="{StaticResource ButtonForegroundBrush}" />
+
+        <Setter Property="Template"
+                Value="{StaticResource Button_Template}" />
+
+        <Setter Property="FontSize"
+                Value="14.667" />
+
+        <Setter Property="FontFamily"
+                Value="Segoe UI" />
+
+        <Setter Property="Padding"
+                Value="10,0,10,2" />
+
+        <Setter Property="MinHeight"
+                Value="30" />
+
+        <Setter Property="MinWidth"
+                Value="30" />
+    </Style>
+    
+</ResourceDictionary>

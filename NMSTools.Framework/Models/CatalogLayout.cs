@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => slots;
             set
             {
-                if ((ReferenceEquals(slots, value) != true))
+                if (ReferenceEquals(slots, value) != true)
                 {
                     slots = value;
                     OnPropertyChanged("Slots");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => seed;
             set
             {
-                if ((ReferenceEquals(seed, value) != true))
+                if (ReferenceEquals(seed, value) != true)
                 {
                     seed = value;
                     OnPropertyChanged("Seed");
@@ -44,7 +44,7 @@ namespace NMSTools.Framework.Models
             get => level;
             set
             {
-                if ((ReferenceEquals(level, value) != true))
+                if (ReferenceEquals(level, value) != true)
                 {
                     level = value;
                     OnPropertyChanged("Level");

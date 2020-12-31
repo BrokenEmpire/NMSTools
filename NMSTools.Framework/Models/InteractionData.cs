@@ -20,7 +20,7 @@ namespace NMSTools.Framework.Models
             get => inventoryContainer;
             set
             {
-                if ((ReferenceEquals(inventoryContainer, value) != true))
+                if (ReferenceEquals(inventoryContainer, value) != true)
                 {
                     inventoryContainer = value;
                     OnPropertyChanged("InventoryContainer");
@@ -34,7 +34,7 @@ namespace NMSTools.Framework.Models
             get => lastUpdateTimestamp;
             set
             {
-                if ((ReferenceEquals(lastUpdateTimestamp, value) != true))
+                if (ReferenceEquals(lastUpdateTimestamp, value) != true)
                 {
                     lastUpdateTimestamp = value;
                     OnPropertyChanged("LastUpdateTimestamp");
@@ -48,7 +48,7 @@ namespace NMSTools.Framework.Models
             get => lastCompletedTimestamp;
             set
             {
-                if ((ReferenceEquals(lastCompletedTimestamp, value) != true))
+                if (ReferenceEquals(lastCompletedTimestamp, value) != true)
                 {
                     lastCompletedTimestamp = value;
                     OnPropertyChanged("LastCompletedTimestamp");
@@ -62,7 +62,7 @@ namespace NMSTools.Framework.Models
             get => lastBrokenTimestamp;
             set
             {
-                if ((ReferenceEquals(lastBrokenTimestamp, value) != true))
+                if (ReferenceEquals(lastBrokenTimestamp, value) != true)
                 {
                     lastBrokenTimestamp = value;
                     OnPropertyChanged("LastBrokenTimestamp");
@@ -76,7 +76,7 @@ namespace NMSTools.Framework.Models
             get => damageTimers;
             set
             {
-                if ((ReferenceEquals(damageTimers, value) != true))
+                if (ReferenceEquals(damageTimers, value) != true)
                 {
                     damageTimers = value;
                     OnPropertyChanged("DamageTimers");
@@ -90,7 +90,7 @@ namespace NMSTools.Framework.Models
             get => flags;
             set
             {
-                if ((ReferenceEquals(flags, value) != true))
+                if (ReferenceEquals(flags, value) != true)
                 {
                     flags = value;
                     OnPropertyChanged("Flags");

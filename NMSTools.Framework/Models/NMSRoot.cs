@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => version;
             set
             {
-                if ((ReferenceEquals(version, value) != true))
+                if (ReferenceEquals(version, value) != true)
                 {
                     version = value;
                     OnPropertyChanged("Version");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => platform;
             set
             {
-                if ((ReferenceEquals(platform, value) != true))
+                if (ReferenceEquals(platform, value) != true)
                 {
                     platform = value;
                     OnPropertyChanged("Platform");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => playerStateData;
             set
             {
-                if ((ReferenceEquals(playerStateData, value) != true))
+                if (ReferenceEquals(playerStateData, value) != true)
                 {
                     playerStateData = value;
                     OnPropertyChanged("PlayerStateData");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => spawnStateData;
             set
             {
-                if ((ReferenceEquals(spawnStateData, value) != true))
+                if (ReferenceEquals(spawnStateData, value) != true)
                 {
                     spawnStateData = value;
                     OnPropertyChanged("SpawnStateData");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => gameKnowledgeData;
             set
             {
-                if ((ReferenceEquals(gameKnowledgeData, value) != true))
+                if (ReferenceEquals(gameKnowledgeData, value) != true)
                 {
                     gameKnowledgeData = value;
                     OnPropertyChanged("GameKnowledgeData");
@@ -89,7 +89,7 @@ namespace NMSTools.Framework.Models
             get => discoveryManagerData;
             set
             {
-                if ((ReferenceEquals(discoveryManagerData, value) != true))
+                if (ReferenceEquals(discoveryManagerData, value) != true)
                 {
                     discoveryManagerData = value;
                     OnPropertyChanged("DiscoveryManagerData");

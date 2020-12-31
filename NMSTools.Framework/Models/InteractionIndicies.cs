@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => savedRaceIndicies;
             set
             {
-                if ((ReferenceEquals(savedRaceIndicies, value) != true))
+                if (ReferenceEquals(savedRaceIndicies, value) != true)
                 {
                     savedRaceIndicies = value;
                     OnPropertyChanged("SavedRaceIndicies");

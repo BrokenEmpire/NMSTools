@@ -3,7 +3,9 @@ using System;
 
 namespace NMSTools.Framework.Converters
 {
-    public sealed class DoubleConverter : BaseConverter<double>
+    using Base;
+
+    public sealed class DoubleConverter : ConverterBase<double>
     {
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

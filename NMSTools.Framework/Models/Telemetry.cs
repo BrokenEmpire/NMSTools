@@ -17,7 +17,7 @@ namespace NMSTools.Framework.Models
             get => id;
             set
             {
-                if ((ReferenceEquals(id, value) != true))
+                if (ReferenceEquals(id, value) != true)
                 {
                     id = value;
                     OnPropertyChanged("Id");
@@ -31,7 +31,7 @@ namespace NMSTools.Framework.Models
             get => telemetryType;
             set
             {
-                if ((ReferenceEquals(telemetryType, value) != true))
+                if (ReferenceEquals(telemetryType, value) != true)
                 {
                     telemetryType = value;
                     OnPropertyChanged("TelemetryType");
@@ -45,7 +45,7 @@ namespace NMSTools.Framework.Models
             get => telemetryValue;
             set
             {
-                if ((ReferenceEquals(telemetryValue, value) != true))
+                if (ReferenceEquals(telemetryValue, value) != true)
                 {
                     telemetryValue = value;
                     OnPropertyChanged("TelemetryValue");

@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => weaponMode;
             set
             {
-                if ((ReferenceEquals(weaponMode, value) != true))
+                if (ReferenceEquals(weaponMode, value) != true)
                 {
                     weaponMode = value;
                     OnPropertyChanged("WeaponMode");

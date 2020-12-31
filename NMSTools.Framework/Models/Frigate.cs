@@ -28,7 +28,7 @@ namespace NMSTools.Framework.Models
             get => resourceSeed;
             set
             {
-                if ((ReferenceEquals(resourceSeed, value) != true))
+                if (ReferenceEquals(resourceSeed, value) != true)
                 {
                     resourceSeed = value;
                     OnPropertyChanged("ResourceSeed");
@@ -42,7 +42,7 @@ namespace NMSTools.Framework.Models
             get => homeSystemSeed;
             set
             {
-                if ((ReferenceEquals(homeSystemSeed, value) != true))
+                if (ReferenceEquals(homeSystemSeed, value) != true)
                 {
                     homeSystemSeed = value;
                     OnPropertyChanged("HomeSystemSeed");
@@ -56,7 +56,7 @@ namespace NMSTools.Framework.Models
             get => timeOfLastIncomeCollection;
             set
             {
-                if ((ReferenceEquals(timeOfLastIncomeCollection, value) != true))
+                if (ReferenceEquals(timeOfLastIncomeCollection, value) != true)
                 {
                     timeOfLastIncomeCollection = value;
                     OnPropertyChanged("TimeOfLastIncomeCollection");
@@ -70,7 +70,7 @@ namespace NMSTools.Framework.Models
             get => customName;
             set
             {
-                if ((ReferenceEquals(customName, value) != true))
+                if (ReferenceEquals(customName, value) != true)
                 {
                     customName = value;
                     OnPropertyChanged("CustomName");
@@ -84,7 +84,7 @@ namespace NMSTools.Framework.Models
             get => frigateType;
             set
             {
-                if ((ReferenceEquals(frigateType, value) != true))
+                if (ReferenceEquals(frigateType, value) != true)
                 {
                     frigateType = value;
                     OnPropertyChanged("FrigateType");
@@ -98,7 +98,7 @@ namespace NMSTools.Framework.Models
             get => race;
             set
             {
-                if ((ReferenceEquals(race, value) != true))
+                if (ReferenceEquals(race, value) != true)
                 {
                     race = value;
                     OnPropertyChanged("Race");
@@ -112,7 +112,7 @@ namespace NMSTools.Framework.Models
             get => totalNumberOfExpeditions;
             set
             {
-                if ((ReferenceEquals(totalNumberOfExpeditions, value) != true))
+                if (ReferenceEquals(totalNumberOfExpeditions, value) != true)
                 {
                     totalNumberOfExpeditions = value;
                     OnPropertyChanged("TotalNumberOfExpeditions");
@@ -126,7 +126,7 @@ namespace NMSTools.Framework.Models
             get => totalNumberOfSuccessfulEvents;
             set
             {
-                if ((ReferenceEquals(totalNumberOfSuccessfulEvents, value) != true))
+                if (ReferenceEquals(totalNumberOfSuccessfulEvents, value) != true)
                 {
                     totalNumberOfSuccessfulEvents = value;
                     OnPropertyChanged("TotalNumberOfSuccessfulEvents");
@@ -140,7 +140,7 @@ namespace NMSTools.Framework.Models
             get => totalNumberOfFailedEvents;
             set
             {
-                if ((ReferenceEquals(totalNumberOfFailedEvents, value) != true))
+                if (ReferenceEquals(totalNumberOfFailedEvents, value) != true)
                 {
                     totalNumberOfFailedEvents = value;
                     OnPropertyChanged("TotalNumberOfFailedEvents");
@@ -154,7 +154,7 @@ namespace NMSTools.Framework.Models
             get => numberOfTimesDamaged;
             set
             {
-                if ((ReferenceEquals(numberOfTimesDamaged, value) != true))
+                if (ReferenceEquals(numberOfTimesDamaged, value) != true)
                 {
                     numberOfTimesDamaged = value;
                     OnPropertyChanged("NumberOfTimesDamaged");
@@ -168,7 +168,7 @@ namespace NMSTools.Framework.Models
             get => traitIDs;
             set
             {
-                if ((ReferenceEquals(traitIDs, value) != true))
+                if (ReferenceEquals(traitIDs, value) != true)
                 {
                     traitIDs = value;
                     OnPropertyChanged("TraitIDs");
@@ -182,7 +182,7 @@ namespace NMSTools.Framework.Models
             get => stats;
             set
             {
-                if ((ReferenceEquals(stats, value) != true))
+                if (ReferenceEquals(stats, value) != true)
                 {
                     stats = value;
                     OnPropertyChanged("Stats");
@@ -196,7 +196,7 @@ namespace NMSTools.Framework.Models
             get => repairsMade;
             set
             {
-                if ((ReferenceEquals(repairsMade, value) != true))
+                if (ReferenceEquals(repairsMade, value) != true)
                 {
                     repairsMade = value;
                     OnPropertyChanged("RepairsMade");
@@ -210,7 +210,7 @@ namespace NMSTools.Framework.Models
             get => damageTaken;
             set
             {
-                if ((ReferenceEquals(damageTaken, value) != true))
+                if (ReferenceEquals(damageTaken, value) != true)
                 {
                     damageTaken = value;
                     OnPropertyChanged("DamageTaken");

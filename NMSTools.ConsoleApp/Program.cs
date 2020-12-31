@@ -1,43 +1,43 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Text;
+using System.Security.Cryptography;
 
 using libMBIN;
 using Newtonsoft.Json;
-using SpookilySharp;
 
 namespace NMSTools.ConsoleApp
 {
+    using Framework.Models;
     using Framework.Converters;
+    using Framework.Meta;
     using Platforms;
    
     class Program
     {
+        public const string steamSavePath = "C:\\Users\\dhr\\AppData\\Roaming\\HelloGames\\NMS\\st_76561197972355393";
+
         public const string pcBanksDir = "D:\\NMSData\\PCBANKS";
         public const string mBinDir = "D:\\NMSData\\MBIN";
         public const string eXMLDir = "D:\\NMSData\\EXML";
 
         public const string saveFile = "D:\\NMSProjects\\Archives\\Misc\\save.hg";
         public const string metaFile = "D:\\NMSProjects\\Archives\\Misc\\mf_save.hg";
-        
+
+        public const string testSaveFile = "D:\\NMSProjects\\Archives\\Misc\\save.nmstools.hg";
+        public const string testMetaFile = "D:\\NMSProjects\\Archives\\Misc\\mf_save.nmstools.hg";
+
         public const string randomSaveFile = "D:\\NMSProjects\\Archives\\Misc\\save.nmseditor.hg";
         public const string randomMetaFile = "D:\\NMSProjects\\Archives\\Misc\\mf_save.nmseditor.hg";
 
         public const string ps4SaveFile = "D:\\NMSProjects\\Archives\\Misc\\5c034a628ee6353c\\CUSA04841\\sce_sdmemory";
         public const string ps4MetaFile = "D:\\NMSProjects\\Archives\\Misc\\5c034a628ee6353c\\CUSA04841\\sce_sdmemory.bin";
 
-        public class Metadata
-        {
-            public byte[] SHA256 { get; set; }
-            public ulong[] Hash { get; set; }
-        }
 
         public struct SaveContainer
         {
@@ -49,15 +49,32 @@ namespace NMSTools.ConsoleApp
 
             public int SaveType { get; set; }
         }
+
         static void Main(string[] args)
         {
-            
+            // var slot = new SaveSlot(metaFile, saveFile);
+
+            //  using var inputFile = File.Open("D:\\TestFile.dump", FileMode.Open, FileAccess.Read, FileShare.Read);
+            //  using var sha256 = new SHA256Managed();
+            //  var result = sha256.ComputeHash(inputFile);
+
+            FindOtherFiles();
+            //Console.WriteLine(inputFile.Position);
+            // var root = Deserialize<NMSRoot>(saveFile);
+
+            // var playerBases = root.PlayerStateData.PersistentPlayerBases;
+
+            // foreach (var item in playerBases.SelectMany(i => i.Objects).GroupBy(i => i.ObjectID).OrderByDescending(i => i.Count()))
+            //  {
+            //    Console.WriteLine("{0}\t\t({1})", item.Key, item.Count());
+            // }
+
+            //   Serialize(root, testSaveFile);
             Console.WriteLine();
             Console.WriteLine("Program Complete");
             Console.Read();
         }
 
-      
         static void FindOtherFiles()
         {
             using var outputFile = File.Create("C:\\Users\\dhr\\Desktop\\output.txt");
@@ -65,10 +82,18 @@ namespace NMSTools.ConsoleApp
 
             var dirInfo = new DirectoryInfo(mBinDir);
             var files = dirInfo.GetFiles("*.*", SearchOption.AllDirectories);
-
+            var special = new string[5] { ".TXT", ".XML", ".JSON", ".CSV", ".DDS" };
             foreach (var group in files.Where(i => i.Extension.Length > 0).GroupBy(i => i.Extension).OrderByDescending(i => i.Count()))
             {
                 sw.WriteLine(string.Format("{0} ({1})", group.Key, group.Count()));
+
+                if (special.Contains(group.Key.ToUpper()))
+                {
+                    foreach (var item in group)
+                    {
+                        sw.WriteLine(item.FullName);
+                    }
+                }
             }
         }
 
@@ -92,15 +117,14 @@ namespace NMSTools.ConsoleApp
                 jtw = new JsonTextWriter(sw);
 
                 serializer.Serialize(jtw, value, typeof(T));
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+
+                sw.Write("\0");
             }
             finally
             {
                 if (jtw != null)
                 {
+                    jtw.Flush();
                     jtw.Close();
 
                     ((IDisposable)jtw).Dispose();
@@ -110,16 +134,16 @@ namespace NMSTools.ConsoleApp
                 if (sw != null)
                 {
                     sw.Close();
-
                     sw.Dispose();
+
                     sw = null;
                 }
 
                 if (outputFile != null)
                 {
                     outputFile.Close();
-
                     outputFile.Dispose();
+
                     outputFile = null;
                 }
 
@@ -263,8 +287,7 @@ namespace NMSTools.ConsoleApp
                 throw new DirectoryNotFoundException();
 
             var dirInfo = new DirectoryInfo(input);
-            var files = dirInfo.GetFiles("*.PC", SearchOption.AllDirectories);
-           // var files = dirInfo.GetFiles("*.MBIN;*.PC", SearchOption.AllDirectories);
+            var files = dirInfo.GetFiles("*.MBIN;*.PC", SearchOption.AllDirectories);
 
             foreach (var file in files)
             {
@@ -435,8 +458,5 @@ namespace NMSTools.ConsoleApp
                 writer.Write(string.Format("#endif // !_NMSTOOLKIT_DB_{0}_H", classType.Name.ToUpper()));
             }
         }
-
-
-
     }
 }

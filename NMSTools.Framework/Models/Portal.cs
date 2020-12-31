@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => portalSeed;
             set
             {
-                if ((ReferenceEquals(portalSeed, value) != true))
+                if (ReferenceEquals(portalSeed, value) != true)
                 {
                     portalSeed = value;
                     OnPropertyChanged("PortalSeed");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => lastPortalUA;
             set
             {
-                if ((ReferenceEquals(lastPortalUA, value) != true))
+                if (ReferenceEquals(lastPortalUA, value) != true)
                 {
                     lastPortalUA = value;
                     OnPropertyChanged("LastPortalUA");

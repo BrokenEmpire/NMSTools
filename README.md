@@ -1,3 +1,3 @@
 # NMSTools
 
-A collection of utilites for No Man's Sky
+A collection of console utilites for No Man's Sky related application development.

@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => className;
             set
             {
-                if ((ReferenceEquals(className, value) != true))
+                if (ReferenceEquals(className, value) != true)
                 {
                     className = value;
                     OnPropertyChanged("ClassName");

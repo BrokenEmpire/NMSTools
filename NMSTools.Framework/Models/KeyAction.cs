@@ -18,7 +18,7 @@ namespace NMSTools.Framework.Models
             get => action;
             set
             {
-                if ((ReferenceEquals(action, value) != true))
+                if (ReferenceEquals(action, value) != true)
                 {
                     action = value;
                     OnPropertyChanged("Action");
@@ -32,7 +32,7 @@ namespace NMSTools.Framework.Models
             get => id;
             set
             {
-                if ((ReferenceEquals(id, value) != true))
+                if (ReferenceEquals(id, value) != true)
                 {
                     id = value;
                     OnPropertyChanged("Id");
@@ -46,7 +46,7 @@ namespace NMSTools.Framework.Models
             get => number;
             set
             {
-                if ((ReferenceEquals(number, value) != true))
+                if (ReferenceEquals(number, value) != true)
                 {
                     number = value;
                     OnPropertyChanged("Number");
@@ -60,7 +60,7 @@ namespace NMSTools.Framework.Models
             get => inventoryIndex;
             set
             {
-                if ((ReferenceEquals(inventoryIndex, value) != true))
+                if (ReferenceEquals(inventoryIndex, value) != true)
                 {
                     inventoryIndex = value;
                     OnPropertyChanged("InventoryIndex");

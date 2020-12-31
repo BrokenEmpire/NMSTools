@@ -23,7 +23,7 @@ namespace NMSTools.Framework.Models
             get => name;
             set
             {
-                if ((ReferenceEquals(name, value) != true))
+                if (ReferenceEquals(name, value) != true)
                 {
                     name = value;
                     OnPropertyChanged("Name");
@@ -37,7 +37,7 @@ namespace NMSTools.Framework.Models
             get => resource;
             set
             {
-                if ((ReferenceEquals(resource, value) != true))
+                if (ReferenceEquals(resource, value) != true)
                 {
                     resource = value;
                     OnPropertyChanged("Resource");
@@ -51,7 +51,7 @@ namespace NMSTools.Framework.Models
             get => inventory;
             set
             {
-                if ((ReferenceEquals(inventory, value) != true))
+                if (ReferenceEquals(inventory, value) != true)
                 {
                     inventory = value;
                     OnPropertyChanged("Inventory");
@@ -65,7 +65,7 @@ namespace NMSTools.Framework.Models
             get => inventoryTech;
             set
             {
-                if ((ReferenceEquals(inventoryTech, value) != true))
+                if (ReferenceEquals(inventoryTech, value) != true)
                 {
                     inventoryTech = value;
                     OnPropertyChanged("InventoryTech");
@@ -79,7 +79,7 @@ namespace NMSTools.Framework.Models
             get => inventoryLayout;
             set
             {
-                if ((ReferenceEquals(inventoryLayout, value) != true))
+                if (ReferenceEquals(inventoryLayout, value) != true)
                 {
                     inventoryLayout = value;
                     OnPropertyChanged("CatalogLayout");
@@ -93,7 +93,7 @@ namespace NMSTools.Framework.Models
             get => location;
             set
             {
-                if ((ReferenceEquals(location, value) != true))
+                if (ReferenceEquals(location, value) != true)
                 {
                     location = value;
                     OnPropertyChanged("Location");
@@ -107,7 +107,7 @@ namespace NMSTools.Framework.Models
             get => position;
             set
             {
-                if ((ReferenceEquals(position, value) != true))
+                if (ReferenceEquals(position, value) != true)
                 {
                     position = value;
                     OnPropertyChanged("Position");
@@ -121,7 +121,7 @@ namespace NMSTools.Framework.Models
             get => direction;
             set
             {
-                if ((ReferenceEquals(direction, value) != true))
+                if (ReferenceEquals(direction, value) != true)
                 {
                     direction = value;
                     OnPropertyChanged("Direction");

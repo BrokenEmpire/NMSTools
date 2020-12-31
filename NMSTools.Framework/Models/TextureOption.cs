@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => textureOptionGroupName;
             set
             {
-                if ((ReferenceEquals(textureOptionGroupName, value) != true))
+                if (ReferenceEquals(textureOptionGroupName, value) != true)
                 {
                     textureOptionGroupName = value;
                     OnPropertyChanged("TextureOptionGroupName");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => textureOptionName;
             set
             {
-                if ((ReferenceEquals(textureOptionName, value) != true))
+                if (ReferenceEquals(textureOptionName, value) != true)
                 {
                     textureOptionName = value;
                     OnPropertyChanged("TextureOptionName");

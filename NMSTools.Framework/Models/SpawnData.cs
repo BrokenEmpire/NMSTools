@@ -26,7 +26,7 @@ namespace NMSTools.Framework.Models
             get => playerPositionInSystem;
             set
             {
-                if ((ReferenceEquals(playerPositionInSystem, value) != true))
+                if (ReferenceEquals(playerPositionInSystem, value) != true)
                 {
                     playerPositionInSystem = value;
                     OnPropertyChanged("PlayerPositionInSystem");
@@ -40,7 +40,7 @@ namespace NMSTools.Framework.Models
             get => playerTransformAt;
             set
             {
-                if ((ReferenceEquals(playerTransformAt, value) != true))
+                if (ReferenceEquals(playerTransformAt, value) != true)
                 {
                     playerTransformAt = value;
                     OnPropertyChanged("PlayerTransformAt");
@@ -54,7 +54,7 @@ namespace NMSTools.Framework.Models
             get => shipPositionInSystem;
             set
             {
-                if ((ReferenceEquals(shipPositionInSystem, value) != true))
+                if (ReferenceEquals(shipPositionInSystem, value) != true)
                 {
                     shipPositionInSystem = value;
                     OnPropertyChanged("ShipPositionInSystem");
@@ -68,7 +68,7 @@ namespace NMSTools.Framework.Models
             get => shipTransformAt;
             set
             {
-                if ((ReferenceEquals(shipTransformAt, value) != true))
+                if (ReferenceEquals(shipTransformAt, value) != true)
                 {
                     shipTransformAt = value;
                     OnPropertyChanged("ShipTransformAt");
@@ -82,7 +82,7 @@ namespace NMSTools.Framework.Models
             get => lastKnownPlayerState;
             set
             {
-                if ((ReferenceEquals(lastKnownPlayerState, value) != true))
+                if (ReferenceEquals(lastKnownPlayerState, value) != true)
                 {
                     lastKnownPlayerState = value;
                     OnPropertyChanged("LastKnownPlayerState");
@@ -96,7 +96,7 @@ namespace NMSTools.Framework.Models
             get => freighterPositionInSystem;
             set
             {
-                if ((ReferenceEquals(freighterPositionInSystem, value) != true))
+                if (ReferenceEquals(freighterPositionInSystem, value) != true)
                 {
                     freighterPositionInSystem = value;
                     OnPropertyChanged("FreighterPositionInSystem");
@@ -110,7 +110,7 @@ namespace NMSTools.Framework.Models
             get => freighterTransformAt;
             set
             {
-                if ((ReferenceEquals(freighterTransformAt, value) != true))
+                if (ReferenceEquals(freighterTransformAt, value) != true)
                 {
                     freighterTransformAt = value;
                     OnPropertyChanged("FreighterTransformAt");
@@ -124,7 +124,7 @@ namespace NMSTools.Framework.Models
             get => freighterTransformUp;
             set
             {
-                if ((ReferenceEquals(freighterTransformUp, value) != true))
+                if (ReferenceEquals(freighterTransformUp, value) != true)
                 {
                     freighterTransformUp = value;
                     OnPropertyChanged("FreighterTransformUp");
@@ -138,7 +138,7 @@ namespace NMSTools.Framework.Models
             get => abandonedFreighterPositionInSystem;
             set
             {
-                if ((ReferenceEquals(abandonedFreighterPositionInSystem, value) != true))
+                if (ReferenceEquals(abandonedFreighterPositionInSystem, value) != true)
                 {
                     abandonedFreighterPositionInSystem = value;
                     OnPropertyChanged("AbandonedFreighterPositionInSystem");
@@ -152,7 +152,7 @@ namespace NMSTools.Framework.Models
             get => abandonedFreighterTransformAt;
             set
             {
-                if ((ReferenceEquals(abandonedFreighterTransformAt, value) != true))
+                if (ReferenceEquals(abandonedFreighterTransformAt, value) != true)
                 {
                     abandonedFreighterTransformAt = value;
                     OnPropertyChanged("AbandonedFreighterTransformAt");
@@ -166,7 +166,7 @@ namespace NMSTools.Framework.Models
             get => abandonedFreighterTransformUp;
             set
             {
-                if ((ReferenceEquals(abandonedFreighterTransformUp, value) != true))
+                if (ReferenceEquals(abandonedFreighterTransformUp, value) != true)
                 {
                     abandonedFreighterTransformUp = value;
                     OnPropertyChanged("AbandonedFreighterTransformUp");

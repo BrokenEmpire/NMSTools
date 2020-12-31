@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => selectedPreset;
             set
             {
-                if ((ReferenceEquals(selectedPreset, value) != true))
+                if (ReferenceEquals(selectedPreset, value) != true)
                 {
                     selectedPreset = value;
                     OnPropertyChanged("SelectedPreset");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => presetData;
             set
             {
-                if ((ReferenceEquals(presetData, value) != true))
+                if (ReferenceEquals(presetData, value) != true)
                 {
                     presetData = value;
                     OnPropertyChanged("PresetData");

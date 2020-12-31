@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => records;
             set
             {
-                if ((ReferenceEquals(records, value) != true))
+                if (ReferenceEquals(records, value) != true)
                 {
                     records = value;
                     OnPropertyChanged("Records");

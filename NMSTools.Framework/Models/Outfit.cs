@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => descriptorGroups;
             set
             {
-                if ((ReferenceEquals(descriptorGroups, value) != true))
+                if (ReferenceEquals(descriptorGroups, value) != true)
                 {
                     descriptorGroups = value;
                     OnPropertyChanged("DescriptorGroups");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => outfitColors;
             set
             {
-                if ((ReferenceEquals(outfitColors, value) != true))
+                if (ReferenceEquals(outfitColors, value) != true)
                 {
                     outfitColors = value;
                     OnPropertyChanged("OutfitColors");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => textureOptions;
             set
             {
-                if ((ReferenceEquals(textureOptions, value) != true))
+                if (ReferenceEquals(textureOptions, value) != true)
                 {
                     textureOptions = value;
                     OnPropertyChanged("TextureOptions");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => boneScaleData;
             set
             {
-                if ((ReferenceEquals(boneScaleData, value) != true))
+                if (ReferenceEquals(boneScaleData, value) != true)
                 {
                     boneScaleData = value;
                     OnPropertyChanged("BoneScaleData");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => scale;
             set
             {
-                if ((ReferenceEquals(scale, value) != true))
+                if (ReferenceEquals(scale, value) != true)
                 {
                     scale = value;
                     OnPropertyChanged("Scale");

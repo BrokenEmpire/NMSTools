@@ -21,7 +21,7 @@ namespace NMSTools.Framework.Models
             get => slotType;
             set
             {
-                if ((ReferenceEquals(slotType, value) != true))
+                if (ReferenceEquals(slotType, value) != true)
                 {
                     slotType = value;
                     OnPropertyChanged("SlotType");
@@ -35,7 +35,7 @@ namespace NMSTools.Framework.Models
             get => id;
             set
             {
-                if ((ReferenceEquals(id, value) != true))
+                if (ReferenceEquals(id, value) != true)
                 {
                     id = value;
                     OnPropertyChanged("Id");
@@ -49,7 +49,7 @@ namespace NMSTools.Framework.Models
             get => amount;
             set
             {
-                if ((ReferenceEquals(amount, value) != true))
+                if (ReferenceEquals(amount, value) != true)
                 {
                     amount = value;
                     OnPropertyChanged("Amount");
@@ -63,7 +63,7 @@ namespace NMSTools.Framework.Models
             get => maxAmount;
             set
             {
-                if ((ReferenceEquals(maxAmount, value) != true))
+                if (ReferenceEquals(maxAmount, value) != true)
                 {
                     maxAmount = value;
                     OnPropertyChanged("MaxAmount");
@@ -77,7 +77,7 @@ namespace NMSTools.Framework.Models
             get => damageFactor;
             set
             {
-                if ((ReferenceEquals(damageFactor, value) != true))
+                if (ReferenceEquals(damageFactor, value) != true)
                 {
                     damageFactor = value;
                     OnPropertyChanged("DamageFactor");
@@ -91,7 +91,7 @@ namespace NMSTools.Framework.Models
             get => fullyInstalled;
             set
             {
-                if ((ReferenceEquals(fullyInstalled, value) != true))
+                if (ReferenceEquals(fullyInstalled, value) != true)
                 {
                     fullyInstalled = value;
                     OnPropertyChanged("FullyInstalled");
@@ -105,7 +105,7 @@ namespace NMSTools.Framework.Models
             get => index;
             set
             {
-                if ((ReferenceEquals(index, value) != true))
+                if (ReferenceEquals(index, value) != true)
                 {
                     index = value;
                     OnPropertyChanged("Index");

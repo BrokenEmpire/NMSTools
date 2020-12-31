@@ -1,0 +1,142 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="GridSplitterBackgroundBrush"
+                     Color="{StaticResource Color_008}" />
+
+    <SolidColorBrush x:Key="GridSplitterForegroundBrush"
+                     Color="{StaticResource Color_002}" />
+
+    <SolidColorBrush x:Key="GridSplitterBorderBrush"
+                     Color="{StaticResource Color_004}" />
+    
+    <SolidColorBrush x:Key="GridSplitterHoverBackgroundBrush"
+                     Color="{StaticResource Color_006}" />
+    
+    <SolidColorBrush x:Key="GridSplitterHoverBorderBrush"
+                     Color="{StaticResource Color_003}" />
+    
+    <SolidColorBrush x:Key="GridSplitterPressedBackgroundBrush"
+                     Color="{StaticResource Color_024}" />
+    
+    <SolidColorBrush x:Key="GridSplitterFocusedBorderBrush"
+                     Color="{StaticResource Color_024}" />
+
+    <SolidColorBrush x:Key="GridSplitterGlyphBackgroundBrush"
+                     Color="{StaticResource Color_003}" />
+    
+    <ControlTemplate x:Key="GridSplitter_Template_Preview"
+                     TargetType="{x:Type Control}">
+        <Rectangle Fill="{StaticResource GridSplitterPressedBackgroundBrush}"
+                   Opacity="0.8" />
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="GridSplitter_Template"
+                     TargetType="{x:Type GridSplitter}">
+        <Grid>
+            <Border x:Name="border"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    BorderBrush="{TemplateBinding BorderBrush}"
+                    Background="{TemplateBinding Background}"
+                    MinHeight="8"
+                    MinWidth="8">
+                <Grid>
+                    <StackPanel x:Name="HGrip"
+                                Height="8"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Orientation="Vertical">
+                        <Rectangle Fill="{StaticResource GridSplitterGlyphBackgroundBrush}"
+                                   Height="1"
+                                   Margin="1,2,1,1"
+                                   StrokeThickness="0"
+                                   Width="20" />
+                        <Rectangle Fill="{StaticResource GridSplitterGlyphBackgroundBrush}"
+                                   Height="1"
+                                   Margin="1,1,1,2"
+                                   StrokeThickness="0"
+                                   Width="20" />
+                    </StackPanel>
+                    <StackPanel x:Name="VGrip"
+                                Width="8"
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Center"
+                                Orientation="Horizontal"
+                                Visibility="Collapsed">
+                        <Rectangle Fill="{StaticResource GridSplitterGlyphBackgroundBrush}"
+                                   Height="20"
+                                   Margin="2,1,1,1"
+                                   StrokeThickness="0"
+                                   Width="1" />
+                        <Rectangle Fill="{StaticResource GridSplitterGlyphBackgroundBrush}"
+                                   Height="20"
+                                   Margin="1,1,2,1"
+                                   StrokeThickness="0"
+                                   Width="1" />
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="HorizontalAlignment"
+                     Value="Stretch">
+                <Setter TargetName="HGrip"
+                        Property="Visibility"
+                        Value="Visible" />
+                <Setter TargetName="VGrip"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="VerticalAlignment"
+                     Value="Stretch">
+                <Setter TargetName="VGrip"
+                        Property="Visibility"
+                        Value="Visible" />
+                <Setter TargetName="HGrip"
+                        Property="Visibility"
+                        Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter TargetName="border"
+                        Property="Background"
+                        Value="{StaticResource GridSplitterHoverBackgroundBrush}" />
+                <Setter TargetName="border"
+                        Property="BorderBrush"
+                        Value="{StaticResource GridSplitterHoverBorderBrush}" />
+            </Trigger>
+            <Trigger Property="IsFocused"
+                     Value="True">
+                <Setter TargetName="border"
+                        Property="BorderBrush"
+                        Value="{StaticResource GridSplitterFocusedBorderBrush}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="GridSplitter_Style_Preview"
+           TargetType="{x:Type GridSplitter}">
+
+        <Setter Property="Control.Template"
+                Value="{StaticResource GridSplitter_Template_Preview}" />
+    </Style>
+
+    <Style x:Key="{x:Type GridSplitter}"
+           TargetType="{x:Type GridSplitter}">
+        <Setter Property="Foreground"
+                Value="{StaticResource GridSplitterForegroundBrush}" />
+        <Setter Property="Background"
+                Value="{StaticResource GridSplitterBackgroundBrush}" />
+        <Setter Property="BorderBrush"
+                Value="{StaticResource GridSplitterBorderBrush}" />
+        <Setter Property="BorderThickness"
+                Value="1" />
+        <Setter Property="SnapsToDevicePixels"
+                Value="True" />
+        <Setter Property="PreviewStyle"
+                Value="{StaticResource GridSplitter_Sytle_Preview}" />
+        <Setter Property="Template"
+                Value="{StaticResource GridSplitter_Template}" />
+    </Style>
+    
+</ResourceDictionary>

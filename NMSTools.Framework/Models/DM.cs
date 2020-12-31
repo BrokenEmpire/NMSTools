@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => cN;
             set
             {
-                if ((ReferenceEquals(cN, value) != true))
+                if (ReferenceEquals(cN, value) != true)
                 {
                     cN = value;
                     OnPropertyChanged("CN");

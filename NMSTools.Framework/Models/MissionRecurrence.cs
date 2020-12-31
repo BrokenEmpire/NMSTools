@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => missionID;
             set
             {
-                if ((ReferenceEquals(missionID, value) != true))
+                if (ReferenceEquals(missionID, value) != true)
                 {
                     missionID = value;
                     OnPropertyChanged("MissionID");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => recurrenceDeadline;
             set
             {
-                if ((ReferenceEquals(recurrenceDeadline, value) != true))
+                if (ReferenceEquals(recurrenceDeadline, value) != true)
                 {
                     recurrenceDeadline = value;
                     OnPropertyChanged("RecurrenceDeadline");

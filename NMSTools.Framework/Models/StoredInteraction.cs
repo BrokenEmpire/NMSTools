@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => interactions;
             set
             {
-                if ((ReferenceEquals(interactions, value) != true))
+                if (ReferenceEquals(interactions, value) != true)
                 {
                     interactions = value;
                     OnPropertyChanged("Interactions");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => currentPos;
             set
             {
-                if ((ReferenceEquals(currentPos, value) != true))
+                if (ReferenceEquals(currentPos, value) != true)
                 {
                     currentPos = value;
                     OnPropertyChanged("CurrentPos");

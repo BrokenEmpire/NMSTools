@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => samplers;
             set
             {
-                if ((ReferenceEquals(samplers, value) != true))
+                if (ReferenceEquals(samplers, value) != true)
                 {
                     samplers = value;
                     OnPropertyChanged("Samplers");

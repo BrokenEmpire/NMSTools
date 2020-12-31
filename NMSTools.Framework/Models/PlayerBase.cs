@@ -35,7 +35,7 @@ namespace NMSTools.Framework.Models
             get => baseVersion;
             set
             {
-                if ((ReferenceEquals(baseVersion, value) != true))
+                if (ReferenceEquals(baseVersion, value) != true)
                 {
                     baseVersion = value;
                     OnPropertyChanged("BaseVersion");
@@ -49,7 +49,7 @@ namespace NMSTools.Framework.Models
             get => originalBaseVersion;
             set
             {
-                if ((ReferenceEquals(originalBaseVersion, value) != true))
+                if (ReferenceEquals(originalBaseVersion, value) != true)
                 {
                     originalBaseVersion = value;
                     OnPropertyChanged("OriginalBaseVersion");
@@ -63,7 +63,7 @@ namespace NMSTools.Framework.Models
             get => galacticAddress;
             set
             {
-                if ((ReferenceEquals(galacticAddress, value) != true))
+                if (ReferenceEquals(galacticAddress, value) != true)
                 {
                     galacticAddress = value;
                     OnPropertyChanged("GalacticAddress");
@@ -77,7 +77,7 @@ namespace NMSTools.Framework.Models
             get => position;
             set
             {
-                if ((ReferenceEquals(position, value) != true))
+                if (ReferenceEquals(position, value) != true)
                 {
                     position = value;
                     OnPropertyChanged("Position");
@@ -91,7 +91,7 @@ namespace NMSTools.Framework.Models
             get => forward;
             set
             {
-                if ((ReferenceEquals(forward, value) != true))
+                if (ReferenceEquals(forward, value) != true)
                 {
                     forward = value;
                     OnPropertyChanged("Forward");
@@ -105,7 +105,7 @@ namespace NMSTools.Framework.Models
             get => userData;
             set
             {
-                if ((ReferenceEquals(userData, value) != true))
+                if (ReferenceEquals(userData, value) != true)
                 {
                     userData = value;
                     OnPropertyChanged("UserData");
@@ -119,7 +119,7 @@ namespace NMSTools.Framework.Models
             get => lastUpdateTimestamp;
             set
             {
-                if ((ReferenceEquals(lastUpdateTimestamp, value) != true))
+                if (ReferenceEquals(lastUpdateTimestamp, value) != true)
                 {
                     lastUpdateTimestamp = value;
                     OnPropertyChanged("LastUpdateTimestamp");
@@ -133,7 +133,7 @@ namespace NMSTools.Framework.Models
             get => objects;
             set
             {
-                if ((ReferenceEquals(objects, value) != true))
+                if (ReferenceEquals(objects, value) != true)
                 {
                     objects = value;
                     OnPropertyChanged("Objects");
@@ -147,7 +147,7 @@ namespace NMSTools.Framework.Models
             get => rID;
             set
             {
-                if ((ReferenceEquals(rID, value) != true))
+                if (ReferenceEquals(rID, value) != true)
                 {
                     rID = value;
                     OnPropertyChanged("RID");
@@ -161,7 +161,7 @@ namespace NMSTools.Framework.Models
             get => owner;
             set
             {
-                if ((ReferenceEquals(owner, value) != true))
+                if (ReferenceEquals(owner, value) != true)
                 {
                     owner = value;
                     OnPropertyChanged("Owner");
@@ -175,7 +175,7 @@ namespace NMSTools.Framework.Models
             get => name;
             set
             {
-                if ((ReferenceEquals(name, value) != true))
+                if (ReferenceEquals(name, value) != true)
                 {
                     name = value;
                     OnPropertyChanged("Name");
@@ -189,7 +189,7 @@ namespace NMSTools.Framework.Models
             get => baseType;
             set
             {
-                if ((ReferenceEquals(baseType, value) != true))
+                if (ReferenceEquals(baseType, value) != true)
                 {
                     baseType = value;
                     OnPropertyChanged("BaseType");
@@ -203,7 +203,7 @@ namespace NMSTools.Framework.Models
             get => lastEditedById;
             set
             {
-                if ((ReferenceEquals(lastEditedById, value) != true))
+                if (ReferenceEquals(lastEditedById, value) != true)
                 {
                     lastEditedById = value;
                     OnPropertyChanged("LastEditedById");
@@ -217,7 +217,7 @@ namespace NMSTools.Framework.Models
             get => lastEditedByUsername;
             set
             {
-                if ((ReferenceEquals(lastEditedByUsername, value) != true))
+                if (ReferenceEquals(lastEditedByUsername, value) != true)
                 {
                     lastEditedByUsername = value;
                     OnPropertyChanged("LastEditedByUsername");
@@ -231,7 +231,7 @@ namespace NMSTools.Framework.Models
             get => screenshotAt;
             set
             {
-                if ((ReferenceEquals(screenshotAt, value) != true))
+                if (ReferenceEquals(screenshotAt, value) != true)
                 {
                     screenshotAt = value;
                     OnPropertyChanged("ScreenshotAt");
@@ -245,7 +245,7 @@ namespace NMSTools.Framework.Models
             get => screenshotPos;
             set
             {
-                if ((ReferenceEquals(screenshotPos, value) != true))
+                if (ReferenceEquals(screenshotPos, value) != true)
                 {
                     screenshotPos = value;
                     OnPropertyChanged("ScreenshotPos");
@@ -259,7 +259,7 @@ namespace NMSTools.Framework.Models
             get => gameMode;
             set
             {
-                if ((ReferenceEquals(gameMode, value) != true))
+                if (ReferenceEquals(gameMode, value) != true)
                 {
                     gameMode = value;
                     OnPropertyChanged("GameMode");
@@ -273,7 +273,7 @@ namespace NMSTools.Framework.Models
             get => platformToken;
             set
             {
-                if ((ReferenceEquals(platformToken, value) != true))
+                if (ReferenceEquals(platformToken, value) != true)
                 {
                     platformToken = value;
                     OnPropertyChanged("PlatformToken");
@@ -287,7 +287,7 @@ namespace NMSTools.Framework.Models
             get => isReported;
             set
             {
-                if ((ReferenceEquals(isReported, value) != true))
+                if (ReferenceEquals(isReported, value) != true)
                 {
                     isReported = value;
                     OnPropertyChanged("IsReported");
@@ -301,7 +301,7 @@ namespace NMSTools.Framework.Models
             get => isFeatured;
             set
             {
-                if ((ReferenceEquals(isFeatured, value) != true))
+                if (ReferenceEquals(isFeatured, value) != true)
                 {
                     isFeatured = value;
                     OnPropertyChanged("IsFeatured");

@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => tSrec;
             set
             {
-                if ((ReferenceEquals(tSrec, value) != true))
+                if (ReferenceEquals(tSrec, value) != true)
                 {
                     tSrec = value;
                     OnPropertyChanged("TSrec");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => dD;
             set
             {
-                if ((ReferenceEquals(dD, value) != true))
+                if (ReferenceEquals(dD, value) != true)
                 {
                     dD = value;
                     OnPropertyChanged("DD");

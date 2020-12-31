@@ -204,7 +204,7 @@ namespace NMSTools.Framework.Models
             get => universeAddress;
             set
             {
-                if ((ReferenceEquals(universeAddress, value) != true))
+                if (ReferenceEquals(universeAddress, value) != true)
                 {
                     universeAddress = value;
                     OnPropertyChanged("UniverseAddress");
@@ -218,7 +218,7 @@ namespace NMSTools.Framework.Models
             get => previousUniverseAddress;
             set
             {
-                if ((ReferenceEquals(previousUniverseAddress, value) != true))
+                if (ReferenceEquals(previousUniverseAddress, value) != true)
                 {
                     previousUniverseAddress = value;
                     OnPropertyChanged("PreviousUniverseAddress");
@@ -232,7 +232,7 @@ namespace NMSTools.Framework.Models
             get => homeRealityIteration;
             set
             {
-                if ((ReferenceEquals(homeRealityIteration, value) != true))
+                if (ReferenceEquals(homeRealityIteration, value) != true)
                 {
                     homeRealityIteration = value;
                     OnPropertyChanged("HomeRealityIteration");
@@ -246,7 +246,7 @@ namespace NMSTools.Framework.Models
             get => inventory;
             set
             {
-                if ((ReferenceEquals(inventory, value) != true))
+                if (ReferenceEquals(inventory, value) != true)
                 {
                     inventory = value;
                     OnPropertyChanged("Inventory");
@@ -260,7 +260,7 @@ namespace NMSTools.Framework.Models
             get => inventoryTech;
             set
             {
-                if ((ReferenceEquals(inventoryTech, value) != true))
+                if (ReferenceEquals(inventoryTech, value) != true)
                 {
                     inventoryTech = value;
                     OnPropertyChanged("InventoryTech");
@@ -274,7 +274,7 @@ namespace NMSTools.Framework.Models
             get => inventoryCargo;
             set
             {
-                if ((ReferenceEquals(inventoryCargo, value) != true))
+                if (ReferenceEquals(inventoryCargo, value) != true)
                 {
                     inventoryCargo = value;
                     OnPropertyChanged("InventoryCargo");
@@ -288,7 +288,7 @@ namespace NMSTools.Framework.Models
             get => inventoryShip;
             set
             {
-                if ((ReferenceEquals(inventoryShip, value) != true))
+                if (ReferenceEquals(inventoryShip, value) != true)
                 {
                     inventoryShip = value;
                     OnPropertyChanged("InventoryShip");
@@ -302,7 +302,7 @@ namespace NMSTools.Framework.Models
             get => inventoryWeapon;
             set
             {
-                if ((ReferenceEquals(inventoryWeapon, value) != true))
+                if (ReferenceEquals(inventoryWeapon, value) != true)
                 {
                     inventoryWeapon = value;
                     OnPropertyChanged("InventoryWeapon");
@@ -316,7 +316,7 @@ namespace NMSTools.Framework.Models
             get => multiTools;
             set
             {
-                if ((ReferenceEquals(multiTools, value) != true))
+                if (ReferenceEquals(multiTools, value) != true)
                 {
                     multiTools = value;
                     OnPropertyChanged("MultiTools");
@@ -330,7 +330,7 @@ namespace NMSTools.Framework.Models
             get => activeMultiTool;
             set
             {
-                if ((ReferenceEquals(activeMultiTool, value) != true))
+                if (ReferenceEquals(activeMultiTool, value) != true)
                 {
                     activeMultiTool = value;
                     OnPropertyChanged("ActiveMultiTool");
@@ -344,7 +344,7 @@ namespace NMSTools.Framework.Models
             get => inventoryGrave;
             set
             {
-                if ((ReferenceEquals(inventoryGrave, value) != true))
+                if (ReferenceEquals(inventoryGrave, value) != true)
                 {
                     inventoryGrave = value;
                     OnPropertyChanged("InventoryGrave");
@@ -358,7 +358,7 @@ namespace NMSTools.Framework.Models
             get => spawnGrave;
             set
             {
-                if ((ReferenceEquals(spawnGrave, value) != true))
+                if (ReferenceEquals(spawnGrave, value) != true)
                 {
                     spawnGrave = value;
                     OnPropertyChanged("SpawnGrave");
@@ -372,7 +372,7 @@ namespace NMSTools.Framework.Models
             get => spaceGrave;
             set
             {
-                if ((ReferenceEquals(spaceGrave, value) != true))
+                if (ReferenceEquals(spaceGrave, value) != true)
                 {
                     spaceGrave = value;
                     OnPropertyChanged("SpaceGrave");
@@ -386,7 +386,7 @@ namespace NMSTools.Framework.Models
             get => graveUniverseAddress;
             set
             {
-                if ((ReferenceEquals(graveUniverseAddress, value) != true))
+                if (ReferenceEquals(graveUniverseAddress, value) != true)
                 {
                     graveUniverseAddress = value;
                     OnPropertyChanged("GraveUniverseAddress");
@@ -400,7 +400,7 @@ namespace NMSTools.Framework.Models
             get => gravePosition;
             set
             {
-                if ((ReferenceEquals(gravePosition, value) != true))
+                if (ReferenceEquals(gravePosition, value) != true)
                 {
                     gravePosition = value;
                     OnPropertyChanged("GravePosition");
@@ -414,7 +414,7 @@ namespace NMSTools.Framework.Models
             get => graveMatrixLookAt;
             set
             {
-                if ((ReferenceEquals(graveMatrixLookAt, value) != true))
+                if (ReferenceEquals(graveMatrixLookAt, value) != true)
                 {
                     graveMatrixLookAt = value;
                     OnPropertyChanged("GraveMatrixLookAt");
@@ -428,7 +428,7 @@ namespace NMSTools.Framework.Models
             get => graveMatrixUp;
             set
             {
-                if ((ReferenceEquals(graveMatrixUp, value) != true))
+                if (ReferenceEquals(graveMatrixUp, value) != true)
                 {
                     graveMatrixUp = value;
                     OnPropertyChanged("GraveMatrixUp");
@@ -442,7 +442,7 @@ namespace NMSTools.Framework.Models
             get => shipLayout;
             set
             {
-                if ((ReferenceEquals(shipLayout, value) != true))
+                if (ReferenceEquals(shipLayout, value) != true)
                 {
                     shipLayout = value;
                     OnPropertyChanged("ShipLayout");
@@ -456,7 +456,7 @@ namespace NMSTools.Framework.Models
             get => weaponLayout;
             set
             {
-                if ((ReferenceEquals(weaponLayout, value) != true))
+                if (ReferenceEquals(weaponLayout, value) != true)
                 {
                     weaponLayout = value;
                     OnPropertyChanged("WeaponLayout");
@@ -470,7 +470,7 @@ namespace NMSTools.Framework.Models
             get => currentShip;
             set
             {
-                if ((ReferenceEquals(currentShip, value) != true))
+                if (ReferenceEquals(currentShip, value) != true)
                 {
                     currentShip = value;
                     OnPropertyChanged("CurrentShip");
@@ -484,7 +484,7 @@ namespace NMSTools.Framework.Models
             get => currentWeapon;
             set
             {
-                if ((ReferenceEquals(currentWeapon, value) != true))
+                if (ReferenceEquals(currentWeapon, value) != true)
                 {
                     currentWeapon = value;
                     OnPropertyChanged("CurrentWeapon");
@@ -498,7 +498,7 @@ namespace NMSTools.Framework.Models
             get => knownTech;
             set
             {
-                if ((ReferenceEquals(knownTech, value) != true))
+                if (ReferenceEquals(knownTech, value) != true)
                 {
                     knownTech = value;
                     OnPropertyChanged("KnownTech");
@@ -512,7 +512,7 @@ namespace NMSTools.Framework.Models
             get => knownProducts;
             set
             {
-                if ((ReferenceEquals(knownProducts, value) != true))
+                if (ReferenceEquals(knownProducts, value) != true)
                 {
                     knownProducts = value;
                     OnPropertyChanged("KnownProducts");
@@ -526,7 +526,7 @@ namespace NMSTools.Framework.Models
             get => knownSpecials;
             set
             {
-                if ((ReferenceEquals(knownSpecials, value) != true))
+                if (ReferenceEquals(knownSpecials, value) != true)
                 {
                     knownSpecials = value;
                     OnPropertyChanged("KnownSpecials");
@@ -540,7 +540,7 @@ namespace NMSTools.Framework.Models
             get => knownRefinerRecipes;
             set
             {
-                if ((ReferenceEquals(knownRefinerRecipes, value) != true))
+                if (ReferenceEquals(knownRefinerRecipes, value) != true)
                 {
                     knownRefinerRecipes = value;
                     OnPropertyChanged("KnownRefinerRecipes");
@@ -554,7 +554,7 @@ namespace NMSTools.Framework.Models
             get => knownWords;
             set
             {
-                if ((ReferenceEquals(knownWords, value) != true))
+                if (ReferenceEquals(knownWords, value) != true)
                 {
                     knownWords = value;
                     OnPropertyChanged("KnownWords");
@@ -568,7 +568,7 @@ namespace NMSTools.Framework.Models
             get => knownWordGroups;
             set
             {
-                if ((ReferenceEquals(knownWordGroups, value) != true))
+                if (ReferenceEquals(knownWordGroups, value) != true)
                 {
                     knownWordGroups = value;
                     OnPropertyChanged("KnownWordGroups");
@@ -582,7 +582,7 @@ namespace NMSTools.Framework.Models
             get => missionProgress;
             set
             {
-                if ((ReferenceEquals(missionProgress, value) != true))
+                if (ReferenceEquals(missionProgress, value) != true)
                 {
                     missionProgress = value;
                     OnPropertyChanged("MissionProgress");
@@ -596,7 +596,7 @@ namespace NMSTools.Framework.Models
             get => postMissionIndex;
             set
             {
-                if ((ReferenceEquals(postMissionIndex, value) != true))
+                if (ReferenceEquals(postMissionIndex, value) != true)
                 {
                     postMissionIndex = value;
                     OnPropertyChanged("PostMissionIndex");
@@ -610,7 +610,7 @@ namespace NMSTools.Framework.Models
             get => currentMissionID;
             set
             {
-                if ((ReferenceEquals(currentMissionID, value) != true))
+                if (ReferenceEquals(currentMissionID, value) != true)
                 {
                     currentMissionID = value;
                     OnPropertyChanged("CurrentMissionID");
@@ -624,7 +624,7 @@ namespace NMSTools.Framework.Models
             get => currentMissionSeed;
             set
             {
-                if ((ReferenceEquals(currentMissionSeed, value) != true))
+                if (ReferenceEquals(currentMissionSeed, value) != true)
                 {
                     currentMissionSeed = value;
                     OnPropertyChanged("CurrentMissionSeed");
@@ -638,7 +638,7 @@ namespace NMSTools.Framework.Models
             get => previousMissionID;
             set
             {
-                if ((ReferenceEquals(previousMissionID, value) != true))
+                if (ReferenceEquals(previousMissionID, value) != true)
                 {
                     previousMissionID = value;
                     OnPropertyChanged("PreviousMissionID");
@@ -652,7 +652,7 @@ namespace NMSTools.Framework.Models
             get => previousMissionSeed;
             set
             {
-                if ((ReferenceEquals(previousMissionSeed, value) != true))
+                if (ReferenceEquals(previousMissionSeed, value) != true)
                 {
                     previousMissionSeed = value;
                     OnPropertyChanged("PreviousMissionSeed");
@@ -666,7 +666,7 @@ namespace NMSTools.Framework.Models
             get => missionVersion;
             set
             {
-                if ((ReferenceEquals(missionVersion, value) != true))
+                if (ReferenceEquals(missionVersion, value) != true)
                 {
                     missionVersion = value;
                     OnPropertyChanged("MissionVersion");
@@ -680,7 +680,7 @@ namespace NMSTools.Framework.Models
             get => missionRecurrences;
             set
             {
-                if ((ReferenceEquals(missionRecurrences, value) != true))
+                if (ReferenceEquals(missionRecurrences, value) != true)
                 {
                     missionRecurrences = value;
                     OnPropertyChanged("MissionRecurrences");
@@ -694,7 +694,7 @@ namespace NMSTools.Framework.Models
             get => holoExplorerInteraction;
             set
             {
-                if ((ReferenceEquals(holoExplorerInteraction, value) != true))
+                if (ReferenceEquals(holoExplorerInteraction, value) != true)
                 {
                     holoExplorerInteraction = value;
                     OnPropertyChanged("HoloExplorerInteraction");
@@ -708,7 +708,7 @@ namespace NMSTools.Framework.Models
             get => holoScepticInteraction;
             set
             {
-                if ((ReferenceEquals(holoScepticInteraction, value) != true))
+                if (ReferenceEquals(holoScepticInteraction, value) != true)
                 {
                     holoScepticInteraction = value;
                     OnPropertyChanged("HoloScepticInteraction");
@@ -722,7 +722,7 @@ namespace NMSTools.Framework.Models
             get => holoNooneInteraction;
             set
             {
-                if ((ReferenceEquals(holoNooneInteraction, value) != true))
+                if (ReferenceEquals(holoNooneInteraction, value) != true)
                 {
                     holoNooneInteraction = value;
                     OnPropertyChanged("HoloNooneInteraction");
@@ -736,7 +736,7 @@ namespace NMSTools.Framework.Models
             get => health;
             set
             {
-                if ((ReferenceEquals(health, value) != true))
+                if (ReferenceEquals(health, value) != true)
                 {
                     health = value;
                     OnPropertyChanged("Health");
@@ -750,7 +750,7 @@ namespace NMSTools.Framework.Models
             get => shipHealth;
             set
             {
-                if ((ReferenceEquals(shipHealth, value) != true))
+                if (ReferenceEquals(shipHealth, value) != true)
                 {
                     shipHealth = value;
                     OnPropertyChanged("ShipHealth");
@@ -764,7 +764,7 @@ namespace NMSTools.Framework.Models
             get => shield;
             set
             {
-                if ((ReferenceEquals(shield, value) != true))
+                if (ReferenceEquals(shield, value) != true)
                 {
                     shield = value;
                     OnPropertyChanged("Shield");
@@ -778,7 +778,7 @@ namespace NMSTools.Framework.Models
             get => shipShield;
             set
             {
-                if ((ReferenceEquals(shipShield, value) != true))
+                if (ReferenceEquals(shipShield, value) != true)
                 {
                     shipShield = value;
                     OnPropertyChanged("ShipShield");
@@ -792,7 +792,7 @@ namespace NMSTools.Framework.Models
             get => energy;
             set
             {
-                if ((ReferenceEquals(energy, value) != true))
+                if (ReferenceEquals(energy, value) != true)
                 {
                     energy = value;
                     OnPropertyChanged("Energy");
@@ -806,7 +806,7 @@ namespace NMSTools.Framework.Models
             get => units;
             set
             {
-                if ((ReferenceEquals(units, value) != true))
+                if (ReferenceEquals(units, value) != true)
                 {
                     units = value;
                     OnPropertyChanged("Units");
@@ -820,7 +820,7 @@ namespace NMSTools.Framework.Models
             get => nanites;
             set
             {
-                if ((ReferenceEquals(nanites, value) != true))
+                if (ReferenceEquals(nanites, value) != true)
                 {
                     nanites = value;
                     OnPropertyChanged("Nanites");
@@ -834,7 +834,7 @@ namespace NMSTools.Framework.Models
             get => specials;
             set
             {
-                if ((ReferenceEquals(specials, value) != true))
+                if (ReferenceEquals(specials, value) != true)
                 {
                     specials = value;
                     OnPropertyChanged("Specials");
@@ -848,7 +848,7 @@ namespace NMSTools.Framework.Models
             get => thirdPersonShip;
             set
             {
-                if ((ReferenceEquals(thirdPersonShip, value) != true))
+                if (ReferenceEquals(thirdPersonShip, value) != true)
                 {
                     thirdPersonShip = value;
                     OnPropertyChanged("ThirdPersonShip");
@@ -862,7 +862,7 @@ namespace NMSTools.Framework.Models
             get => timeAlive;
             set
             {
-                if ((ReferenceEquals(timeAlive, value) != true))
+                if (ReferenceEquals(timeAlive, value) != true)
                 {
                     timeAlive = value;
                     OnPropertyChanged("TimeAlive");
@@ -876,7 +876,7 @@ namespace NMSTools.Framework.Models
             get => totalPlayTime;
             set
             {
-                if ((ReferenceEquals(totalPlayTime, value) != true))
+                if (ReferenceEquals(totalPlayTime, value) != true)
                 {
                     totalPlayTime = value;
                     OnPropertyChanged("TotalPlayTime");
@@ -890,7 +890,7 @@ namespace NMSTools.Framework.Models
             get => markerStack;
             set
             {
-                if ((ReferenceEquals(markerStack, value) != true))
+                if (ReferenceEquals(markerStack, value) != true)
                 {
                     markerStack = value;
                     OnPropertyChanged("MarkerStack");
@@ -904,7 +904,7 @@ namespace NMSTools.Framework.Models
             get => newMPMarkerStack;
             set
             {
-                if ((ReferenceEquals(newMPMarkerStack, value) != true))
+                if (ReferenceEquals(newMPMarkerStack, value) != true)
                 {
                     newMPMarkerStack = value;
                     OnPropertyChanged("NewMPMarkerStack");
@@ -918,7 +918,7 @@ namespace NMSTools.Framework.Models
             get => surveyedEventPositions;
             set
             {
-                if ((ReferenceEquals(surveyedEventPositions, value) != true))
+                if (ReferenceEquals(surveyedEventPositions, value) != true)
                 {
                     surveyedEventPositions = value;
                     OnPropertyChanged("SurveyedEventPositions");
@@ -932,7 +932,7 @@ namespace NMSTools.Framework.Models
             get => nextSurveyedEventPositionIndex;
             set
             {
-                if ((ReferenceEquals(nextSurveyedEventPositionIndex, value) != true))
+                if (ReferenceEquals(nextSurveyedEventPositionIndex, value) != true)
                 {
                     nextSurveyedEventPositionIndex = value;
                     OnPropertyChanged("NextSurveyedEventPositionIndex");
@@ -946,7 +946,7 @@ namespace NMSTools.Framework.Models
             get => stats;
             set
             {
-                if ((ReferenceEquals(stats, value) != true))
+                if (ReferenceEquals(stats, value) != true)
                 {
                     stats = value;
                     OnPropertyChanged("Stats");
@@ -960,7 +960,7 @@ namespace NMSTools.Framework.Models
             get => telemetryStats;
             set
             {
-                if ((ReferenceEquals(telemetryStats, value) != true))
+                if (ReferenceEquals(telemetryStats, value) != true)
                 {
                     telemetryStats = value;
                     OnPropertyChanged("TelemetryStats");
@@ -974,7 +974,7 @@ namespace NMSTools.Framework.Models
             get => storedInteractions;
             set
             {
-                if ((ReferenceEquals(storedInteractions, value) != true))
+                if (ReferenceEquals(storedInteractions, value) != true)
                 {
                     storedInteractions = value;
                     OnPropertyChanged("StoredInteractions");
@@ -988,7 +988,7 @@ namespace NMSTools.Framework.Models
             get => maintenanceInteractions;
             set
             {
-                if ((ReferenceEquals(maintenanceInteractions, value) != true))
+                if (ReferenceEquals(maintenanceInteractions, value) != true)
                 {
                     maintenanceInteractions = value;
                     OnPropertyChanged("MaintenanceInteractions");
@@ -1002,7 +1002,7 @@ namespace NMSTools.Framework.Models
             get => personalMaintenanceInteractions;
             set
             {
-                if ((ReferenceEquals(personalMaintenanceInteractions, value) != true))
+                if (ReferenceEquals(personalMaintenanceInteractions, value) != true)
                 {
                     personalMaintenanceInteractions = value;
                     OnPropertyChanged("PersonalMaintenanceInteractions");
@@ -1016,7 +1016,7 @@ namespace NMSTools.Framework.Models
             get => visitedSystems;
             set
             {
-                if ((ReferenceEquals(visitedSystems, value) != true))
+                if (ReferenceEquals(visitedSystems, value) != true)
                 {
                     visitedSystems = value;
                     OnPropertyChanged("VisitedSystems");
@@ -1030,7 +1030,7 @@ namespace NMSTools.Framework.Models
             get => hazard;
             set
             {
-                if ((ReferenceEquals(hazard, value) != true))
+                if (ReferenceEquals(hazard, value) != true)
                 {
                     hazard = value;
                     OnPropertyChanged("Hazard");
@@ -1044,7 +1044,7 @@ namespace NMSTools.Framework.Models
             get => boltAmmo;
             set
             {
-                if ((ReferenceEquals(boltAmmo, value) != true))
+                if (ReferenceEquals(boltAmmo, value) != true)
                 {
                     boltAmmo = value;
                     OnPropertyChanged("BoltAmmo");
@@ -1058,7 +1058,7 @@ namespace NMSTools.Framework.Models
             get => scatterAmmo;
             set
             {
-                if ((ReferenceEquals(scatterAmmo, value) != true))
+                if (ReferenceEquals(scatterAmmo, value) != true)
                 {
                     scatterAmmo = value;
                     OnPropertyChanged("ScatterAmmo");
@@ -1072,7 +1072,7 @@ namespace NMSTools.Framework.Models
             get => pulseAmmo;
             set
             {
-                if ((ReferenceEquals(pulseAmmo, value) != true))
+                if (ReferenceEquals(pulseAmmo, value) != true)
                 {
                     pulseAmmo = value;
                     OnPropertyChanged("PulseAmmo");
@@ -1086,7 +1086,7 @@ namespace NMSTools.Framework.Models
             get => laserAmmo;
             set
             {
-                if ((ReferenceEquals(laserAmmo, value) != true))
+                if (ReferenceEquals(laserAmmo, value) != true)
                 {
                     laserAmmo = value;
                     OnPropertyChanged("LaserAmmo");
@@ -1100,7 +1100,7 @@ namespace NMSTools.Framework.Models
             get => firstSpawnPosition;
             set
             {
-                if ((ReferenceEquals(firstSpawnPosition, value) != true))
+                if (ReferenceEquals(firstSpawnPosition, value) != true)
                 {
                     firstSpawnPosition = value;
                     OnPropertyChanged("FirstSpawnPosition");
@@ -1114,7 +1114,7 @@ namespace NMSTools.Framework.Models
             get => savedInteractionIndicies;
             set
             {
-                if ((ReferenceEquals(savedInteractionIndicies, value) != true))
+                if (ReferenceEquals(savedInteractionIndicies, value) != true)
                 {
                     savedInteractionIndicies = value;
                     OnPropertyChanged("SavedInteractionIndicies");
@@ -1128,7 +1128,7 @@ namespace NMSTools.Framework.Models
             get => savedInteractionDialogTable;
             set
             {
-                if ((ReferenceEquals(savedInteractionDialogTable, value) != true))
+                if (ReferenceEquals(savedInteractionDialogTable, value) != true)
                 {
                     savedInteractionDialogTable = value;
                     OnPropertyChanged("SavedInteractionDialogTable");
@@ -1142,7 +1142,7 @@ namespace NMSTools.Framework.Models
             get => interactionProgressTable;
             set
             {
-                if ((ReferenceEquals(interactionProgressTable, value) != true))
+                if (ReferenceEquals(interactionProgressTable, value) != true)
                 {
                     interactionProgressTable = value;
                     OnPropertyChanged("InteractionProgressTable");
@@ -1156,7 +1156,7 @@ namespace NMSTools.Framework.Models
             get => atlasStationAdressData;
             set
             {
-                if ((ReferenceEquals(atlasStationAdressData, value) != true))
+                if (ReferenceEquals(atlasStationAdressData, value) != true)
                 {
                     atlasStationAdressData = value;
                     OnPropertyChanged("AtlasStationAdressData");
@@ -1170,7 +1170,7 @@ namespace NMSTools.Framework.Models
             get => newAtlasStationAdressData;
             set
             {
-                if ((ReferenceEquals(newAtlasStationAdressData, value) != true))
+                if (ReferenceEquals(newAtlasStationAdressData, value) != true)
                 {
                     newAtlasStationAdressData = value;
                     OnPropertyChanged("NewAtlasStationAdressData");
@@ -1184,7 +1184,7 @@ namespace NMSTools.Framework.Models
             get => visitedAtlasStationsData;
             set
             {
-                if ((ReferenceEquals(visitedAtlasStationsData, value) != true))
+                if (ReferenceEquals(visitedAtlasStationsData, value) != true)
                 {
                     visitedAtlasStationsData = value;
                     OnPropertyChanged("VisitedAtlasStationsData");
@@ -1198,7 +1198,7 @@ namespace NMSTools.Framework.Models
             get => firstAtlasStationDiscovered;
             set
             {
-                if ((ReferenceEquals(firstAtlasStationDiscovered, value) != true))
+                if (ReferenceEquals(firstAtlasStationDiscovered, value) != true)
                 {
                     firstAtlasStationDiscovered = value;
                     OnPropertyChanged("FirstAtlasStationDiscovered");
@@ -1212,7 +1212,7 @@ namespace NMSTools.Framework.Models
             get => usesThirdPersonCharacterCam;
             set
             {
-                if ((ReferenceEquals(usesThirdPersonCharacterCam, value) != true))
+                if (ReferenceEquals(usesThirdPersonCharacterCam, value) != true)
                 {
                     usesThirdPersonCharacterCam = value;
                     OnPropertyChanged("UsesThirdPersonCharacterCam");
@@ -1226,7 +1226,7 @@ namespace NMSTools.Framework.Models
             get => progressionLevel;
             set
             {
-                if ((ReferenceEquals(progressionLevel, value) != true))
+                if (ReferenceEquals(progressionLevel, value) != true)
                 {
                     progressionLevel = value;
                     OnPropertyChanged("ProgressionLevel");
@@ -1240,7 +1240,7 @@ namespace NMSTools.Framework.Models
             get => procTechIndex;
             set
             {
-                if ((ReferenceEquals(procTechIndex, value) != true))
+                if (ReferenceEquals(procTechIndex, value) != true)
                 {
                     procTechIndex = value;
                     OnPropertyChanged("ProcTechIndex");
@@ -1254,7 +1254,7 @@ namespace NMSTools.Framework.Models
             get => isNew;
             set
             {
-                if ((ReferenceEquals(isNew, value) != true))
+                if (ReferenceEquals(isNew, value) != true)
                 {
                     isNew = value;
                     OnPropertyChanged("IsNew");
@@ -1268,7 +1268,7 @@ namespace NMSTools.Framework.Models
             get => useSmallerBlackholeJumps;
             set
             {
-                if ((ReferenceEquals(useSmallerBlackholeJumps, value) != true))
+                if (ReferenceEquals(useSmallerBlackholeJumps, value) != true)
                 {
                     useSmallerBlackholeJumps = value;
                     OnPropertyChanged("UseSmallerBlackholeJumps");
@@ -1282,7 +1282,7 @@ namespace NMSTools.Framework.Models
             get => usedEntitlements;
             set
             {
-                if ((ReferenceEquals(usedEntitlements, value) != true))
+                if (ReferenceEquals(usedEntitlements, value) != true)
                 {
                     usedEntitlements = value;
                     OnPropertyChanged("UsedEntitlements");
@@ -1296,7 +1296,7 @@ namespace NMSTools.Framework.Models
             get => planetPositions;
             set
             {
-                if ((ReferenceEquals(planetPositions, value) != true))
+                if (ReferenceEquals(planetPositions, value) != true)
                 {
                     planetPositions = value;
                     OnPropertyChanged("PlanetPositions");
@@ -1310,7 +1310,7 @@ namespace NMSTools.Framework.Models
             get => planetSeeds;
             set
             {
-                if ((ReferenceEquals(planetSeeds, value) != true))
+                if (ReferenceEquals(planetSeeds, value) != true)
                 {
                     planetSeeds = value;
                     OnPropertyChanged("PlanetSeeds");
@@ -1324,7 +1324,7 @@ namespace NMSTools.Framework.Models
             get => primaryPlanet;
             set
             {
-                if ((ReferenceEquals(primaryPlanet, value) != true))
+                if (ReferenceEquals(primaryPlanet, value) != true)
                 {
                     primaryPlanet = value;
                     OnPropertyChanged("PrimaryPlanet");
@@ -1338,7 +1338,7 @@ namespace NMSTools.Framework.Models
             get => timeLastSpaceBattle;
             set
             {
-                if ((ReferenceEquals(timeLastSpaceBattle, value) != true))
+                if (ReferenceEquals(timeLastSpaceBattle, value) != true)
                 {
                     timeLastSpaceBattle = value;
                     OnPropertyChanged("TimeLastSpaceBattle");
@@ -1352,7 +1352,7 @@ namespace NMSTools.Framework.Models
             get => warpsLastSpaceBattle;
             set
             {
-                if ((ReferenceEquals(warpsLastSpaceBattle, value) != true))
+                if (ReferenceEquals(warpsLastSpaceBattle, value) != true)
                 {
                     warpsLastSpaceBattle = value;
                     OnPropertyChanged("WarpsLastSpaceBattle");
@@ -1366,7 +1366,7 @@ namespace NMSTools.Framework.Models
             get => activeSpaceBattleUA;
             set
             {
-                if ((ReferenceEquals(activeSpaceBattleUA, value) != true))
+                if (ReferenceEquals(activeSpaceBattleUA, value) != true)
                 {
                     activeSpaceBattleUA = value;
                     OnPropertyChanged("ActiveSpaceBattleUA");
@@ -1380,7 +1380,7 @@ namespace NMSTools.Framework.Models
             get => timeLastMiniStation;
             set
             {
-                if ((ReferenceEquals(timeLastMiniStation, value) != true))
+                if (ReferenceEquals(timeLastMiniStation, value) != true)
                 {
                     timeLastMiniStation = value;
                     OnPropertyChanged("TimeLastMiniStation");
@@ -1394,7 +1394,7 @@ namespace NMSTools.Framework.Models
             get => warpsLastMiniStation;
             set
             {
-                if ((ReferenceEquals(warpsLastMiniStation, value) != true))
+                if (ReferenceEquals(warpsLastMiniStation, value) != true)
                 {
                     warpsLastMiniStation = value;
                     OnPropertyChanged("WarpsLastMiniStation");
@@ -1408,7 +1408,7 @@ namespace NMSTools.Framework.Models
             get => miniStationUA;
             set
             {
-                if ((ReferenceEquals(miniStationUA, value) != true))
+                if (ReferenceEquals(miniStationUA, value) != true)
                 {
                     miniStationUA = value;
                     OnPropertyChanged("MiniStationUA");
@@ -1422,7 +1422,7 @@ namespace NMSTools.Framework.Models
             get => anomalyPositionOverride;
             set
             {
-                if ((ReferenceEquals(anomalyPositionOverride, value) != true))
+                if (ReferenceEquals(anomalyPositionOverride, value) != true)
                 {
                     anomalyPositionOverride = value;
                     OnPropertyChanged("AnomalyPositionOverride");
@@ -1436,7 +1436,7 @@ namespace NMSTools.Framework.Models
             get => gameStartAddress1;
             set
             {
-                if ((ReferenceEquals(gameStartAddress1, value) != true))
+                if (ReferenceEquals(gameStartAddress1, value) != true)
                 {
                     gameStartAddress1 = value;
                     OnPropertyChanged("GameStartAddress1");
@@ -1450,7 +1450,7 @@ namespace NMSTools.Framework.Models
             get => gameStartAddress2;
             set
             {
-                if ((ReferenceEquals(gameStartAddress2, value) != true))
+                if (ReferenceEquals(gameStartAddress2, value) != true)
                 {
                     gameStartAddress2 = value;
                     OnPropertyChanged("GameStartAddress2");
@@ -1464,7 +1464,7 @@ namespace NMSTools.Framework.Models
             get => galacticMapRequests;
             set
             {
-                if ((ReferenceEquals(galacticMapRequests, value) != true))
+                if (ReferenceEquals(galacticMapRequests, value) != true)
                 {
                     galacticMapRequests = value;
                     OnPropertyChanged("GalacticMapRequests");
@@ -1478,7 +1478,7 @@ namespace NMSTools.Framework.Models
             get => firstShipPosition;
             set
             {
-                if ((ReferenceEquals(firstShipPosition, value) != true))
+                if (ReferenceEquals(firstShipPosition, value) != true)
                 {
                     firstShipPosition = value;
                     OnPropertyChanged("FirstShipPosition");
@@ -1492,7 +1492,7 @@ namespace NMSTools.Framework.Models
             get => hazardTimeAlive;
             set
             {
-                if ((ReferenceEquals(hazardTimeAlive, value) != true))
+                if (ReferenceEquals(hazardTimeAlive, value) != true)
                 {
                     hazardTimeAlive = value;
                     OnPropertyChanged("HazardTimeAlive");
@@ -1506,7 +1506,7 @@ namespace NMSTools.Framework.Models
             get => revealBlackHoles;
             set
             {
-                if ((ReferenceEquals(revealBlackHoles, value) != true))
+                if (ReferenceEquals(revealBlackHoles, value) != true)
                 {
                     revealBlackHoles = value;
                     OnPropertyChanged("RevealBlackHoles");
@@ -1520,7 +1520,7 @@ namespace NMSTools.Framework.Models
             get => currentFreighterHomeSystemSeed;
             set
             {
-                if ((ReferenceEquals(currentFreighterHomeSystemSeed, value) != true))
+                if (ReferenceEquals(currentFreighterHomeSystemSeed, value) != true)
                 {
                     currentFreighterHomeSystemSeed = value;
                     OnPropertyChanged("CurrentFreighterHomeSystemSeed");
@@ -1534,7 +1534,7 @@ namespace NMSTools.Framework.Models
             get => currentFreighter;
             set
             {
-                if ((ReferenceEquals(currentFreighter, value) != true))
+                if (ReferenceEquals(currentFreighter, value) != true)
                 {
                     currentFreighter = value;
                     OnPropertyChanged("CurrentFreighter");
@@ -1548,7 +1548,7 @@ namespace NMSTools.Framework.Models
             get => freighterLayout;
             set
             {
-                if ((ReferenceEquals(freighterLayout, value) != true))
+                if (ReferenceEquals(freighterLayout, value) != true)
                 {
                     freighterLayout = value;
                     OnPropertyChanged("FreighterLayout");
@@ -1562,7 +1562,7 @@ namespace NMSTools.Framework.Models
             get => freighterInventory;
             set
             {
-                if ((ReferenceEquals(freighterInventory, value) != true))
+                if (ReferenceEquals(freighterInventory, value) != true)
                 {
                     freighterInventory = value;
                     OnPropertyChanged("FreighterInventory");
@@ -1576,7 +1576,7 @@ namespace NMSTools.Framework.Models
             get => freighterInventoryTech;
             set
             {
-                if ((ReferenceEquals(freighterInventoryTech, value) != true))
+                if (ReferenceEquals(freighterInventoryTech, value) != true)
                 {
                     freighterInventoryTech = value;
                     OnPropertyChanged("FreighterInventoryTech");
@@ -1590,7 +1590,7 @@ namespace NMSTools.Framework.Models
             get => freighterUniverseAddress;
             set
             {
-                if ((ReferenceEquals(freighterUniverseAddress, value) != true))
+                if (ReferenceEquals(freighterUniverseAddress, value) != true)
                 {
                     freighterUniverseAddress = value;
                     OnPropertyChanged("FreighterUniverseAddress");
@@ -1604,7 +1604,7 @@ namespace NMSTools.Framework.Models
             get => freighterMatrixAt;
             set
             {
-                if ((ReferenceEquals(freighterMatrixAt, value) != true))
+                if (ReferenceEquals(freighterMatrixAt, value) != true)
                 {
                     freighterMatrixAt = value;
                     OnPropertyChanged("FreighterMatrixAt");
@@ -1618,7 +1618,7 @@ namespace NMSTools.Framework.Models
             get => freighterMatrixUp;
             set
             {
-                if ((ReferenceEquals(freighterMatrixUp, value) != true))
+                if (ReferenceEquals(freighterMatrixUp, value) != true)
                 {
                     freighterMatrixUp = value;
                     OnPropertyChanged("FreighterMatrixUp");
@@ -1632,7 +1632,7 @@ namespace NMSTools.Framework.Models
             get => freighterMatrixPos;
             set
             {
-                if ((ReferenceEquals(freighterMatrixPos, value) != true))
+                if (ReferenceEquals(freighterMatrixPos, value) != true)
                 {
                     freighterMatrixPos = value;
                     OnPropertyChanged("FreighterMatrixPos");
@@ -1646,7 +1646,7 @@ namespace NMSTools.Framework.Models
             get => baseBuildingObjects;
             set
             {
-                if ((ReferenceEquals(baseBuildingObjects, value) != true))
+                if (ReferenceEquals(baseBuildingObjects, value) != true)
                 {
                     baseBuildingObjects = value;
                     OnPropertyChanged("BaseBuildingObjects");
@@ -1660,7 +1660,7 @@ namespace NMSTools.Framework.Models
             get => terrainEditData;
             set
             {
-                if ((ReferenceEquals(terrainEditData, value) != true))
+                if (ReferenceEquals(terrainEditData, value) != true)
                 {
                     terrainEditData = value;
                     OnPropertyChanged("TerrainEditData");
@@ -1674,7 +1674,7 @@ namespace NMSTools.Framework.Models
             get => nPCWorkers;
             set
             {
-                if ((ReferenceEquals(nPCWorkers, value) != true))
+                if (ReferenceEquals(nPCWorkers, value) != true)
                 {
                     nPCWorkers = value;
                     OnPropertyChanged("NPCWorkers");
@@ -1688,7 +1688,7 @@ namespace NMSTools.Framework.Models
             get => persistentPlayerBases;
             set
             {
-                if ((ReferenceEquals(persistentPlayerBases, value) != true))
+                if (ReferenceEquals(persistentPlayerBases, value) != true)
                 {
                     persistentPlayerBases = value;
                     OnPropertyChanged("PersistentPlayerBases");
@@ -1702,7 +1702,7 @@ namespace NMSTools.Framework.Models
             get => teleportEndpoints;
             set
             {
-                if ((ReferenceEquals(teleportEndpoints, value) != true))
+                if (ReferenceEquals(teleportEndpoints, value) != true)
                 {
                     teleportEndpoints = value;
                     OnPropertyChanged("TeleportEndpoints");
@@ -1716,7 +1716,7 @@ namespace NMSTools.Framework.Models
             get => chest0Layout;
             set
             {
-                if ((ReferenceEquals(chest0Layout, value) != true))
+                if (ReferenceEquals(chest0Layout, value) != true)
                 {
                     chest0Layout = value;
                     OnPropertyChanged("Chest0Layout");
@@ -1730,7 +1730,7 @@ namespace NMSTools.Framework.Models
             get => chest0Inventory;
             set
             {
-                if ((ReferenceEquals(chest0Inventory, value) != true))
+                if (ReferenceEquals(chest0Inventory, value) != true)
                 {
                     chest0Inventory = value;
                     OnPropertyChanged("Chest0Inventory");
@@ -1744,7 +1744,7 @@ namespace NMSTools.Framework.Models
             get => chest1Layout;
             set
             {
-                if ((ReferenceEquals(chest1Layout, value) != true))
+                if (ReferenceEquals(chest1Layout, value) != true)
                 {
                     chest1Layout = value;
                     OnPropertyChanged("Chest1Layout");
@@ -1758,7 +1758,7 @@ namespace NMSTools.Framework.Models
             get => chest1Inventory;
             set
             {
-                if ((ReferenceEquals(chest1Inventory, value) != true))
+                if (ReferenceEquals(chest1Inventory, value) != true)
                 {
                     chest1Inventory = value;
                     OnPropertyChanged("Chest1Inventory");
@@ -1772,7 +1772,7 @@ namespace NMSTools.Framework.Models
             get => chest2Layout;
             set
             {
-                if ((ReferenceEquals(chest2Layout, value) != true))
+                if (ReferenceEquals(chest2Layout, value) != true)
                 {
                     chest2Layout = value;
                     OnPropertyChanged("Chest2Layout");
@@ -1786,7 +1786,7 @@ namespace NMSTools.Framework.Models
             get => chest2Inventory;
             set
             {
-                if ((ReferenceEquals(chest2Inventory, value) != true))
+                if (ReferenceEquals(chest2Inventory, value) != true)
                 {
                     chest2Inventory = value;
                     OnPropertyChanged("Chest2Inventory");
@@ -1800,7 +1800,7 @@ namespace NMSTools.Framework.Models
             get => chest3Layout;
             set
             {
-                if ((ReferenceEquals(chest3Layout, value) != true))
+                if (ReferenceEquals(chest3Layout, value) != true)
                 {
                     chest3Layout = value;
                     OnPropertyChanged("Chest3Layout");
@@ -1814,7 +1814,7 @@ namespace NMSTools.Framework.Models
             get => chest3Inventory;
             set
             {
-                if ((ReferenceEquals(chest3Inventory, value) != true))
+                if (ReferenceEquals(chest3Inventory, value) != true)
                 {
                     chest3Inventory = value;
                     OnPropertyChanged("Chest3Inventory");
@@ -1828,7 +1828,7 @@ namespace NMSTools.Framework.Models
             get => chest4Layout;
             set
             {
-                if ((ReferenceEquals(chest4Layout, value) != true))
+                if (ReferenceEquals(chest4Layout, value) != true)
                 {
                     chest4Layout = value;
                     OnPropertyChanged("Chest4Layout");
@@ -1842,7 +1842,7 @@ namespace NMSTools.Framework.Models
             get => chest4Inventory;
             set
             {
-                if ((ReferenceEquals(chest4Inventory, value) != true))
+                if (ReferenceEquals(chest4Inventory, value) != true)
                 {
                     chest4Inventory = value;
                     OnPropertyChanged("Chest4Inventory");
@@ -1856,7 +1856,7 @@ namespace NMSTools.Framework.Models
             get => chest5Layout;
             set
             {
-                if ((ReferenceEquals(chest5Layout, value) != true))
+                if (ReferenceEquals(chest5Layout, value) != true)
                 {
                     chest5Layout = value;
                     OnPropertyChanged("Chest5Layout");
@@ -1870,7 +1870,7 @@ namespace NMSTools.Framework.Models
             get => chest5Inventory;
             set
             {
-                if ((ReferenceEquals(chest5Inventory, value) != true))
+                if (ReferenceEquals(chest5Inventory, value) != true)
                 {
                     chest5Inventory = value;
                     OnPropertyChanged("Chest5Inventory");
@@ -1884,7 +1884,7 @@ namespace NMSTools.Framework.Models
             get => chest6Layout;
             set
             {
-                if ((ReferenceEquals(chest6Layout, value) != true))
+                if (ReferenceEquals(chest6Layout, value) != true)
                 {
                     chest6Layout = value;
                     OnPropertyChanged("Chest6Layout");
@@ -1898,7 +1898,7 @@ namespace NMSTools.Framework.Models
             get => chest6Inventory;
             set
             {
-                if ((ReferenceEquals(chest6Inventory, value) != true))
+                if (ReferenceEquals(chest6Inventory, value) != true)
                 {
                     chest6Inventory = value;
                     OnPropertyChanged("Chest6Inventory");
@@ -1912,7 +1912,7 @@ namespace NMSTools.Framework.Models
             get => chest7Layout;
             set
             {
-                if ((ReferenceEquals(chest7Layout, value) != true))
+                if (ReferenceEquals(chest7Layout, value) != true)
                 {
                     chest7Layout = value;
                     OnPropertyChanged("Chest7Layout");
@@ -1926,7 +1926,7 @@ namespace NMSTools.Framework.Models
             get => chest7Inventory;
             set
             {
-                if ((ReferenceEquals(chest7Inventory, value) != true))
+                if (ReferenceEquals(chest7Inventory, value) != true)
                 {
                     chest7Inventory = value;
                     OnPropertyChanged("Chest7Inventory");
@@ -1940,7 +1940,7 @@ namespace NMSTools.Framework.Models
             get => chest8Layout;
             set
             {
-                if ((ReferenceEquals(chest8Layout, value) != true))
+                if (ReferenceEquals(chest8Layout, value) != true)
                 {
                     chest8Layout = value;
                     OnPropertyChanged("Chest8Layout");
@@ -1954,7 +1954,7 @@ namespace NMSTools.Framework.Models
             get => chest8Inventory;
             set
             {
-                if ((ReferenceEquals(chest8Inventory, value) != true))
+                if (ReferenceEquals(chest8Inventory, value) != true)
                 {
                     chest8Inventory = value;
                     OnPropertyChanged("Chest8Inventory");
@@ -1968,7 +1968,7 @@ namespace NMSTools.Framework.Models
             get => chest9Layout;
             set
             {
-                if ((ReferenceEquals(chest9Layout, value) != true))
+                if (ReferenceEquals(chest9Layout, value) != true)
                 {
                     chest9Layout = value;
                     OnPropertyChanged("Chest9Layout");
@@ -1982,7 +1982,7 @@ namespace NMSTools.Framework.Models
             get => chest9Inventory;
             set
             {
-                if ((ReferenceEquals(chest9Inventory, value) != true))
+                if (ReferenceEquals(chest9Inventory, value) != true)
                 {
                     chest9Inventory = value;
                     OnPropertyChanged("Chest9Inventory");
@@ -1996,7 +1996,7 @@ namespace NMSTools.Framework.Models
             get => chestMagicLayout;
             set
             {
-                if ((ReferenceEquals(chestMagicLayout, value) != true))
+                if (ReferenceEquals(chestMagicLayout, value) != true)
                 {
                     chestMagicLayout = value;
                     OnPropertyChanged("ChestMagicLayout");
@@ -2010,7 +2010,7 @@ namespace NMSTools.Framework.Models
             get => chestMagicInventory;
             set
             {
-                if ((ReferenceEquals(chestMagicInventory, value) != true))
+                if (ReferenceEquals(chestMagicInventory, value) != true)
                 {
                     chestMagicInventory = value;
                     OnPropertyChanged("ChestMagicInventory");
@@ -2024,7 +2024,7 @@ namespace NMSTools.Framework.Models
             get => chestMagic2Layout;
             set
             {
-                if ((ReferenceEquals(chestMagic2Layout, value) != true))
+                if (ReferenceEquals(chestMagic2Layout, value) != true)
                 {
                     chestMagic2Layout = value;
                     OnPropertyChanged("ChestMagic2Layout");
@@ -2038,7 +2038,7 @@ namespace NMSTools.Framework.Models
             get => chestMagic2Inventory;
             set
             {
-                if ((ReferenceEquals(chestMagic2Inventory, value) != true))
+                if (ReferenceEquals(chestMagic2Inventory, value) != true)
                 {
                     chestMagic2Inventory = value;
                     OnPropertyChanged("ChestMagic2Inventory");
@@ -2052,7 +2052,7 @@ namespace NMSTools.Framework.Models
             get => cookingIngredientsLayout;
             set
             {
-                if ((ReferenceEquals(cookingIngredientsLayout, value) != true))
+                if (ReferenceEquals(cookingIngredientsLayout, value) != true)
                 {
                     cookingIngredientsLayout = value;
                     OnPropertyChanged("CookingIngredientsLayout");
@@ -2066,7 +2066,7 @@ namespace NMSTools.Framework.Models
             get => cookingIngredientsInventory;
             set
             {
-                if ((ReferenceEquals(cookingIngredientsInventory, value) != true))
+                if (ReferenceEquals(cookingIngredientsInventory, value) != true)
                 {
                     cookingIngredientsInventory = value;
                     OnPropertyChanged("CookingIngredientsInventory");
@@ -2080,7 +2080,7 @@ namespace NMSTools.Framework.Models
             get => currentFreighterNPC;
             set
             {
-                if ((ReferenceEquals(currentFreighterNPC, value) != true))
+                if (ReferenceEquals(currentFreighterNPC, value) != true)
                 {
                     currentFreighterNPC = value;
                     OnPropertyChanged("CurrentFreighterNPC");
@@ -2094,7 +2094,7 @@ namespace NMSTools.Framework.Models
             get => vehicleOwnership;
             set
             {
-                if ((ReferenceEquals(vehicleOwnership, value) != true))
+                if (ReferenceEquals(vehicleOwnership, value) != true)
                 {
                     vehicleOwnership = value;
                     OnPropertyChanged("VehicleOwnership");
@@ -2108,7 +2108,7 @@ namespace NMSTools.Framework.Models
             get => primaryVehicle;
             set
             {
-                if ((ReferenceEquals(primaryVehicle, value) != true))
+                if (ReferenceEquals(primaryVehicle, value) != true)
                 {
                     primaryVehicle = value;
                     OnPropertyChanged("PrimaryVehicle");
@@ -2122,7 +2122,7 @@ namespace NMSTools.Framework.Models
             get => shipOwnership;
             set
             {
-                if ((ReferenceEquals(shipOwnership, value) != true))
+                if (ReferenceEquals(shipOwnership, value) != true)
                 {
                     shipOwnership = value;
                     OnPropertyChanged("ShipOwnership");
@@ -2136,7 +2136,7 @@ namespace NMSTools.Framework.Models
             get => primaryShip;
             set
             {
-                if ((ReferenceEquals(primaryShip, value) != true))
+                if (ReferenceEquals(primaryShip, value) != true)
                 {
                     primaryShip = value;
                     OnPropertyChanged("PrimaryShip");
@@ -2150,7 +2150,7 @@ namespace NMSTools.Framework.Models
             get => multiShipEnabled;
             set
             {
-                if ((ReferenceEquals(multiShipEnabled, value) != true))
+                if (ReferenceEquals(multiShipEnabled, value) != true)
                 {
                     multiShipEnabled = value;
                     OnPropertyChanged("MultiShipEnabled");
@@ -2164,7 +2164,7 @@ namespace NMSTools.Framework.Models
             get => playerFreighterName;
             set
             {
-                if ((ReferenceEquals(playerFreighterName, value) != true))
+                if (ReferenceEquals(playerFreighterName, value) != true)
                 {
                     playerFreighterName = value;
                     OnPropertyChanged("PlayerFreighterName");
@@ -2178,7 +2178,7 @@ namespace NMSTools.Framework.Models
             get => startGameShipPosition;
             set
             {
-                if ((ReferenceEquals(startGameShipPosition, value) != true))
+                if (ReferenceEquals(startGameShipPosition, value) != true)
                 {
                     startGameShipPosition = value;
                     OnPropertyChanged("StartGameShipPosition");
@@ -2192,7 +2192,7 @@ namespace NMSTools.Framework.Models
             get => shipNeedsTerrainPositioning;
             set
             {
-                if ((ReferenceEquals(shipNeedsTerrainPositioning, value) != true))
+                if (ReferenceEquals(shipNeedsTerrainPositioning, value) != true)
                 {
                     shipNeedsTerrainPositioning = value;
                     OnPropertyChanged("ShipNeedsTerrainPositioning");
@@ -2206,7 +2206,7 @@ namespace NMSTools.Framework.Models
             get => tradingSupplyDataIndex;
             set
             {
-                if ((ReferenceEquals(tradingSupplyDataIndex, value) != true))
+                if (ReferenceEquals(tradingSupplyDataIndex, value) != true)
                 {
                     tradingSupplyDataIndex = value;
                     OnPropertyChanged("TradingSupplyDataIndex");
@@ -2220,7 +2220,7 @@ namespace NMSTools.Framework.Models
             get => tradingSupplyData;
             set
             {
-                if ((ReferenceEquals(tradingSupplyData, value) != true))
+                if (ReferenceEquals(tradingSupplyData, value) != true)
                 {
                     tradingSupplyData = value;
                     OnPropertyChanged("TradingSupplyData");
@@ -2234,7 +2234,7 @@ namespace NMSTools.Framework.Models
             get => lastPortal;
             set
             {
-                if ((ReferenceEquals(lastPortal, value) != true))
+                if (ReferenceEquals(lastPortal, value) != true)
                 {
                     lastPortal = value;
                     OnPropertyChanged("LastPortal");
@@ -2248,7 +2248,7 @@ namespace NMSTools.Framework.Models
             get => visitedPortal;
             set
             {
-                if ((ReferenceEquals(visitedPortal, value) != true))
+                if (ReferenceEquals(visitedPortal, value) != true)
                 {
                     visitedPortal = value;
                     OnPropertyChanged("VisitedPortal");
@@ -2262,7 +2262,7 @@ namespace NMSTools.Framework.Models
             get => knownPortalRunes;
             set
             {
-                if ((ReferenceEquals(knownPortalRunes, value) != true))
+                if (ReferenceEquals(knownPortalRunes, value) != true)
                 {
                     knownPortalRunes = value;
                     OnPropertyChanged("KnownPortalRunes");
@@ -2276,7 +2276,7 @@ namespace NMSTools.Framework.Models
             get => onOtherSideOfPortal;
             set
             {
-                if ((ReferenceEquals(onOtherSideOfPortal, value) != true))
+                if (ReferenceEquals(onOtherSideOfPortal, value) != true)
                 {
                     onOtherSideOfPortal = value;
                     OnPropertyChanged("OnOtherSideOfPortal");
@@ -2290,7 +2290,7 @@ namespace NMSTools.Framework.Models
             get => otherSideOfPortalReturnBase;
             set
             {
-                if ((ReferenceEquals(otherSideOfPortalReturnBase, value) != true))
+                if (ReferenceEquals(otherSideOfPortalReturnBase, value) != true)
                 {
                     otherSideOfPortalReturnBase = value;
                     OnPropertyChanged("OtherSideOfPortalReturnBase");
@@ -2304,7 +2304,7 @@ namespace NMSTools.Framework.Models
             get => portalMarkerPosition_Local;
             set
             {
-                if ((ReferenceEquals(portalMarkerPosition_Local, value) != true))
+                if (ReferenceEquals(portalMarkerPosition_Local, value) != true)
                 {
                     portalMarkerPosition_Local = value;
                     OnPropertyChanged("PortalMarkerPosition_Local");
@@ -2318,7 +2318,7 @@ namespace NMSTools.Framework.Models
             get => portalMarkerPosition_Offset;
             set
             {
-                if ((ReferenceEquals(portalMarkerPosition_Offset, value) != true))
+                if (ReferenceEquals(portalMarkerPosition_Offset, value) != true)
                 {
                     portalMarkerPosition_Offset = value;
                     OnPropertyChanged("PortalMarkerPosition_Offset");
@@ -2332,7 +2332,7 @@ namespace NMSTools.Framework.Models
             get => startingPrimaryWeapon;
             set
             {
-                if ((ReferenceEquals(startingPrimaryWeapon, value) != true))
+                if (ReferenceEquals(startingPrimaryWeapon, value) != true)
                 {
                     startingPrimaryWeapon = value;
                     OnPropertyChanged("StartingPrimaryWeapon");
@@ -2346,7 +2346,7 @@ namespace NMSTools.Framework.Models
             get => startingSecondaryWeapon;
             set
             {
-                if ((ReferenceEquals(startingSecondaryWeapon, value) != true))
+                if (ReferenceEquals(startingSecondaryWeapon, value) != true)
                 {
                     startingSecondaryWeapon = value;
                     OnPropertyChanged("StartingSecondaryWeapon");
@@ -2360,7 +2360,7 @@ namespace NMSTools.Framework.Models
             get => outfitPresets;
             set
             {
-                if ((ReferenceEquals(outfitPresets, value) != true))
+                if (ReferenceEquals(outfitPresets, value) != true)
                 {
                     outfitPresets = value;
                     OnPropertyChanged("OutfitPresets");
@@ -2374,7 +2374,7 @@ namespace NMSTools.Framework.Models
             get => shipUsesLegacyColours;
             set
             {
-                if ((ReferenceEquals(shipUsesLegacyColours, value) != true))
+                if (ReferenceEquals(shipUsesLegacyColours, value) != true)
                 {
                     shipUsesLegacyColours = value;
                     OnPropertyChanged("ShipUsesLegacyColours");
@@ -2388,7 +2388,7 @@ namespace NMSTools.Framework.Models
             get => outfits;
             set
             {
-                if ((ReferenceEquals(outfits, value) != true))
+                if (ReferenceEquals(outfits, value) != true)
                 {
                     outfits = value;
                     OnPropertyChanged("Outfits");
@@ -2402,7 +2402,7 @@ namespace NMSTools.Framework.Models
             get => jetpackEffect;
             set
             {
-                if ((ReferenceEquals(jetpackEffect, value) != true))
+                if (ReferenceEquals(jetpackEffect, value) != true)
                 {
                     jetpackEffect = value;
                     OnPropertyChanged("JetpackEffect");
@@ -2416,7 +2416,7 @@ namespace NMSTools.Framework.Models
             get => fleetSeed;
             set
             {
-                if ((ReferenceEquals(fleetSeed, value) != true))
+                if (ReferenceEquals(fleetSeed, value) != true)
                 {
                     fleetSeed = value;
                     OnPropertyChanged("FleetSeed");
@@ -2430,7 +2430,7 @@ namespace NMSTools.Framework.Models
             get => fleetFrigates;
             set
             {
-                if ((ReferenceEquals(fleetFrigates, value) != true))
+                if (ReferenceEquals(fleetFrigates, value) != true)
                 {
                     fleetFrigates = value;
                     OnPropertyChanged("FleetFrigates");
@@ -2444,7 +2444,7 @@ namespace NMSTools.Framework.Models
             get => fleetExpeditions;
             set
             {
-                if ((ReferenceEquals(fleetExpeditions, value) != true))
+                if (ReferenceEquals(fleetExpeditions, value) != true)
                 {
                     fleetExpeditions = value;
                     OnPropertyChanged("FleetExpeditions");
@@ -2458,7 +2458,7 @@ namespace NMSTools.Framework.Models
             get => expeditionSeedsSelectedToday;
             set
             {
-                if ((ReferenceEquals(expeditionSeedsSelectedToday, value) != true))
+                if (ReferenceEquals(expeditionSeedsSelectedToday, value) != true)
                 {
                     expeditionSeedsSelectedToday = value;
                     OnPropertyChanged("ExpeditionSeedsSelectedToday");
@@ -2472,7 +2472,7 @@ namespace NMSTools.Framework.Models
             get => lastKnownDay;
             set
             {
-                if ((ReferenceEquals(lastKnownDay, value) != true))
+                if (ReferenceEquals(lastKnownDay, value) != true)
                 {
                     lastKnownDay = value;
                     OnPropertyChanged("LastKnownDay");
@@ -2486,7 +2486,7 @@ namespace NMSTools.Framework.Models
             get => sunTimer;
             set
             {
-                if ((ReferenceEquals(sunTimer, value) != true))
+                if (ReferenceEquals(sunTimer, value) != true)
                 {
                     sunTimer = value;
                     OnPropertyChanged("SunTimer");
@@ -2500,7 +2500,7 @@ namespace NMSTools.Framework.Models
             get => multiplayerLobbyID;
             set
             {
-                if ((ReferenceEquals(multiplayerLobbyID, value) != true))
+                if (ReferenceEquals(multiplayerLobbyID, value) != true)
                 {
                     multiplayerLobbyID = value;
                     OnPropertyChanged("MultiplayerLobbyID");
@@ -2514,7 +2514,7 @@ namespace NMSTools.Framework.Models
             get => multiplayerUA;
             set
             {
-                if ((ReferenceEquals(multiplayerUA, value) != true))
+                if (ReferenceEquals(multiplayerUA, value) != true)
                 {
                     multiplayerUA = value;
                     OnPropertyChanged("MultiplayerUA");
@@ -2528,7 +2528,7 @@ namespace NMSTools.Framework.Models
             get => multiplayerSpawn;
             set
             {
-                if ((ReferenceEquals(multiplayerSpawn, value) != true))
+                if (ReferenceEquals(multiplayerSpawn, value) != true)
                 {
                     multiplayerSpawn = value;
                     OnPropertyChanged("MultiplayerSpawn");
@@ -2542,7 +2542,7 @@ namespace NMSTools.Framework.Models
             get => repairTechBuffer;
             set
             {
-                if ((ReferenceEquals(repairTechBuffer, value) != true))
+                if (ReferenceEquals(repairTechBuffer, value) != true)
                 {
                     repairTechBuffer = value;
                     OnPropertyChanged("RepairTechBuffer");
@@ -2556,7 +2556,7 @@ namespace NMSTools.Framework.Models
             get => multiplayerPrivileges;
             set
             {
-                if ((ReferenceEquals(multiplayerPrivileges, value) != true))
+                if (ReferenceEquals(multiplayerPrivileges, value) != true)
                 {
                     multiplayerPrivileges = value;
                     OnPropertyChanged("MultiplayerPrivileges");
@@ -2570,7 +2570,7 @@ namespace NMSTools.Framework.Models
             get => hotActions;
             set
             {
-                if ((ReferenceEquals(hotActions, value) != true))
+                if (ReferenceEquals(hotActions, value) != true)
                 {
                     hotActions = value;
                     OnPropertyChanged("HotActions");
@@ -2584,7 +2584,7 @@ namespace NMSTools.Framework.Models
             get => lastUABeforePortalWarp;
             set
             {
-                if ((ReferenceEquals(lastUABeforePortalWarp, value) != true))
+                if (ReferenceEquals(lastUABeforePortalWarp, value) != true)
                 {
                     lastUABeforePortalWarp = value;
                     OnPropertyChanged("LastUABeforePortalWarp");
@@ -2598,7 +2598,7 @@ namespace NMSTools.Framework.Models
             get => storyPortalSeed;
             set
             {
-                if ((ReferenceEquals(storyPortalSeed, value) != true))
+                if (ReferenceEquals(storyPortalSeed, value) != true)
                 {
                     storyPortalSeed = value;
                     OnPropertyChanged("StoryPortalSeed");
@@ -2612,7 +2612,7 @@ namespace NMSTools.Framework.Models
             get => shopNumber;
             set
             {
-                if ((ReferenceEquals(shopNumber, value) != true))
+                if (ReferenceEquals(shopNumber, value) != true)
                 {
                     shopNumber = value;
                     OnPropertyChanged("ShopNumber");
@@ -2626,7 +2626,7 @@ namespace NMSTools.Framework.Models
             get => shopTier;
             set
             {
-                if ((ReferenceEquals(shopTier, value) != true))
+                if (ReferenceEquals(shopTier, value) != true)
                 {
                     shopTier = value;
                     OnPropertyChanged("ShopTier");
@@ -2640,7 +2640,7 @@ namespace NMSTools.Framework.Models
             get => hasAccessToNexus;
             set
             {
-                if ((ReferenceEquals(hasAccessToNexus, value) != true))
+                if (ReferenceEquals(hasAccessToNexus, value) != true)
                 {
                     hasAccessToNexus = value;
                     OnPropertyChanged("HasAccessToNexus");
@@ -2654,7 +2654,7 @@ namespace NMSTools.Framework.Models
             get => nexusUniverseAddress;
             set
             {
-                if ((ReferenceEquals(nexusUniverseAddress, value) != true))
+                if (ReferenceEquals(nexusUniverseAddress, value) != true)
                 {
                     nexusUniverseAddress = value;
                     OnPropertyChanged("NexusUniverseAddress");
@@ -2668,7 +2668,7 @@ namespace NMSTools.Framework.Models
             get => nexusMatrixAt;
             set
             {
-                if ((ReferenceEquals(nexusMatrixAt, value) != true))
+                if (ReferenceEquals(nexusMatrixAt, value) != true)
                 {
                     nexusMatrixAt = value;
                     OnPropertyChanged("NexusMatrixAt");
@@ -2682,7 +2682,7 @@ namespace NMSTools.Framework.Models
             get => nexusMatrixUp;
             set
             {
-                if ((ReferenceEquals(nexusMatrixUp, value) != true))
+                if (ReferenceEquals(nexusMatrixUp, value) != true)
                 {
                     nexusMatrixUp = value;
                     OnPropertyChanged("NexusMatrixUp");
@@ -2696,7 +2696,7 @@ namespace NMSTools.Framework.Models
             get => nexusMatrixPos;
             set
             {
-                if ((ReferenceEquals(nexusMatrixPos, value) != true))
+                if (ReferenceEquals(nexusMatrixPos, value) != true)
                 {
                     nexusMatrixPos = value;
                     OnPropertyChanged("NexusMatrixPos");
@@ -2710,7 +2710,7 @@ namespace NMSTools.Framework.Models
             get => photoModeSettings;
             set
             {
-                if ((ReferenceEquals(photoModeSettings, value) != true))
+                if (ReferenceEquals(photoModeSettings, value) != true)
                 {
                     photoModeSettings = value;
                     OnPropertyChanged("PhotoModeSettings");
@@ -2724,7 +2724,7 @@ namespace NMSTools.Framework.Models
             get => bannerIcon;
             set
             {
-                if ((ReferenceEquals(bannerIcon, value) != true))
+                if (ReferenceEquals(bannerIcon, value) != true)
                 {
                     bannerIcon = value;
                     OnPropertyChanged("BannerIcon");
@@ -2738,7 +2738,7 @@ namespace NMSTools.Framework.Models
             get => bannerMainColour;
             set
             {
-                if ((ReferenceEquals(bannerMainColour, value) != true))
+                if (ReferenceEquals(bannerMainColour, value) != true)
                 {
                     bannerMainColour = value;
                     OnPropertyChanged("BannerMainColour");
@@ -2752,7 +2752,7 @@ namespace NMSTools.Framework.Models
             get => bannerBackgroundColour;
             set
             {
-                if ((ReferenceEquals(bannerBackgroundColour, value) != true))
+                if (ReferenceEquals(bannerBackgroundColour, value) != true)
                 {
                     bannerBackgroundColour = value;
                     OnPropertyChanged("BannerBackgroundColour");
@@ -2766,7 +2766,7 @@ namespace NMSTools.Framework.Models
             get => bannerTitleId;
             set
             {
-                if ((ReferenceEquals(bannerTitleId, value) != true))
+                if (ReferenceEquals(bannerTitleId, value) != true)
                 {
                     bannerTitleId = value;
                     OnPropertyChanged("BannerTitleId");
@@ -2780,7 +2780,7 @@ namespace NMSTools.Framework.Models
             get => telemetryUploadVersion;
             set
             {
-                if ((ReferenceEquals(telemetryUploadVersion, value) != true))
+                if (ReferenceEquals(telemetryUploadVersion, value) != true)
                 {
                     telemetryUploadVersion = value;
                     OnPropertyChanged("TelemetryUploadVersion");
@@ -2794,7 +2794,7 @@ namespace NMSTools.Framework.Models
             get => usesThirdPersonVehicleCam;
             set
             {
-                if ((ReferenceEquals(usesThirdPersonVehicleCam, value) != true))
+                if (ReferenceEquals(usesThirdPersonVehicleCam, value) != true)
                 {
                     usesThirdPersonVehicleCam = value;
                     OnPropertyChanged("UsesThirdPersonVehicleCam");
@@ -2808,7 +2808,7 @@ namespace NMSTools.Framework.Models
             get => vRCameraOffset;
             set
             {
-                if ((ReferenceEquals(vRCameraOffset, value) != true))
+                if (ReferenceEquals(vRCameraOffset, value) != true)
                 {
                     vRCameraOffset = value;
                     OnPropertyChanged("VRCameraOffset");
@@ -2822,7 +2822,7 @@ namespace NMSTools.Framework.Models
             get => seasonalData;
             set
             {
-                if ((ReferenceEquals(seasonalData, value) != true))
+                if (ReferenceEquals(seasonalData, value) != true)
                 {
                     seasonalData = value;
                     OnPropertyChanged("SeasonalData");

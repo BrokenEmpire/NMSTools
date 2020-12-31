@@ -21,7 +21,7 @@ namespace NMSTools.Framework.Models
             get => galacticAddresses;
             set
             {
-                if ((ReferenceEquals(galacticAddresses, value) != true))
+                if (ReferenceEquals(galacticAddresses, value) != true)
                 {
                     galacticAddresses = value;
                     OnPropertyChanged("GalacticAddresses");
@@ -35,7 +35,7 @@ namespace NMSTools.Framework.Models
             get => bufferSizes;
             set
             {
-                if ((ReferenceEquals(bufferSizes, value) != true))
+                if (ReferenceEquals(bufferSizes, value) != true)
                 {
                     bufferSizes = value;
                     OnPropertyChanged("BufferSizes");
@@ -49,7 +49,7 @@ namespace NMSTools.Framework.Models
             get => bufferAges;
             set
             {
-                if ((ReferenceEquals(bufferAges, value) != true))
+                if (ReferenceEquals(bufferAges, value) != true)
                 {
                     bufferAges = value;
                     OnPropertyChanged("BufferAges");
@@ -63,7 +63,7 @@ namespace NMSTools.Framework.Models
             get => bufferAnchors;
             set
             {
-                if ((ReferenceEquals(bufferAnchors, value) != true))
+                if (ReferenceEquals(bufferAnchors, value) != true)
                 {
                     bufferAnchors = value;
                     OnPropertyChanged("BufferAnchors");
@@ -77,7 +77,7 @@ namespace NMSTools.Framework.Models
             get => bufferProtected;
             set
             {
-                if ((ReferenceEquals(bufferProtected, value) != true))
+                if (ReferenceEquals(bufferProtected, value) != true)
                 {
                     bufferProtected = value;
                     OnPropertyChanged("BufferProtected");
@@ -91,7 +91,7 @@ namespace NMSTools.Framework.Models
             get => edits;
             set
             {
-                if ((ReferenceEquals(edits, value) != true))
+                if (ReferenceEquals(edits, value) != true)
                 {
                     edits = value;
                     OnPropertyChanged("Edits");

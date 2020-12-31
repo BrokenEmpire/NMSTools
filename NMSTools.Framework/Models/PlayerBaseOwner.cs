@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => lID;
             set
             {
-                if ((ReferenceEquals(lID, value) != true))
+                if (ReferenceEquals(lID, value) != true)
                 {
                     lID = value;
                     OnPropertyChanged("LID");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => uID;
             set
             {
-                if ((ReferenceEquals(uID, value) != true))
+                if (ReferenceEquals(uID, value) != true)
                 {
                     uID = value;
                     OnPropertyChanged("UID");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => uSN;
             set
             {
-                if ((ReferenceEquals(uSN, value) != true))
+                if (ReferenceEquals(uSN, value) != true)
                 {
                     uSN = value;
                     OnPropertyChanged("USN");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => pTK;
             set
             {
-                if ((ReferenceEquals(pTK, value) != true))
+                if (ReferenceEquals(pTK, value) != true)
                 {
                     pTK = value;
                     OnPropertyChanged("PTK");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => tS;
             set
             {
-                if ((ReferenceEquals(tS, value) != true))
+                if (ReferenceEquals(tS, value) != true)
                 {
                     tS = value;
                     OnPropertyChanged("TS");

@@ -15,7 +15,7 @@ namespace NMSTools.Framework.Models
             get => persistentBaseTypes;
             set
             {
-                if ((ReferenceEquals(persistentBaseTypes, value) != true))
+                if (ReferenceEquals(persistentBaseTypes, value) != true)
                 {
                     persistentBaseTypes = value;
                     OnPropertyChanged("PersistentBaseTypes");

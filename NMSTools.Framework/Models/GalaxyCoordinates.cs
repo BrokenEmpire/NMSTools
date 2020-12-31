@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => voxelX;
             set
             {
-                if ((ReferenceEquals(voxelX, value) != true))
+                if (ReferenceEquals(voxelX, value) != true)
                 {
                     voxelX = value;
                     OnPropertyChanged("VoxelX");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => voxelY;
             set
             {
-                if ((ReferenceEquals(voxelY, value) != true))
+                if (ReferenceEquals(voxelY, value) != true)
                 {
                     voxelY = value;
                     OnPropertyChanged("VoxelY");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => voxelZ;
             set
             {
-                if ((ReferenceEquals(voxelZ, value) != true))
+                if (ReferenceEquals(voxelZ, value) != true)
                 {
                     voxelZ = value;
                     OnPropertyChanged("VoxelZ");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => solarSystemIndex;
             set
             {
-                if ((ReferenceEquals(solarSystemIndex, value) != true))
+                if (ReferenceEquals(solarSystemIndex, value) != true)
                 {
                     solarSystemIndex = value;
                     OnPropertyChanged("SolarSystemIndex");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => planetIndex;
             set
             {
-                if ((ReferenceEquals(planetIndex, value) != true))
+                if (ReferenceEquals(planetIndex, value) != true)
                 {
                     planetIndex = value;
                     OnPropertyChanged("PlanetIndex");

@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => baseStatID;
             set
             {
-                if ((ReferenceEquals(baseStatID, value) != true))
+                if (ReferenceEquals(baseStatID, value) != true)
                 {
                     baseStatID = value;
                     OnPropertyChanged("BaseStatID");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => statValue;
             set
             {
-                if ((ReferenceEquals(statValue, value) != true))
+                if (ReferenceEquals(statValue, value) != true)
                 {
                     statValue = value;
                     OnPropertyChanged("StatValue");

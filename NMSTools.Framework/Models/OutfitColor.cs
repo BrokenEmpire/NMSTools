@@ -16,7 +16,7 @@ namespace NMSTools.Framework.Models
             get => palette;
             set
             {
-                if ((ReferenceEquals(palette, value) != true))
+                if (ReferenceEquals(palette, value) != true)
                 {
                     palette = value;
                     OnPropertyChanged("Palette");
@@ -30,7 +30,7 @@ namespace NMSTools.Framework.Models
             get => rgb;
             set
             {
-                if ((ReferenceEquals(rgb, value) != true))
+                if (ReferenceEquals(rgb, value) != true)
                 {
                     rgb = value;
                     OnPropertyChanged("RGB");

@@ -19,7 +19,7 @@ namespace NMSTools.Framework.Models
             get => galacticAddress;
             set
             {
-                if ((ReferenceEquals(galacticAddress, value) != true))
+                if (ReferenceEquals(galacticAddress, value) != true)
                 {
                     galacticAddress = value;
                     OnPropertyChanged("GalacticAddress");
@@ -33,7 +33,7 @@ namespace NMSTools.Framework.Models
             get => supply;
             set
             {
-                if ((ReferenceEquals(supply, value) != true))
+                if (ReferenceEquals(supply, value) != true)
                 {
                     supply = value;
                     OnPropertyChanged("Supply");
@@ -47,7 +47,7 @@ namespace NMSTools.Framework.Models
             get => demand;
             set
             {
-                if ((ReferenceEquals(demand, value) != true))
+                if (ReferenceEquals(demand, value) != true)
                 {
                     demand = value;
                     OnPropertyChanged("Demand");
@@ -61,7 +61,7 @@ namespace NMSTools.Framework.Models
             get => product;
             set
             {
-                if ((ReferenceEquals(product, value) != true))
+                if (ReferenceEquals(product, value) != true)
                 {
                     product = value;
                     OnPropertyChanged("Product");
@@ -75,7 +75,7 @@ namespace NMSTools.Framework.Models
             get => timestamp;
             set
             {
-                if ((ReferenceEquals(timestamp, value) != true))
+                if (ReferenceEquals(timestamp, value) != true)
                 {
                     timestamp = value;
                     OnPropertyChanged("Timestamp");

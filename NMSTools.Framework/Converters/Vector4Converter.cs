@@ -3,9 +3,10 @@ using System;
 
 namespace NMSTools.Framework.Converters
 {
+    using Base;
     using Framework.Primitives;
 
-    public sealed class Vector4Converter : BaseConverter<Vector4>
+    public sealed class Vector4Converter : ConverterBase<Vector4>
     {
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
         {

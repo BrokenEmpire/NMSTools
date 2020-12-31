@@ -25,7 +25,7 @@ namespace NMSTools.Framework.Models
             get => slots;
             set
             {
-                if ((ReferenceEquals(slots, value) != true))
+                if (ReferenceEquals(slots, value) != true)
                 {
                     slots = value;
                     OnPropertyChanged("Slots");
@@ -39,7 +39,7 @@ namespace NMSTools.Framework.Models
             get => validSlotIndices;
             set
             {
-                if ((ReferenceEquals(validSlotIndices, value) != true))
+                if (ReferenceEquals(validSlotIndices, value) != true)
                 {
                     validSlotIndices = value;
                     OnPropertyChanged("ValidSlotIndices");
@@ -53,7 +53,7 @@ namespace NMSTools.Framework.Models
             get => classType;
             set
             {
-                if ((ReferenceEquals(classType, value) != true))
+                if (ReferenceEquals(classType, value) != true)
                 {
                     classType = value;
                     OnPropertyChanged("ClassType");
@@ -67,7 +67,7 @@ namespace NMSTools.Framework.Models
             get => substanceMaxStorageMultiplier;
             set
             {
-                if ((ReferenceEquals(substanceMaxStorageMultiplier, value) != true))
+                if (ReferenceEquals(substanceMaxStorageMultiplier, value) != true)
                 {
                     substanceMaxStorageMultiplier = value;
                     OnPropertyChanged("SubstanceMaxStorageMultiplier");
@@ -81,7 +81,7 @@ namespace NMSTools.Framework.Models
             get => productMaxStorageMultiplier;
             set
             {
-                if ((ReferenceEquals(productMaxStorageMultiplier, value) != true))
+                if (ReferenceEquals(productMaxStorageMultiplier, value) != true)
                 {
                     productMaxStorageMultiplier = value;
                     OnPropertyChanged("ProductMaxStorageMultiplier");
@@ -95,7 +95,7 @@ namespace NMSTools.Framework.Models
             get => baseStatValues;
             set
             {
-                if ((ReferenceEquals(baseStatValues, value) != true))
+                if (ReferenceEquals(baseStatValues, value) != true)
                 {
                     baseStatValues = value;
                     OnPropertyChanged("BaseStatValues");
@@ -109,7 +109,7 @@ namespace NMSTools.Framework.Models
             get => specialSlots;
             set
             {
-                if ((ReferenceEquals(specialSlots, value) != true))
+                if (ReferenceEquals(specialSlots, value) != true)
                 {
                     specialSlots = value;
                     OnPropertyChanged("SpecialSlots");
@@ -123,7 +123,7 @@ namespace NMSTools.Framework.Models
             get => width;
             set
             {
-                if ((ReferenceEquals(width, value) != true))
+                if (ReferenceEquals(width, value) != true)
                 {
                     width = value;
                     OnPropertyChanged("Width");
@@ -137,7 +137,7 @@ namespace NMSTools.Framework.Models
             get => height;
             set
             {
-                if ((ReferenceEquals(height, value) != true))
+                if (ReferenceEquals(height, value) != true)
                 {
                     height = value;
                     OnPropertyChanged("Height");
@@ -151,7 +151,7 @@ namespace NMSTools.Framework.Models
             get => isCool;
             set
             {
-                if ((ReferenceEquals(isCool, value) != true))
+                if (ReferenceEquals(isCool, value) != true)
                 {
                     isCool = value;
                     OnPropertyChanged("IsCool");
@@ -165,7 +165,7 @@ namespace NMSTools.Framework.Models
             get => name;
             set
             {
-                if ((ReferenceEquals(name, value) != true))
+                if (ReferenceEquals(name, value) != true)
                 {
                     name = value;
                     OnPropertyChanged("Name");
@@ -179,7 +179,7 @@ namespace NMSTools.Framework.Models
             get => version;
             set
             {
-                if ((ReferenceEquals(version, value) != true))
+                if (ReferenceEquals(version, value) != true)
                 {
                     version = value;
                     OnPropertyChanged("Version");

@@ -20,7 +20,7 @@ namespace NMSTools.Framework.Models
             get => dD;
             set
             {
-                if ((ReferenceEquals(dD, value) != true))
+                if (ReferenceEquals(dD, value) != true)
                 {
                     dD = value;
                     OnPropertyChanged("DD");
@@ -34,7 +34,7 @@ namespace NMSTools.Framework.Models
             get => dM;
             set
             {
-                if ((ReferenceEquals(dM, value) != true))
+                if (ReferenceEquals(dM, value) != true)
                 {
                     dM = value;
                     OnPropertyChanged("DM");
@@ -48,7 +48,7 @@ namespace NMSTools.Framework.Models
             get => oWS;
             set
             {
-                if ((ReferenceEquals(oWS, value) != true))
+                if (ReferenceEquals(oWS, value) != true)
                 {
                     oWS = value;
                     OnPropertyChanged("OWS");
@@ -62,7 +62,7 @@ namespace NMSTools.Framework.Models
             get => fL;
             set
             {
-                if ((ReferenceEquals(fL, value) != true))
+                if (ReferenceEquals(fL, value) != true)
                 {
                     fL = value;
                     OnPropertyChanged("FL");
@@ -76,7 +76,7 @@ namespace NMSTools.Framework.Models
             get => rID;
             set
             {
-                if ((ReferenceEquals(rID, value) != true))
+                if (ReferenceEquals(rID, value) != true)
                 {
                     rID = value;
                     OnPropertyChanged("RID");
@@ -90,7 +90,7 @@ namespace NMSTools.Framework.Models
             get => pTK;
             set
             {
-                if ((ReferenceEquals(pTK, value) != true))
+                if (ReferenceEquals(pTK, value) != true)
                 {
                     pTK = value;
                     OnPropertyChanged("PTK");
